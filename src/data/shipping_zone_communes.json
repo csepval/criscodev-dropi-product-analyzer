@@ -1,0 +1,2424 @@
+[
+  {
+    "id": "szc_15101",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "15",
+    "commune_code": "15101",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_15102",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "15",
+    "commune_code": "15102",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_15201",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "15",
+    "commune_code": "15201",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_15202",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "15",
+    "commune_code": "15202",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_01101",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "01",
+    "commune_code": "01101",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_01107",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "01",
+    "commune_code": "01107",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_01401",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "01",
+    "commune_code": "01401",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_01402",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "01",
+    "commune_code": "01402",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_01403",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "01",
+    "commune_code": "01403",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_01404",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "01",
+    "commune_code": "01404",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_01405",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "01",
+    "commune_code": "01405",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_02101",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "02",
+    "commune_code": "02101",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_02102",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "02",
+    "commune_code": "02102",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_02103",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "02",
+    "commune_code": "02103",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_02104",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "02",
+    "commune_code": "02104",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_02201",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "02",
+    "commune_code": "02201",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_02202",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "02",
+    "commune_code": "02202",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_02203",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "02",
+    "commune_code": "02203",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_02301",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "02",
+    "commune_code": "02301",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_02302",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "02",
+    "commune_code": "02302",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_03101",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "03",
+    "commune_code": "03101",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_03102",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "03",
+    "commune_code": "03102",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_03103",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "03",
+    "commune_code": "03103",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_03201",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "03",
+    "commune_code": "03201",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_03202",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "03",
+    "commune_code": "03202",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_03301",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "03",
+    "commune_code": "03301",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_03302",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "03",
+    "commune_code": "03302",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_03303",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "03",
+    "commune_code": "03303",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_03304",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "03",
+    "commune_code": "03304",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_04101",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "04",
+    "commune_code": "04101",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_04102",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "04",
+    "commune_code": "04102",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_04103",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "04",
+    "commune_code": "04103",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_04104",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "04",
+    "commune_code": "04104",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_04105",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "04",
+    "commune_code": "04105",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_04106",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "04",
+    "commune_code": "04106",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_04201",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "04",
+    "commune_code": "04201",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_04202",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "04",
+    "commune_code": "04202",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_04203",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "04",
+    "commune_code": "04203",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_04204",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "04",
+    "commune_code": "04204",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_04301",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "04",
+    "commune_code": "04301",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_04302",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "04",
+    "commune_code": "04302",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_04303",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "04",
+    "commune_code": "04303",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_04304",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "04",
+    "commune_code": "04304",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_04305",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "04",
+    "commune_code": "04305",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05101",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05101",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05102",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05102",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05103",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05103",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05104",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "05",
+    "commune_code": "05104",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05105",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05105",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05107",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05107",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05109",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05109",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05201",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "05",
+    "commune_code": "05201",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05301",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05301",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05302",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05302",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05303",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05303",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05304",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05304",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05401",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05401",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05402",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05402",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05403",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05403",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05404",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05404",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05405",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05405",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05501",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05501",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05502",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05502",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05503",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05503",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05504",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05504",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05506",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05506",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05601",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05601",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05602",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05602",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05603",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05603",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05604",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05604",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05605",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05605",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05606",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05606",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05701",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05701",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05702",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05702",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05703",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05703",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05704",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05704",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05705",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05705",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05706",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05706",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05801",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05801",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05802",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05802",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05803",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05803",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_05804",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "05",
+    "commune_code": "05804",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13107",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13107",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13108",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13108",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13109",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13109",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13110",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13110",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13111",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13111",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13112",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13112",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13113",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13113",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13114",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13114",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13115",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13115",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13116",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13116",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13117",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13117",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13118",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13118",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13119",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13119",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13120",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13120",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13121",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13121",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13122",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13122",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13123",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13123",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13124",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13124",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13125",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13125",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13126",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13126",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13127",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13127",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13128",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13128",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13129",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13129",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13130",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13130",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13131",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13131",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13132",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13132",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13201",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13201",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13202",
+    "zone_id": "zone_rm_periferica",
+    "region_code": "13",
+    "commune_code": "13202",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13203",
+    "zone_id": "zone_rm_periferica",
+    "region_code": "13",
+    "commune_code": "13203",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13301",
+    "zone_id": "zone_rm_periferica",
+    "region_code": "13",
+    "commune_code": "13301",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13302",
+    "zone_id": "zone_rm_periferica",
+    "region_code": "13",
+    "commune_code": "13302",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13303",
+    "zone_id": "zone_rm_periferica",
+    "region_code": "13",
+    "commune_code": "13303",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13401",
+    "zone_id": "zone_santiago_urbano",
+    "region_code": "13",
+    "commune_code": "13401",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13402",
+    "zone_id": "zone_rm_periferica",
+    "region_code": "13",
+    "commune_code": "13402",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13403",
+    "zone_id": "zone_rm_periferica",
+    "region_code": "13",
+    "commune_code": "13403",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13404",
+    "zone_id": "zone_rm_periferica",
+    "region_code": "13",
+    "commune_code": "13404",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13501",
+    "zone_id": "zone_rm_periferica",
+    "region_code": "13",
+    "commune_code": "13501",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13502",
+    "zone_id": "zone_rm_periferica",
+    "region_code": "13",
+    "commune_code": "13502",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13503",
+    "zone_id": "zone_rm_periferica",
+    "region_code": "13",
+    "commune_code": "13503",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13504",
+    "zone_id": "zone_rm_periferica",
+    "region_code": "13",
+    "commune_code": "13504",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13505",
+    "zone_id": "zone_rm_periferica",
+    "region_code": "13",
+    "commune_code": "13505",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13601",
+    "zone_id": "zone_rm_periferica",
+    "region_code": "13",
+    "commune_code": "13601",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13602",
+    "zone_id": "zone_rm_periferica",
+    "region_code": "13",
+    "commune_code": "13602",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13603",
+    "zone_id": "zone_rm_periferica",
+    "region_code": "13",
+    "commune_code": "13603",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13604",
+    "zone_id": "zone_rm_periferica",
+    "region_code": "13",
+    "commune_code": "13604",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13605",
+    "zone_id": "zone_rm_periferica",
+    "region_code": "13",
+    "commune_code": "13605",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06101",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06101",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06102",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06102",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06103",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06103",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06104",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06104",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06105",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06105",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06106",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06106",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06107",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06107",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06108",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06108",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06109",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06109",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06110",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06110",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06111",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06111",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06112",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06112",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06113",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06113",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06114",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06114",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06115",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06115",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06116",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06116",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06117",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06117",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06201",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06201",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06202",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06202",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06203",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06203",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06204",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06204",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06205",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06205",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06206",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06206",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06301",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06301",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06302",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06302",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06303",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06303",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06304",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06304",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06305",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06305",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06306",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06306",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06307",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06307",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06308",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06308",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06309",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06309",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_06310",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "06",
+    "commune_code": "06310",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07101",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07101",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07102",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07102",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07103",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07103",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07104",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07104",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07105",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07105",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07106",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07106",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07107",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07107",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07108",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07108",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07109",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07109",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07110",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07110",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07201",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07201",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07202",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07202",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07203",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07203",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07301",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07301",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07302",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07302",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07303",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07303",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07304",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07304",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07305",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07305",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07306",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07306",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07307",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07307",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07308",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07308",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07309",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07309",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07401",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07401",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07402",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07402",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07403",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07403",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07404",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07404",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07405",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07405",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07406",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07406",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07407",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07407",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_07408",
+    "zone_id": "zone_regiones_centrales",
+    "region_code": "07",
+    "commune_code": "07408",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_16101",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "16",
+    "commune_code": "16101",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_16102",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "16",
+    "commune_code": "16102",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_16103",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "16",
+    "commune_code": "16103",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_16104",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "16",
+    "commune_code": "16104",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_16105",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "16",
+    "commune_code": "16105",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_16106",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "16",
+    "commune_code": "16106",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_16107",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "16",
+    "commune_code": "16107",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_16108",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "16",
+    "commune_code": "16108",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_16109",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "16",
+    "commune_code": "16109",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_16201",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "16",
+    "commune_code": "16201",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_16202",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "16",
+    "commune_code": "16202",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_16203",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "16",
+    "commune_code": "16203",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_16204",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "16",
+    "commune_code": "16204",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_16205",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "16",
+    "commune_code": "16205",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_16206",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "16",
+    "commune_code": "16206",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_16207",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "16",
+    "commune_code": "16207",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_16301",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "16",
+    "commune_code": "16301",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_16302",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "16",
+    "commune_code": "16302",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_16303",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "16",
+    "commune_code": "16303",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_16304",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "16",
+    "commune_code": "16304",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_16305",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "16",
+    "commune_code": "16305",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08101",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08101",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08102",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08102",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08103",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08103",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08104",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08104",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08105",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08105",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08106",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08106",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08107",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08107",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08108",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08108",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08109",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08109",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08110",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08110",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08111",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08111",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08112",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08112",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08201",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08201",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08202",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08202",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08203",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08203",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08204",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08204",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08205",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08205",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08206",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08206",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08207",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08207",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08301",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08301",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08302",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08302",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08303",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08303",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08304",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08304",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08305",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08305",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08306",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08306",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08307",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08307",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08308",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08308",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08309",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08309",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08310",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08310",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08311",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08311",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08312",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08312",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08313",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08313",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_08314",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "08",
+    "commune_code": "08314",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09101",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09101",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09102",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09102",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09103",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09103",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09104",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09104",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09105",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09105",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09106",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09106",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09107",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09107",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09108",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09108",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09109",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09109",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09110",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09110",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09111",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09111",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09112",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09112",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09113",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09113",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09114",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09114",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09115",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09115",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09116",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09116",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09117",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09117",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09118",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09118",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09119",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09119",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09120",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09120",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09121",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09121",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09201",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09201",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09202",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09202",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09203",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09203",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09204",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09204",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09205",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09205",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09206",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09206",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09207",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09207",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09208",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09208",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09209",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09209",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09210",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09210",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_09211",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "09",
+    "commune_code": "09211",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_14101",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "14",
+    "commune_code": "14101",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_14102",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "14",
+    "commune_code": "14102",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_14103",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "14",
+    "commune_code": "14103",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_14104",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "14",
+    "commune_code": "14104",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_14105",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "14",
+    "commune_code": "14105",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_14106",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "14",
+    "commune_code": "14106",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_14107",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "14",
+    "commune_code": "14107",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_14108",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "14",
+    "commune_code": "14108",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_14201",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "14",
+    "commune_code": "14201",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_14202",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "14",
+    "commune_code": "14202",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_14203",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "14",
+    "commune_code": "14203",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_14204",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "14",
+    "commune_code": "14204",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10101",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10101",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10102",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10102",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10103",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10103",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10104",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10104",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10105",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10105",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10106",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10106",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10107",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10107",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10108",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10108",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10109",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10109",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10201",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10201",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10202",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10202",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10203",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10203",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10204",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10204",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10205",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10205",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10206",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10206",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10207",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10207",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10208",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10208",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10209",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10209",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10210",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10210",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10301",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10301",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10302",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10302",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10303",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10303",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10304",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10304",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10305",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10305",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10306",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10306",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10307",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10307",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10401",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10401",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10402",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10402",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10403",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10403",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_10404",
+    "zone_id": "zone_regiones_alejadas",
+    "region_code": "10",
+    "commune_code": "10404",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_11101",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "11",
+    "commune_code": "11101",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_11102",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "11",
+    "commune_code": "11102",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_11201",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "11",
+    "commune_code": "11201",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_11202",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "11",
+    "commune_code": "11202",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_11203",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "11",
+    "commune_code": "11203",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_11301",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "11",
+    "commune_code": "11301",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_11302",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "11",
+    "commune_code": "11302",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_11303",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "11",
+    "commune_code": "11303",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_11401",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "11",
+    "commune_code": "11401",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_11402",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "11",
+    "commune_code": "11402",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_12101",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "12",
+    "commune_code": "12101",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_12102",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "12",
+    "commune_code": "12102",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_12103",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "12",
+    "commune_code": "12103",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_12104",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "12",
+    "commune_code": "12104",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_12201",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "12",
+    "commune_code": "12201",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_12202",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "12",
+    "commune_code": "12202",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_12301",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "12",
+    "commune_code": "12301",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_12302",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "12",
+    "commune_code": "12302",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_12303",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "12",
+    "commune_code": "12303",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_12401",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "12",
+    "commune_code": "12401",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_12402",
+    "zone_id": "zone_zonas_extremas",
+    "region_code": "12",
+    "commune_code": "12402",
+    "created_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "szc_13101",
+    "zone_id": "zone_zona_comunas_1793110306749_6752",
+    "region_code": "13",
+    "commune_code": "13101",
+    "created_at": "2026-10-27T14:11:46.760Z"
+  },
+  {
+    "id": "szc_13102",
+    "zone_id": "zone_zona_comunas_1793110306749_6752",
+    "region_code": "13",
+    "commune_code": "13102",
+    "created_at": "2026-10-27T14:11:46.760Z"
+  },
+  {
+    "id": "szc_13103",
+    "zone_id": "zone_zona_beta_1793110306772_6774",
+    "region_code": "13",
+    "commune_code": "13103",
+    "created_at": "2026-10-27T14:11:46.788Z"
+  },
+  {
+    "id": "szc_13104",
+    "zone_id": "zone_zona_inactiva_1793110306805_6808",
+    "region_code": "13",
+    "commune_code": "13104",
+    "created_at": "2026-10-27T14:11:46.815Z"
+  },
+  {
+    "id": "szc_13105",
+    "zone_id": "zone_zona_vigencia_1793110306825_6828",
+    "region_code": "13",
+    "commune_code": "13105",
+    "created_at": "2026-10-27T14:11:46.834Z"
+  },
+  {
+    "id": "szc_13106",
+    "zone_id": "zone_zona_con_refs_1793110306855_6857",
+    "region_code": "13",
+    "commune_code": "13106",
+    "created_at": "2026-10-27T14:11:46.862Z"
+  }
+]

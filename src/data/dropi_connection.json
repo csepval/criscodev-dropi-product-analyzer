@@ -1,0 +1,8 @@
+{
+  "id": "default",
+  "auth_mode": "TOKEN",
+  "masked_token": "eyJ0eXAiOi...k5l4UZ60",
+  "encrypted_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwcC5kcm9waS5jbCIsImlhdCI6MTc5MzA1MjQxMiwiZXhwIjoxNzkzMDk1NjEyLCJuYmYiOjE3OTMwNTI0MTIsImp0aSI6IkRYMHBEZ3RweWx4MkZ0OG0iLCJzdWIiOiI0OTMxNzgiLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIiwiYXVkIjoiRFJPUEkiLCJ0b2tlbl90eXBlIjoiRFJPUEkiLCJ3Yl9pZCI6NH0.RrzWW_lSrupsk-ZmWZa3WtGC12Ifw1Gcc-rk5l4UZ60",
+  "status": "DISCONNECTED",
+  "last_verified_at": "2026-10-26T22:07:05.246Z"
+}

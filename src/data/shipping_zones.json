@@ -1,0 +1,614 @@
+[
+  {
+    "id": "zone_santiago_urbano",
+    "name": "Santiago urbano",
+    "description": "Comunas céntricas y de alta conectividad del Gran Santiago.",
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T10:43:01.781Z",
+    "updated_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "zone_rm_periferica",
+    "name": "Región Metropolitana periférica",
+    "description": "Comunas rurales y semi-urbanas de los valles de la Región Metropolitana.",
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T10:43:01.781Z",
+    "updated_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "zone_regiones_centrales",
+    "name": "Regiones centrales",
+    "description": "Valparaíso, O'Higgins, Maule y Coquimbo.",
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T10:43:01.781Z",
+    "updated_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "zone_regiones_alejadas",
+    "name": "Regiones alejadas",
+    "description": "Norte y Sur de Chile (Antofagasta, Atacama, Biobío, Araucanía, Los Ríos, Los Lagos).",
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T10:43:01.781Z",
+    "updated_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "zone_zonas_extremas",
+    "name": "Zonas extremas",
+    "description": "Arica, Tarapacá, Aysén, Magallanes y territorios insulares. Requiere cotización previa.",
+    "status": "ACTIVE",
+    "requires_quote": true,
+    "created_at": "2026-10-27T10:43:01.781Z",
+    "updated_at": "2026-10-27T10:43:01.781Z"
+  },
+  {
+    "id": "zone_zona_test_especial_1793106479842_9848",
+    "name": "Zona Test Especial 1793106479842",
+    "description": "Zona de pruebas unitarias",
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:07:59.847Z",
+    "updated_at": "2026-10-27T13:07:59.847Z"
+  },
+  {
+    "id": "zone_zona_edicin_1793106480187_0189",
+    "name": "Zona Edición 1793106480187",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:08:00.189Z",
+    "updated_at": "2026-10-27T13:08:00.203Z"
+  },
+  {
+    "id": "zone_zona_comunas_1793106480212_0226",
+    "name": "Zona Comunas 1793106480212",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:08:00.226Z",
+    "updated_at": "2026-10-27T13:08:00.226Z"
+  },
+  {
+    "id": "zone_zona_alpha_1793106480264_0266",
+    "name": "Zona Alpha 1793106480264",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:08:00.266Z",
+    "updated_at": "2026-10-27T13:08:00.266Z"
+  },
+  {
+    "id": "zone_zona_beta_1793106480272_0276",
+    "name": "Zona Beta 1793106480272",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:08:00.276Z",
+    "updated_at": "2026-10-27T13:08:00.276Z"
+  },
+  {
+    "id": "zone_zona_inactiva_1793106480325_0328",
+    "name": "Zona Inactiva 1793106480325",
+    "description": null,
+    "status": "INACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:08:00.328Z",
+    "updated_at": "2026-10-27T13:08:00.347Z"
+  },
+  {
+    "id": "zone_zona_vigencia_1793106480359_0362",
+    "name": "Zona Vigencia 1793106480359",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:08:00.362Z",
+    "updated_at": "2026-10-27T13:08:00.362Z"
+  },
+  {
+    "id": "zone_zona_iva_1793106480424_0431",
+    "name": "Zona IVA 1793106480424",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:08:00.431Z",
+    "updated_at": "2026-10-27T13:08:00.431Z"
+  },
+  {
+    "id": "zone_zona_con_refs_1793106480442_0446",
+    "name": "Zona Con Refs 1793106480442",
+    "description": null,
+    "status": "INACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:08:00.446Z",
+    "updated_at": "2026-10-27T13:08:00.474Z"
+  },
+  {
+    "id": "zone_zona_test_especial_1793106547921_7927",
+    "name": "Zona Test Especial 1793106547921",
+    "description": "Zona de pruebas unitarias",
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:09:07.925Z",
+    "updated_at": "2026-10-27T13:09:07.925Z"
+  },
+  {
+    "id": "zone_zona_edicin_1793106548241_8247",
+    "name": "Zona Edición 1793106548241",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:09:08.247Z",
+    "updated_at": "2026-10-27T13:09:08.256Z"
+  },
+  {
+    "id": "zone_zona_comunas_1793106548259_8263",
+    "name": "Zona Comunas 1793106548259",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:09:08.263Z",
+    "updated_at": "2026-10-27T13:09:08.263Z"
+  },
+  {
+    "id": "zone_zona_alpha_1793106548338_8340",
+    "name": "Zona Alpha 1793106548338",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:09:08.340Z",
+    "updated_at": "2026-10-27T13:09:08.340Z"
+  },
+  {
+    "id": "zone_zona_beta_1793106548343_8346",
+    "name": "Zona Beta 1793106548343",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:09:08.346Z",
+    "updated_at": "2026-10-27T13:09:08.346Z"
+  },
+  {
+    "id": "zone_zona_inactiva_1793106548385_8388",
+    "name": "Zona Inactiva 1793106548385",
+    "description": null,
+    "status": "INACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:09:08.388Z",
+    "updated_at": "2026-10-27T13:09:08.403Z"
+  },
+  {
+    "id": "zone_zona_vigencia_1793106548409_8412",
+    "name": "Zona Vigencia 1793106548409",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:09:08.412Z",
+    "updated_at": "2026-10-27T13:09:08.412Z"
+  },
+  {
+    "id": "zone_zona_iva_1793106548436_8440",
+    "name": "Zona IVA 1793106548436",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:09:08.440Z",
+    "updated_at": "2026-10-27T13:09:08.440Z"
+  },
+  {
+    "id": "zone_zona_con_refs_1793106548443_8445",
+    "name": "Zona Con Refs 1793106548443",
+    "description": null,
+    "status": "INACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:09:08.445Z",
+    "updated_at": "2026-10-27T13:09:08.459Z"
+  },
+  {
+    "id": "zone_zona_test_especial_1793106968482_8487",
+    "name": "Zona Test Especial 1793106968482",
+    "description": "Zona de pruebas unitarias",
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:16:08.486Z",
+    "updated_at": "2026-10-27T13:16:08.486Z"
+  },
+  {
+    "id": "zone_zona_edicin_1793106968801_8806",
+    "name": "Zona Edición 1793106968801",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:16:08.806Z",
+    "updated_at": "2026-10-27T13:16:08.815Z"
+  },
+  {
+    "id": "zone_zona_comunas_1793106968818_8822",
+    "name": "Zona Comunas 1793106968818",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:16:08.822Z",
+    "updated_at": "2026-10-27T13:16:08.822Z"
+  },
+  {
+    "id": "zone_zona_alpha_1793106968884_8887",
+    "name": "Zona Alpha 1793106968884",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:16:08.887Z",
+    "updated_at": "2026-10-27T13:16:08.887Z"
+  },
+  {
+    "id": "zone_zona_beta_1793106968891_8895",
+    "name": "Zona Beta 1793106968891",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:16:08.895Z",
+    "updated_at": "2026-10-27T13:16:08.895Z"
+  },
+  {
+    "id": "zone_zona_inactiva_1793106968937_8941",
+    "name": "Zona Inactiva 1793106968937",
+    "description": null,
+    "status": "INACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:16:08.941Z",
+    "updated_at": "2026-10-27T13:16:08.953Z"
+  },
+  {
+    "id": "zone_zona_vigencia_1793106968960_8963",
+    "name": "Zona Vigencia 1793106968960",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:16:08.963Z",
+    "updated_at": "2026-10-27T13:16:08.963Z"
+  },
+  {
+    "id": "zone_zona_iva_1793106968990_8993",
+    "name": "Zona IVA 1793106968990",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:16:08.993Z",
+    "updated_at": "2026-10-27T13:16:08.993Z"
+  },
+  {
+    "id": "zone_zona_con_refs_1793106968996_8999",
+    "name": "Zona Con Refs 1793106968996",
+    "description": null,
+    "status": "INACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:16:08.999Z",
+    "updated_at": "2026-10-27T13:16:09.015Z"
+  },
+  {
+    "id": "zone_zona_test_especial_1793107069026_9030",
+    "name": "Zona Test Especial 1793107069026",
+    "description": "Zona de pruebas unitarias",
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:17:49.028Z",
+    "updated_at": "2026-10-27T13:17:49.028Z"
+  },
+  {
+    "id": "zone_zona_edicin_1793107069059_9063",
+    "name": "Zona Edición 1793107069059",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:17:49.063Z",
+    "updated_at": "2026-10-27T13:17:49.072Z"
+  },
+  {
+    "id": "zone_zona_comunas_1793107069076_9080",
+    "name": "Zona Comunas 1793107069076",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:17:49.079Z",
+    "updated_at": "2026-10-27T13:17:49.079Z"
+  },
+  {
+    "id": "zone_zona_alpha_1793107069099_9103",
+    "name": "Zona Alpha 1793107069099",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:17:49.103Z",
+    "updated_at": "2026-10-27T13:17:49.103Z"
+  },
+  {
+    "id": "zone_zona_beta_1793107069106_9111",
+    "name": "Zona Beta 1793107069106",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:17:49.111Z",
+    "updated_at": "2026-10-27T13:17:49.111Z"
+  },
+  {
+    "id": "zone_zona_inactiva_1793107069152_9155",
+    "name": "Zona Inactiva 1793107069152",
+    "description": null,
+    "status": "INACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:17:49.155Z",
+    "updated_at": "2026-10-27T13:17:49.170Z"
+  },
+  {
+    "id": "zone_zona_vigencia_1793107069178_9181",
+    "name": "Zona Vigencia 1793107069178",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:17:49.181Z",
+    "updated_at": "2026-10-27T13:17:49.181Z"
+  },
+  {
+    "id": "zone_zona_iva_1793107069211_9216",
+    "name": "Zona IVA 1793107069211",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:17:49.215Z",
+    "updated_at": "2026-10-27T13:17:49.215Z"
+  },
+  {
+    "id": "zone_zona_con_refs_1793107069219_9223",
+    "name": "Zona Con Refs 1793107069219",
+    "description": null,
+    "status": "INACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:17:49.223Z",
+    "updated_at": "2026-10-27T13:17:49.238Z"
+  },
+  {
+    "id": "zone_zona_test_especial_1793108511429_1437",
+    "name": "Zona Test Especial 1793108511429",
+    "description": "Zona de pruebas unitarias",
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:41:51.435Z",
+    "updated_at": "2026-10-27T13:41:51.435Z"
+  },
+  {
+    "id": "zone_zona_edicin_1793108512702_2704",
+    "name": "Zona Edición 1793108512702",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:41:52.704Z",
+    "updated_at": "2026-10-27T13:41:52.714Z"
+  },
+  {
+    "id": "zone_zona_comunas_1793108512718_2721",
+    "name": "Zona Comunas 1793108512718",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:41:52.721Z",
+    "updated_at": "2026-10-27T13:41:52.721Z"
+  },
+  {
+    "id": "zone_zona_alpha_1793108512744_2750",
+    "name": "Zona Alpha 1793108512744",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:41:52.750Z",
+    "updated_at": "2026-10-27T13:41:52.750Z"
+  },
+  {
+    "id": "zone_zona_beta_1793108512755_2761",
+    "name": "Zona Beta 1793108512755",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:41:52.760Z",
+    "updated_at": "2026-10-27T13:41:52.760Z"
+  },
+  {
+    "id": "zone_zona_inactiva_1793108512813_2817",
+    "name": "Zona Inactiva 1793108512813",
+    "description": null,
+    "status": "INACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:41:52.817Z",
+    "updated_at": "2026-10-27T13:41:52.834Z"
+  },
+  {
+    "id": "zone_zona_vigencia_1793108512843_2848",
+    "name": "Zona Vigencia 1793108512843",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:41:52.848Z",
+    "updated_at": "2026-10-27T13:41:52.848Z"
+  },
+  {
+    "id": "zone_zona_iva_1793108512882_2887",
+    "name": "Zona IVA 1793108512882",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:41:52.887Z",
+    "updated_at": "2026-10-27T13:41:52.887Z"
+  },
+  {
+    "id": "zone_zona_con_refs_1793108512891_2895",
+    "name": "Zona Con Refs 1793108512891",
+    "description": null,
+    "status": "INACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T13:41:52.895Z",
+    "updated_at": "2026-10-27T13:41:52.916Z"
+  },
+  {
+    "id": "zone_zona_test_especial_1793109629899_9903",
+    "name": "Zona Test Especial 1793109629899",
+    "description": "Zona de pruebas unitarias",
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T14:00:29.902Z",
+    "updated_at": "2026-10-27T14:00:29.902Z"
+  },
+  {
+    "id": "zone_zona_edicin_1793109630246_0266",
+    "name": "Zona Edición 1793109630246",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T14:00:30.266Z",
+    "updated_at": "2026-10-27T14:00:30.273Z"
+  },
+  {
+    "id": "zone_zona_comunas_1793109630276_0279",
+    "name": "Zona Comunas 1793109630276",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T14:00:30.279Z",
+    "updated_at": "2026-10-27T14:00:30.279Z"
+  },
+  {
+    "id": "zone_zona_alpha_1793109630292_0295",
+    "name": "Zona Alpha 1793109630292",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T14:00:30.295Z",
+    "updated_at": "2026-10-27T14:00:30.295Z"
+  },
+  {
+    "id": "zone_zona_beta_1793109630297_0299",
+    "name": "Zona Beta 1793109630297",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T14:00:30.299Z",
+    "updated_at": "2026-10-27T14:00:30.299Z"
+  },
+  {
+    "id": "zone_zona_inactiva_1793109630326_0329",
+    "name": "Zona Inactiva 1793109630326",
+    "description": null,
+    "status": "INACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T14:00:30.329Z",
+    "updated_at": "2026-10-27T14:00:30.339Z"
+  },
+  {
+    "id": "zone_zona_vigencia_1793109630344_0347",
+    "name": "Zona Vigencia 1793109630344",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T14:00:30.347Z",
+    "updated_at": "2026-10-27T14:00:30.347Z"
+  },
+  {
+    "id": "zone_zona_iva_1793109630365_0368",
+    "name": "Zona IVA 1793109630365",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T14:00:30.368Z",
+    "updated_at": "2026-10-27T14:00:30.368Z"
+  },
+  {
+    "id": "zone_zona_con_refs_1793109630370_0373",
+    "name": "Zona Con Refs 1793109630370",
+    "description": null,
+    "status": "INACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T14:00:30.373Z",
+    "updated_at": "2026-10-27T14:00:30.384Z"
+  },
+  {
+    "id": "zone_zona_test_especial_1793110306710_6714",
+    "name": "Zona Test Especial 1793110306710",
+    "description": "Zona de pruebas unitarias",
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T14:11:46.713Z",
+    "updated_at": "2026-10-27T14:11:46.713Z"
+  },
+  {
+    "id": "zone_zona_edicin_1793110306735_6739",
+    "name": "Zona Edición 1793110306735",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T14:11:46.739Z",
+    "updated_at": "2026-10-27T14:11:46.746Z"
+  },
+  {
+    "id": "zone_zona_comunas_1793110306749_6752",
+    "name": "Zona Comunas 1793110306749",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T14:11:46.752Z",
+    "updated_at": "2026-10-27T14:11:46.752Z"
+  },
+  {
+    "id": "zone_zona_alpha_1793110306766_6769",
+    "name": "Zona Alpha 1793110306766",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T14:11:46.769Z",
+    "updated_at": "2026-10-27T14:11:46.769Z"
+  },
+  {
+    "id": "zone_zona_beta_1793110306772_6774",
+    "name": "Zona Beta 1793110306772",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T14:11:46.774Z",
+    "updated_at": "2026-10-27T14:11:46.774Z"
+  },
+  {
+    "id": "zone_zona_inactiva_1793110306805_6808",
+    "name": "Zona Inactiva 1793110306805",
+    "description": null,
+    "status": "INACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T14:11:46.808Z",
+    "updated_at": "2026-10-27T14:11:46.820Z"
+  },
+  {
+    "id": "zone_zona_vigencia_1793110306825_6828",
+    "name": "Zona Vigencia 1793110306825",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T14:11:46.828Z",
+    "updated_at": "2026-10-27T14:11:46.828Z"
+  },
+  {
+    "id": "zone_zona_iva_1793110306849_6852",
+    "name": "Zona IVA 1793110306849",
+    "description": null,
+    "status": "ACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T14:11:46.852Z",
+    "updated_at": "2026-10-27T14:11:46.852Z"
+  },
+  {
+    "id": "zone_zona_con_refs_1793110306855_6857",
+    "name": "Zona Con Refs 1793110306855",
+    "description": null,
+    "status": "INACTIVE",
+    "requires_quote": false,
+    "created_at": "2026-10-27T14:11:46.857Z",
+    "updated_at": "2026-10-27T14:11:46.868Z"
+  }
+]

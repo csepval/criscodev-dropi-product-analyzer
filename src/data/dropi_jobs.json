@@ -1,0 +1,157 @@
+[
+  {
+    "id": "job_live_1793061779591",
+    "job_type": "API_MANUAL",
+    "filters_used": {
+      "keywords": "",
+      "category": "Tecnología",
+      "max_price": 50000,
+      "limit": 100,
+      "categoryuser": [
+        1,
+        2
+      ]
+    },
+    "total_fetched": 200,
+    "total_inserted": 197,
+    "total_updated": 3,
+    "total_flagged": 174,
+    "total_errors": 0,
+    "duration_ms": 1286,
+    "status": "COMPLETED",
+    "diagnostic_message": "Importación completada: 200 productos procesados (197 nuevos, 3 actualizados, 174 con alertas).",
+    "finished_at": "2026-10-27T00:43:00.878Z"
+  },
+  {
+    "id": "job_live_1793056165244",
+    "job_type": "API_MANUAL",
+    "filters_used": {
+      "category": "Tecnología",
+      "limit": 5
+    },
+    "total_fetched": 5,
+    "total_inserted": 5,
+    "total_updated": 0,
+    "total_flagged": 5,
+    "total_errors": 0,
+    "duration_ms": 1092,
+    "status": "COMPLETED",
+    "diagnostic_message": "Importación completada: 5 productos procesados (5 nuevos, 0 actualizados, 5 con alertas).",
+    "finished_at": "2026-10-26T23:09:26.336Z"
+  },
+  {
+    "id": "job_1792719502620",
+    "job_type": "API_MANUAL",
+    "filters_used": {
+      "category": "Tecnología",
+      "categoryuser": [
+        2,
+        1
+      ],
+      "min_price": 0,
+      "max_price": 50000,
+      "limit": 50
+    },
+    "total_fetched": 50,
+    "total_inserted": 0,
+    "total_updated": 50,
+    "total_flagged": 5,
+    "total_errors": 0,
+    "duration_ms": 228,
+    "status": "COMPLETED",
+    "diagnostic_message": "Lote de 50 productos procesado exitosamente. Insertados: 0, Alertas: 5.",
+    "started_at": "2026-10-23T01:38:22.620Z"
+  },
+  {
+    "id": "job_1792718705860",
+    "job_type": "INITIAL_TEST_BATCH_50",
+    "filters_used": {
+      "category": "Tecnología",
+      "categoryuser": [
+        2,
+        1
+      ],
+      "min_price": 0,
+      "max_price": 50000,
+      "limit": 50
+    },
+    "total_fetched": 50,
+    "total_inserted": 0,
+    "total_updated": 50,
+    "total_flagged": 5,
+    "total_errors": 0,
+    "duration_ms": 189,
+    "status": "COMPLETED",
+    "diagnostic_message": "Lote de 50 productos procesado exitosamente. Insertados: 0, Alertas: 5.",
+    "started_at": "2026-10-23T01:25:05.860Z"
+  },
+  {
+    "id": "job_1792712616430",
+    "job_type": "INITIAL_TEST_BATCH_50",
+    "filters_used": {
+      "category": "Tecnología",
+      "categoryuser": [
+        2,
+        1
+      ],
+      "min_price": 0,
+      "max_price": 50000,
+      "limit": 50
+    },
+    "total_fetched": 50,
+    "total_inserted": 0,
+    "total_updated": 50,
+    "total_flagged": 5,
+    "total_errors": 0,
+    "duration_ms": 233,
+    "status": "COMPLETED",
+    "diagnostic_message": "Lote de 50 productos procesado exitosamente. Insertados: 0, Alertas: 5.",
+    "started_at": "2026-10-22T23:43:36.430Z"
+  },
+  {
+    "id": "job_1792712542881",
+    "job_type": "INITIAL_TEST_BATCH_50",
+    "filters_used": {
+      "category": "Tecnología",
+      "categoryuser": [
+        2,
+        1
+      ],
+      "min_price": 0,
+      "max_price": 50000,
+      "limit": 50
+    },
+    "total_fetched": 50,
+    "total_inserted": 50,
+    "total_updated": 0,
+    "total_flagged": 5,
+    "total_errors": 0,
+    "duration_ms": 234,
+    "status": "COMPLETED",
+    "diagnostic_message": "Lote de 50 productos procesado exitosamente. Insertados: 50, Alertas: 5.",
+    "started_at": "2026-10-22T23:42:22.881Z"
+  },
+  {
+    "id": "job_1792712451867",
+    "job_type": "INITIAL_TEST_BATCH_50",
+    "filters_used": {
+      "category": "Tecnología",
+      "categoryuser": [
+        2,
+        1
+      ],
+      "min_price": 0,
+      "max_price": 50000,
+      "limit": 50
+    },
+    "total_fetched": 50,
+    "total_inserted": 0,
+    "total_updated": 0,
+    "total_flagged": 0,
+    "total_errors": 0,
+    "duration_ms": 0,
+    "status": "RUNNING",
+    "diagnostic_message": "Ejecutando lote inicial de 50 productos...",
+    "started_at": "2026-10-22T23:40:51.867Z"
+  }
+]

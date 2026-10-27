@@ -1,0 +1,3272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CrisCodev – Dropi Product Analyzer (Autónomo)</title>
+  <style>
+    :root {
+      --bg: #0B1120;
+      --card-bg: rgba(15, 23, 42, 0.85);
+      --border: rgba(255, 255, 255, 0.1);
+      --brand-blue: #2563EB;
+      --brand-orange: #F97316;
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --success: #10B981;
+      --warning: #F59E0B;
+      --danger: #EF4444;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: rgba(15, 23, 42, 0.95);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+    }
+    .logo-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .badge-icon {
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-orange));
+      color: white;
+      font-weight: 800;
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+    .title-group h1 { font-size: 1.25rem; font-weight: 700; color: white; }
+    .title-group p { font-size: 0.8rem; color: var(--text-muted); }
+    .header-actions { display: flex; align-items: center; gap: 1rem; }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: rgba(16, 185, 129, 0.15);
+      color: #34D399;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+      font-family: inherit;
+    }
+    .status-pill:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      filter: brightness(1.1);
+    }
+    .status-pill.disconnected {
+      background: rgba(239, 68, 68, 0.15);
+      color: #F87171;
+      border-color: rgba(239, 68, 68, 0.4);
+      animation: pulse-border 2.5s infinite;
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: currentColor;
+      display: inline-block;
+    }
+    @keyframes pulse-border {
+      0%, 100% { border-color: rgba(239, 68, 68, 0.3); }
+      50% { border-color: rgba(239, 68, 68, 0.85); box-shadow: 0 0 10px rgba(239, 68, 68, 0.2); }
+    }
+    /* Modal de Autenticación / Conexión */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.78);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+    }
+    .modal-backdrop.open { display: flex !important; }
+    .modal-card {
+      background: #0F172A;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      max-width: 580px;
+      width: 100%;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+      animation: modal-enter 0.2s ease-out;
+    }
+    @keyframes modal-enter {
+      from { opacity: 0; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .modal-header {
+      padding: 1.25rem 1.75rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .modal-close-btn {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.75rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+    }
+    .modal-close-btn:hover { color: white; background: rgba(255,255,255,0.05); }
+    .modal-body {
+      padding: 1.75rem;
+    }
+    .step-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    .spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top-color: var(--brand-blue);
+      animation: spin 0.8s linear infinite;
+      vertical-align: middle;
+      margin-right: 0.5rem;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    main {
+      flex: 1;
+      max-width: 1400px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .tabs-nav {
+      display: flex;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2rem;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      padding: 0.75rem 1.25rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+    .tab-btn:hover { color: white; }
+    .tab-btn.active {
+      color: var(--brand-blue);
+      border-bottom-color: var(--brand-blue);
+    }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+    .stat-card .label { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+    .stat-card .value { font-size: 1.75rem; font-weight: 800; color: white; }
+    .filters-bar {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    .filter-input {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: white;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      outline: none;
+    }
+    .filter-input:focus { border-color: var(--brand-blue); }
+    .btn {
+      background: var(--brand-blue);
+      color: white;
+      border: none;
+      padding: 0.65rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: opacity 0.2s;
+      text-decoration: none;
+    }
+    .btn:hover { opacity: 0.9; }
+    .btn-orange { background: var(--brand-orange); }
+    .table-container {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+    th {
+      background: rgba(0, 0, 0, 0.3);
+      color: var(--text-muted);
+      text-align: left;
+      padding: 1rem;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      vertical-align: middle;
+    }
+    tr:hover { background: rgba(255, 255, 255, 0.02); }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+    .badge-premium { background: rgba(249, 115, 22, 0.2); color: #FB923C; }
+    .badge-verified { background: rgba(16, 185, 129, 0.2); color: #34D399; }
+    .badge-flagged { background: rgba(239, 68, 68, 0.2); color: #F87171; }
+    .badge-new { background: rgba(59, 130, 246, 0.2); color: #60A5FA; border: 1px solid rgba(59, 130, 246, 0.35); }
+    .badge-local { background: rgba(16, 185, 129, 0.2); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.35); }
+    .badge-attractive { background: rgba(16, 185, 129, 0.2); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.4); }
+    .badge-moderate { background: rgba(59, 130, 246, 0.2); color: #60A5FA; border: 1px solid rgba(59, 130, 246, 0.4); }
+    .badge-low { background: rgba(245, 158, 11, 0.2); color: #FBBF24; border: 1px solid rgba(245, 158, 11, 0.4); }
+    .badge-loss { background: rgba(239, 68, 68, 0.2); color: #F87171; border: 1px solid rgba(239, 68, 68, 0.4); }
+    .badge-incomplete { background: rgba(148, 163, 184, 0.15); color: #94A3B8; border: 1px solid rgba(148, 163, 184, 0.3); }
+    .status-banner {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .status-banner.success {
+      background: rgba(16, 185, 129, 0.1);
+      border-color: rgba(16, 185, 129, 0.35);
+      color: #E2E8F0;
+    }
+    .status-banner.error {
+      background: rgba(239, 68, 68, 0.1);
+      border-color: rgba(239, 68, 68, 0.35);
+      color: #FCA5A5;
+    }
+    .margin-positive { color: #34D399; font-weight: 700; }
+    .margin-negative { color: #F87171; font-weight: 700; }
+    .product-img {
+      width: 48px;
+      height: 48px;
+      border-radius: 6px;
+      object-fit: cover;
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .product-cell {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-badge">
+      <div class="badge-icon">CRISCODEV</div>
+      <div class="title-group">
+        <h1>Dropi Product Analyzer</h1>
+        <p>Módulo Autónomo de Auditoría y Detección de Catálogo (Entrega 2)</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button id="conn-pill" class="status-pill disconnected" onclick="handlePillClick()" type="button" title="Haz clic para iniciar sesión o gestionar conexión"><span class="status-dot"></span><span id="conn-pill-text">Desconectado (Clic para conectar)</span></button>
+      <a href="/api/export" class="btn btn-orange">📥 Exportar Excel (4 Hojas)</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="stats-grid" id="stats-grid">
+      <div class="stat-card">
+        <div class="label">Total Productos</div>
+        <div class="value" id="stat-total">--</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Proveedores Únicos</div>
+        <div class="value" id="stat-suppliers">--</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Premium / Verificados</div>
+        <div class="value" id="stat-premium">-- / --</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Margen ≥ 30%</div>
+        <div class="value" id="stat-margin" style="color: #34D399;">--</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Alertas de Calidad</div>
+        <div class="value" id="stat-flags" style="color: #F87171;">--</div>
+      </div>
+    </div>
+
+    <div class="tabs-nav">
+      <button class="tab-btn active" onclick="switchTab('catalog')">📦 Catálogo en Nuestra Base</button>
+      <button class="tab-btn" onclick="switchTab('live-import')">🚀 Importación desde Dropi</button>
+      <button class="tab-btn" onclick="switchTab('shipping')">🚚 Tarifas de Despacho</button>
+      <button class="tab-btn" onclick="switchTab('profitability')">💰 Rentabilidad e IVA</button>
+      <button class="tab-btn" onclick="switchTab('jobs')">📊 Historial de Importaciones</button>
+      <button class="tab-btn" onclick="switchTab('connection')">⚙️ Configuración de Conexión</button>
+    </div>
+
+    <!-- Pestaña 1: Catálogo -->
+    <div id="tab-catalog" class="tab-content active">
+      <div class="filters-bar">
+        <input type="text" id="filter-search" class="filter-input" placeholder="Buscar por producto..." oninput="loadProducts()">
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.875rem;">
+          <input type="checkbox" id="filter-verified" onchange="loadProducts()"> Verificados
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.875rem;">
+          <input type="checkbox" id="filter-premium" onchange="loadProducts()"> Premium
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.875rem;">
+          <input type="checkbox" id="filter-clean" onchange="loadProducts()"> Excluir Alertas
+        </label>
+        <button class="btn" onclick="loadProducts()">Filtrar</button>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Producto</th>
+              <th>Proveedor</th>
+              <th>Costo Mín.</th>
+              <th>Precio Sug.</th>
+              <th>Margen Preliminar</th>
+              <th>Stock</th>
+              <th>Estado Calidad</th>
+            </tr>
+          </thead>
+          <tbody id="catalog-tbody">
+            <tr><td colspan="8" style="text-align:center; padding: 2rem;">Cargando catálogo...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    
+    <!-- Pestaña 2: Importación en Vivo desde Dropi -->
+    <div id="tab-live-import" class="tab-content">
+      <div style="margin-bottom: 1.25rem;">
+        <h2 style="font-size: 1.2rem; font-weight: 700; color: white;">Explorador e Importador en Vivo Dropi Chile</h2>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">
+          Consulta directamente la API oficial de Dropi Chile, visualiza productos en tiempo real con cálculo preliminar de margen comercial e impórtalos a tu base de datos local y PostgreSQL.
+        </p>
+      </div>
+
+      <!-- Barra de Filtros Dropi -->
+      <div class="filters-bar">
+        <input type="text" id="live-filter-search" class="filter-input" style="flex: 2; min-width: 200px;" placeholder="Palabra clave (ej. cargador, smartwatch, soporte)...">
+        
+        <select id="live-filter-category" class="filter-input" style="flex: 1; min-width: 160px;">
+          <option value="Tecnología" selected>Tecnología</option>
+          <option value="Hogar">Hogar</option>
+          <option value="Belleza">Belleza y Cuidado Personal</option>
+          <option value="Moda">Moda y Accesorios</option>
+          <option value="Salud">Salud y Bienestar</option>
+          <option value="Mascotas">Mascotas</option>
+          <option value="">Todas las Categorías</option>
+        </select>
+
+        <div style="display:flex; align-items:center; gap: 0.4rem;">
+          <span style="font-size:0.8rem; color:var(--text-muted);">Min $:</span>
+          <input type="number" id="live-filter-min-price" class="filter-input" style="width: 95px;" value="0" step="1000">
+        </div>
+
+        <div style="display:flex; align-items:center; gap: 0.4rem;">
+          <span style="font-size:0.8rem; color:var(--text-muted);">Max $:</span>
+          <input type="number" id="live-filter-max-price" class="filter-input" style="width: 105px;" value="50000" step="5000">
+        </div>
+
+        <label style="display:flex; align-items:center; gap:0.4rem; font-size:0.85rem; color:var(--text-muted); cursor:pointer;">
+          <input type="checkbox" id="live-filter-verified" checked> Verificado
+        </label>
+        <label style="display:flex; align-items:center; gap:0.4rem; font-size:0.85rem; color:var(--text-muted); cursor:pointer;">
+          <input type="checkbox" id="live-filter-premium" checked> Premium
+        </label>
+
+        <select id="live-filter-limit" class="filter-input" style="width: 90px;" title="Cantidad máxima de productos a traer de Dropi">
+          <option value="10">10 prod.</option>
+          <option value="25">25 prod.</option>
+          <option value="50" selected>50 prod.</option>
+          <option value="100">100 prod.</option>
+        </select>
+
+        <button class="btn" onclick="searchDropiLiveUI()">🔍 Consultar en Dropi</button>
+        <button class="btn btn-orange" id="btn-live-import" onclick="importFromDropiUI()">⬇️ Importar a Nuestra Base</button>
+      </div>
+
+      <!-- Banner de Estado de la Consulta -->
+      <div id="live-status-banner" style="display: none;" class="status-banner">
+        <div id="live-status-text"></div>
+        <div id="live-status-actions"></div>
+      </div>
+
+      <!-- Tabla de Resultados en Vivo de Dropi -->
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID Dropi</th>
+              <th>Producto en Dropi</th>
+              <th>Proveedor</th>
+              <th>Costo Prov.</th>
+              <th>Precio Sugerido</th>
+              <th>Margen Preliminar</th>
+              <th>Stock Dropi</th>
+              <th>En Nuestra Base</th>
+              <th>Evaluación</th>
+            </tr>
+          </thead>
+          <tbody id="live-catalog-tbody">
+            <tr>
+              <td colspan="9" style="text-align:center; padding: 3rem; color: var(--text-muted);">
+                Configura los filtros de búsqueda y haz clic en <strong>«🔍 Consultar en Dropi»</strong> para explorar productos en vivo.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Contenedor Paginación: Mostrar más productos -->
+      <div id="live-load-more-container" style="display: none; text-align: center; margin: 1.75rem 0 2.5rem 0;">
+        <button id="btn-load-more" class="btn" style="padding: 0.85rem 2.75rem; font-size: 0.95rem; font-weight: 700; background: #1E293B; border: 1px solid #334155; border-radius: 9999px; color: #F8FAFC; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,0.3); transition: all 0.2s;" onmouseover="this.style.background='#334155'; this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#1E293B'; this.style.transform='translateY(0)'" onclick="loadMoreDropiProductsUI()">
+          Mostrar más productos
+        </button>
+        <div id="load-more-status" style="margin-top: 0.75rem; font-size: 0.875rem; color: var(--text-muted); display: none;"></div>
+      </div>
+    </div>
+
+    <!-- Pestaña: Tarifas de Despacho Estándar por Zona (Chile) -->
+    <div id="tab-shipping" class="tab-content">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom: 1.5rem; flex-wrap:wrap; gap:1rem;">
+        <div>
+          <h2 style="font-size: 1.35rem; font-weight: 700; color: white; display:flex; align-items:center; gap:0.5rem;">
+            <span>🚚</span> Configuración de Tarifas de Despacho por Zona
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-top:0.25rem;">
+            Administra las zonas geográficas de Chile y sus tarifas estándar para proyectar el costo de envío y margen comercial en Dropi.
+          </p>
+        </div>
+        <div style="display:flex; gap:0.75rem;">
+          <button class="btn btn-orange" onclick="openZoneModal()">➕ Nueva Zona de Despacho</button>
+          <button class="btn" onclick="loadShippingDashboard()">🔄 Actualizar</button>
+        </div>
+      </div>
+
+      <!-- 5.1 RESUMEN GENERAL (INDICADORES KPI) -->
+      <div class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); margin-bottom: 2rem;">
+        <div class="stat-card">
+          <div class="label">Zonas Configuradas</div>
+          <div class="value" id="ship-kpi-zones">--</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Comunas Asignadas</div>
+          <div class="value" id="ship-kpi-assigned" style="color: #34D399;">--</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Comunas Sin Asignación</div>
+          <div class="value" id="ship-kpi-unassigned" style="color: #F87171;">--</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Zonas Activas</div>
+          <div class="value" id="ship-kpi-active" style="color: #60A5FA;">--</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Requieren Cotización</div>
+          <div class="value" id="ship-kpi-quote" style="color: #FBBF24;">--</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Última Modificación</div>
+          <div class="value" id="ship-kpi-updated" style="font-size: 1.05rem; line-height: 2.2rem; color: #E2E8F0;">--</div>
+        </div>
+      </div>
+
+      <!-- 9. SIMULADOR DE TARIFA ESTÁNDAR: "Consultar despacho estimado" -->
+      <div class="stat-card" style="margin-bottom: 2rem; border-color: rgba(59, 130, 246, 0.4); background: linear-gradient(180deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.8) 100%);">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1.25rem; flex-wrap:wrap; gap:0.5rem;">
+          <div>
+            <h3 style="font-size: 1.1rem; font-weight: 700; color: white; display:flex; align-items:center; gap:0.5rem;">
+              <span>🧭</span> Consultar Despacho Estimado (Simulador en Vivo)
+            </h3>
+            <p style="font-size: 0.825rem; color: var(--text-muted); margin-top:0.2rem;">
+              Selecciona una región y comuna para consultar la zona asignada, la tarifa al cliente, el costo logístico estimado Dropi y la diferencia calculada.
+            </p>
+          </div>
+          <span class="badge badge-verified">MOTOR LOGÍSTICO ETAPA 1</span>
+        </div>
+
+        <div style="display:flex; flex-wrap:wrap; gap:1rem; align-items:flex-end; margin-bottom: 1.25rem;">
+          <div style="flex:1; min-width: 220px;">
+            <label style="display:block; font-size:0.8rem; color:var(--text-muted); margin-bottom:0.4rem;">1. Selecciona Región:</label>
+            <select id="sim-region-select" class="filter-input" style="width:100%;" onchange="onSimRegionChange()">
+              <option value="">Cargando regiones oficiales...</option>
+            </select>
+          </div>
+          <div style="flex:1; min-width: 220px;">
+            <label style="display:block; font-size:0.8rem; color:var(--text-muted); margin-bottom:0.4rem;">2. Selecciona Comuna:</label>
+            <select id="sim-commune-select" class="filter-input" style="width:100%;" onchange="calculateShippingSimulation()">
+              <option value="">Primero selecciona una región</option>
+            </select>
+          </div>
+          <button class="btn" onclick="calculateShippingSimulation()">🔍 Consultar Estimación</button>
+        </div>
+
+        <!-- Tarjeta de Resultado del Simulador -->
+        <div id="sim-result-card" style="display:none; background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem;">
+          <!-- Inyectado dinámicamente -->
+        </div>
+      </div>
+
+      <!-- 5.2 TABLA DE ZONAS Y TARIFAS -->
+      <div style="margin-bottom: 1rem; display:flex; justify-content:space-between; align-items:center;">
+        <h3 style="font-size: 1.1rem; font-weight: 700; color: white;">Zonas de Despacho y Tarifas de Referencia</h3>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">Valores estándar en CLP con IVA incluido</span>
+      </div>
+
+      <div class="table-container" style="margin-bottom: 2.5rem;">
+        <table>
+          <thead>
+            <tr>
+              <th>Zona Geográfica</th>
+              <th>Tarifa Estándar (Cliente)</th>
+              <th>Costo Dropi Estimado</th>
+              <th>Diferencia / Margen</th>
+              <th>Comunas</th>
+              <th>Cobertura</th>
+              <th>Estado</th>
+              <th>Última Modificación</th>
+              <th style="text-align:right;">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="zones-table-tbody">
+            <tr><td colspan="9" style="text-align:center; padding: 2rem;">Cargando zonas de despacho...</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 5.3 ASIGNACIÓN DE COMUNAS -->
+      <div style="margin-bottom: 1rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+        <div>
+          <h3 style="font-size: 1.1rem; font-weight: 700; color: white;">Asignación de Comunas (346 Comunas Oficiales CUT)</h3>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin-top:0.2rem;">
+            Asigna comunas individualmente o en bloque. Cada comuna pertenece a máximo una zona activa (garantía de unicidad).
+          </p>
+        </div>
+      </div>
+
+      <div class="filters-bar" style="margin-bottom: 1rem;">
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <span style="font-size:0.8rem; color:var(--text-muted);">Región:</span>
+          <select id="commune-filter-region" class="filter-input" onchange="loadCommunesTable()">
+            <option value="">Todas las Regiones (346 comunas)</option>
+          </select>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <span style="font-size:0.8rem; color:var(--text-muted);">Estado:</span>
+          <select id="commune-filter-status" class="filter-input" onchange="loadCommunesTable()">
+            <option value="ALL">Todas las comunas</option>
+            <option value="ASSIGNED">Solo Asignadas</option>
+            <option value="NOT_CONFIGURED">Sin Configuración</option>
+          </select>
+        </div>
+        <input type="text" id="commune-filter-search" class="filter-input" placeholder="Buscar comuna o código CUT..." style="width: 200px;" oninput="loadCommunesTable()">
+        
+        <div style="margin-left:auto; display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap;">
+          <span style="font-size:0.8rem; color:var(--text-muted);"><span id="selected-communes-count" style="font-weight:700; color:white;">0</span> seleccionadas:</span>
+          <select id="batch-target-zone-select" class="filter-input" style="max-width:180px;">
+            <option value="">Zona Destino...</option>
+          </select>
+          <button class="btn btn-orange" onclick="assignSelectedCommunes()">📌 Asignar a Zona</button>
+          <button class="btn" style="background:rgba(239, 68, 68, 0.2); color:#F87171; border:1px solid rgba(239,68,68,0.3);" onclick="unassignSelectedCommunes()">❌ Desasignar</button>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 40px; text-align:center;">
+                <input type="checkbox" id="check-all-communes" onchange="toggleSelectAllCommunes(this.checked)">
+              </th>
+              <th>Código CUT</th>
+              <th>Comuna</th>
+              <th>Provincia</th>
+              <th>Región</th>
+              <th>Zona Asignada</th>
+              <th>Tarifa Estándar</th>
+              <th>Costo Estimado</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody id="communes-table-tbody">
+            <tr><td colspan="9" style="text-align:center; padding: 2rem;">Cargando comunas...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Pestaña: Motor de Rentabilidad, Costos e IVA (Etapa 2) -->
+    <div id="tab-profitability" class="tab-content">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom: 1.5rem; flex-wrap:wrap; gap:1rem;">
+        <div>
+          <h2 style="font-size: 1.35rem; font-weight: 700; color: white; display:flex; align-items:center; gap:0.5rem;">
+            <span>💰</span> Motor de Rentabilidad, Costos e IVA
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-top:0.25rem;">
+            Evaluación financiera y tributaria automatizada por producto y zona de despacho de Chile. Precios mínimos, márgenes y comisiones sin modificar Pancocos.
+          </p>
+        </div>
+        <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+          <a href="/api/profitability/export" target="_blank" class="btn btn-orange" style="text-decoration:none;">
+            📥 Exportar Análisis (Excel)
+          </a>
+          <button class="btn" style="background:rgba(59, 130, 246, 0.2); border:1px solid rgba(59, 130, 246, 0.4); color:#60A5FA;" onclick="openProfilesModal()">
+            ⚙️ Parámetros Financieros
+          </button>
+          <button class="btn" onclick="runBulkProfitabilityUI()">
+            ⚡ Calcular Rentabilidad de Productos
+          </button>
+        </div>
+      </div>
+
+      <!-- KPI Summary Cards (Sección 11) -->
+      <div class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); margin-bottom: 2rem;">
+        <div class="stat-card">
+          <div class="label">Total Evaluados</div>
+          <div class="value" id="prof-kpi-total">--</div>
+        </div>
+        <div class="stat-card" style="border-color: rgba(16, 185, 129, 0.4);">
+          <div class="label">Rentabilidad Atractiva (≥25%)</div>
+          <div class="value" id="prof-kpi-attractive" style="color: #34D399;">--</div>
+        </div>
+        <div class="stat-card" style="border-color: rgba(59, 130, 246, 0.4);">
+          <div class="label">Rentabilidad Moderada (15-25%)</div>
+          <div class="value" id="prof-kpi-moderate" style="color: #60A5FA;">--</div>
+        </div>
+        <div class="stat-card" style="border-color: rgba(245, 158, 11, 0.4);">
+          <div class="label">Rentabilidad Baja (0-15%)</div>
+          <div class="value" id="prof-kpi-low" style="color: #FBBF24;">--</div>
+        </div>
+        <div class="stat-card" style="border-color: rgba(239, 68, 68, 0.4);">
+          <div class="label">Con Pérdidas (<0%)</div>
+          <div class="value" id="prof-kpi-loss" style="color: #F87171;">--</div>
+        </div>
+        <div class="stat-card" style="border-color: rgba(148, 163, 184, 0.3);">
+          <div class="label">Evaluación Incompleta</div>
+          <div class="value" id="prof-kpi-incomplete" style="color: #94A3B8;">--</div>
+        </div>
+      </div>
+
+      <!-- Barra de Filtros del Análisis Masivo (Sección 11) -->
+      <div class="filters-bar">
+        <div style="display:flex; flex-direction:column; gap:0.25rem;">
+          <span style="font-size:0.75rem; color:var(--text-muted);">Perfil Financiero Activo:</span>
+          <select id="prof-filter-profile" class="filter-input" style="min-width:180px;" onchange="onProfileFilterChange()">
+            <!-- Inyectado por JS -->
+          </select>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:0.25rem;">
+          <span style="font-size:0.75rem; color:var(--text-muted);">Tratamiento IVA Proveedor:</span>
+          <select id="prof-filter-tax" class="filter-input" style="min-width:210px;" onchange="loadProfitabilityProductsUI()">
+            <option value="TAX_CREDIT_APPLICABLE" selected>Factura con Crédito Fiscal</option>
+            <option value="NO_TAX_CREDIT">Sin Derecho a Crédito Fiscal</option>
+            <option value="PRICE_NET_WITHOUT_VAT">Precio Neto sin IVA</option>
+            <option value="UNKNOWN_CONSERVATIVE">Escenario Conservador</option>
+          </select>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:0.25rem;">
+          <span style="font-size:0.75rem; color:var(--text-muted);">Buscar Producto:</span>
+          <input type="text" id="prof-filter-search" class="filter-input" placeholder="Nombre o proveedor..." oninput="filterProfitabilityTable()">
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:0.25rem;">
+          <span style="font-size:0.75rem; color:var(--text-muted);">Categoría:</span>
+          <select id="prof-filter-category" class="filter-input" onchange="filterProfitabilityTable()">
+            <option value="">Todas las Categorías</option>
+          </select>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:0.25rem;">
+          <span style="font-size:0.75rem; color:var(--text-muted);">Filtrar por Semáforo:</span>
+          <select id="prof-filter-status" class="filter-input" onchange="filterProfitabilityTable()">
+            <option value="">Todos los Estados</option>
+            <option value="ATTRACTIVE">Rentabilidad Atractiva (≥25%)</option>
+            <option value="MODERATE">Rentabilidad Moderada (15-25%)</option>
+            <option value="LOW">Rentabilidad Baja (0-15%)</option>
+            <option value="LOSS">Pérdida Estimada (&lt;0%)</option>
+            <option value="INCOMPLETE">Evaluación Incompleta</option>
+          </select>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:0.5rem; padding-top:1.2rem;">
+          <label style="display:flex; align-items:center; gap:0.4rem; font-size:0.85rem; color:white; cursor:pointer;">
+            <input type="checkbox" id="prof-filter-stock" onchange="filterProfitabilityTable()"> Solo con Stock
+          </label>
+        </div>
+      </div>
+
+      <!-- Banner Informativo de Perfil y Metodología -->
+      <div id="prof-active-profile-banner" class="status-banner" style="background: rgba(30, 41, 59, 0.6); border-color: rgba(59, 130, 246, 0.3);">
+        <div>
+          <strong style="color:white;" id="prof-banner-name">Perfil Estándar</strong>
+          <span style="color:var(--text-muted); font-size:0.825rem; margin-left:0.5rem;" id="prof-banner-desc">Margen objetivo: 25% | Margen mínimo: 15% | Publicidad: $3.000 | Comisión: 3%</span>
+        </div>
+        <div style="display:flex; gap:0.5rem; align-items:center;">
+          <span class="badge badge-verified">IVA 19% SEPARADO</span>
+          <span class="badge badge-premium">CLP</span>
+        </div>
+      </div>
+
+      <!-- Tabla de Rentabilidad Masiva (Sección 11) -->
+      <div class="table-container" style="margin-bottom: 2rem;">
+        <table>
+          <thead>
+            <tr>
+              <th>ID Dropi</th>
+              <th>Producto & Variantes</th>
+              <th>Proveedor</th>
+              <th>Costo Prov.</th>
+              <th>Precio Sugerido</th>
+              <th>Precio Evaluado</th>
+              <th>Mínimo Rentable</th>
+              <th>Recomendado</th>
+              <th>Mejor Margen</th>
+              <th>Peor Margen</th>
+              <th>Margen Promedio</th>
+              <th>Zonas Rentables</th>
+              <th>Cobertura</th>
+              <th>Semáforo</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="profitability-table-tbody">
+            <tr><td colspan="15" style="text-align:center; padding: 2.5rem; color:var(--text-muted);">Cargando evaluación de rentabilidad...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Pestaña 3: Conexión -->
+    <div id="tab-connection" class="tab-content">
+      <div class="stat-card" style="max-width: 650px; margin: 0 auto;">
+        <h2 style="font-size: 1.2rem; margin-bottom: 1rem;">Administración de Sesión Dropi Chile</h2>
+        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">
+          Configura tu token Bearer de sesión o API key para conectar el catálogo sin almacenar contraseñas en el servidor.
+        </p>
+        <div style="margin-bottom: 1.25rem;">
+          <label style="display:block; font-size: 0.85rem; margin-bottom: 0.5rem; color: var(--text-muted);">Token de Sesión o Integración Dropi</label>
+          <input type="password" id="input-token" class="filter-input" style="width: 100%;" placeholder="Ingresa tu token activo de Dropi...">
+        </div>
+        <div style="display:flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+          <button class="btn" onclick="saveToken()">Guardar y Verificar Token</button>
+          <button class="btn btn-orange" onclick="startAssistedLogin()">🔑 Iniciar Sesión Asistido (Navegador)</button>
+          <button class="btn" style="background: rgba(239, 68, 68, 0.2); color: #F87171;" onclick="disconnect()">Desconectar</button>
+        </div>
+        <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 1rem; font-size: 0.85rem; color: #E2E8F0;">
+          <strong>⚡ Cambio Automático de Estado:</strong> En cuanto inicies sesión exitosamente (ya sea pegando tu token o mediante la ventana asistida de Dropi), el indicador superior cambiará inmediatamente a <span style="color:#34D399; font-weight:700;">● CONECTADO A DROPI</span>.
+        </div>
+        <div id="conn-msg" style="margin-top: 1.25rem; font-size: 0.85rem;"></div>
+      </div>
+    </div>
+
+    <!-- Pestaña 3: Historial -->
+    <div id="tab-jobs" class="tab-content">
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID Trabajo</th>
+              <th>Tipo</th>
+              <th>Total Extraído</th>
+              <th>Insertados</th>
+              <th>Con Alertas</th>
+              <th>Duración</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody id="jobs-tbody">
+            <tr><td colspan="7" style="text-align:center; padding: 2rem;">Cargando historial...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    CrisCodev Dropi Product Analyzer v2.0 • Arquitectura Autónoma Independiente • Node.js, Python & PostgreSQL
+  </footer>
+
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      
+      const targetContent = document.getElementById('tab-' + tabId);
+      if (targetContent) targetContent.classList.add('active');
+      
+      const btn = document.querySelector(`.tab-btn[onclick*="'${tabId}'"]`);
+      if (btn) btn.classList.add('active');
+
+      if (tabId === 'jobs') loadJobs();
+      if (tabId === 'catalog') loadProducts();
+      if (tabId === 'shipping') loadShippingDashboard();
+      if (tabId === 'profitability') loadProfitabilityDashboard();
+    }
+
+    let currentAuthData = { status: 'DISCONNECTED' };
+    let isWaitingBrowserLogin = false;
+
+    function handlePillClick() {
+      openConnModal();
+    }
+
+    function openConnModal() {
+      const backdrop = document.getElementById('conn-modal-backdrop');
+      if (backdrop) {
+        backdrop.classList.add('open');
+        renderModalContent();
+      }
+    }
+
+    function closeConnModal(e) {
+      if (!e || e.target.id === 'conn-modal-backdrop') {
+        const backdrop = document.getElementById('conn-modal-backdrop');
+        if (backdrop) backdrop.classList.remove('open');
+      }
+    }
+
+    function renderModalContent() {
+      const body = document.getElementById('modal-body-content');
+      if (!body) return;
+
+      if (currentAuthData.status === 'CONNECTED') {
+        body.innerHTML = `
+          <div style="text-align:center; margin-bottom: 1.5rem;">
+            <div style="display:inline-flex; align-items:center; justify-content:center; width:52px; height:52px; border-radius:50%; background:rgba(16, 185, 129, 0.2); color:#34D399; font-size:1.75rem; margin-bottom:0.75rem;">✓</div>
+            <h3 style="font-size:1.15rem; color:white; margin-bottom:0.25rem;">Conexión Activa con Dropi Chile</h3>
+            <p style="font-size:0.85rem; color:var(--text-muted);">Acceso autorizado para consulta de catálogo, stock y cálculo comercial.</p>
+          </div>
+          <div class="step-box" style="font-size:0.85rem;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+              <span style="color:var(--text-muted);">Token de sesión:</span>
+              <code style="color:#F97316; font-weight:600;">${currentAuthData.masked_token || 'Activo'}</code>
+            </div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+              <span style="color:var(--text-muted);">Última verificación:</span>
+              <span>${currentAuthData.last_verified_at ? new Date(currentAuthData.last_verified_at).toLocaleTimeString('es-CL') : 'Reciente'}</span>
+            </div>
+            <div style="display:flex; justify-content:space-between;">
+              <span style="color:var(--text-muted);">Catálogo BFF Dropi:</span>
+              <span style="color:#34D399; font-weight:700;">● EN LÍNEA</span>
+            </div>
+          </div>
+          <div style="display:flex; gap:1rem; justify-content:flex-end;">
+            <button class="btn btn-orange" onclick="closeConnModal(); loadProducts();">Ver Catálogo</button>
+            <button class="btn" style="background:rgba(239, 68, 68, 0.2); color:#F87171;" onclick="disconnect()">Desconectar</button>
+          </div>
+        `;
+        return;
+      }
+
+      if (isWaitingBrowserLogin) {
+        body.innerHTML = `
+          <div style="text-align:center; padding: 1rem 0;">
+            <div style="margin-bottom:0.75rem;"><span class="spinner" style="width:28px; height:28px; border-width:3px;"></span></div>
+            <h3 style="font-size:1.15rem; color:white; margin-bottom:0.35rem;">Esperando Inicio de Sesión y Código 2FA</h3>
+            <p style="font-size:0.85rem; color:var(--text-muted); max-width:480px; margin:0 auto 0.75rem; line-height:1.4;">
+              1. En la ventana que se abrió, ingresa tu correo y contraseña.<br>
+              2. <strong>Ingresa tu código 2FA de 6 dígitos</strong>. La ventana esperará pacientemente.<br>
+              3. Al entrar al panel de Dropi, esta pantalla se conectará de inmediato.
+            </p>
+
+            <div id="modal-live-log" style="background:rgba(15, 23, 42, 0.7); border:1px solid var(--border); border-radius:8px; padding:0.6rem 0.9rem; font-size:0.775rem; color:#94A3B8; font-family:monospace; margin-bottom:1.25rem; max-width:480px; margin-left:auto; margin-right:auto; word-break:break-word;">
+              Iniciando navegador seguro del sistema...
+            </div>
+
+            <div style="display:flex; gap:0.75rem; justify-content:center; margin-bottom:1.25rem; flex-wrap:wrap;">
+              <a href="https://app.dropi.cl/auth/login" target="_blank" class="btn btn-orange" style="text-decoration:none; font-weight:700; padding:0.6rem 1.2rem;">
+                🌐 Abrir Dropi en Otra Pestaña
+              </a>
+              <button class="btn" onclick="triggerAssistedLoginFromModal()">
+                🔄 Reintentar Ventana Asistida
+              </button>
+            </div>
+
+            <div class="step-box" style="text-align:left; font-size:0.825rem;">
+              <strong style="color:white; display:block; margin-bottom:0.4rem;">🔑 ¿Ya tienes tu sesión abierta en Dropi?</strong>
+              <p style="color:var(--text-muted); margin-bottom:0.6rem;">Pega tu token Bearer aquí para conectar de inmediato sin esperar:</p>
+              <div style="display:flex; gap:0.5rem;">
+                <input type="password" id="modal-token-input-alt" class="filter-input" style="flex:1;" placeholder="eyJ0eXAiOiJKV1Qi...">
+                <button class="btn btn-orange" onclick="saveTokenFromAlt()">Conectar</button>
+              </div>
+              <div id="modal-token-alt-err" style="margin-top:0.4rem; font-size:0.8rem;"></div>
+            </div>
+
+            <button class="btn" style="background:transparent; color:var(--text-muted); font-size:0.8rem;" onclick="stopLogPolling(); isWaitingBrowserLogin=false; renderModalContent();">Volver a opciones</button>
+          </div>
+        `;
+        return;
+      }
+
+      body.innerHTML = `
+        <div style="margin-bottom: 1.25rem;">
+          <h3 style="font-size:1.05rem; color:white; margin-bottom:0.35rem;">Iniciar Sesión en Dropi Chile</h3>
+          <p style="font-size:0.825rem; color:var(--text-muted);">
+            Conecta tu cuenta para importar productos, evaluar márgenes y detectar proveedores verificados.
+          </p>
+        </div>
+
+        <div class="step-box" style="border-color: rgba(37, 99, 235, 0.4); background: rgba(37, 99, 235, 0.06);">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
+            <strong style="color:white; font-size:0.92rem;">1. Ventana Asistida (Recomendado)</strong>
+            <span class="badge badge-verified">Seguro & Automático</span>
+          </div>
+          <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:1rem; line-height:1.4;">
+            Abre el formulario oficial de Dropi en tu pantalla. Si tienes activa Autenticación en 2 Pasos (2FA), la ventana esperará a que ingreses tus dígitos. Al entrar al panel, el sistema capturará la sesión definitiva automáticamente.
+          </p>
+          <button class="btn btn-orange" style="width:100%; justify-content:center; font-weight:700; padding:0.75rem;" onclick="triggerAssistedLoginFromModal()">
+            🚀 Abrir Dropi para Iniciar Sesión
+          </button>
+        </div>
+
+        <div class="step-box">
+          <strong style="color:white; font-size:0.9rem; display:block; margin-bottom:0.4rem;">2. O pegar token Bearer manualmente</strong>
+          <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.75rem;">
+            Si ya iniciaste sesión en tu navegador habitual, pega tu token de sesión aquí:
+          </p>
+          <div style="display:flex; gap:0.5rem;">
+            <input type="password" id="modal-token-input" class="filter-input" style="flex:1;" placeholder="eyJ0eXAiOiJKV1Qi...">
+            <button class="btn" onclick="saveTokenFromModal()">Conectar</button>
+          </div>
+          <div id="modal-token-err" style="margin-top:0.5rem; font-size:0.8rem;"></div>
+        </div>
+
+        <div style="font-size:0.75rem; color:#64748B; line-height:1.4;">
+          🔒 <strong>Seguridad Entrega 2:</strong> Credenciales protegidas bajo las directrices del proyecto. Toda consulta se autentica mediante JWT de sesión web.
+        </div>
+      `;
+    }
+
+    let loginLogInterval = null;
+
+    function stopLogPolling() {
+      if (loginLogInterval) {
+        clearInterval(loginLogInterval);
+        loginLogInterval = null;
+      }
+    }
+
+    function startLogPolling() {
+      stopLogPolling();
+      loginLogInterval = setInterval(async () => {
+        if (!isWaitingBrowserLogin) {
+          stopLogPolling();
+          return;
+        }
+        try {
+          // Consultar logs del navegador asistido
+          const logRes = await fetch('/api/auth/login-logs');
+          const logData = await logRes.json();
+          if (logData?.logs?.length > 0) {
+            const lastLog = logData.logs[logData.logs.length - 1];
+            const logEl = document.getElementById('modal-live-log');
+            if (logEl) {
+              logEl.textContent = lastLog;
+              if (lastLog.includes('2FA')) {
+                logEl.style.color = '#F59E0B';
+                logEl.style.borderColor = 'rgba(245, 158, 11, 0.4)';
+              } else if (lastLog.includes('✓') || lastLog.includes('VERIFICADA')) {
+                logEl.style.color = '#34D399';
+                logEl.style.borderColor = 'rgba(52, 211, 153, 0.4)';
+              } else {
+                logEl.style.color = '#94A3B8';
+              }
+            }
+          }
+
+          // Consultar estado general de autenticación
+          const authRes = await fetch('/api/auth');
+          const authData = await authRes.json();
+          if (authData.status === 'CONNECTED') {
+            stopLogPolling();
+            await loadAuth();
+          }
+        } catch {}
+      }, 1500);
+    }
+
+    async function triggerAssistedLoginFromModal() {
+      isWaitingBrowserLogin = true;
+      renderModalContent();
+      startLogPolling();
+      try {
+        await fetch('/api/auth/start-login', { method: 'POST' });
+      } catch (e) {
+        stopLogPolling();
+        isWaitingBrowserLogin = false;
+        renderModalContent();
+        alert('Error al abrir la ventana asistida de Dropi.');
+      }
+    }
+
+        async function saveTokenFromAlt() {
+      const input = document.getElementById('modal-token-input-alt');
+      const err = document.getElementById('modal-token-alt-err');
+      const token = input?.value?.trim();
+      if (!token) {
+        if (err) { err.textContent = 'Ingresa un token válido.'; err.style.color = '#F87171'; }
+        return;
+      }
+      if (err) { err.textContent = 'Verificando con Dropi Chile...'; err.style.color = '#F59E0B'; }
+      try {
+        const res = await fetch('/api/auth', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ token })
+        });
+        const d = await res.json();
+        if (d.status === 'CONNECTED') {
+          await loadAuth();
+        } else {
+          if (err) { err.textContent = d.message || 'Token rechazado por Dropi.'; err.style.color = '#F87171'; }
+        }
+      } catch (e) {
+        if (err) { err.textContent = 'Error de conexión.'; err.style.color = '#F87171'; }
+      }
+    }
+
+    async function saveTokenFromModal() {
+      const input = document.getElementById('modal-token-input');
+      const err = document.getElementById('modal-token-err');
+      const token = input?.value?.trim();
+      if (!token) {
+        if (err) { err.textContent = 'Por favor ingresa un token válido.'; err.style.color = '#F87171'; }
+        return;
+      }
+      if (err) { err.textContent = 'Verificando con Dropi Chile...'; err.style.color = '#F59E0B'; }
+      try {
+        const res = await fetch('/api/auth', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ token })
+        });
+        const d = await res.json();
+        if (d.status === 'CONNECTED') {
+          await loadAuth();
+        } else {
+          if (err) { err.textContent = d.message || 'Token rechazado por Dropi.'; err.style.color = '#F87171'; }
+        }
+      } catch (e) {
+        if (err) { err.textContent = 'Error de conexión con el servidor local.'; err.style.color = '#F87171'; }
+      }
+    }
+
+    async function loadAuth() {
+      try {
+        const res = await fetch('/api/auth');
+        const d = await res.json();
+        currentAuthData = d;
+        const pill = document.getElementById('conn-pill');
+        const pillText = document.getElementById('conn-pill-text');
+        
+        const dot = '<span class="status-dot"></span>';
+        if (d.status === 'CONNECTED') {
+          pill.className = 'status-pill';
+          pill.innerHTML = dot + '<span id="conn-pill-text">Conectado a Dropi</span>';
+
+          if (isWaitingBrowserLogin) {
+            isWaitingBrowserLogin = false;
+            const modalBody = document.getElementById('modal-body-content');
+            if (modalBody) {
+              modalBody.innerHTML = `
+                <div style="text-align:center; padding: 2rem;">
+                  <div style="display:inline-flex; align-items:center; justify-content:center; width:56px; height:56px; border-radius:50%; background:rgba(16, 185, 129, 0.2); color:#34D399; font-size:2rem; margin-bottom:1rem;">✓</div>
+                  <h3 style="color:#34D399; font-size:1.2rem; margin-bottom:0.5rem;">¡Conexión Exitosa con Dropi!</h3>
+                  <p style="color:var(--text-muted); font-size:0.875rem;">El catálogo ha sido verificado. Actualizando productos...</p>
+                </div>
+              `;
+              setTimeout(() => {
+                closeConnModal();
+                loadProducts();
+              }, 1200);
+            }
+          }
+        } else {
+          pill.className = 'status-pill disconnected';
+          pill.innerHTML = dot + '<span id="conn-pill-text">Desconectado (Clic para conectar)</span>';
+        }
+      } catch (e) {}
+    }
+
+    async function saveToken() {
+      const token = document.getElementById('input-token').value;
+      const msg = document.getElementById('conn-msg');
+      msg.textContent = 'Verificando conexión con Dropi...';
+      try {
+        const res = await fetch('/api/auth', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ token })
+        });
+        const d = await res.json();
+        msg.textContent = d.message || 'Configuración actualizada.';
+        msg.style.color = d.status === 'CONNECTED' ? '#34D399' : '#F87171';
+        loadAuth();
+      } catch (e) {
+        msg.textContent = 'Error al guardar el token.';
+        msg.style.color = '#F87171';
+      }
+    }
+
+    async function disconnect() {
+      await fetch('/api/auth', { method: 'DELETE' });
+      document.getElementById('conn-msg').textContent = 'Sesión desconectada.';
+      loadAuth();
+    }
+
+    async function loadProducts() {
+      const search = document.getElementById('filter-search').value;
+      const verified = document.getElementById('filter-verified').checked;
+      const premium = document.getElementById('filter-premium').checked;
+      const clean = document.getElementById('filter-clean').checked;
+
+      const params = new URLSearchParams();
+      if (search) params.set('search', search);
+      if (verified) params.set('is_verified', 'true');
+      if (premium) params.set('is_premium', 'true');
+      if (clean) params.set('exclude_flags', 'true');
+
+      const res = await fetch('/api/products?' + params.toString());
+      const d = await res.json();
+
+      if (d.stats) {
+        document.getElementById('stat-total').textContent = d.stats.totalProducts;
+        document.getElementById('stat-suppliers').textContent = d.stats.totalSuppliers;
+        document.getElementById('stat-premium').textContent = d.stats.premiumCount + ' / ' + d.stats.verifiedCount;
+        document.getElementById('stat-margin').textContent = d.stats.highMarginCount;
+        document.getElementById('stat-flags').textContent = d.stats.flaggedCount;
+      }
+
+      const tbody = document.getElementById('catalog-tbody');
+      if (!d.products || d.products.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="8" style="text-align:center; padding: 2rem;">No se encontraron productos con los filtros seleccionados.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = d.products.map(p => {
+        const margin = p.gross_margin_preliminary;
+        const marginStr = margin !== null ? margin.toFixed(1) + '%' : 'N/D';
+        const marginClass = margin && margin > 0 ? 'margin-positive' : 'margin-negative';
+        const badgeRev = p.requires_review
+          ? '<span class="badge badge-flagged">REQUIERE REVISIÓN</span>'
+          : '<span class="badge badge-verified">COHERENTE</span>';
+
+        return '<tr>' +
+          '<td style="color:var(--text-muted); font-size:0.75rem;">' + p.dropi_id + '</td>' +
+          '<td>' +
+            '<div class="product-cell">' +
+              '<img src="' + (p.image_url || 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=100') + '" class="product-img" alt="">' +
+              '<div>' +
+                '<div style="font-weight:600;">' + p.name + '</div>' +
+                '<div style="font-size:0.75rem; color:var(--text-muted);">' + p.category + ' • ' + (p.has_variants ? 'Con variantes' : 'Simple') + '</div>' +
+              '</div>' +
+            '</div>' +
+          '</td>' +
+          '<td>' +
+            '<div>' + p.supplier_name + '</div>' +
+            '<div style="margin-top:0.25rem;">' +
+              (p.is_premium ? '<span class="badge badge-premium">PREMIUM</span> ' : '') +
+              (p.is_verified ? '<span class="badge badge-verified">VERIFICADO</span>' : '') +
+            '</div>' +
+          '</td>' +
+          '<td>$' + p.supplier_price_min.toLocaleString('es-CL') + '</td>' +
+          '<td>$' + (p.suggested_price || 0).toLocaleString('es-CL') + '</td>' +
+          '<td class="' + marginClass + '">' + marginStr + '</td>' +
+          '<td>' + p.stock + ' un.</td>' +
+          '<td>' + badgeRev + '</td>' +
+        '</tr>';
+      }).join('');
+    }
+
+    
+    // =========================================================================
+    // SECCIÓN 2: IMPORTACIÓN EN VIVO DIRECTA DESDE DROPI CHILE (PAGINACIÓN CONTINUA)
+    // =========================================================================
+    let currentLiveProducts = [];
+    let currentLiveOffset = 0;
+    let hasMoreLiveProducts = true;
+    let isLoadingMore = false;
+
+    function getLiveFilterValues() {
+      const search = document.getElementById('live-filter-search')?.value?.trim() || '';
+      const category = document.getElementById('live-filter-category')?.value || '';
+      const rawMin = document.getElementById('live-filter-min-price')?.value;
+      const rawMax = document.getElementById('live-filter-max-price')?.value;
+      const minPrice = rawMin !== '' && !isNaN(parseFloat(rawMin)) ? parseFloat(rawMin) : 0;
+      const maxPrice = rawMax !== '' && !isNaN(parseFloat(rawMax)) ? parseFloat(rawMax) : 0;
+      const verified = document.getElementById('live-filter-verified')?.checked;
+      const premium = document.getElementById('live-filter-premium')?.checked;
+      const limit = parseInt(document.getElementById('live-filter-limit')?.value || '100', 10);
+
+      const categoryuser = [];
+      if (verified) categoryuser.push(1); // 1 = Verificado en Dropi Chile
+      if (premium) categoryuser.push(2);  // 2 = Premium en Dropi Chile
+
+      const filters = {
+        keywords: search,
+        category: category,
+        min_price: minPrice > 0 ? minPrice : undefined,
+        max_price: maxPrice > 0 ? maxPrice : undefined,
+        limit: limit
+      };
+
+      if (categoryuser.length > 0) {
+        filters.categoryuser = categoryuser;
+      }
+
+      return filters;
+    }
+
+    function renderLiveProductRow(p) {
+      const margin = p.gross_margin_preliminary;
+      const marginStr = margin !== null ? margin.toFixed(1) + '%' : 'N/D';
+      const marginClass = margin && margin > 0 ? 'margin-positive' : 'margin-negative';
+      const badgeRev = p.requires_review
+        ? '<span class="badge badge-flagged" title="' + (p.flags?.[0]?.description || 'Requiere revisión') + '">ALERTA</span>'
+        : '<span class="badge badge-verified">COHERENTE</span>';
+
+      const dbBadge = p.is_in_local_db
+        ? '<span class="badge badge-local">✓ EN NUESTRA BASE</span>'
+        : '<span class="badge badge-new">+ NUEVO EN DROPI</span>';
+
+      return '<tr>' +
+        '<td style="color:var(--text-muted); font-size:0.75rem;">' + p.dropi_id + '</td>' +
+        '<td>' +
+          '<div class="product-cell">' +
+            '<img src="' + (p.image_url || 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=100') + '" class="product-img" alt="">' +
+            '<div>' +
+              '<div style="font-weight:600;">' + p.name + '</div>' +
+              '<div style="font-size:0.75rem; color:var(--text-muted);">' + p.category + ' • ' + (p.has_variants ? 'Con variantes' : 'Simple') + '</div>' +
+            '</div>' +
+          '</div>' +
+        '</td>' +
+        '<td>' +
+          '<div>' + p.supplier_name + '</div>' +
+          '<div style="margin-top:0.25rem;">' +
+            (p.is_premium ? '<span class="badge badge-premium">PREMIUM</span> ' : '') +
+            (p.is_verified ? '<span class="badge badge-verified">VERIFICADO</span>' : '') +
+          '</div>' +
+        '</td>' +
+        '<td>$' + p.supplier_price_min.toLocaleString('es-CL') + '</td>' +
+        '<td>$' + (p.suggested_price ? p.suggested_price.toLocaleString('es-CL') : '0') + '</td>' +
+        '<td class="' + marginClass + '">' + marginStr + '</td>' +
+        '<td>' + p.stock + ' un.</td>' +
+        '<td>' + dbBadge + '</td>' +
+        '<td>' + badgeRev + '</td>' +
+      '</tr>';
+    }
+
+    function updateLiveBanner() {
+      const banner = document.getElementById('live-status-banner');
+      const bannerText = document.getElementById('live-status-text');
+      const bannerActions = document.getElementById('live-status-actions');
+      if (!banner || !bannerText || !bannerActions) return;
+
+      if (currentLiveProducts.length === 0) {
+        banner.style.display = 'none';
+        return;
+      }
+
+      const newCount = currentLiveProducts.filter(p => !p.is_in_local_db).length;
+      const localCount = currentLiveProducts.filter(p => p.is_in_local_db).length;
+
+      banner.className = 'status-banner success';
+      banner.style.display = 'flex';
+      bannerText.innerHTML = `<strong>Resultados Dropi Chile:</strong> Se encontraron <strong>${currentLiveProducts.length}</strong> productos en vivo (${newCount} nuevos para importar, ${localCount} ya en tu base).`;
+      bannerActions.innerHTML = `<button class="btn btn-orange" onclick="importFromDropiUI()">⬇️ Importar estos ${currentLiveProducts.length} productos</button>`;
+    }
+
+    async function searchDropiLiveUI() {
+      console.log('[searchDropiLiveUI] Iniciando consulta en vivo en Dropi...');
+      const tbody = document.getElementById('live-catalog-tbody');
+      const banner = document.getElementById('live-status-banner');
+      const loadMoreContainer = document.getElementById('live-load-more-container');
+      const btnLoadMore = document.getElementById('btn-load-more');
+      const statusEl = document.getElementById('load-more-status');
+
+      if (!tbody) {
+        console.error('Elemento live-catalog-tbody no encontrado');
+        return;
+      }
+
+      // Reiniciar estado de paginación
+      currentLiveProducts = [];
+      currentLiveOffset = 0;
+      hasMoreLiveProducts = true;
+      if (loadMoreContainer) loadMoreContainer.style.display = 'none';
+      if (banner) banner.style.display = 'none';
+
+      tbody.innerHTML = '<tr><td colspan="9" style="text-align:center; padding: 3rem;"><span class="spinner"></span> Consultando catálogo oficial en Dropi Chile...</td></tr>';
+
+      const filters = getLiveFilterValues();
+      filters.offset = 0;
+
+      try {
+        const res = await fetch('/api/dropi/search', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(filters)
+        });
+        const data = await res.json();
+
+        if (!data.success) {
+          tbody.innerHTML = `<tr><td colspan="9" style="text-align:center; padding: 3rem; color: #F87171;">❌ ${data.error || 'Error al consultar Dropi'}</td></tr>`;
+          if (banner) {
+            banner.className = 'status-banner error';
+            banner.style.display = 'flex';
+            document.getElementById('live-status-text').innerHTML = `<strong>Aviso:</strong> ${data.error || 'No fue posible consultar Dropi Chile.'}`;
+            document.getElementById('live-status-actions').innerHTML = `<button class="btn btn-orange" onclick="openConnModal()">Conectar o Iniciar Sesión</button>`;
+          }
+          return;
+        }
+
+        currentLiveProducts = data.products || [];
+
+        if (currentLiveProducts.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="9" style="text-align:center; padding: 3rem; color: var(--text-muted);">No se encontraron productos en Dropi con esos filtros. Intenta ampliar el rango de precios o cambiar la categoría.</td></tr>';
+          return;
+        }
+
+        currentLiveOffset = data.next_offset || currentLiveProducts.length;
+        hasMoreLiveProducts = data.has_more ?? (currentLiveProducts.length >= (filters.limit || 50));
+
+        // Renderizar primeras filas
+        tbody.innerHTML = currentLiveProducts.map(renderLiveProductRow).join('');
+
+        // Actualizar banner superior
+        updateLiveBanner();
+
+        // Controlar botón de paginación "Mostrar más productos"
+        if (loadMoreContainer) {
+          loadMoreContainer.style.display = 'block';
+          if (hasMoreLiveProducts) {
+            if (btnLoadMore) {
+              btnLoadMore.style.display = 'inline-block';
+              btnLoadMore.disabled = false;
+              btnLoadMore.innerHTML = 'Mostrar más productos';
+            }
+            if (statusEl) statusEl.style.display = 'none';
+          } else {
+            if (btnLoadMore) btnLoadMore.style.display = 'none';
+            if (statusEl) {
+              statusEl.style.display = 'block';
+              statusEl.textContent = '✓ Has cargado todos los productos disponibles en Dropi Chile con estos filtros.';
+            }
+          }
+        }
+
+      } catch (err) {
+        tbody.innerHTML = `<tr><td colspan="9" style="text-align:center; padding: 3rem; color: #F87171;">Error al consultar: ${err.message}</td></tr>`;
+      }
+    }
+
+    async function loadMoreDropiProductsUI() {
+      if (isLoadingMore || !hasMoreLiveProducts) return;
+      isLoadingMore = true;
+
+      const btn = document.getElementById('btn-load-more');
+      const statusEl = document.getElementById('load-more-status');
+      const originalText = btn ? btn.innerHTML : 'Mostrar más productos';
+
+      if (btn) {
+        btn.innerHTML = '<span class="spinner"></span> Cargando más productos de Dropi...';
+        btn.disabled = true;
+      }
+
+      const filters = getLiveFilterValues();
+      filters.offset = currentLiveOffset;
+
+      try {
+        const res = await fetch('/api/dropi/search', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(filters)
+        });
+        const data = await res.json();
+
+        if (data.success && Array.isArray(data.products) && data.products.length > 0) {
+          // Filtrar duplicados por dropi_id
+          const existingIds = new Set(currentLiveProducts.map(p => p.dropi_id));
+          const newBatch = data.products.filter(p => !existingIds.has(p.dropi_id));
+
+          currentLiveProducts.push(...newBatch);
+          currentLiveOffset = data.next_offset || (currentLiveOffset + data.products.length);
+          hasMoreLiveProducts = data.has_more ?? (data.products.length >= (filters.limit || 50));
+
+          const tbody = document.getElementById('live-catalog-tbody');
+          if (tbody && newBatch.length > 0) {
+            tbody.insertAdjacentHTML('beforeend', newBatch.map(renderLiveProductRow).join(''));
+          }
+
+          updateLiveBanner();
+
+          if (hasMoreLiveProducts) {
+            if (btn) {
+              btn.style.display = 'inline-block';
+              btn.innerHTML = 'Mostrar más productos';
+              btn.disabled = false;
+            }
+            if (statusEl) statusEl.style.display = 'none';
+          } else {
+            if (btn) btn.style.display = 'none';
+            if (statusEl) {
+              statusEl.style.display = 'block';
+              statusEl.textContent = '✓ Has cargado todos los productos disponibles en Dropi Chile con estos filtros.';
+            }
+          }
+        } else {
+          hasMoreLiveProducts = false;
+          if (btn) btn.style.display = 'none';
+          if (statusEl) {
+            statusEl.style.display = 'block';
+            statusEl.textContent = '✓ No hay más productos disponibles en Dropi Chile para estos filtros.';
+          }
+        }
+      } catch (err) {
+        console.error('Error al cargar más productos:', err);
+        if (btn) {
+          btn.innerHTML = 'Reintentar cargar más productos';
+          btn.disabled = false;
+        }
+      } finally {
+        isLoadingMore = false;
+      }
+    }
+
+    async function importFromDropiUI() {
+      const btn = document.getElementById('btn-live-import');
+      const originalText = btn ? btn.innerHTML : '⬇️ Importar a Nuestra Base';
+      if (btn) {
+        btn.innerHTML = '<span class="spinner"></span> Importando...';
+        btn.disabled = true;
+      }
+
+      const banner = document.getElementById('live-status-banner');
+      const bannerText = document.getElementById('live-status-text');
+      const bannerActions = document.getElementById('live-status-actions');
+
+      if (banner && bannerText) {
+        banner.className = 'status-banner';
+        banner.style.display = 'flex';
+        bannerText.innerHTML = `<span class="spinner"></span> Guardando ${currentLiveProducts.length} productos en PostgreSQL / Base Local...`;
+        if (bannerActions) bannerActions.innerHTML = '';
+      }
+
+      const payload = {
+        products: currentLiveProducts,
+        filters: getLiveFilterValues()
+      };
+
+      try {
+        const res = await fetch('/api/dropi/import', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          // Marcar todos los productos actualmente en memoria como guardados en local
+          currentLiveProducts.forEach(p => { p.is_in_local_db = true; });
+          
+          // Re-renderizar filas de la tabla para reflejar la insignia "✓ EN NUESTRA BASE"
+          const tbody = document.getElementById('live-catalog-tbody');
+          if (tbody) {
+            tbody.innerHTML = currentLiveProducts.map(renderLiveProductRow).join('');
+          }
+
+          if (banner && bannerText && bannerActions) {
+            banner.className = 'status-banner success';
+            bannerText.innerHTML = `<strong>✓ ¡Importación Exitosa!</strong> ${data.message} (${data.duration_ms} ms).`;
+            bannerActions.innerHTML = `<button class="btn" style="background:#2563EB;" onclick="switchTab('catalog'); loadProducts();">📦 Ver Catálogo en Nuestra Base</button>`;
+          }
+          
+          // Actualizar catálogo local y métricas de la pestaña 1
+          loadProducts();
+        } else {
+          if (banner && bannerText && bannerActions) {
+            banner.className = 'status-banner error';
+            bannerText.innerHTML = `<strong>Error de Importación:</strong> ${data.error || data.message}`;
+            bannerActions.innerHTML = `<button class="btn btn-orange" onclick="openConnModal()">Revisar Conexión</button>`;
+          }
+        }
+      } catch (err) {
+        if (banner && bannerText) {
+          banner.className = 'status-banner error';
+          bannerText.innerHTML = `<strong>Error inesperado:</strong> ${err.message}`;
+        }
+      } finally {
+        if (btn) {
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+        }
+      }
+    }
+
+
+    async function loadJobs() {
+      const res = await fetch('/api/jobs');
+      const d = await res.json();
+      const tbody = document.getElementById('jobs-tbody');
+      if (!d.jobs || d.jobs.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding:2rem;">Sin historial de ejecuciones.</td></tr>';
+        return;
+      }
+      tbody.innerHTML = d.jobs.map(j => '<tr>' +
+        '<td style="font-family:monospace; font-size:0.75rem;">' + j.id + '</td>' +
+        '<td>' + j.job_type + '</td>' +
+        '<td>' + j.total_fetched + '</td>' +
+        '<td>' + j.total_inserted + '</td>' +
+        '<td>' + j.total_flagged + '</td>' +
+        '<td>' + j.duration_ms + ' ms</td>' +
+        '<td><span class="badge badge-verified">' + j.status + '</span></td>' +
+      '</tr>').join('');
+    }
+
+    async function startAssistedLogin() {
+      const msg = document.getElementById('conn-msg');
+      msg.textContent = 'Iniciando navegador seguro en tu pantalla...';
+      msg.style.color = '#F59E0B';
+      try {
+        const res = await fetch('/api/auth/start-login', { method: 'POST' });
+        const d = await res.json();
+        msg.textContent = d.message || 'Ventana de Dropi abierta. Ingresa tus datos.';
+        msg.style.color = '#34D399';
+      } catch (e) {
+        msg.textContent = 'Error al abrir el navegador asistido.';
+        msg.style.color = '#F87171';
+      }
+    }
+
+    // =========================================================================
+    // SECCIÓN 3: GESTIÓN DE TARIFAS Y ZONAS DE DESPACHO ESTÁNDAR (ETAPA 1)
+    // =========================================================================
+    let shippingCatalog = null;
+    let currentZonesList = [];
+    let selectedCommuneCodes = new Set();
+    let shippingDashboardLoaded = false;
+
+    async function loadShippingDashboard() {
+      await Promise.all([
+        loadShippingKpi(),
+        loadShippingCatalog(),
+        loadZonesTable(),
+        loadCommunesTable()
+      ]);
+      shippingDashboardLoaded = true;
+    }
+
+    async function loadShippingKpi() {
+      try {
+        const res = await fetch('/api/shipping/kpi');
+        const d = await res.json();
+        if (d.success) {
+          document.getElementById('ship-kpi-zones').textContent = d.total_zones;
+          document.getElementById('ship-kpi-assigned').textContent = `${d.assigned_communes} / ${d.total_communes}`;
+          document.getElementById('ship-kpi-unassigned').textContent = d.unassigned_communes;
+          document.getElementById('ship-kpi-active').textContent = d.active_zones;
+          document.getElementById('ship-kpi-quote').textContent = d.quote_required_zones;
+          
+          if (d.last_modified_at) {
+            const dt = new Date(d.last_modified_at);
+            document.getElementById('ship-kpi-updated').textContent = dt.toLocaleDateString('es-CL') + ' ' + dt.toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit' });
+          } else {
+            document.getElementById('ship-kpi-updated').textContent = 'Reciente';
+          }
+        }
+      } catch (err) {
+        console.error('Error al cargar KPIs de despacho:', err);
+      }
+    }
+
+    async function loadShippingCatalog() {
+      if (shippingCatalog) return;
+      try {
+        const res = await fetch('/api/shipping/catalog');
+        const d = await res.json();
+        if (d.success && Array.isArray(d.regions)) {
+          shippingCatalog = d;
+
+          // Poblar selector del simulador
+          const simRegionSelect = document.getElementById('sim-region-select');
+          if (simRegionSelect) {
+            simRegionSelect.innerHTML = '<option value="">-- Selecciona una Región Oficial --</option>' +
+              d.regions.map(r => `<option value="${r.region_code}">${r.region_roman} • ${r.region_name} (${r.communes.length} comunas)</option>`).join('');
+          }
+
+          // Poblar filtro de comunas
+          const filterRegionSelect = document.getElementById('commune-filter-region');
+          if (filterRegionSelect) {
+            filterRegionSelect.innerHTML = '<option value="">Todas las Regiones (346 comunas)</option>' +
+              d.regions.map(r => `<option value="${r.region_code}">${r.region_roman} • ${r.region_name}</option>`).join('');
+          }
+        }
+      } catch (err) {
+        console.error('Error al cargar catálogo oficial de Chile:', err);
+      }
+    }
+
+    function onSimRegionChange() {
+      const regionCode = document.getElementById('sim-region-select').value;
+      const communeSelect = document.getElementById('sim-commune-select');
+      const resultCard = document.getElementById('sim-result-card');
+      if (resultCard) resultCard.style.display = 'none';
+
+      if (!regionCode || !shippingCatalog) {
+        communeSelect.innerHTML = '<option value="">Primero selecciona una región</option>';
+        return;
+      }
+
+      const region = shippingCatalog.regions.find(r => r.region_code === regionCode);
+      if (!region || !Array.isArray(region.communes)) {
+        communeSelect.innerHTML = '<option value="">No hay comunas disponibles</option>';
+        return;
+      }
+
+      communeSelect.innerHTML = '<option value="">-- Selecciona una Comuna --</option>' +
+        region.communes.map(c => `<option value="${c.commune_code}">${c.commune_name} (CUT: ${c.commune_code})</option>`).join('');
+    }
+
+    async function calculateShippingSimulation() {
+      const regionCode = document.getElementById('sim-region-select').value;
+      const communeCode = document.getElementById('sim-commune-select').value;
+      const resultCard = document.getElementById('sim-result-card');
+      if (!resultCard) return;
+
+      if (!regionCode || !communeCode) {
+        resultCard.style.display = 'block';
+        resultCard.innerHTML = '<div style="color: #FBBF24;">⚠️ Por favor selecciona una región y una comuna para calcular la estimación.</div>';
+        return;
+      }
+
+      resultCard.style.display = 'block';
+      resultCard.innerHTML = '<div style="text-align:center; padding:1rem;"><span class="spinner"></span> Consultando motor de tarifas estándar...</div>';
+
+      try {
+        const res = await fetch('/api/shipping/estimate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ region_code: regionCode, commune_code: communeCode })
+        });
+        const data = await res.json();
+
+        if (!data.success || !data.estimate) {
+          resultCard.innerHTML = `<div style="color: #F87171;">❌ Error al consultar despacho: ${data.error || 'Respuesta inválida'}</div>`;
+          return;
+        }
+
+        const est = data.estimate;
+        let statusBadge = '';
+        let differenceHtml = '';
+
+        if (est.status === 'CONFIGURED') {
+          statusBadge = '<span class="badge badge-verified" style="background:rgba(16,185,129,0.2); color:#34D399; font-size:0.8rem;">✓ TARIFA CONFIGURADA</span>';
+          const margin = est.margin_shipping;
+          const isNegative = margin !== null && margin < 0;
+          const diffColor = isNegative ? '#F87171' : '#34D399';
+          const diffPrefix = margin !== null && margin > 0 ? '+' : '';
+          const diffText = margin !== null ? `${diffPrefix}$${margin.toLocaleString('es-CL')} CLP` : 'N/D';
+          const diffDesc = isNegative ? '(Sobrecosto asumido / margen negativo)' : '(Margen bruto a favor de despacho)';
+
+          differenceHtml = `
+            <div style="background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:8px; padding:0.9rem;">
+              <span style="font-size:0.75rem; color:var(--text-muted); display:block; margin-bottom:0.25rem;">Diferencia Neta (Cliente - Costo Dropi):</span>
+              <span style="font-size:1.35rem; font-weight:800; color:${diffColor};">${diffText}</span>
+              <span style="font-size:0.75rem; color:var(--text-muted); display:block; margin-top:0.2rem;">${diffDesc}</span>
+            </div>
+          `;
+        } else if (est.status === 'REQUIRES_QUOTE') {
+          statusBadge = '<span class="badge" style="background:rgba(245,158,11,0.2); color:#FBBF24; font-size:0.8rem;">⚠️ REQUIERE COTIZACIÓN</span>';
+          differenceHtml = `
+            <div style="background:rgba(245,158,11,0.08); border:1px solid rgba(245,158,11,0.3); border-radius:8px; padding:0.9rem;">
+              <span style="font-size:0.75rem; color:#FBBF24; font-weight:700; display:block; margin-bottom:0.25rem;">Zona Extrema / Territorio Especial:</span>
+              <span style="font-size:0.95rem; color:white;">Tarifa variable según peso, volumen y transportadora oficial.</span>
+            </div>
+          `;
+        } else {
+          statusBadge = '<span class="badge badge-flagged" style="font-size:0.8rem;">⚠️ SIN CONFIGURACIÓN</span>';
+          differenceHtml = `
+            <div style="background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.3); border-radius:8px; padding:0.9rem;">
+              <span style="font-size:0.75rem; color:#F87171; font-weight:700; display:block; margin-bottom:0.25rem;">Sin Cobertura Asignada:</span>
+              <span style="font-size:0.85rem; color:#E2E8F0;">Esta comuna no tiene tarifa ni zona asignada. Asígnala en la tabla inferior para que participe en los cálculos.</span>
+            </div>
+          `;
+        }
+
+        const customerPriceStr = est.customer_shipping_price !== null ? `$${est.customer_shipping_price.toLocaleString('es-CL')} CLP` : '<em style="color:var(--text-muted);">Sin tarifa fija</em>';
+        const dropiCostStr = est.estimated_dropi_cost !== null ? `$${est.estimated_dropi_cost.toLocaleString('es-CL')} CLP` : '<em style="color:var(--text-muted);">Sin costo fijo</em>';
+        const zoneNameStr = est.zone_name ? `<strong>${est.zone_name}</strong>` : '<em style="color:#F87171;">Sin zona asignada</em>';
+
+        resultCard.innerHTML = `
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; flex-wrap:wrap; gap:0.5rem; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:0.75rem;">
+            <div>
+              <span style="font-size:1.15rem; font-weight:700; color:white;">📍 ${est.commune_name} (CUT: ${est.commune_code})</span>
+              <span style="font-size:0.825rem; color:var(--text-muted); margin-left:0.5rem;">Zona: ${zoneNameStr}</span>
+            </div>
+            <div>${statusBadge}</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; margin-bottom:1rem;">
+            <div style="background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:8px; padding:0.9rem;">
+              <span style="font-size:0.75rem; color:var(--text-muted); display:block; margin-bottom:0.25rem;">Tarifa Estándar al Cliente:</span>
+              <span style="font-size:1.35rem; font-weight:800; color:white;">${customerPriceStr}</span>
+              <span style="font-size:0.75rem; color:#34D399; display:block; margin-top:0.2rem;">${est.customer_price_includes_vat ? '✓ Incluye IVA 19%' : 'Neto sin IVA'}</span>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:8px; padding:0.9rem;">
+              <span style="font-size:0.75rem; color:var(--text-muted); display:block; margin-bottom:0.25rem;">Costo Logístico Estimado Dropi:</span>
+              <span style="font-size:1.35rem; font-weight:800; color:#F97316;">${dropiCostStr}</span>
+              <span style="font-size:0.75rem; color:#34D399; display:block; margin-top:0.2rem;">${est.estimated_cost_includes_vat ? '✓ Incluye IVA 19%' : 'Neto sin IVA'}</span>
+            </div>
+
+            ${differenceHtml}
+          </div>
+
+          <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.4; background:rgba(0,0,0,0.25); border-radius:6px; padding:0.6rem 0.9rem;">
+            ℹ️ <strong>Detalle:</strong> ${est.diagnostic_message} ${est.valid_from ? '• Vigente desde ' + new Date(est.valid_from).toLocaleDateString('es-CL') : ''}
+          </div>
+        `;
+      } catch (err) {
+        resultCard.innerHTML = `<div style="color: #F87171;">Error al calcular despacho: ${err.message}</div>`;
+      }
+    }
+
+    async function loadZonesTable() {
+      const tbody = document.getElementById('zones-table-tbody');
+      const batchSelect = document.getElementById('batch-target-zone-select');
+      if (!tbody) return;
+
+      try {
+        const res = await fetch('/api/shipping/zones');
+        const data = await res.json();
+        if (!data.success || !Array.isArray(data.zones)) {
+          tbody.innerHTML = '<tr><td colspan="9" style="text-align:center; padding:2rem; color:#F87171;">Error al cargar zonas.</td></tr>';
+          return;
+        }
+
+        currentZonesList = data.zones;
+
+        // Actualizar selector para asignación en bloque
+        if (batchSelect) {
+          batchSelect.innerHTML = '<option value="">Zona Destino...</option>' +
+            data.zones.filter(z => z.status === 'ACTIVE').map(z => `<option value="${z.id}">${z.name}</option>`).join('');
+        }
+
+        if (data.zones.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="9" style="text-align:center; padding:2rem;">No hay zonas configuradas. Haz clic en «➕ Nueva Zona de Despacho».</td></tr>';
+          return;
+        }
+
+        tbody.innerHTML = data.zones.map(z => {
+          const rate = z.rate;
+          const isQuote = z.requires_quote;
+          const customerPrice = (!isQuote && rate && rate.customer_shipping_price !== null)
+            ? `$${rate.customer_shipping_price.toLocaleString('es-CL')}`
+            : '<span style="color:#FBBF24;">Requiere cotización</span>';
+          
+          const dropiCost = (!isQuote && rate && rate.estimated_dropi_cost !== null)
+            ? `$${rate.estimated_dropi_cost.toLocaleString('es-CL')}`
+            : '<span style="color:#FBBF24;">Requiere cotización</span>';
+
+          let marginHtml = '<span style="color:var(--text-muted);">N/D</span>';
+          if (!isQuote && rate && rate.customer_shipping_price !== null && rate.estimated_dropi_cost !== null) {
+            const diff = rate.customer_shipping_price - rate.estimated_dropi_cost;
+            const diffColor = diff < 0 ? '#F87171' : '#34D399';
+            const diffSign = diff > 0 ? '+' : '';
+            marginHtml = `<span style="font-weight:700; color:${diffColor};">${diffSign}$${diff.toLocaleString('es-CL')}</span>`;
+          }
+
+          const statusBadge = z.status === 'ACTIVE'
+            ? '<span class="badge badge-verified">ACTIVA</span>'
+            : '<span class="badge badge-flagged">INACTIVA</span>';
+
+          const coverageBadge = isQuote
+            ? '<span class="badge" style="background:rgba(245,158,11,0.2); color:#FBBF24;">VARIABLE / ESPECIAL</span>'
+            : '<span class="badge" style="background:rgba(59,130,246,0.2); color:#60A5FA;">TARIFA PLANA</span>';
+
+          const updatedStr = z.updated_at ? new Date(z.updated_at).toLocaleDateString('es-CL') : '--';
+
+          return `
+            <tr>
+              <td>
+                <div style="font-weight:700; color:white;">${z.name}</div>
+                <div style="font-size:0.75rem; color:var(--text-muted);">${z.description || 'Sin descripción'}</div>
+              </td>
+              <td style="font-weight:600;">${customerPrice}</td>
+              <td style="font-weight:600; color:#F97316;">${dropiCost}</td>
+              <td>${marginHtml}</td>
+              <td>
+                <span class="badge" style="background:rgba(255,255,255,0.06); color:#E2E8F0; font-size:0.75rem;">
+                  📍 ${z.communes_count || 0} comunas
+                </span>
+              </td>
+              <td>${coverageBadge}</td>
+              <td>${statusBadge}</td>
+              <td style="font-size:0.8rem; color:var(--text-muted);">${updatedStr}</td>
+              <td style="text-align:right;">
+                <div style="display:inline-flex; gap:0.4rem;">
+                  <button class="btn" style="padding:0.35rem 0.65rem; font-size:0.78rem;" title="Editar Zona y Tarifa" onclick="openZoneModal('${z.id}')">✏️ Editar</button>
+                  <button class="btn" style="padding:0.35rem 0.65rem; font-size:0.78rem; background:rgba(255,255,255,0.08);" title="${z.status === 'ACTIVE' ? 'Desactivar Zona' : 'Activar Zona'}" onclick="toggleZoneStatus('${z.id}', '${z.status}')">${z.status === 'ACTIVE' ? '⏸️' : '▶️'}</button>
+                  <button class="btn" style="padding:0.35rem 0.65rem; font-size:0.78rem; background:rgba(239,68,68,0.15); color:#F87171;" title="Eliminar / Desactivar Zona" onclick="deleteZoneUI('${z.id}', '${z.name}')">🗑️</button>
+                </div>
+              </td>
+            </tr>
+          `;
+        }).join('');
+      } catch (err) {
+        tbody.innerHTML = `<tr><td colspan="9" style="text-align:center; padding:2rem; color:#F87171;">Error de conexión: ${err.message}</td></tr>`;
+      }
+    }
+
+    function openZoneModal(zoneId = null) {
+      const backdrop = document.getElementById('zone-modal-backdrop');
+      const title = document.getElementById('zone-modal-title');
+      const errorEl = document.getElementById('zone-form-error');
+      if (errorEl) errorEl.textContent = '';
+
+      if (zoneId) {
+        const zone = currentZonesList.find(z => z.id === zoneId);
+        if (!zone) return;
+        title.textContent = `Editar Zona: ${zone.name}`;
+        document.getElementById('zone-form-id').value = zone.id;
+        document.getElementById('zone-form-name').value = zone.name;
+        document.getElementById('zone-form-description').value = zone.description || '';
+        document.getElementById('zone-form-requires-quote').checked = Boolean(zone.requires_quote);
+        document.getElementById('zone-form-active').checked = zone.status === 'ACTIVE';
+
+        const rate = zone.rate;
+        document.getElementById('zone-form-customer-price').value = rate?.customer_shipping_price ?? 3990;
+        document.getElementById('zone-form-dropi-cost').value = rate?.estimated_dropi_cost ?? 4500;
+        document.getElementById('zone-form-price-vat').checked = rate?.customer_price_includes_vat ?? true;
+        document.getElementById('zone-form-cost-vat').checked = rate?.estimated_cost_includes_vat ?? true;
+        document.getElementById('zone-form-notes').value = rate?.notes || '';
+
+        toggleQuoteFields(Boolean(zone.requires_quote));
+      } else {
+        title.textContent = 'Crear Nueva Zona de Despacho';
+        document.getElementById('zone-form-id').value = '';
+        document.getElementById('zone-form-name').value = '';
+        document.getElementById('zone-form-description').value = '';
+        document.getElementById('zone-form-requires-quote').checked = false;
+        document.getElementById('zone-form-customer-price').value = 4990;
+        document.getElementById('zone-form-dropi-cost').value = 5200;
+        document.getElementById('zone-form-price-vat').checked = true;
+        document.getElementById('zone-form-cost-vat').checked = true;
+        document.getElementById('zone-form-notes').value = 'Tarifa estándar con IVA';
+        document.getElementById('zone-form-active').checked = true;
+        toggleQuoteFields(false);
+      }
+
+      backdrop.classList.add('open');
+    }
+
+    function closeZoneModal(e) {
+      if (!e || e.target.id === 'zone-modal-backdrop') {
+        const backdrop = document.getElementById('zone-modal-backdrop');
+        if (backdrop) backdrop.classList.remove('open');
+      }
+    }
+
+    function toggleQuoteFields(isQuote) {
+      const container = document.getElementById('zone-rates-fields');
+      if (container) {
+        container.style.opacity = isQuote ? '0.4' : '1';
+        container.style.pointerEvents = isQuote ? 'none' : 'auto';
+      }
+    }
+
+    async function saveZoneForm() {
+      const id = document.getElementById('zone-form-id').value;
+      const name = document.getElementById('zone-form-name').value.trim();
+      const description = document.getElementById('zone-form-description').value.trim();
+      const requiresQuote = document.getElementById('zone-form-requires-quote').checked;
+      const customerPrice = parseFloat(document.getElementById('zone-form-customer-price').value) || 0;
+      const dropiCost = parseFloat(document.getElementById('zone-form-dropi-cost').value) || 0;
+      const priceVat = document.getElementById('zone-form-price-vat').checked;
+      const costVat = document.getElementById('zone-form-cost-vat').checked;
+      const notes = document.getElementById('zone-form-notes').value.trim();
+      const isActive = document.getElementById('zone-form-active').checked;
+      const errorEl = document.getElementById('zone-form-error');
+
+      if (!name) {
+        if (errorEl) errorEl.textContent = 'El nombre de la zona es obligatorio.';
+        return;
+      }
+
+      const payload = {
+        name,
+        description,
+        status: isActive ? 'ACTIVE' : 'INACTIVE',
+        requires_quote: requiresQuote,
+        customer_shipping_price: requiresQuote ? null : customerPrice,
+        estimated_dropi_cost: requiresQuote ? null : dropiCost,
+        customer_price_includes_vat: priceVat,
+        estimated_cost_includes_vat: costVat,
+        notes: notes || undefined
+      };
+
+      try {
+        let res;
+        if (id) {
+          payload.id = id;
+          res = await fetch('/api/shipping/zones', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+        } else {
+          res = await fetch('/api/shipping/zones', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+        }
+
+        const data = await res.json();
+        if (data.success) {
+          closeZoneModal();
+          loadShippingDashboard();
+        } else {
+          if (errorEl) errorEl.textContent = data.error || 'Error al guardar la zona.';
+        }
+      } catch (err) {
+        if (errorEl) errorEl.textContent = `Error de red: ${err.message}`;
+      }
+    }
+
+    async function toggleZoneStatus(zoneId, currentStatus) {
+      const newStatus = currentStatus === 'ACTIVE' ? 'INACTIVE' : 'ACTIVE';
+      try {
+        const res = await fetch('/api/shipping/zones', {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: zoneId, status: newStatus })
+        });
+        const d = await res.json();
+        if (d.success) {
+          loadShippingDashboard();
+        } else {
+          alert(d.error || 'No se pudo cambiar el estado de la zona.');
+        }
+      } catch (e) {
+        alert('Error al modificar estado de la zona.');
+      }
+    }
+
+    async function deleteZoneUI(zoneId, zoneName) {
+      if (!confirm(`¿Estás seguro de que deseas eliminar o desactivar la zona "${zoneName}"?`)) {
+        return;
+      }
+      try {
+        const res = await fetch('/api/shipping/zones?id=' + encodeURIComponent(zoneId), {
+          method: 'DELETE'
+        });
+        const d = await res.json();
+        if (d.success) {
+          alert(d.message || 'Operación completada.');
+          loadShippingDashboard();
+        } else {
+          alert(d.error || 'No se pudo eliminar la zona.');
+        }
+      } catch (e) {
+        alert('Error al eliminar la zona.');
+      }
+    }
+
+    async function loadCommunesTable() {
+      const tbody = document.getElementById('communes-table-tbody');
+      if (!tbody) return;
+
+      const regionCode = document.getElementById('commune-filter-region')?.value || '';
+      const status = document.getElementById('commune-filter-status')?.value || 'ALL';
+      const search = document.getElementById('commune-filter-search')?.value?.trim() || '';
+
+      const params = new URLSearchParams();
+      if (regionCode) params.set('region_code', regionCode);
+      if (status !== 'ALL') params.set('status', status);
+      if (search) params.set('search', search);
+
+      try {
+        const res = await fetch('/api/shipping/communes?' + params.toString());
+        const data = await res.json();
+        if (!data.success || !Array.isArray(data.communes)) {
+          tbody.innerHTML = '<tr><td colspan="9" style="text-align:center; padding:2rem; color:#F87171;">Error al consultar comunas.</td></tr>';
+          return;
+        }
+
+        if (data.communes.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="9" style="text-align:center; padding:2rem;">No se encontraron comunas con los filtros aplicados.</td></tr>';
+          return;
+        }
+
+        tbody.innerHTML = data.communes.map(c => {
+          const isChecked = selectedCommuneCodes.has(c.commune_code) ? 'checked' : '';
+          const isAssigned = c.status === 'ASSIGNED';
+          
+          let statusBadge = isAssigned
+            ? '<span class="badge badge-verified">✓ ASIGNADA</span>'
+            : '<span class="badge badge-flagged">⚠️ SIN CONFIGURACIÓN</span>';
+
+          let zoneStr = isAssigned && c.zone_name
+            ? `<strong style="color:white;">${c.zone_name}</strong>`
+            : '<span style="color:var(--text-muted);">Sin zona</span>';
+
+          let customerPrice = '--';
+          let dropiCost = '--';
+
+          if (isAssigned) {
+            if (c.requires_quote) {
+              customerPrice = '<span style="color:#FBBF24; font-size:0.75rem;">Cotización req.</span>';
+              dropiCost = '<span style="color:#FBBF24; font-size:0.75rem;">Cotización req.</span>';
+            } else {
+              customerPrice = c.customer_shipping_price !== null ? `$${c.customer_shipping_price.toLocaleString('es-CL')}` : '--';
+              dropiCost = c.estimated_dropi_cost !== null ? `$${c.estimated_dropi_cost.toLocaleString('es-CL')}` : '--';
+            }
+          }
+
+          return `
+            <tr>
+              <td style="text-align:center;">
+                <input type="checkbox" class="commune-check" value="${c.commune_code}" ${isChecked} onchange="onCommuneCheckChange('${c.commune_code}', this.checked)">
+              </td>
+              <td style="font-family:monospace; font-size:0.8rem; color:var(--text-muted);">${c.commune_code}</td>
+              <td style="font-weight:600; color:white;">${c.commune_name}</td>
+              <td style="font-size:0.8rem; color:var(--text-muted);">${c.province_name}</td>
+              <td><span class="badge" style="background:rgba(255,255,255,0.05); color:#94A3B8;">${c.region_roman} • ${c.region_name}</span></td>
+              <td>${zoneStr}</td>
+              <td style="font-weight:600;">${customerPrice}</td>
+              <td style="font-weight:600; color:#F97316;">${dropiCost}</td>
+              <td>${statusBadge}</td>
+            </tr>
+          `;
+        }).join('');
+      } catch (err) {
+        tbody.innerHTML = `<tr><td colspan="9" style="text-align:center; padding:2rem; color:#F87171;">Error al consultar comunas: ${err.message}</td></tr>`;
+      }
+    }
+
+    function onCommuneCheckChange(code, checked) {
+      if (checked) {
+        selectedCommuneCodes.add(code);
+      } else {
+        selectedCommuneCodes.delete(code);
+      }
+      updateSelectedCommunesCount();
+    }
+
+    function toggleSelectAllCommunes(checked) {
+      const checkboxes = document.querySelectorAll('.commune-check');
+      checkboxes.forEach(cb => {
+        cb.checked = checked;
+        if (checked) {
+          selectedCommuneCodes.add(cb.value);
+        } else {
+          selectedCommuneCodes.delete(cb.value);
+        }
+      });
+      updateSelectedCommunesCount();
+    }
+
+    function updateSelectedCommunesCount() {
+      const countEl = document.getElementById('selected-communes-count');
+      if (countEl) countEl.textContent = selectedCommuneCodes.size;
+    }
+
+    async function assignSelectedCommunes() {
+      if (selectedCommuneCodes.size === 0) {
+        alert('Por favor selecciona al menos una comuna marcando su casilla.');
+        return;
+      }
+      const zoneId = document.getElementById('batch-target-zone-select').value;
+      if (!zoneId) {
+        alert('Por favor selecciona la Zona Destino en el desplegable.');
+        return;
+      }
+
+      const codes = Array.from(selectedCommuneCodes);
+      try {
+        const res = await fetch('/api/shipping/communes/assign', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ zone_id: zoneId, commune_codes: codes })
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert(data.message || 'Comunas asignadas correctamente.');
+          selectedCommuneCodes.clear();
+          updateSelectedCommunesCount();
+          const checkAll = document.getElementById('check-all-communes');
+          if (checkAll) checkAll.checked = false;
+          loadShippingDashboard();
+        } else {
+          alert(data.error || 'Error al asignar comunas.');
+        }
+      } catch (err) {
+        alert(`Error al asignar comunas: ${err.message}`);
+      }
+    }
+
+    async function unassignSelectedCommunes() {
+      if (selectedCommuneCodes.size === 0) {
+        alert('Por favor selecciona al menos una comuna para desasignar.');
+        return;
+      }
+      if (!confirm(`¿Deseas desasignar las ${selectedCommuneCodes.size} comunas seleccionadas para dejarlas como "Sin configuración"?`)) {
+        return;
+      }
+
+      const codes = Array.from(selectedCommuneCodes);
+      try {
+        const res = await fetch('/api/shipping/communes/unassign', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ commune_codes: codes })
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert(data.message || 'Comunas desasignadas correctamente.');
+          selectedCommuneCodes.clear();
+          updateSelectedCommunesCount();
+          const checkAll = document.getElementById('check-all-communes');
+          if (checkAll) checkAll.checked = false;
+          loadShippingDashboard();
+        } else {
+          alert(data.error || 'Error al desasignar comunas.');
+        }
+      } catch (err) {
+        alert(`Error al desasignar comunas: ${err.message}`);
+      }
+    }
+
+    // =========================================================================
+    // ETAPA 2: MOTOR DE RENTABILIDAD, COSTOS E IVA (JAVASCRIPT)
+    // =========================================================================
+
+    const profState = {
+      profiles: [],
+      activeProfile: null,
+      selectedProfileForEdit: null,
+      zones: [],
+      productsResults: [],
+      filteredResults: [],
+      currentSimProduct: null,
+      currentSimEval: null,
+      currentSimZoneId: null,
+      activeModalTab: 'calc'
+    };
+
+    function formatCLP(val) {
+      if (val === null || val === undefined || isNaN(val)) return 'Sin datos';
+      return '$' + Math.round(val).toLocaleString('es-CL');
+    }
+
+    function formatPct(val) {
+      if (val === null || val === undefined || isNaN(val)) return 'N/A';
+      return Number(val).toFixed(1) + '%';
+    }
+
+    function getStatusBadge(status) {
+      switch (status) {
+        case 'ATTRACTIVE':
+          return '<span class="badge badge-attractive">★ ATRACTIVA (≥25%)</span>';
+        case 'MODERATE':
+          return '<span class="badge badge-moderate">MODERADA (15-25%)</span>';
+        case 'LOW':
+          return '<span class="badge badge-low">BAJA (0-15%)</span>';
+        case 'LOSS':
+          return '<span class="badge badge-loss">⚠ PÉRDIDA (&lt;0%)</span>';
+        case 'INCOMPLETE':
+        default:
+          return '<span class="badge badge-incomplete">INCOMPLETA</span>';
+      }
+    }
+
+    async function loadProfitabilityDashboard() {
+      try {
+        // 1. Cargar Zonas de Despacho
+        try {
+          const allZonesRes = await fetch('/api/shipping/communes');
+          if (allZonesRes.ok) {
+            const zData = await allZonesRes.json();
+            if (zData.zones) profState.zones = zData.zones;
+          }
+        } catch {}
+
+        // 2. Cargar Perfiles Financieros
+        const pRes = await fetch('/api/profitability/profiles');
+        const pData = await pRes.json();
+        if (pData.success) {
+          profState.profiles = pData.profiles;
+          profState.activeProfile = pData.active_profile;
+          updateProfileSelectorsUI();
+        }
+
+        // 3. Cargar Resultados de Rentabilidad más Recientes
+        await loadProfitabilityProductsUI();
+
+      } catch (err) {
+        console.error('Error cargando panel de rentabilidad:', err);
+      }
+    }
+
+    function updateProfileSelectorsUI() {
+      const select = document.getElementById('prof-filter-profile');
+      if (select && profState.profiles) {
+        select.innerHTML = profState.profiles.map(p => {
+          const selected = p.id === profState.activeProfile?.id ? 'selected' : '';
+          return `<option value="${p.id}" ${selected}>${p.name} ${p.is_active ? '(Activo)' : ''}</option>`;
+        }).join('');
+      }
+
+      if (profState.activeProfile) {
+        const nameEl = document.getElementById('prof-banner-name');
+        const descEl = document.getElementById('prof-banner-desc');
+        if (nameEl) nameEl.textContent = `Perfil ${profState.activeProfile.name}`;
+        if (descEl) {
+          descEl.textContent = 
+            `Margen objetivo: ${profState.activeProfile.target_margin_pct}% | Mínimo: ${profState.activeProfile.min_acceptable_margin_pct}% | Publicidad: ${formatCLP(profState.activeProfile.estimated_ad_cost_per_order)} | Pasarela: ${(profState.activeProfile.payment_fee_pct * 100).toFixed(1)}% + ${formatCLP(profState.activeProfile.payment_fee_fixed)} | Reserva dev.: ${(profState.activeProfile.return_reserve_pct * 100).toFixed(1)}%`;
+        }
+      }
+    }
+
+    async function onProfileFilterChange() {
+      const select = document.getElementById('prof-filter-profile');
+      const profileId = select?.value;
+      if (profileId) {
+        try {
+          await fetch('/api/profitability/profiles/active', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ profile_id: profileId })
+          });
+          await loadProfitabilityDashboard();
+        } catch (e) {
+          console.error(e);
+        }
+      }
+    }
+
+    async function runBulkProfitabilityUI() {
+      const tbody = document.getElementById('profitability-table-tbody');
+      tbody.innerHTML = '<tr><td colspan="15" style="text-align:center; padding: 3rem;"><span class="spinner" style="display:inline-block; width:28px; height:28px; border-width:3px; margin-bottom:0.75rem;"></span><br><strong style="color:white;">Ejecutando motor financiero sobre el catálogo...</strong><br><span style="font-size:0.8rem; color:var(--text-muted);">Calculando impuestos, tarifas logísticas de 16 regiones y márgenes algebraicos...</span></td></tr>';
+
+      try {
+        const taxTreatment = document.getElementById('prof-filter-tax')?.value || 'TAX_CREDIT_APPLICABLE';
+        const profileId = document.getElementById('prof-filter-profile')?.value || profState.activeProfile?.id;
+
+        const res = await fetch('/api/profitability/evaluate-batch', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            profile_id: profileId,
+            tax_treatment: taxTreatment
+          })
+        });
+
+        const data = await res.json();
+        if (data.success && data.summary) {
+          await loadProfitabilityProductsUI();
+        } else {
+          tbody.innerHTML = `<tr><td colspan="15" style="text-align:center; padding: 2rem; color:#F87171;">Error al ejecutar evaluación: ${data.error || 'Respuesta inválida'}</td></tr>`;
+        }
+      } catch (err) {
+        tbody.innerHTML = `<tr><td colspan="15" style="text-align:center; padding: 2rem; color:#F87171;">Error de conexión: ${err.message}</td></tr>`;
+      }
+    }
+
+    async function loadProfitabilityProductsUI() {
+      try {
+        const res = await fetch('/api/profitability/latest');
+        const data = await res.json();
+        if (data.success && Array.isArray(data.results)) {
+          profState.productsResults = data.results;
+          profState.filteredResults = [...data.results];
+
+          // Actualizar KPIs
+          updateProfitabilityKPIs(data.results);
+
+          // Actualizar Categorías
+          const categories = Array.from(new Set(data.results.map(r => r.category).filter(Boolean)));
+          const catSelect = document.getElementById('prof-filter-category');
+          if (catSelect) {
+            const currentCat = catSelect.value;
+            catSelect.innerHTML = '<option value="">Todas las Categorías</option>' +
+              categories.map(c => `<option value="${c}" ${c === currentCat ? 'selected' : ''}>${c}</option>`).join('');
+          }
+
+          filterProfitabilityTable();
+        }
+      } catch (e) {
+        console.error('Error cargando resultados de rentabilidad:', e);
+      }
+    }
+
+    function updateProfitabilityKPIs(results) {
+      const total = results.length;
+      const attractive = results.filter(r => r.overall_classification === 'ATTRACTIVE').length;
+      const moderate = results.filter(r => r.overall_classification === 'MODERATE').length;
+      const low = results.filter(r => r.overall_classification === 'LOW').length;
+      const loss = results.filter(r => r.overall_classification === 'LOSS').length;
+      const incomplete = results.filter(r => r.overall_classification === 'INCOMPLETE').length;
+
+      document.getElementById('prof-kpi-total').textContent = total;
+      document.getElementById('prof-kpi-attractive').textContent = attractive;
+      document.getElementById('prof-kpi-moderate').textContent = moderate;
+      document.getElementById('prof-kpi-low').textContent = low;
+      document.getElementById('prof-kpi-loss').textContent = loss;
+      document.getElementById('prof-kpi-incomplete').textContent = incomplete;
+    }
+
+    function filterProfitabilityTable() {
+      const search = (document.getElementById('prof-filter-search')?.value || '').toLowerCase().trim();
+      const category = document.getElementById('prof-filter-category')?.value || '';
+      const status = document.getElementById('prof-filter-status')?.value || '';
+      const onlyStock = document.getElementById('prof-filter-stock')?.checked || false;
+
+      let list = profState.productsResults;
+
+      if (search) {
+        list = list.filter(r => 
+          (r.product_name && r.product_name.toLowerCase().includes(search)) ||
+          (r.supplier_name && r.supplier_name.toLowerCase().includes(search)) ||
+          String(r.dropi_id).includes(search)
+        );
+      }
+      if (category) {
+        list = list.filter(r => r.category === category);
+      }
+      if (status) {
+        list = list.filter(r => r.overall_classification === status);
+      }
+      if (onlyStock) {
+        list = list.filter(r => r.stock > 0);
+      }
+
+      profState.filteredResults = list;
+      renderProfitabilityTable(list);
+    }
+
+    function renderProfitabilityTable(results) {
+      const tbody = document.getElementById('profitability-table-tbody');
+      if (!tbody) return;
+
+      if (!results || results.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="15" style="text-align:center; padding: 2.5rem; color:var(--text-muted);">No se encontraron productos que coincidan con los filtros aplicados.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = results.map(r => {
+        const variantsBadge = r.has_variants 
+          ? `<span class="badge badge-new" style="margin-left:0.35rem; font-size:0.65rem;">${r.variants_count} VAR.</span>` 
+          : '';
+
+        let alertsHtml = '';
+        if (r.flags && r.flags.length > 0) {
+          const alertBadges = r.flags.map(f => {
+            if (f === 'VARIANTE_CON_MARGEN_NEGATIVO') return '<span class="badge badge-loss" title="Una o más variantes presentan pérdida">VARIANTE CON PÉRDIDA</span>';
+            if (f === 'MARGEN_NEGATIVO_EN_ALGUNA_ZONA') return '<span class="badge badge-loss" title="Presenta pérdida en al menos una zona geográfica">PÉRDIDA EN ZONA</span>';
+            if (f === 'PRECIO_SUGERIDO_ANOMALO') return '<span class="badge badge-low" title="Precio sugerido por Dropi inferior o cercano al costo">SUGERIDO ANÓMALO</span>';
+            if (f === 'PUBLICIDAD_CONSUME_MARGEN') return '<span class="badge badge-low" title="El CAC estimado supera el 50% del margen bruto">ALTO IMPACTO CAC</span>';
+            return `<span class="badge badge-incomplete">${f}</span>`;
+          }).join(' ');
+          alertsHtml = `<div style="margin-top:0.35rem; display:flex; gap:0.25rem; flex-wrap:wrap;">${alertBadges}</div>`;
+        }
+
+        const marginColor = r.avg_margin_pct !== null && r.avg_margin_pct >= 25 ? '#34D399' : (r.avg_margin_pct !== null && r.avg_margin_pct >= 15 ? '#60A5FA' : (r.avg_margin_pct !== null && r.avg_margin_pct >= 0 ? '#FBBF24' : '#F87171'));
+
+        return `<tr>
+          <td style="color:var(--text-muted); font-size:0.75rem;">${r.dropi_id}</td>
+          <td>
+            <div style="font-weight:600; color:white;">${r.product_name} ${variantsBadge}</div>
+            <div style="font-size:0.75rem; color:var(--text-muted);">${r.category} • Stock: ${r.stock}</div>
+            ${alertsHtml}
+          </td>
+          <td style="font-size:0.8rem; color:#CBD5E1;">${r.supplier_name || 'Sin proveedor'}</td>
+          <td style="font-size:0.85rem; font-weight:600; color:white;">${formatCLP(r.supplier_price)}</td>
+          <td style="font-size:0.85rem; color:var(--text-muted);">${formatCLP(r.suggested_price)}</td>
+          <td style="font-size:0.85rem; font-weight:700; color:#60A5FA;">${formatCLP(r.sale_price_used)}</td>
+          <td style="font-size:0.85rem; font-weight:700; color:#FBBF24;">${formatCLP(r.overall_min_profitable_price)}</td>
+          <td style="font-size:0.85rem; font-weight:700; color:#34D399;">${formatCLP(r.overall_recommended_price)}</td>
+          <td style="font-size:0.85rem; color:#34D399; font-weight:600;">${formatPct(r.best_margin_pct)}</td>
+          <td style="font-size:0.85rem; color:#F87171;">${formatPct(r.worst_margin_pct)}</td>
+          <td style="font-size:0.95rem; font-weight:800; color:${marginColor};">${formatPct(r.avg_margin_pct)}</td>
+          <td style="font-size:0.8rem; color:#CBD5E1;">${r.profitable_zones_count} / ${r.total_zones_count}</td>
+          <td style="font-size:0.8rem; color:#CBD5E1;">${r.evaluable_coverage_pct}%</td>
+          <td>${getStatusBadge(r.overall_classification)}</td>
+          <td>
+            <button class="btn" style="padding:0.4rem 0.75rem; font-size:0.8rem; background:rgba(37,99,235,0.25); border:1px solid rgba(37,99,235,0.5);" onclick="openProductSimulator('${r.product_id}')">
+              🔍 Simular
+            </button>
+          </td>
+        </tr>`;
+      }).join('');
+    }
+
+    // =========================================================================
+    // MODAL DE SIMULACIÓN Y CALCULADORA INTERACTIVA (Sección 10)
+    // =========================================================================
+
+    function switchSimModalTab(tabKey) {
+      profState.activeModalTab = tabKey;
+      ['calc', 'zones', 'variants'].forEach(k => {
+        const btn = document.getElementById(`sim-tab-btn-${k}`);
+        const view = document.getElementById(`sim-view-${k}`);
+        if (btn) btn.classList.toggle('active', k === tabKey);
+        if (view) view.style.display = (k === tabKey) ? 'block' : 'none';
+      });
+    }
+
+    async function openProductSimulator(productId) {
+      const prodResult = profState.productsResults.find(p => p.product_id === productId || String(p.dropi_id) === String(productId));
+      if (!prodResult) return;
+
+      profState.currentSimProduct = prodResult;
+
+      // Actualizar Título
+      document.getElementById('sim-modal-product-title').textContent = prodResult.product_name;
+      document.getElementById('sim-modal-product-subtitle').textContent = 
+        `Proveedor: ${prodResult.supplier_name} | Costo Prov: ${formatCLP(prodResult.supplier_price)} | Sugerido: ${formatCLP(prodResult.suggested_price)} | Stock: ${prodResult.stock}`;
+
+      // Configurar Selector de Zonas
+      const zoneSelect = document.getElementById('sim-select-zone');
+      if (zoneSelect && prodResult.zones_evaluations) {
+        zoneSelect.innerHTML = prodResult.zones_evaluations.map(z => {
+          return `<option value="${z.zone_id}">${z.zone_name} (${z.is_evaluable ? formatCLP(z.shipping_charged) : 'Cotización'})</option>`;
+        }).join('');
+      }
+
+      // Configurar pestaña de variantes si corresponde
+      const varTabBtn = document.getElementById('sim-tab-btn-variants');
+      if (varTabBtn) {
+        varTabBtn.style.display = prodResult.has_variants ? 'inline-block' : 'none';
+      }
+
+      // Inicializar Inputs
+      const initialPrice = prodResult.sale_price_used || prodResult.suggested_price || Math.round(prodResult.supplier_price * 1.8);
+      document.getElementById('sim-input-price').value = initialPrice;
+      document.getElementById('sim-slider-price').value = Math.min(initialPrice, 150000);
+      document.getElementById('sim-input-price-display').textContent = formatCLP(initialPrice);
+      document.getElementById('sim-select-tax').value = prodResult.tax_treatment_used || 'TAX_CREDIT_APPLICABLE';
+      document.getElementById('sim-input-ad-cost').value = prodResult.profile_used?.estimated_ad_cost_per_order || 3000;
+      document.getElementById('sim-input-name').value = `Simulación ${prodResult.product_name.slice(0, 20)} (${new Date().toLocaleDateString('es-CL')})`;
+
+      switchSimModalTab('calc');
+
+      // Abrir Modal
+      const modal = document.getElementById('modal-product-profitability');
+      if (modal) modal.classList.add('open');
+
+      // Calcular
+      await runLiveProductSimulation();
+    }
+
+    function closeProductSimulatorModal(e) {
+      if (!e || e.target.id === 'modal-product-profitability') {
+        const modal = document.getElementById('modal-product-profitability');
+        if (modal) modal.classList.remove('open');
+      }
+    }
+
+    function onSimInputPriceChange(val) {
+      const num = Number(val) || 0;
+      document.getElementById('sim-input-price').value = num;
+      document.getElementById('sim-slider-price').value = Math.min(num, 150000);
+      document.getElementById('sim-input-price-display').textContent = formatCLP(num);
+      runLiveProductSimulation();
+    }
+
+    function resetSimulationValues() {
+      if (!profState.currentSimProduct) return;
+      const orig = profState.currentSimProduct;
+      const basePrice = orig.suggested_price || Math.round(orig.supplier_price * 1.8);
+      onSimInputPriceChange(basePrice);
+      document.getElementById('sim-select-tax').value = orig.tax_treatment_used || 'TAX_CREDIT_APPLICABLE';
+      document.getElementById('sim-input-ad-cost').value = orig.profile_used?.estimated_ad_cost_per_order || 3000;
+    }
+
+    async function runLiveProductSimulation() {
+      if (!profState.currentSimProduct) return;
+
+      const salePrice = Number(document.getElementById('sim-input-price')?.value) || 0;
+      const zoneId = document.getElementById('sim-select-zone')?.value;
+      const taxTreatment = document.getElementById('sim-select-tax')?.value;
+      const adCost = Number(document.getElementById('sim-input-ad-cost')?.value) || 0;
+
+      // Llamar al endpoint /api/profitability/evaluate-product
+      try {
+        const res = await fetch('/api/profitability/evaluate-product', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            product_id: profState.currentSimProduct.product_id,
+            custom_sale_price: salePrice,
+            custom_ad_cost: adCost,
+            tax_treatment: taxTreatment,
+            profile_id: profState.activeProfile?.id
+          })
+        });
+
+        const data = await res.json();
+        if (data.success && data.evaluation) {
+          profState.currentSimEval = data.evaluation;
+          renderSimulationResults(data.evaluation, zoneId, salePrice);
+        }
+      } catch (err) {
+        console.error('Error calculando simulación en vivo:', err);
+      }
+    }
+
+    function renderSimulationResults(evaluation, selectedZoneId, currentSalePrice) {
+      // 1. Zona seleccionada actualmente para la tarjeta principal
+      const zoneEval = evaluation.zones_evaluations.find(z => z.zone_id === selectedZoneId) || evaluation.zones_evaluations[0];
+
+      if (zoneEval) {
+        // Tarjetas Principales
+        const marginEl = document.getElementById('sim-res-margin');
+        marginEl.textContent = formatPct(zoneEval.contribution_margin_pct);
+        marginEl.style.color = zoneEval.contribution_margin_pct !== null && zoneEval.contribution_margin_pct >= 25 ? '#34D399' : (zoneEval.contribution_margin_pct !== null && zoneEval.contribution_margin_pct >= 15 ? '#60A5FA' : (zoneEval.contribution_margin_pct !== null && zoneEval.contribution_margin_pct >= 0 ? '#FBBF24' : '#F87171'));
+
+        document.getElementById('sim-res-status-badge').innerHTML = getStatusBadge(zoneEval.status);
+        document.getElementById('sim-res-profit').textContent = formatCLP(zoneEval.estimated_profit);
+
+        // Precios Estratégicos
+        document.getElementById('sim-res-min-price').textContent = formatCLP(zoneEval.min_profitable_price);
+        document.getElementById('sim-res-rec-price').textContent = formatCLP(zoneEval.recommended_price);
+
+        // Desglose Contable
+        document.getElementById('sim-row-total-cust').textContent = formatCLP(zoneEval.total_customer_pays);
+        document.getElementById('sim-row-net-revenue').textContent = formatCLP(zoneEval.net_revenue);
+        document.getElementById('sim-row-vat-product').textContent = formatCLP(zoneEval.vat_debit_product);
+        document.getElementById('sim-row-vat-shipping').textContent = formatCLP(zoneEval.vat_debit_shipping);
+        document.getElementById('sim-row-vat-total').textContent = formatCLP(zoneEval.total_vat_debit);
+        document.getElementById('sim-row-tax-credit').textContent = formatCLP(zoneEval.potential_tax_credit);
+        document.getElementById('sim-row-cost-prov').textContent = formatCLP(zoneEval.effective_provider_cost);
+        document.getElementById('sim-row-cost-ship').textContent = formatCLP(zoneEval.effective_shipping_cost);
+        document.getElementById('sim-row-fee-payment').textContent = formatCLP(zoneEval.payment_fee);
+        document.getElementById('sim-row-fee-ads').textContent = formatCLP(zoneEval.ad_cost);
+        document.getElementById('sim-row-return-reserve').textContent = formatCLP(zoneEval.return_reserve);
+        document.getElementById('sim-row-logistics-margin').textContent = formatCLP(zoneEval.logistics_margin);
+      }
+
+      // 2. Tabla de Comparativa entre Zonas
+      document.getElementById('sim-zone-table-price').textContent = Math.round(currentSalePrice).toLocaleString('es-CL');
+      const zonesTbody = document.getElementById('sim-zones-table-tbody');
+      if (zonesTbody) {
+        zonesTbody.innerHTML = evaluation.zones_evaluations.map(z => {
+          return `<tr>
+            <td style="font-weight:600; color:white;">${z.zone_name}</td>
+            <td>${formatCLP(z.shipping_charged)}</td>
+            <td>${formatCLP(z.shipping_dropi_cost)}</td>
+            <td style="color:${z.logistics_margin !== null && z.logistics_margin >= 0 ? '#34D399' : '#F87171'};">${formatCLP(z.logistics_margin)}</td>
+            <td style="font-weight:600; color:white;">${formatCLP(z.total_customer_pays)}</td>
+            <td style="font-weight:700; color:${z.estimated_profit !== null && z.estimated_profit > 0 ? '#34D399' : '#F87171'};">${formatCLP(z.estimated_profit)}</td>
+            <td style="font-weight:800;">${formatPct(z.contribution_margin_pct)}</td>
+            <td style="font-weight:600; color:#FBBF24;">${formatCLP(z.min_profitable_price)}</td>
+            <td>${getStatusBadge(z.status)}</td>
+          </tr>`;
+        }).join('');
+      }
+
+      // 3. Tabla de Variantes
+      const varTbody = document.getElementById('sim-variants-table-tbody');
+      if (varTbody && evaluation.variants_evaluations) {
+        varTbody.innerHTML = evaluation.variants_evaluations.map(v => {
+          return `<tr>
+            <td style="color:var(--text-muted); font-size:0.75rem;">${v.sku || v.variant_id}</td>
+            <td style="font-weight:600; color:white;">${v.name}</td>
+            <td>${formatCLP(v.supplier_price)}</td>
+            <td>${formatCLP(v.suggested_price)}</td>
+            <td>${v.stock}</td>
+            <td style="font-weight:700; color:${v.has_loss ? '#F87171' : '#34D399'};">${formatPct(v.margin_pct)}</td>
+            <td style="font-weight:600;">${formatCLP(v.profit)}</td>
+            <td>${getStatusBadge(v.status)}</td>
+          </tr>`;
+        }).join('');
+      }
+    }
+
+    async function saveSimulationFromModal() {
+      if (!profState.currentSimEval) return;
+      const simName = document.getElementById('sim-input-name')?.value?.trim() || 'Simulación Guardada';
+      const zoneId = document.getElementById('sim-select-zone')?.value;
+      const zoneEval = profState.currentSimEval.zones_evaluations.find(z => z.zone_id === zoneId) || profState.currentSimEval.zones_evaluations[0];
+
+      try {
+        const res = await fetch('/api/profitability/simulations', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            product_id: profState.currentSimEval.product_id,
+            product_name: profState.currentSimEval.product_name,
+            simulation_name: simName,
+            input_params: {
+              sale_price: profState.currentSimEval.sale_price_used,
+              zone_id: zoneId,
+              profile_id: profState.activeProfile?.id,
+              tax_treatment: profState.currentSimEval.tax_treatment_used,
+              ad_cost: profState.currentSimEval.profile_used?.estimated_ad_cost_per_order
+            },
+            results: {
+              profit: zoneEval?.estimated_profit || 0,
+              margin_pct: zoneEval?.contribution_margin_pct || 0,
+              status: zoneEval?.status || 'INCOMPLETE',
+              min_price: zoneEval?.min_profitable_price || null,
+              rec_price: zoneEval?.recommended_price || null
+            }
+          })
+        });
+
+        const data = await res.json();
+        if (data.success) {
+          alert('¡Simulación guardada exitosamente en el historial!');
+        } else {
+          alert('Error al guardar simulación: ' + data.error);
+        }
+      } catch (e) {
+        alert('Error de conexión: ' + e.message);
+      }
+    }
+
+    // =========================================================================
+    // MODAL DE CONFIGURACIÓN DE PARÁMETROS FINANCIEROS (Sección 3)
+    // =========================================================================
+
+    function openProfilesModal() {
+      const modal = document.getElementById('modal-financial-profiles');
+      if (!modal) return;
+
+      renderProfilesPills();
+      const current = profState.activeProfile || profState.profiles[0];
+      if (current) selectProfileForForm(current.id);
+
+      modal.classList.add('open');
+    }
+
+    function closeProfilesModal(e) {
+      if (!e || e.target.id === 'modal-financial-profiles') {
+        const modal = document.getElementById('modal-financial-profiles');
+        if (modal) modal.classList.remove('open');
+      }
+    }
+
+    function renderProfilesPills() {
+      const container = document.getElementById('profiles-pills-container');
+      if (!container || !profState.profiles) return;
+
+      container.innerHTML = profState.profiles.map(p => {
+        const isActive = p.id === profState.selectedProfileForEdit?.id;
+        const isDefault = p.is_active;
+        return `<button class="btn" style="padding:0.4rem 0.8rem; font-size:0.8rem; background:${isActive ? 'var(--brand-blue)' : 'rgba(255,255,255,0.08)'};" onclick="selectProfileForForm('${p.id}')">
+          ${p.name} ${isDefault ? '★' : ''}
+        </button>`;
+      }).join('');
+    }
+
+    function selectProfileForForm(profileId) {
+      const p = profState.profiles.find(x => x.id === profileId);
+      if (!p) return;
+
+      profState.selectedProfileForEdit = p;
+      renderProfilesPills();
+
+      document.getElementById('prof-form-id').value = p.id;
+      document.getElementById('prof-form-name').value = p.name;
+      document.getElementById('prof-form-desc').value = p.description || '';
+      document.getElementById('prof-form-target-margin').value = p.target_margin_pct;
+      document.getElementById('prof-form-min-margin').value = p.min_acceptable_margin_pct;
+      document.getElementById('prof-form-ads').value = p.estimated_ad_cost_per_order;
+      document.getElementById('prof-form-vat').value = Math.round(p.vat_sales_rate * 100);
+      document.getElementById('prof-form-payment-pct').value = (p.payment_fee_pct * 100).toFixed(1);
+      document.getElementById('prof-form-payment-fixed').value = p.payment_fee_fixed;
+      document.getElementById('prof-form-returns').value = (p.return_reserve_pct * 100).toFixed(1);
+      document.getElementById('prof-form-other-costs').value = p.other_variable_costs;
+
+      const actBtn = document.getElementById('btn-activate-profile');
+      if (actBtn) {
+        actBtn.style.display = p.is_active ? 'none' : 'inline-flex';
+      }
+      document.getElementById('prof-form-msg').textContent = '';
+    }
+
+    async function activateSelectedProfile() {
+      if (!profState.selectedProfileForEdit) return;
+      try {
+        const res = await fetch('/api/profitability/profiles/active', {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ profile_id: profState.selectedProfileForEdit.id })
+        });
+        const d = await res.json();
+        if (d.success) {
+          await loadProfitabilityDashboard();
+          selectProfileForForm(profState.selectedProfileForEdit.id);
+          document.getElementById('prof-form-msg').textContent = 'Perfil activado como predeterminado.';
+          document.getElementById('prof-form-msg').style.color = '#34D399';
+        }
+      } catch (e) {
+        document.getElementById('prof-form-msg').textContent = 'Error: ' + e.message;
+        document.getElementById('prof-form-msg').style.color = '#F87171';
+      }
+    }
+
+    async function saveFinancialProfileFromModal() {
+      const id = document.getElementById('prof-form-id').value;
+      const name = document.getElementById('prof-form-name').value;
+      const description = document.getElementById('prof-form-desc').value;
+      const target_margin_pct = parseFloat(document.getElementById('prof-form-target-margin').value);
+      const min_acceptable_margin_pct = parseFloat(document.getElementById('prof-form-min-margin').value);
+      const estimated_ad_cost_per_order = parseInt(document.getElementById('prof-form-ads').value, 10);
+      const vat_sales_rate = parseFloat(document.getElementById('prof-form-vat').value) / 100;
+      const payment_fee_pct = parseFloat(document.getElementById('prof-form-payment-pct').value) / 100;
+      const payment_fee_fixed = parseInt(document.getElementById('prof-form-payment-fixed').value, 10) || 0;
+      const return_reserve_pct = parseFloat(document.getElementById('prof-form-returns').value) / 100;
+      const other_variable_costs = parseInt(document.getElementById('prof-form-other-costs').value, 10) || 0;
+
+      try {
+        const res = await fetch('/api/profitability/profiles', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            id,
+            name,
+            description,
+            target_margin_pct,
+            min_acceptable_margin_pct,
+            estimated_ad_cost_per_order,
+            vat_sales_rate,
+            payment_fee_pct,
+            payment_fee_fixed,
+            return_reserve_pct,
+            other_variable_costs
+          })
+        });
+
+        const d = await res.json();
+        if (d.success) {
+          document.getElementById('prof-form-msg').textContent = 'Parámetros guardados exitosamente.';
+          document.getElementById('prof-form-msg').style.color = '#34D399';
+          await loadProfitabilityDashboard();
+        } else {
+          document.getElementById('prof-form-msg').textContent = 'Error: ' + d.error;
+          document.getElementById('prof-form-msg').style.color = '#F87171';
+        }
+      } catch (e) {
+        document.getElementById('prof-form-msg').textContent = 'Error: ' + e.message;
+        document.getElementById('prof-form-msg').style.color = '#F87171';
+      }
+    }
+
+    loadAuth();
+    loadProducts();
+    // Sondeo en tiempo real cada 3 segundos para cambiar a CONECTADO automáticamente
+    setInterval(loadAuth, 3000);
+  </script>
+
+  <!-- Modal Interactivo de Autenticación Dropi -->
+  <div id="conn-modal-backdrop" class="modal-backdrop" onclick="closeConnModal(event)">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div style="display:flex; align-items:center; gap: 0.75rem;">
+          <span class="badge-icon">DROPI</span>
+          <h2 id="modal-title" style="font-size: 1.15rem; font-weight: 700; color: white;">Conexión Dropi Chile</h2>
+        </div>
+        <button class="modal-close-btn" onclick="closeConnModal()">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-body-content">
+        <!-- Contenido dinámico inyectado por JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Interactivo para Crear / Editar Zona de Despacho y Tarifa -->
+  <div id="zone-modal-backdrop" class="modal-backdrop" onclick="closeZoneModal(event)">
+    <div class="modal-card" style="max-width: 620px;">
+      <div class="modal-header">
+        <div style="display:flex; align-items:center; gap: 0.75rem;">
+          <span class="badge-icon">ZONA</span>
+          <h2 id="zone-modal-title" style="font-size: 1.15rem; font-weight: 700; color: white;">Crear Zona de Despacho</h2>
+        </div>
+        <button class="modal-close-btn" onclick="closeZoneModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="zone-form-id" value="">
+        
+        <div style="margin-bottom: 1rem;">
+          <label style="display:block; font-size:0.85rem; color:var(--text-muted); margin-bottom:0.4rem;">Nombre de la Zona *</label>
+          <input type="text" id="zone-form-name" class="filter-input" style="width:100%;" placeholder="ej. Santiago urbano, Regiones extremas...">
+        </div>
+
+        <div style="margin-bottom: 1rem;">
+          <label style="display:block; font-size:0.85rem; color:var(--text-muted); margin-bottom:0.4rem;">Descripción</label>
+          <input type="text" id="zone-form-description" class="filter-input" style="width:100%;" placeholder="Detalle de cobertura geográfica o condiciones...">
+        </div>
+
+        <div style="display:flex; gap:1rem; margin-bottom:1rem; flex-wrap:wrap;">
+          <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.85rem; color:white; cursor:pointer;">
+            <input type="checkbox" id="zone-form-requires-quote" onchange="toggleQuoteFields(this.checked)">
+            <strong>Requiere Cotización Directa</strong> (Zonas extremas / sin tarifa fija)
+          </label>
+        </div>
+
+        <div id="zone-rates-fields" style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin-bottom: 1rem;">
+          <div>
+            <label style="display:block; font-size:0.85rem; color:var(--text-muted); margin-bottom:0.4rem;">Tarifa Estándar al Cliente ($ CLP) *</label>
+            <input type="number" id="zone-form-customer-price" class="filter-input" style="width:100%;" value="3990" step="100">
+            <span style="font-size:0.75rem; color:var(--text-muted);">Monto a cobrar al cliente</span>
+          </div>
+          <div>
+            <label style="display:block; font-size:0.85rem; color:var(--text-muted); margin-bottom:0.4rem;">Costo Logístico Estimado Dropi ($ CLP) *</label>
+            <input type="number" id="zone-form-dropi-cost" class="filter-input" style="width:100%;" value="4500" step="100">
+            <span style="font-size:0.75rem; color:var(--text-muted);">Monto estimado que cobra Dropi</span>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:1rem; margin-bottom:1.25rem; flex-wrap:wrap;">
+          <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.85rem; color:var(--text-muted); cursor:pointer;">
+            <input type="checkbox" id="zone-form-price-vat" checked> Tarifa cliente incluye IVA (19%)
+          </label>
+          <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.85rem; color:var(--text-muted); cursor:pointer;">
+            <input type="checkbox" id="zone-form-cost-vat" checked> Costo Dropi incluye IVA (19%)
+          </label>
+        </div>
+
+        <div style="margin-bottom: 1.25rem;">
+          <label style="display:block; font-size:0.85rem; color:var(--text-muted); margin-bottom:0.4rem;">Observaciones / Notas de la Tarifa</label>
+          <input type="text" id="zone-form-notes" class="filter-input" style="width:100%;" placeholder="ej. Tarifa de referencia de Blue Express...">
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid rgba(255,255,255,0.08); padding-top:1rem;">
+          <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.85rem; color:white; cursor:pointer;">
+            <input type="checkbox" id="zone-form-active" checked> Zona Activa
+          </label>
+          <div style="display:flex; gap:0.75rem;">
+            <button class="btn" style="background:transparent; border:1px solid var(--border);" onclick="closeZoneModal()">Cancelar</button>
+            <button class="btn btn-orange" onclick="saveZoneForm()">Guardar Zona y Tarifa</button>
+          </div>
+        </div>
+        <div id="zone-form-error" style="color:#F87171; font-size:0.85rem; margin-top:0.75rem;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Interactivo: Calculadora de Rentabilidad por Producto (Sección 10) -->
+  <div id="modal-product-profitability" class="modal-backdrop" onclick="closeProductSimulatorModal(event)">
+    <div class="modal-card" style="max-width: 980px; max-height: 90vh; display: flex; flex-direction: column;">
+      <div class="modal-header">
+        <div style="display:flex; align-items:center; gap: 0.75rem;">
+          <span class="badge-icon">RENTABILIDAD</span>
+          <div>
+            <h2 id="sim-modal-product-title" style="font-size: 1.15rem; font-weight: 700; color: white;">Calculadora Financiera de Producto</h2>
+            <p id="sim-modal-product-subtitle" style="font-size: 0.78rem; color: var(--text-muted);">Simulación de márgenes, impuestos y precios recomendados</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" onclick="closeProductSimulatorModal()">&times;</button>
+      </div>
+
+      <!-- Pestañas internas del Modal -->
+      <div style="display:flex; gap:1rem; padding: 0.75rem 1.5rem; background: rgba(0,0,0,0.2); border-bottom: 1px solid var(--border);">
+        <button id="sim-tab-btn-calc" class="tab-btn active" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;" onclick="switchSimModalTab('calc')">🧮 Simulación & Desglose</button>
+        <button id="sim-tab-btn-zones" class="tab-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;" onclick="switchSimModalTab('zones')">🗺️ Comparativa entre Zonas</button>
+        <button id="sim-tab-btn-variants" class="tab-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; display:none;" onclick="switchSimModalTab('variants')">🏷️ Variantes de Producto</button>
+      </div>
+
+      <div class="modal-body" style="overflow-y: auto; padding: 1.5rem; flex: 1;">
+        <!-- VISTA 1: CALCULADORA Y DESGLOSE -->
+        <div id="sim-view-calc">
+          <div style="display:grid; grid-template-columns: 360px 1fr; gap: 1.5rem;">
+            <!-- Controles de Simulación (Izquierda) -->
+            <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: white; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.5rem;">
+                ⚙️ Variables de Simulación
+              </h4>
+
+              <div style="margin-bottom: 1rem;">
+                <div style="display:flex; justify-content:space-between; margin-bottom:0.3rem;">
+                  <label style="font-size:0.8rem; color:var(--text-muted);">Precio de Venta Final (IVA inc.):</label>
+                  <strong style="color:#60A5FA; font-size:0.9rem;" id="sim-input-price-display">$0</strong>
+                </div>
+                <input type="number" id="sim-input-price" class="filter-input" style="width:100%;" step="500" oninput="onSimInputPriceChange(this.value)">
+                <input type="range" id="sim-slider-price" min="1000" max="150000" step="500" style="width:100%; margin-top:0.4rem;" oninput="onSimInputPriceChange(this.value)">
+                <span style="font-size:0.7rem; color:var(--text-muted);">Desliza o escribe para calcular en tiempo real</span>
+              </div>
+
+              <div style="margin-bottom: 1rem;">
+                <label style="display:block; font-size:0.8rem; color:var(--text-muted); margin-bottom:0.3rem;">Zona de Despacho:</label>
+                <select id="sim-select-zone" class="filter-input" style="width:100%;" onchange="runLiveProductSimulation()">
+                  <!-- Dinámico -->
+                </select>
+              </div>
+
+              <div style="margin-bottom: 1rem;">
+                <label style="display:block; font-size:0.8rem; color:var(--text-muted); margin-bottom:0.3rem;">Tratamiento Tributario Proveedor:</label>
+                <select id="sim-select-tax" class="filter-input" style="width:100%; font-size:0.825rem;" onchange="runLiveProductSimulation()">
+                  <option value="TAX_CREDIT_APPLICABLE">Factura afecta con crédito fiscal</option>
+                  <option value="NO_TAX_CREDIT">Sin derecho a crédito fiscal</option>
+                  <option value="PRICE_NET_WITHOUT_VAT">Precio informado neto (sin IVA)</option>
+                  <option value="UNKNOWN_CONSERVATIVE">Escenario conservador</option>
+                </select>
+              </div>
+
+              <div style="margin-bottom: 1rem;">
+                <label style="display:block; font-size:0.8rem; color:var(--text-muted); margin-bottom:0.3rem;">Inversión Publicitaria por Pedido ($):</label>
+                <input type="number" id="sim-input-ad-cost" class="filter-input" style="width:100%;" value="3000" step="500" oninput="runLiveProductSimulation()">
+              </div>
+
+              <div style="margin-bottom: 1.25rem;">
+                <label style="display:block; font-size:0.8rem; color:var(--text-muted); margin-bottom:0.3rem;">Nombre para Guardar Simulación:</label>
+                <input type="text" id="sim-input-name" class="filter-input" style="width:100%;" placeholder="ej. Campaña Cyber / Venta Santiago">
+              </div>
+
+              <div style="display:flex; gap:0.5rem; flex-direction:column;">
+                <button class="btn btn-orange" style="width:100%; justify-content:center;" onclick="saveSimulationFromModal()">
+                  💾 Guardar Simulación
+                </button>
+                <button class="btn" style="width:100%; justify-content:center; background:transparent; border:1px solid var(--border);" onclick="resetSimulationValues()">
+                  ↺ Restablecer Valores Originales
+                </button>
+              </div>
+            </div>
+
+            <!-- Resultados en Tiempo Real (Derecha) -->
+            <div>
+              <!-- Tarjetas Principales -->
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem;">
+                  <span style="font-size:0.8rem; color:var(--text-muted);">Margen de Contribución:</span>
+                  <div id="sim-res-margin" style="font-size: 2.2rem; font-weight: 800; color: #34D399; margin: 0.25rem 0;">--%</div>
+                  <div id="sim-res-status-badge"></div>
+                </div>
+
+                <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem;">
+                  <span style="font-size:0.8rem; color:var(--text-muted);">Utilidad Estimada por Pedido:</span>
+                  <div id="sim-res-profit" style="font-size: 2.2rem; font-weight: 800; color: white; margin: 0.25rem 0;">$--</div>
+                  <span style="font-size:0.75rem; color:var(--text-muted);">Ingreso Neto menos todos los Costos</span>
+                </div>
+              </div>
+
+              <!-- Precios Estratégicos -->
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 10px; padding: 0.9rem;">
+                  <div style="font-size:0.75rem; color:#FBBF24; font-weight:700;">PRECIO MÍNIMO RENTABLE (Margen 15%)</div>
+                  <div id="sim-res-min-price" style="font-size: 1.4rem; font-weight: 800; color: white; margin-top:0.25rem;">$--</div>
+                  <span style="font-size:0.7rem; color:var(--text-muted);">Para no entrar en rentabilidad deficiente</span>
+                </div>
+                <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 10px; padding: 0.9rem;">
+                  <div style="font-size:0.75rem; color:#34D399; font-weight:700;">PRECIO RECOMENDADO (Margen 25%)</div>
+                  <div id="sim-res-rec-price" style="font-size: 1.4rem; font-weight: 800; color: white; margin-top:0.25rem;">$--</div>
+                  <span style="font-size:0.7rem; color:var(--text-muted);">Para cumplir objetivo del perfil activo</span>
+                </div>
+              </div>
+
+              <!-- Desglose Tributario y de Costos -->
+              <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem;">
+                <h5 style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                  Desglose Detallado de Ingresos, Impuestos y Costos
+                </h5>
+
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; font-size: 0.825rem;">
+                  <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:0.35rem;">
+                    <span style="color:var(--text-muted);">Total Pagado por Cliente:</span>
+                    <strong id="sim-row-total-cust" style="color:white;">$--</strong>
+                  </div>
+                  <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:0.35rem;">
+                    <span style="color:var(--text-muted);">Ingreso Neto Total:</span>
+                    <strong id="sim-row-net-revenue" style="color:white;">$--</strong>
+                  </div>
+
+                  <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:0.35rem;">
+                    <span style="color:var(--text-muted);">IVA Débito Producto:</span>
+                    <span id="sim-row-vat-product">$--</span>
+                  </div>
+                  <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:0.35rem;">
+                    <span style="color:var(--text-muted);">IVA Débito Despacho:</span>
+                    <span id="sim-row-vat-shipping">$--</span>
+                  </div>
+
+                  <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:0.35rem;">
+                    <span style="color:var(--text-muted);">IVA Débito Total (F29):</span>
+                    <span id="sim-row-vat-total" style="color:#FBBF24;">$--</span>
+                  </div>
+                  <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:0.35rem;">
+                    <span style="color:var(--text-muted);">Crédito Fiscal Potencial:</span>
+                    <span id="sim-row-tax-credit" style="color:#34D399;">$--</span>
+                  </div>
+
+                  <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:0.35rem;">
+                    <span style="color:var(--text-muted);">Costo Efectivo Proveedor:</span>
+                    <span id="sim-row-cost-prov">$--</span>
+                  </div>
+                  <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:0.35rem;">
+                    <span style="color:var(--text-muted);">Costo Logístico Dropi:</span>
+                    <span id="sim-row-cost-ship">$--</span>
+                  </div>
+
+                  <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:0.35rem;">
+                    <span style="color:var(--text-muted);">Comisión Pasarela Pago:</span>
+                    <span id="sim-row-fee-payment">$--</span>
+                  </div>
+                  <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:0.35rem;">
+                    <span style="color:var(--text-muted);">Inversión Publicitaria (CAC):</span>
+                    <span id="sim-row-fee-ads">$--</span>
+                  </div>
+
+                  <div style="display:flex; justify-content:space-between;">
+                    <span style="color:var(--text-muted);">Reserva de Devoluciones:</span>
+                    <span id="sim-row-return-reserve">$--</span>
+                  </div>
+                  <div style="display:flex; justify-content:space-between;">
+                    <span style="color:var(--text-muted);">Margen Logístico Neto:</span>
+                    <span id="sim-row-logistics-margin">$--</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- VISTA 2: COMPARATIVA ENTRE TODAS LAS ZONAS -->
+        <div id="sim-view-zones" style="display:none;">
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">
+            Rendimiento económico de este producto aplicando el precio de venta seleccionado ($<span id="sim-zone-table-price">0</span>) en cada una de las zonas geográficas configuradas:
+          </p>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Zona Geográfica</th>
+                  <th>Tarifa Cliente</th>
+                  <th>Costo Dropi</th>
+                  <th>Margen Logístico</th>
+                  <th>Total Cliente</th>
+                  <th>Utilidad Neta</th>
+                  <th>Margen (%)</th>
+                  <th>Mínimo Rentable</th>
+                  <th>Semáforo</th>
+                </tr>
+              </thead>
+              <tbody id="sim-zones-table-tbody">
+                <!-- Inyectado por JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- VISTA 3: VARIANTES DE PRODUCTO -->
+        <div id="sim-view-variants" style="display:none;">
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">
+            Evaluación independiente por cada variante con sus costos y precios de catálogo específicos:
+          </p>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>SKU / ID</th>
+                  <th>Variante</th>
+                  <th>Costo Proveedor</th>
+                  <th>Precio Sugerido</th>
+                  <th>Stock</th>
+                  <th>Margen Estimado</th>
+                  <th>Utilidad</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody id="sim-variants-table-tbody">
+                <!-- Inyectado por JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Interactivo: Configuración de Parámetros Financieros (Sección 3) -->
+  <div id="modal-financial-profiles" class="modal-backdrop" onclick="closeProfilesModal(event)">
+    <div class="modal-card" style="max-width: 680px;">
+      <div class="modal-header">
+        <div style="display:flex; align-items:center; gap: 0.75rem;">
+          <span class="badge-icon">PARÁMETROS</span>
+          <h2 style="font-size: 1.15rem; font-weight: 700; color: white;">Configuración de Parámetros Financieros</h2>
+        </div>
+        <button class="modal-close-btn" onclick="closeProfilesModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:0.825rem; color:var(--text-muted); margin-bottom:1.25rem;">
+          Administra los perfiles de análisis financiero. Los cambios aplican de manera analítica en las simulaciones y no modifican Pancocos ni Dropi.
+        </p>
+
+        <!-- Selector de Perfiles -->
+        <div style="margin-bottom:1.25rem;">
+          <label style="display:block; font-size:0.85rem; color:var(--text-muted); margin-bottom:0.4rem;">Seleccionar Perfil a Editar / Activar:</label>
+          <div id="profiles-pills-container" style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+            <!-- Píldoras inyectadas por JS -->
+          </div>
+        </div>
+
+        <div style="background:rgba(15, 23, 42, 0.6); border:1px solid var(--border); border-radius:12px; padding:1.25rem; margin-bottom:1.25rem;">
+          <input type="hidden" id="prof-form-id" value="">
+          
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin-bottom:1rem;">
+            <div>
+              <label style="display:block; font-size:0.8rem; color:var(--text-muted); margin-bottom:0.3rem;">Nombre del Perfil *</label>
+              <input type="text" id="prof-form-name" class="filter-input" style="width:100%;">
+            </div>
+            <div>
+              <label style="display:block; font-size:0.8rem; color:var(--text-muted); margin-bottom:0.3rem;">Moneda Oficial</label>
+              <input type="text" id="prof-form-currency" class="filter-input" style="width:100%;" value="CLP" readonly>
+            </div>
+          </div>
+
+          <div style="margin-bottom:1rem;">
+            <label style="display:block; font-size:0.8rem; color:var(--text-muted); margin-bottom:0.3rem;">Descripción</label>
+            <input type="text" id="prof-form-desc" class="filter-input" style="width:100%;">
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin-bottom:1rem;">
+            <div>
+              <label style="display:block; font-size:0.8rem; color:var(--text-muted); margin-bottom:0.3rem;">Margen Objetivo (%) *</label>
+              <input type="number" id="prof-form-target-margin" class="filter-input" style="width:100%;" step="0.5" value="25">
+            </div>
+            <div>
+              <label style="display:block; font-size:0.8rem; color:var(--text-muted); margin-bottom:0.3rem;">Margen Mínimo Aceptable (%) *</label>
+              <input type="number" id="prof-form-min-margin" class="filter-input" style="width:100%;" step="0.5" value="15">
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin-bottom:1rem;">
+            <div>
+              <label style="display:block; font-size:0.8rem; color:var(--text-muted); margin-bottom:0.3rem;">Publicidad Estimada por Pedido ($ CLP) *</label>
+              <input type="number" id="prof-form-ads" class="filter-input" style="width:100%;" step="100" value="3000">
+            </div>
+            <div>
+              <label style="display:block; font-size:0.8rem; color:var(--text-muted); margin-bottom:0.3rem;">Tasa IVA Ventas (%) *</label>
+              <input type="number" id="prof-form-vat" class="filter-input" style="width:100%;" step="1" value="19">
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin-bottom:1rem;">
+            <div>
+              <label style="display:block; font-size:0.8rem; color:var(--text-muted); margin-bottom:0.3rem;">Comisión Pasarela Pago (%) *</label>
+              <input type="number" id="prof-form-payment-pct" class="filter-input" style="width:100%;" step="0.1" value="3.0">
+            </div>
+            <div>
+              <label style="display:block; font-size:0.8rem; color:var(--text-muted); margin-bottom:0.3rem;">Comisión Pasarela Fija ($ CLP)</label>
+              <input type="number" id="prof-form-payment-fixed" class="filter-input" style="width:100%;" step="10" value="0">
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem;">
+            <div>
+              <label style="display:block; font-size:0.8rem; color:var(--text-muted); margin-bottom:0.3rem;">Reserva para Devoluciones (%) *</label>
+              <input type="number" id="prof-form-returns" class="filter-input" style="width:100%;" step="0.5" value="2.0">
+            </div>
+            <div>
+              <label style="display:block; font-size:0.8rem; color:var(--text-muted); margin-bottom:0.3rem;">Otros Costos Variables ($ CLP)</label>
+              <input type="number" id="prof-form-other-costs" class="filter-input" style="width:100%;" step="50" value="0">
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid rgba(255,255,255,0.08); padding-top:1rem;">
+          <button id="btn-activate-profile" class="btn" style="background:rgba(16, 185, 129, 0.2); border:1px solid rgba(16, 185, 129, 0.4); color:#34D399;" onclick="activateSelectedProfile()">
+            ✓ Activar como Perfil Predeterminado
+          </button>
+          <div style="display:flex; gap:0.75rem;">
+            <button class="btn" style="background:transparent; border:1px solid var(--border);" onclick="closeProfilesModal()">Cerrar</button>
+            <button class="btn btn-orange" onclick="saveFinancialProfileFromModal()">Guardar Parámetros</button>
+          </div>
+        </div>
+        <div id="prof-form-msg" style="margin-top:0.75rem; font-size:0.85rem;"></div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

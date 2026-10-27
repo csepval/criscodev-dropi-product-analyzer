@@ -1,0 +1,4 @@
+# Requerimientos para el importador Python de Dropi Chile
+# La biblioteca estándar urllib se utiliza por defecto para máxima portabilidad,
+# pero se recomienda requests para integraciones avanzadas y reintentos.
+urllib3>=2.0.0
