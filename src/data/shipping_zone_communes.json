@@ -2381,44 +2381,44 @@
   },
   {
     "id": "szc_13101",
-    "zone_id": "zone_zona_comunas_1793110306749_6752",
+    "zone_id": "zone_zona_comunas_1793197007032_7035",
     "region_code": "13",
     "commune_code": "13101",
-    "created_at": "2026-10-27T14:11:46.760Z"
+    "created_at": "2026-10-28T14:16:47.047Z"
   },
   {
     "id": "szc_13102",
-    "zone_id": "zone_zona_comunas_1793110306749_6752",
+    "zone_id": "zone_zona_comunas_1793197007032_7035",
     "region_code": "13",
     "commune_code": "13102",
-    "created_at": "2026-10-27T14:11:46.760Z"
+    "created_at": "2026-10-28T14:16:47.047Z"
   },
   {
     "id": "szc_13103",
-    "zone_id": "zone_zona_beta_1793110306772_6774",
+    "zone_id": "zone_zona_beta_1793197007066_7071",
     "region_code": "13",
     "commune_code": "13103",
-    "created_at": "2026-10-27T14:11:46.788Z"
+    "created_at": "2026-10-28T14:16:47.090Z"
   },
   {
     "id": "szc_13104",
-    "zone_id": "zone_zona_inactiva_1793110306805_6808",
+    "zone_id": "zone_zona_inactiva_1793197007115_7119",
     "region_code": "13",
     "commune_code": "13104",
-    "created_at": "2026-10-27T14:11:46.815Z"
+    "created_at": "2026-10-28T14:16:47.127Z"
   },
   {
     "id": "szc_13105",
-    "zone_id": "zone_zona_vigencia_1793110306825_6828",
+    "zone_id": "zone_zona_vigencia_1793197007147_7152",
     "region_code": "13",
     "commune_code": "13105",
-    "created_at": "2026-10-27T14:11:46.834Z"
+    "created_at": "2026-10-28T14:16:47.162Z"
   },
   {
     "id": "szc_13106",
-    "zone_id": "zone_zona_con_refs_1793110306855_6857",
+    "zone_id": "zone_zona_con_refs_1793197007195_7200",
     "region_code": "13",
     "commune_code": "13106",
-    "created_at": "2026-10-27T14:11:46.862Z"
+    "created_at": "2026-10-28T14:16:47.208Z"
   }
 ]

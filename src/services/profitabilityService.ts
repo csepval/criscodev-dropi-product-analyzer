@@ -103,6 +103,8 @@ export interface ProductProfitabilityResult {
   product_id: string;
   dropi_id: number;
   product_name: string;
+  image_url?: string | null;
+  product_url?: string | null;
   supplier_name: string;
   category: string;
   supplier_price: number;
@@ -849,6 +851,8 @@ export async function calculateProductProfitability(params: {
     product_id: product.id,
     dropi_id: product.dropi_id,
     product_name: product.name,
+    image_url: product.image_url || null,
+    product_url: product.product_url || (product.dropi_id ? `https://app.dropi.cl/dashboard/search?product=${product.dropi_id}` : null),
     supplier_name: product.supplier_name,
     category: product.category,
     supplier_price: supplierPrice,

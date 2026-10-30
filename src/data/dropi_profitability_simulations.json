@@ -1,5 +1,115 @@
 [
   {
+    "id": "sim_1793197025138",
+    "product_id": "prod_test_sim",
+    "product_name": "Producto Simulado",
+    "simulation_name": "Simulación Black Friday",
+    "input_params": {
+      "sale_price": 29990,
+      "zone_id": "zone_santiago_urbano",
+      "profile_id": "profile_standard",
+      "tax_treatment": "TAX_CREDIT_APPLICABLE",
+      "ad_cost": 3500
+    },
+    "results": {
+      "profit": 6500,
+      "margin_pct": 25.5,
+      "status": "ATTRACTIVE",
+      "min_price": 22000,
+      "rec_price": 29000
+    },
+    "created_by": "admin",
+    "created_at": "2026-10-28T14:17:05.138Z"
+  },
+  {
+    "id": "sim_1793195374236",
+    "product_id": "prod_test_sim",
+    "product_name": "Producto Simulado",
+    "simulation_name": "Simulación Black Friday",
+    "input_params": {
+      "sale_price": 29990,
+      "zone_id": "zone_santiago_urbano",
+      "profile_id": "profile_standard",
+      "tax_treatment": "TAX_CREDIT_APPLICABLE",
+      "ad_cost": 3500
+    },
+    "results": {
+      "profit": 6500,
+      "margin_pct": 25.5,
+      "status": "ATTRACTIVE",
+      "min_price": 22000,
+      "rec_price": 29000
+    },
+    "created_by": "admin",
+    "created_at": "2026-10-28T13:49:34.236Z"
+  },
+  {
+    "id": "sim_1793143788760",
+    "product_id": "prod_test_sim",
+    "product_name": "Producto Simulado",
+    "simulation_name": "Simulación Black Friday",
+    "input_params": {
+      "sale_price": 29990,
+      "zone_id": "zone_santiago_urbano",
+      "profile_id": "profile_standard",
+      "tax_treatment": "TAX_CREDIT_APPLICABLE",
+      "ad_cost": 3500
+    },
+    "results": {
+      "profit": 6500,
+      "margin_pct": 25.5,
+      "status": "ATTRACTIVE",
+      "min_price": 22000,
+      "rec_price": 29000
+    },
+    "created_by": "admin",
+    "created_at": "2026-10-27T23:29:48.760Z"
+  },
+  {
+    "id": "sim_1793122017642",
+    "product_id": "prod_test_sim",
+    "product_name": "Producto Simulado",
+    "simulation_name": "Simulación Black Friday",
+    "input_params": {
+      "sale_price": 29990,
+      "zone_id": "zone_santiago_urbano",
+      "profile_id": "profile_standard",
+      "tax_treatment": "TAX_CREDIT_APPLICABLE",
+      "ad_cost": 3500
+    },
+    "results": {
+      "profit": 6500,
+      "margin_pct": 25.5,
+      "status": "ATTRACTIVE",
+      "min_price": 22000,
+      "rec_price": 29000
+    },
+    "created_by": "admin",
+    "created_at": "2026-10-27T17:26:57.642Z"
+  },
+  {
+    "id": "sim_1793120124836",
+    "product_id": "prod_test_sim",
+    "product_name": "Producto Simulado",
+    "simulation_name": "Simulación Black Friday",
+    "input_params": {
+      "sale_price": 29990,
+      "zone_id": "zone_santiago_urbano",
+      "profile_id": "profile_standard",
+      "tax_treatment": "TAX_CREDIT_APPLICABLE",
+      "ad_cost": 3500
+    },
+    "results": {
+      "profit": 6500,
+      "margin_pct": 25.5,
+      "status": "ATTRACTIVE",
+      "min_price": 22000,
+      "rec_price": 29000
+    },
+    "created_by": "admin",
+    "created_at": "2026-10-27T16:55:24.836Z"
+  },
+  {
     "id": "sim_1793110309045",
     "product_id": "prod_test_sim",
     "product_name": "Producto Simulado",

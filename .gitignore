@@ -33,3 +33,10 @@ yarn-error.log*
 # OS Files
 .DS_Store
 Thumbs.db
+.vscode/
+
+# Browser persistent profiles
+src/data/chatgpt_profile/
+src/data/copilot_profile/
+src/data/*.log
+

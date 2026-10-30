@@ -1,5 +1,51 @@
 [
   {
+    "id": "job_live_1793321052670",
+    "job_type": "API_MANUAL",
+    "filters_used": {
+      "keywords": "",
+      "category": "Mascotas",
+      "max_price": 50000,
+      "limit": 50,
+      "categoryuser": [
+        1,
+        2
+      ]
+    },
+    "total_fetched": 50,
+    "total_inserted": 1,
+    "total_updated": 49,
+    "total_flagged": 47,
+    "total_errors": 0,
+    "duration_ms": 668,
+    "status": "COMPLETED",
+    "diagnostic_message": "Importación completada: 50 productos procesados (1 nuevos, 49 actualizados, 47 con alertas).",
+    "finished_at": "2026-10-30T00:44:13.338Z"
+  },
+  {
+    "id": "job_live_1793193810363",
+    "job_type": "API_MANUAL",
+    "filters_used": {
+      "keywords": "",
+      "category": "Mascotas",
+      "max_price": 50000,
+      "limit": 50,
+      "categoryuser": [
+        1,
+        2
+      ]
+    },
+    "total_fetched": 272,
+    "total_inserted": 268,
+    "total_updated": 4,
+    "total_flagged": 209,
+    "total_errors": 0,
+    "duration_ms": 2621,
+    "status": "COMPLETED",
+    "diagnostic_message": "Importación completada: 272 productos procesados (268 nuevos, 4 actualizados, 209 con alertas).",
+    "finished_at": "2026-10-28T13:23:32.984Z"
+  },
+  {
     "id": "job_live_1793061779591",
     "job_type": "API_MANUAL",
     "filters_used": {

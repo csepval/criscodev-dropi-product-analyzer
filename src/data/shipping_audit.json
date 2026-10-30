@@ -3781,5 +3781,1643 @@
     },
     "changed_by": "unit-tester",
     "changed_at": "2026-10-27T14:11:46.868Z"
+  },
+  {
+    "id": "audit_1793120037303",
+    "rate_id": "rate_zone_zona_test_especial_1793120037296_7303_7303",
+    "zone_id": "zone_zona_test_especial_1793120037296_7303",
+    "action": "CREATE_ZONE",
+    "previous_values": null,
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_test_especial_1793120037296_7303",
+        "name": "Zona Test Especial 1793120037296",
+        "description": "Zona de pruebas unitarias",
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-27T16:53:57.302Z",
+        "updated_at": "2026-10-27T16:53:57.302Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_test_especial_1793120037296_7303_7303",
+        "zone_id": "zone_zona_test_especial_1793120037296_7303",
+        "customer_shipping_price": 6500,
+        "estimated_dropi_cost": 6000,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-27T16:53:57.302Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-27T16:53:57.302Z",
+        "updated_at": "2026-10-27T16:53:57.302Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-27T16:53:57.302Z"
+  },
+  {
+    "id": "audit_1793120037643",
+    "rate_id": "rate_zone_zona_edicin_1793120037639_7643_7643",
+    "zone_id": "zone_zona_edicin_1793120037639_7643",
+    "action": "CREATE_ZONE",
+    "previous_values": null,
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_edicin_1793120037639_7643",
+        "name": "Zona Edición 1793120037639",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-27T16:53:57.643Z",
+        "updated_at": "2026-10-27T16:53:57.643Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_edicin_1793120037639_7643_7643",
+        "zone_id": "zone_zona_edicin_1793120037639_7643",
+        "customer_shipping_price": 4000,
+        "estimated_dropi_cost": 4500,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-27T16:53:57.643Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-27T16:53:57.643Z",
+        "updated_at": "2026-10-27T16:53:57.643Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-27T16:53:57.643Z"
+  },
+  {
+    "id": "audit_1793120037651",
+    "rate_id": "rate_zone_zona_edicin_1793120037639_7643_7651",
+    "zone_id": "zone_zona_edicin_1793120037639_7643",
+    "action": "UPDATE_ZONE_OR_RATE",
+    "previous_values": {
+      "zone": {
+        "id": "zone_zona_edicin_1793120037639_7643",
+        "name": "Zona Edición 1793120037639",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-27T16:53:57.643Z",
+        "updated_at": "2026-10-27T16:53:57.643Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_edicin_1793120037639_7643_7643",
+        "zone_id": "zone_zona_edicin_1793120037639_7643",
+        "customer_shipping_price": 4000,
+        "estimated_dropi_cost": 4500,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-27T16:53:57.643Z",
+        "valid_until": "2026-10-27T16:53:57.651Z",
+        "is_active": false,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-27T16:53:57.643Z",
+        "updated_at": "2026-10-27T16:53:57.651Z"
+      }
+    },
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_edicin_1793120037639_7643",
+        "name": "Zona Edición 1793120037639",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-27T16:53:57.643Z",
+        "updated_at": "2026-10-27T16:53:57.651Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_edicin_1793120037639_7643_7651",
+        "zone_id": "zone_zona_edicin_1793120037639_7643",
+        "customer_shipping_price": 4990,
+        "estimated_dropi_cost": 4800,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-27T16:53:57.651Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": "Tarifa ajustada por alza de combustible",
+        "created_at": "2026-10-27T16:53:57.651Z",
+        "updated_at": "2026-10-27T16:53:57.651Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-27T16:53:57.651Z"
+  },
+  {
+    "id": "audit_1793120037657",
+    "rate_id": "rate_zone_zona_comunas_1793120037654_7656_7657",
+    "zone_id": "zone_zona_comunas_1793120037654_7656",
+    "action": "CREATE_ZONE",
+    "previous_values": null,
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_comunas_1793120037654_7656",
+        "name": "Zona Comunas 1793120037654",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-27T16:53:57.656Z",
+        "updated_at": "2026-10-27T16:53:57.656Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_comunas_1793120037654_7656_7657",
+        "zone_id": "zone_zona_comunas_1793120037654_7656",
+        "customer_shipping_price": 5000,
+        "estimated_dropi_cost": 5000,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-27T16:53:57.656Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-27T16:53:57.656Z",
+        "updated_at": "2026-10-27T16:53:57.656Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-27T16:53:57.656Z"
+  },
+  {
+    "id": "audit_1793120037667",
+    "zone_id": "zone_zona_comunas_1793120037654_7656",
+    "action": "ASSIGN_COMMUNES",
+    "previous_values": {
+      "previous_assignments": 2
+    },
+    "new_values": {
+      "assigned_codes": [
+        "13101",
+        "13102"
+      ],
+      "target_zone": "Zona Comunas 1793120037654"
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-27T16:53:57.667Z"
+  },
+  {
+    "id": "audit_1793120037676",
+    "rate_id": "rate_zone_zona_alpha_1793120037673_7676_7676",
+    "zone_id": "zone_zona_alpha_1793120037673_7676",
+    "action": "CREATE_ZONE",
+    "previous_values": null,
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_alpha_1793120037673_7676",
+        "name": "Zona Alpha 1793120037673",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-27T16:53:57.676Z",
+        "updated_at": "2026-10-27T16:53:57.676Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_alpha_1793120037673_7676_7676",
+        "zone_id": "zone_zona_alpha_1793120037673_7676",
+        "customer_shipping_price": 3990,
+        "estimated_dropi_cost": 3990,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-27T16:53:57.676Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-27T16:53:57.676Z",
+        "updated_at": "2026-10-27T16:53:57.676Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-27T16:53:57.676Z"
+  },
+  {
+    "id": "audit_1793120037682",
+    "rate_id": "rate_zone_zona_beta_1793120037678_7682_7682",
+    "zone_id": "zone_zona_beta_1793120037678_7682",
+    "action": "CREATE_ZONE",
+    "previous_values": null,
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_beta_1793120037678_7682",
+        "name": "Zona Beta 1793120037678",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-27T16:53:57.682Z",
+        "updated_at": "2026-10-27T16:53:57.682Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_beta_1793120037678_7682_7682",
+        "zone_id": "zone_zona_beta_1793120037678_7682",
+        "customer_shipping_price": 3990,
+        "estimated_dropi_cost": 3990,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-27T16:53:57.682Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-27T16:53:57.682Z",
+        "updated_at": "2026-10-27T16:53:57.682Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-27T16:53:57.682Z"
+  },
+  {
+    "id": "audit_1793120037688",
+    "zone_id": "zone_zona_alpha_1793120037673_7676",
+    "action": "ASSIGN_COMMUNES",
+    "previous_values": {
+      "previous_assignments": 1
+    },
+    "new_values": {
+      "assigned_codes": [
+        "13103"
+      ],
+      "target_zone": "Zona Alpha 1793120037673"
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-27T16:53:57.688Z"
+  },
+  {
+    "id": "audit_1793120037697",
+    "zone_id": "zone_zona_beta_1793120037678_7682",
+    "action": "ASSIGN_COMMUNES",
+    "previous_values": {
+      "previous_assignments": 1
+    },
+    "new_values": {
+      "assigned_codes": [
+        "13103"
+      ],
+      "target_zone": "Zona Beta 1793120037678"
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-27T16:53:57.697Z"
+  },
+  {
+    "id": "audit_1793120037720",
+    "rate_id": "rate_zone_zona_inactiva_1793120037717_7720_7720",
+    "zone_id": "zone_zona_inactiva_1793120037717_7720",
+    "action": "CREATE_ZONE",
+    "previous_values": null,
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_inactiva_1793120037717_7720",
+        "name": "Zona Inactiva 1793120037717",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-27T16:53:57.720Z",
+        "updated_at": "2026-10-27T16:53:57.720Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_inactiva_1793120037717_7720_7720",
+        "zone_id": "zone_zona_inactiva_1793120037717_7720",
+        "customer_shipping_price": 3000,
+        "estimated_dropi_cost": 3000,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-27T16:53:57.720Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-27T16:53:57.720Z",
+        "updated_at": "2026-10-27T16:53:57.720Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-27T16:53:57.720Z"
+  },
+  {
+    "id": "audit_1793120037725",
+    "zone_id": "zone_zona_inactiva_1793120037717_7720",
+    "action": "ASSIGN_COMMUNES",
+    "previous_values": {
+      "previous_assignments": 1
+    },
+    "new_values": {
+      "assigned_codes": [
+        "13104"
+      ],
+      "target_zone": "Zona Inactiva 1793120037717"
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-27T16:53:57.725Z"
+  },
+  {
+    "id": "audit_1793120037731",
+    "rate_id": "rate_zone_zona_inactiva_1793120037717_7720_7720",
+    "zone_id": "zone_zona_inactiva_1793120037717_7720",
+    "action": "UPDATE_ZONE_OR_RATE",
+    "previous_values": {
+      "zone": {
+        "id": "zone_zona_inactiva_1793120037717_7720",
+        "name": "Zona Inactiva 1793120037717",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-27T16:53:57.720Z",
+        "updated_at": "2026-10-27T16:53:57.720Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_inactiva_1793120037717_7720_7720",
+        "zone_id": "zone_zona_inactiva_1793120037717_7720",
+        "customer_shipping_price": 3000,
+        "estimated_dropi_cost": 3000,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-27T16:53:57.720Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-27T16:53:57.720Z",
+        "updated_at": "2026-10-27T16:53:57.720Z"
+      }
+    },
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_inactiva_1793120037717_7720",
+        "name": "Zona Inactiva 1793120037717",
+        "description": null,
+        "status": "INACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-27T16:53:57.720Z",
+        "updated_at": "2026-10-27T16:53:57.731Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_inactiva_1793120037717_7720_7720",
+        "zone_id": "zone_zona_inactiva_1793120037717_7720",
+        "customer_shipping_price": 3000,
+        "estimated_dropi_cost": 3000,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-27T16:53:57.720Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-27T16:53:57.720Z",
+        "updated_at": "2026-10-27T16:53:57.720Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-27T16:53:57.731Z"
+  },
+  {
+    "id": "audit_1793120037741",
+    "rate_id": "rate_zone_zona_vigencia_1793120037737_7741_7741",
+    "zone_id": "zone_zona_vigencia_1793120037737_7741",
+    "action": "CREATE_ZONE",
+    "previous_values": null,
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_vigencia_1793120037737_7741",
+        "name": "Zona Vigencia 1793120037737",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-27T16:53:57.741Z",
+        "updated_at": "2026-10-27T16:53:57.741Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_vigencia_1793120037737_7741_7741",
+        "zone_id": "zone_zona_vigencia_1793120037737_7741",
+        "customer_shipping_price": 5500,
+        "estimated_dropi_cost": 5000,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-27T16:53:57.741Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-27T16:53:57.741Z",
+        "updated_at": "2026-10-27T16:53:57.741Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-27T16:53:57.741Z"
+  },
+  {
+    "id": "audit_1793120037747",
+    "zone_id": "zone_zona_vigencia_1793120037737_7741",
+    "action": "ASSIGN_COMMUNES",
+    "previous_values": {
+      "previous_assignments": 1
+    },
+    "new_values": {
+      "assigned_codes": [
+        "13105"
+      ],
+      "target_zone": "Zona Vigencia 1793120037737"
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-27T16:53:57.747Z"
+  },
+  {
+    "id": "audit_1793120037764",
+    "rate_id": "rate_zone_zona_iva_1793120037762_7764_7764",
+    "zone_id": "zone_zona_iva_1793120037762_7764",
+    "action": "CREATE_ZONE",
+    "previous_values": null,
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_iva_1793120037762_7764",
+        "name": "Zona IVA 1793120037762",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-27T16:53:57.764Z",
+        "updated_at": "2026-10-27T16:53:57.764Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_iva_1793120037762_7764_7764",
+        "zone_id": "zone_zona_iva_1793120037762_7764",
+        "customer_shipping_price": 4990,
+        "estimated_dropi_cost": 4990,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-27T16:53:57.764Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-27T16:53:57.764Z",
+        "updated_at": "2026-10-27T16:53:57.764Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-27T16:53:57.764Z"
+  },
+  {
+    "id": "audit_1793120037772",
+    "rate_id": "rate_zone_zona_con_refs_1793120037768_7772_7772",
+    "zone_id": "zone_zona_con_refs_1793120037768_7772",
+    "action": "CREATE_ZONE",
+    "previous_values": null,
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_con_refs_1793120037768_7772",
+        "name": "Zona Con Refs 1793120037768",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-27T16:53:57.772Z",
+        "updated_at": "2026-10-27T16:53:57.772Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_con_refs_1793120037768_7772_7772",
+        "zone_id": "zone_zona_con_refs_1793120037768_7772",
+        "customer_shipping_price": 3990,
+        "estimated_dropi_cost": 3990,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-27T16:53:57.772Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-27T16:53:57.772Z",
+        "updated_at": "2026-10-27T16:53:57.772Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-27T16:53:57.772Z"
+  },
+  {
+    "id": "audit_1793120037778",
+    "zone_id": "zone_zona_con_refs_1793120037768_7772",
+    "action": "ASSIGN_COMMUNES",
+    "previous_values": {
+      "previous_assignments": 1
+    },
+    "new_values": {
+      "assigned_codes": [
+        "13106"
+      ],
+      "target_zone": "Zona Con Refs 1793120037768"
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-27T16:53:57.778Z"
+  },
+  {
+    "id": "audit_1793120037784",
+    "zone_id": "zone_zona_con_refs_1793120037768_7772",
+    "action": "DEACTIVATE_ZONE_WITH_REFERENCES",
+    "previous_values": {
+      "status": "ACTIVE",
+      "assigned_communes": 1
+    },
+    "new_values": {
+      "status": "INACTIVE"
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-27T16:53:57.784Z"
+  },
+  {
+    "id": "audit_1793195341791",
+    "rate_id": "rate_zone_zona_test_especial_1793195341783_1791_1791",
+    "zone_id": "zone_zona_test_especial_1793195341783_1791",
+    "action": "CREATE_ZONE",
+    "previous_values": null,
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_test_especial_1793195341783_1791",
+        "name": "Zona Test Especial 1793195341783",
+        "description": "Zona de pruebas unitarias",
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-28T13:49:01.789Z",
+        "updated_at": "2026-10-28T13:49:01.789Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_test_especial_1793195341783_1791_1791",
+        "zone_id": "zone_zona_test_especial_1793195341783_1791",
+        "customer_shipping_price": 6500,
+        "estimated_dropi_cost": 6000,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-28T13:49:01.789Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-28T13:49:01.789Z",
+        "updated_at": "2026-10-28T13:49:01.789Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T13:49:01.789Z"
+  },
+  {
+    "id": "audit_1793195343032",
+    "rate_id": "rate_zone_zona_edicin_1793195343029_3032_3032",
+    "zone_id": "zone_zona_edicin_1793195343029_3032",
+    "action": "CREATE_ZONE",
+    "previous_values": null,
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_edicin_1793195343029_3032",
+        "name": "Zona Edición 1793195343029",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-28T13:49:03.032Z",
+        "updated_at": "2026-10-28T13:49:03.032Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_edicin_1793195343029_3032_3032",
+        "zone_id": "zone_zona_edicin_1793195343029_3032",
+        "customer_shipping_price": 4000,
+        "estimated_dropi_cost": 4500,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-28T13:49:03.032Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-28T13:49:03.032Z",
+        "updated_at": "2026-10-28T13:49:03.032Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T13:49:03.032Z"
+  },
+  {
+    "id": "audit_1793195343039",
+    "rate_id": "rate_zone_zona_edicin_1793195343029_3032_3039",
+    "zone_id": "zone_zona_edicin_1793195343029_3032",
+    "action": "UPDATE_ZONE_OR_RATE",
+    "previous_values": {
+      "zone": {
+        "id": "zone_zona_edicin_1793195343029_3032",
+        "name": "Zona Edición 1793195343029",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-28T13:49:03.032Z",
+        "updated_at": "2026-10-28T13:49:03.032Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_edicin_1793195343029_3032_3032",
+        "zone_id": "zone_zona_edicin_1793195343029_3032",
+        "customer_shipping_price": 4000,
+        "estimated_dropi_cost": 4500,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-28T13:49:03.032Z",
+        "valid_until": "2026-10-28T13:49:03.039Z",
+        "is_active": false,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-28T13:49:03.032Z",
+        "updated_at": "2026-10-28T13:49:03.039Z"
+      }
+    },
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_edicin_1793195343029_3032",
+        "name": "Zona Edición 1793195343029",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-28T13:49:03.032Z",
+        "updated_at": "2026-10-28T13:49:03.039Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_edicin_1793195343029_3032_3039",
+        "zone_id": "zone_zona_edicin_1793195343029_3032",
+        "customer_shipping_price": 4990,
+        "estimated_dropi_cost": 4800,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-28T13:49:03.039Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": "Tarifa ajustada por alza de combustible",
+        "created_at": "2026-10-28T13:49:03.039Z",
+        "updated_at": "2026-10-28T13:49:03.039Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T13:49:03.039Z"
+  },
+  {
+    "id": "audit_1793195343045",
+    "rate_id": "rate_zone_zona_comunas_1793195343042_3045_3045",
+    "zone_id": "zone_zona_comunas_1793195343042_3045",
+    "action": "CREATE_ZONE",
+    "previous_values": null,
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_comunas_1793195343042_3045",
+        "name": "Zona Comunas 1793195343042",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-28T13:49:03.045Z",
+        "updated_at": "2026-10-28T13:49:03.045Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_comunas_1793195343042_3045_3045",
+        "zone_id": "zone_zona_comunas_1793195343042_3045",
+        "customer_shipping_price": 5000,
+        "estimated_dropi_cost": 5000,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-28T13:49:03.045Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-28T13:49:03.045Z",
+        "updated_at": "2026-10-28T13:49:03.045Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T13:49:03.045Z"
+  },
+  {
+    "id": "audit_1793195343054",
+    "zone_id": "zone_zona_comunas_1793195343042_3045",
+    "action": "ASSIGN_COMMUNES",
+    "previous_values": {
+      "previous_assignments": 2
+    },
+    "new_values": {
+      "assigned_codes": [
+        "13101",
+        "13102"
+      ],
+      "target_zone": "Zona Comunas 1793195343042"
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T13:49:03.054Z"
+  },
+  {
+    "id": "audit_1793195343064",
+    "rate_id": "rate_zone_zona_alpha_1793195343061_3064_3064",
+    "zone_id": "zone_zona_alpha_1793195343061_3064",
+    "action": "CREATE_ZONE",
+    "previous_values": null,
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_alpha_1793195343061_3064",
+        "name": "Zona Alpha 1793195343061",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-28T13:49:03.064Z",
+        "updated_at": "2026-10-28T13:49:03.064Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_alpha_1793195343061_3064_3064",
+        "zone_id": "zone_zona_alpha_1793195343061_3064",
+        "customer_shipping_price": 3990,
+        "estimated_dropi_cost": 3990,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-28T13:49:03.064Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-28T13:49:03.064Z",
+        "updated_at": "2026-10-28T13:49:03.064Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T13:49:03.064Z"
+  },
+  {
+    "id": "audit_1793195343070",
+    "rate_id": "rate_zone_zona_beta_1793195343067_3070_3070",
+    "zone_id": "zone_zona_beta_1793195343067_3070",
+    "action": "CREATE_ZONE",
+    "previous_values": null,
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_beta_1793195343067_3070",
+        "name": "Zona Beta 1793195343067",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-28T13:49:03.070Z",
+        "updated_at": "2026-10-28T13:49:03.070Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_beta_1793195343067_3070_3070",
+        "zone_id": "zone_zona_beta_1793195343067_3070",
+        "customer_shipping_price": 3990,
+        "estimated_dropi_cost": 3990,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-28T13:49:03.070Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-28T13:49:03.070Z",
+        "updated_at": "2026-10-28T13:49:03.070Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T13:49:03.070Z"
+  },
+  {
+    "id": "audit_1793195343076",
+    "zone_id": "zone_zona_alpha_1793195343061_3064",
+    "action": "ASSIGN_COMMUNES",
+    "previous_values": {
+      "previous_assignments": 1
+    },
+    "new_values": {
+      "assigned_codes": [
+        "13103"
+      ],
+      "target_zone": "Zona Alpha 1793195343061"
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T13:49:03.076Z"
+  },
+  {
+    "id": "audit_1793195343085",
+    "zone_id": "zone_zona_beta_1793195343067_3070",
+    "action": "ASSIGN_COMMUNES",
+    "previous_values": {
+      "previous_assignments": 1
+    },
+    "new_values": {
+      "assigned_codes": [
+        "13103"
+      ],
+      "target_zone": "Zona Beta 1793195343067"
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T13:49:03.085Z"
+  },
+  {
+    "id": "audit_1793195343107",
+    "rate_id": "rate_zone_zona_inactiva_1793195343103_3107_3107",
+    "zone_id": "zone_zona_inactiva_1793195343103_3107",
+    "action": "CREATE_ZONE",
+    "previous_values": null,
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_inactiva_1793195343103_3107",
+        "name": "Zona Inactiva 1793195343103",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-28T13:49:03.107Z",
+        "updated_at": "2026-10-28T13:49:03.107Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_inactiva_1793195343103_3107_3107",
+        "zone_id": "zone_zona_inactiva_1793195343103_3107",
+        "customer_shipping_price": 3000,
+        "estimated_dropi_cost": 3000,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-28T13:49:03.107Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-28T13:49:03.107Z",
+        "updated_at": "2026-10-28T13:49:03.107Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T13:49:03.107Z"
+  },
+  {
+    "id": "audit_1793195343113",
+    "zone_id": "zone_zona_inactiva_1793195343103_3107",
+    "action": "ASSIGN_COMMUNES",
+    "previous_values": {
+      "previous_assignments": 1
+    },
+    "new_values": {
+      "assigned_codes": [
+        "13104"
+      ],
+      "target_zone": "Zona Inactiva 1793195343103"
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T13:49:03.113Z"
+  },
+  {
+    "id": "audit_1793195343120",
+    "rate_id": "rate_zone_zona_inactiva_1793195343103_3107_3107",
+    "zone_id": "zone_zona_inactiva_1793195343103_3107",
+    "action": "UPDATE_ZONE_OR_RATE",
+    "previous_values": {
+      "zone": {
+        "id": "zone_zona_inactiva_1793195343103_3107",
+        "name": "Zona Inactiva 1793195343103",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-28T13:49:03.107Z",
+        "updated_at": "2026-10-28T13:49:03.107Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_inactiva_1793195343103_3107_3107",
+        "zone_id": "zone_zona_inactiva_1793195343103_3107",
+        "customer_shipping_price": 3000,
+        "estimated_dropi_cost": 3000,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-28T13:49:03.107Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-28T13:49:03.107Z",
+        "updated_at": "2026-10-28T13:49:03.107Z"
+      }
+    },
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_inactiva_1793195343103_3107",
+        "name": "Zona Inactiva 1793195343103",
+        "description": null,
+        "status": "INACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-28T13:49:03.107Z",
+        "updated_at": "2026-10-28T13:49:03.120Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_inactiva_1793195343103_3107_3107",
+        "zone_id": "zone_zona_inactiva_1793195343103_3107",
+        "customer_shipping_price": 3000,
+        "estimated_dropi_cost": 3000,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-28T13:49:03.107Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-28T13:49:03.107Z",
+        "updated_at": "2026-10-28T13:49:03.107Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T13:49:03.120Z"
+  },
+  {
+    "id": "audit_1793195343128",
+    "rate_id": "rate_zone_zona_vigencia_1793195343125_3128_3128",
+    "zone_id": "zone_zona_vigencia_1793195343125_3128",
+    "action": "CREATE_ZONE",
+    "previous_values": null,
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_vigencia_1793195343125_3128",
+        "name": "Zona Vigencia 1793195343125",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-28T13:49:03.128Z",
+        "updated_at": "2026-10-28T13:49:03.128Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_vigencia_1793195343125_3128_3128",
+        "zone_id": "zone_zona_vigencia_1793195343125_3128",
+        "customer_shipping_price": 5500,
+        "estimated_dropi_cost": 5000,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-28T13:49:03.128Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-28T13:49:03.128Z",
+        "updated_at": "2026-10-28T13:49:03.128Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T13:49:03.128Z"
+  },
+  {
+    "id": "audit_1793195343133",
+    "zone_id": "zone_zona_vigencia_1793195343125_3128",
+    "action": "ASSIGN_COMMUNES",
+    "previous_values": {
+      "previous_assignments": 1
+    },
+    "new_values": {
+      "assigned_codes": [
+        "13105"
+      ],
+      "target_zone": "Zona Vigencia 1793195343125"
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T13:49:03.133Z"
+  },
+  {
+    "id": "audit_1793195343150",
+    "rate_id": "rate_zone_zona_iva_1793195343148_3150_3150",
+    "zone_id": "zone_zona_iva_1793195343148_3150",
+    "action": "CREATE_ZONE",
+    "previous_values": null,
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_iva_1793195343148_3150",
+        "name": "Zona IVA 1793195343148",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-28T13:49:03.150Z",
+        "updated_at": "2026-10-28T13:49:03.150Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_iva_1793195343148_3150_3150",
+        "zone_id": "zone_zona_iva_1793195343148_3150",
+        "customer_shipping_price": 4990,
+        "estimated_dropi_cost": 4990,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-28T13:49:03.150Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-28T13:49:03.150Z",
+        "updated_at": "2026-10-28T13:49:03.150Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T13:49:03.150Z"
+  },
+  {
+    "id": "audit_1793195343156",
+    "rate_id": "rate_zone_zona_con_refs_1793195343153_3156_3156",
+    "zone_id": "zone_zona_con_refs_1793195343153_3156",
+    "action": "CREATE_ZONE",
+    "previous_values": null,
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_con_refs_1793195343153_3156",
+        "name": "Zona Con Refs 1793195343153",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-28T13:49:03.156Z",
+        "updated_at": "2026-10-28T13:49:03.156Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_con_refs_1793195343153_3156_3156",
+        "zone_id": "zone_zona_con_refs_1793195343153_3156",
+        "customer_shipping_price": 3990,
+        "estimated_dropi_cost": 3990,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-28T13:49:03.156Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-28T13:49:03.156Z",
+        "updated_at": "2026-10-28T13:49:03.156Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T13:49:03.156Z"
+  },
+  {
+    "id": "audit_1793195343161",
+    "zone_id": "zone_zona_con_refs_1793195343153_3156",
+    "action": "ASSIGN_COMMUNES",
+    "previous_values": {
+      "previous_assignments": 1
+    },
+    "new_values": {
+      "assigned_codes": [
+        "13106"
+      ],
+      "target_zone": "Zona Con Refs 1793195343153"
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T13:49:03.161Z"
+  },
+  {
+    "id": "audit_1793195343168",
+    "zone_id": "zone_zona_con_refs_1793195343153_3156",
+    "action": "DEACTIVATE_ZONE_WITH_REFERENCES",
+    "previous_values": {
+      "status": "ACTIVE",
+      "assigned_communes": 1
+    },
+    "new_values": {
+      "status": "INACTIVE"
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T13:49:03.168Z"
+  },
+  {
+    "id": "audit_1793197006695",
+    "rate_id": "rate_zone_zona_test_especial_1793197006684_6695_6695",
+    "zone_id": "zone_zona_test_especial_1793197006684_6695",
+    "action": "CREATE_ZONE",
+    "previous_values": null,
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_test_especial_1793197006684_6695",
+        "name": "Zona Test Especial 1793197006684",
+        "description": "Zona de pruebas unitarias",
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-28T14:16:46.692Z",
+        "updated_at": "2026-10-28T14:16:46.692Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_test_especial_1793197006684_6695_6695",
+        "zone_id": "zone_zona_test_especial_1793197006684_6695",
+        "customer_shipping_price": 6500,
+        "estimated_dropi_cost": 6000,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-28T14:16:46.692Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-28T14:16:46.692Z",
+        "updated_at": "2026-10-28T14:16:46.692Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T14:16:46.692Z"
+  },
+  {
+    "id": "audit_1793197007016",
+    "rate_id": "rate_zone_zona_edicin_1793197007011_7016_7016",
+    "zone_id": "zone_zona_edicin_1793197007011_7016",
+    "action": "CREATE_ZONE",
+    "previous_values": null,
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_edicin_1793197007011_7016",
+        "name": "Zona Edición 1793197007011",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-28T14:16:47.016Z",
+        "updated_at": "2026-10-28T14:16:47.016Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_edicin_1793197007011_7016_7016",
+        "zone_id": "zone_zona_edicin_1793197007011_7016",
+        "customer_shipping_price": 4000,
+        "estimated_dropi_cost": 4500,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-28T14:16:47.016Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-28T14:16:47.016Z",
+        "updated_at": "2026-10-28T14:16:47.016Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T14:16:47.016Z"
+  },
+  {
+    "id": "audit_1793197007028",
+    "rate_id": "rate_zone_zona_edicin_1793197007011_7016_7028",
+    "zone_id": "zone_zona_edicin_1793197007011_7016",
+    "action": "UPDATE_ZONE_OR_RATE",
+    "previous_values": {
+      "zone": {
+        "id": "zone_zona_edicin_1793197007011_7016",
+        "name": "Zona Edición 1793197007011",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-28T14:16:47.016Z",
+        "updated_at": "2026-10-28T14:16:47.016Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_edicin_1793197007011_7016_7016",
+        "zone_id": "zone_zona_edicin_1793197007011_7016",
+        "customer_shipping_price": 4000,
+        "estimated_dropi_cost": 4500,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-28T14:16:47.016Z",
+        "valid_until": "2026-10-28T14:16:47.028Z",
+        "is_active": false,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-28T14:16:47.016Z",
+        "updated_at": "2026-10-28T14:16:47.028Z"
+      }
+    },
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_edicin_1793197007011_7016",
+        "name": "Zona Edición 1793197007011",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-28T14:16:47.016Z",
+        "updated_at": "2026-10-28T14:16:47.028Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_edicin_1793197007011_7016_7028",
+        "zone_id": "zone_zona_edicin_1793197007011_7016",
+        "customer_shipping_price": 4990,
+        "estimated_dropi_cost": 4800,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-28T14:16:47.028Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": "Tarifa ajustada por alza de combustible",
+        "created_at": "2026-10-28T14:16:47.028Z",
+        "updated_at": "2026-10-28T14:16:47.028Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T14:16:47.028Z"
+  },
+  {
+    "id": "audit_1793197007035",
+    "rate_id": "rate_zone_zona_comunas_1793197007032_7035_7035",
+    "zone_id": "zone_zona_comunas_1793197007032_7035",
+    "action": "CREATE_ZONE",
+    "previous_values": null,
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_comunas_1793197007032_7035",
+        "name": "Zona Comunas 1793197007032",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-28T14:16:47.035Z",
+        "updated_at": "2026-10-28T14:16:47.035Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_comunas_1793197007032_7035_7035",
+        "zone_id": "zone_zona_comunas_1793197007032_7035",
+        "customer_shipping_price": 5000,
+        "estimated_dropi_cost": 5000,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-28T14:16:47.035Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-28T14:16:47.035Z",
+        "updated_at": "2026-10-28T14:16:47.035Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T14:16:47.035Z"
+  },
+  {
+    "id": "audit_1793197007047",
+    "zone_id": "zone_zona_comunas_1793197007032_7035",
+    "action": "ASSIGN_COMMUNES",
+    "previous_values": {
+      "previous_assignments": 2
+    },
+    "new_values": {
+      "assigned_codes": [
+        "13101",
+        "13102"
+      ],
+      "target_zone": "Zona Comunas 1793197007032"
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T14:16:47.047Z"
+  },
+  {
+    "id": "audit_1793197007062",
+    "rate_id": "rate_zone_zona_alpha_1793197007057_7062_7062",
+    "zone_id": "zone_zona_alpha_1793197007057_7062",
+    "action": "CREATE_ZONE",
+    "previous_values": null,
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_alpha_1793197007057_7062",
+        "name": "Zona Alpha 1793197007057",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-28T14:16:47.062Z",
+        "updated_at": "2026-10-28T14:16:47.062Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_alpha_1793197007057_7062_7062",
+        "zone_id": "zone_zona_alpha_1793197007057_7062",
+        "customer_shipping_price": 3990,
+        "estimated_dropi_cost": 3990,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-28T14:16:47.062Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-28T14:16:47.062Z",
+        "updated_at": "2026-10-28T14:16:47.062Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T14:16:47.062Z"
+  },
+  {
+    "id": "audit_1793197007071",
+    "rate_id": "rate_zone_zona_beta_1793197007066_7071_7071",
+    "zone_id": "zone_zona_beta_1793197007066_7071",
+    "action": "CREATE_ZONE",
+    "previous_values": null,
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_beta_1793197007066_7071",
+        "name": "Zona Beta 1793197007066",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-28T14:16:47.071Z",
+        "updated_at": "2026-10-28T14:16:47.071Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_beta_1793197007066_7071_7071",
+        "zone_id": "zone_zona_beta_1793197007066_7071",
+        "customer_shipping_price": 3990,
+        "estimated_dropi_cost": 3990,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-28T14:16:47.071Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-28T14:16:47.071Z",
+        "updated_at": "2026-10-28T14:16:47.071Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T14:16:47.071Z"
+  },
+  {
+    "id": "audit_1793197007078",
+    "zone_id": "zone_zona_alpha_1793197007057_7062",
+    "action": "ASSIGN_COMMUNES",
+    "previous_values": {
+      "previous_assignments": 1
+    },
+    "new_values": {
+      "assigned_codes": [
+        "13103"
+      ],
+      "target_zone": "Zona Alpha 1793197007057"
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T14:16:47.078Z"
+  },
+  {
+    "id": "audit_1793197007090",
+    "zone_id": "zone_zona_beta_1793197007066_7071",
+    "action": "ASSIGN_COMMUNES",
+    "previous_values": {
+      "previous_assignments": 1
+    },
+    "new_values": {
+      "assigned_codes": [
+        "13103"
+      ],
+      "target_zone": "Zona Beta 1793197007066"
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T14:16:47.090Z"
+  },
+  {
+    "id": "audit_1793197007119",
+    "rate_id": "rate_zone_zona_inactiva_1793197007115_7119_7119",
+    "zone_id": "zone_zona_inactiva_1793197007115_7119",
+    "action": "CREATE_ZONE",
+    "previous_values": null,
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_inactiva_1793197007115_7119",
+        "name": "Zona Inactiva 1793197007115",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-28T14:16:47.119Z",
+        "updated_at": "2026-10-28T14:16:47.119Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_inactiva_1793197007115_7119_7119",
+        "zone_id": "zone_zona_inactiva_1793197007115_7119",
+        "customer_shipping_price": 3000,
+        "estimated_dropi_cost": 3000,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-28T14:16:47.119Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-28T14:16:47.119Z",
+        "updated_at": "2026-10-28T14:16:47.119Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T14:16:47.119Z"
+  },
+  {
+    "id": "audit_1793197007127",
+    "zone_id": "zone_zona_inactiva_1793197007115_7119",
+    "action": "ASSIGN_COMMUNES",
+    "previous_values": {
+      "previous_assignments": 1
+    },
+    "new_values": {
+      "assigned_codes": [
+        "13104"
+      ],
+      "target_zone": "Zona Inactiva 1793197007115"
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T14:16:47.127Z"
+  },
+  {
+    "id": "audit_1793197007137",
+    "rate_id": "rate_zone_zona_inactiva_1793197007115_7119_7119",
+    "zone_id": "zone_zona_inactiva_1793197007115_7119",
+    "action": "UPDATE_ZONE_OR_RATE",
+    "previous_values": {
+      "zone": {
+        "id": "zone_zona_inactiva_1793197007115_7119",
+        "name": "Zona Inactiva 1793197007115",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-28T14:16:47.119Z",
+        "updated_at": "2026-10-28T14:16:47.119Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_inactiva_1793197007115_7119_7119",
+        "zone_id": "zone_zona_inactiva_1793197007115_7119",
+        "customer_shipping_price": 3000,
+        "estimated_dropi_cost": 3000,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-28T14:16:47.119Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-28T14:16:47.119Z",
+        "updated_at": "2026-10-28T14:16:47.119Z"
+      }
+    },
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_inactiva_1793197007115_7119",
+        "name": "Zona Inactiva 1793197007115",
+        "description": null,
+        "status": "INACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-28T14:16:47.119Z",
+        "updated_at": "2026-10-28T14:16:47.137Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_inactiva_1793197007115_7119_7119",
+        "zone_id": "zone_zona_inactiva_1793197007115_7119",
+        "customer_shipping_price": 3000,
+        "estimated_dropi_cost": 3000,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-28T14:16:47.119Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-28T14:16:47.119Z",
+        "updated_at": "2026-10-28T14:16:47.119Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T14:16:47.137Z"
+  },
+  {
+    "id": "audit_1793197007152",
+    "rate_id": "rate_zone_zona_vigencia_1793197007147_7152_7152",
+    "zone_id": "zone_zona_vigencia_1793197007147_7152",
+    "action": "CREATE_ZONE",
+    "previous_values": null,
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_vigencia_1793197007147_7152",
+        "name": "Zona Vigencia 1793197007147",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-28T14:16:47.152Z",
+        "updated_at": "2026-10-28T14:16:47.152Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_vigencia_1793197007147_7152_7152",
+        "zone_id": "zone_zona_vigencia_1793197007147_7152",
+        "customer_shipping_price": 5500,
+        "estimated_dropi_cost": 5000,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-28T14:16:47.152Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-28T14:16:47.152Z",
+        "updated_at": "2026-10-28T14:16:47.152Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T14:16:47.152Z"
+  },
+  {
+    "id": "audit_1793197007162",
+    "zone_id": "zone_zona_vigencia_1793197007147_7152",
+    "action": "ASSIGN_COMMUNES",
+    "previous_values": {
+      "previous_assignments": 1
+    },
+    "new_values": {
+      "assigned_codes": [
+        "13105"
+      ],
+      "target_zone": "Zona Vigencia 1793197007147"
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T14:16:47.162Z"
+  },
+  {
+    "id": "audit_1793197007191",
+    "rate_id": "rate_zone_zona_iva_1793197007186_7191_7191",
+    "zone_id": "zone_zona_iva_1793197007186_7191",
+    "action": "CREATE_ZONE",
+    "previous_values": null,
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_iva_1793197007186_7191",
+        "name": "Zona IVA 1793197007186",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-28T14:16:47.191Z",
+        "updated_at": "2026-10-28T14:16:47.191Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_iva_1793197007186_7191_7191",
+        "zone_id": "zone_zona_iva_1793197007186_7191",
+        "customer_shipping_price": 4990,
+        "estimated_dropi_cost": 4990,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-28T14:16:47.191Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-28T14:16:47.191Z",
+        "updated_at": "2026-10-28T14:16:47.191Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T14:16:47.191Z"
+  },
+  {
+    "id": "audit_1793197007200",
+    "rate_id": "rate_zone_zona_con_refs_1793197007195_7200_7200",
+    "zone_id": "zone_zona_con_refs_1793197007195_7200",
+    "action": "CREATE_ZONE",
+    "previous_values": null,
+    "new_values": {
+      "zone": {
+        "id": "zone_zona_con_refs_1793197007195_7200",
+        "name": "Zona Con Refs 1793197007195",
+        "description": null,
+        "status": "ACTIVE",
+        "requires_quote": false,
+        "created_at": "2026-10-28T14:16:47.199Z",
+        "updated_at": "2026-10-28T14:16:47.199Z"
+      },
+      "rate": {
+        "id": "rate_zone_zona_con_refs_1793197007195_7200_7200",
+        "zone_id": "zone_zona_con_refs_1793197007195_7200",
+        "customer_shipping_price": 3990,
+        "estimated_dropi_cost": 3990,
+        "customer_price_includes_vat": true,
+        "estimated_cost_includes_vat": true,
+        "valid_from": "2026-10-28T14:16:47.199Z",
+        "valid_until": null,
+        "is_active": true,
+        "origin": "MANUAL",
+        "notes": null,
+        "created_at": "2026-10-28T14:16:47.199Z",
+        "updated_at": "2026-10-28T14:16:47.199Z"
+      }
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T14:16:47.199Z"
+  },
+  {
+    "id": "audit_1793197007208",
+    "zone_id": "zone_zona_con_refs_1793197007195_7200",
+    "action": "ASSIGN_COMMUNES",
+    "previous_values": {
+      "previous_assignments": 1
+    },
+    "new_values": {
+      "assigned_codes": [
+        "13106"
+      ],
+      "target_zone": "Zona Con Refs 1793197007195"
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T14:16:47.208Z"
+  },
+  {
+    "id": "audit_1793197007218",
+    "zone_id": "zone_zona_con_refs_1793197007195_7200",
+    "action": "DEACTIVATE_ZONE_WITH_REFERENCES",
+    "previous_values": {
+      "status": "ACTIVE",
+      "assigned_communes": 1
+    },
+    "new_values": {
+      "status": "INACTIVE"
+    },
+    "changed_by": "unit-tester",
+    "changed_at": "2026-10-28T14:16:47.218Z"
   }
 ]

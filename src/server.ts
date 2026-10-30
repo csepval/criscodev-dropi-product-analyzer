@@ -1,7 +1,6 @@
 // src/server.ts
 // Servidor Web Autónomo para CrisCodev Dropi Product Analyzer
 import http from 'node:http';
-import url from 'node:url';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -41,6 +40,23 @@ import {
   saveSimulation
 } from './services/profitabilityService';
 import { generateProfitabilityExcel } from './services/profitabilityExcel';
+import {
+  getActiveBusinessUnits,
+  findActiveBusinessUnit,
+  saveProductToPancocosDb,
+  publishViaPancocosFulfillment,
+  type ProductToPublish,
+} from './services/pancocosPublishService';
+import { queryCopilotAnalysis, startAssistedCopilotLoginWindow } from './services/copilotService';
+import {
+  queryChatGptMarketPrices,
+  startAssistedChatGptLoginWindow,
+} from './services/chatgptMarketPricesService';
+import {
+  getAIConfig,
+  saveAIConfig,
+  getDefaultAIConfig,
+} from './services/aiConfigService';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -74,8 +90,8 @@ function parseBody(req: http.IncomingMessage): Promise<any> {
 }
 
 const server = http.createServer(async (req, res) => {
-  const parsedUrl = url.parse(req.url || '/', true);
-  const pathname = parsedUrl.pathname || '/';
+  const reqUrl = new URL(req.url || '/', `http://${req.headers.host || 'localhost'}`);
+  const pathname = reqUrl.pathname;
   const method = req.method || 'GET';
 
   if (method === 'OPTIONS') {
@@ -271,7 +287,7 @@ const server = http.createServer(async (req, res) => {
     // Actualizar Zona o Tarifa de Despacho
     if (pathname === '/api/shipping/zones' && (method === 'PUT' || method === 'POST')) {
       const body = await parseBody(req);
-      const zoneId = (parsedUrl.query.id as string) || body.id || body.zone_id;
+      const zoneId = reqUrl.searchParams.get('id') || body.id || body.zone_id;
       if (!zoneId) {
         return sendJson(res, 400, { success: false, error: 'ID de zona no especificado.' });
       }
@@ -282,7 +298,7 @@ const server = http.createServer(async (req, res) => {
     // Eliminar o Desactivar Zona de Despacho
     if (pathname === '/api/shipping/zones' && (method === 'DELETE' || method === 'POST')) {
       const body = method === 'POST' ? await parseBody(req) : {};
-      const zoneId = (parsedUrl.query.id as string) || body.id || body.zone_id;
+      const zoneId = reqUrl.searchParams.get('id') || body.id || body.zone_id;
       if (!zoneId) {
         return sendJson(res, 400, { success: false, error: 'ID de zona no especificado.' });
       }
@@ -292,10 +308,9 @@ const server = http.createServer(async (req, res) => {
 
     // Consultar Comunas Enriquecidas con Estado de Asignación y Tarifa
     if (pathname === '/api/shipping/communes' && method === 'GET') {
-      const q = parsedUrl.query;
-      const region_code = (q.region_code as string) || undefined;
-      const search = (q.search as string) || undefined;
-      const status = (q.status as any) || 'ALL';
+      const region_code = reqUrl.searchParams.get('region_code') || undefined;
+      const search = reqUrl.searchParams.get('search') || undefined;
+      const status = (reqUrl.searchParams.get('status') as any) || 'ALL';
       const result = await getCommunesWithStatus({ region_code, search, status });
       return sendJson(res, 200, { success: true, ...result });
     }
@@ -363,6 +378,102 @@ const server = http.createServer(async (req, res) => {
       }
       const activated = await setActiveFinancialProfile(body.profile_id);
       return sendJson(res, 200, { success: true, profile: activated });
+    }
+
+    // Unidades de negocio activas de Pancocos (selector del botón "Publicar Producto")
+    if (pathname === '/api/business-units' && method === 'GET') {
+      const businessUnits = await getActiveBusinessUnits();
+      return sendJson(res, 200, { success: true, business_units: businessUnits });
+    }
+
+    // Publicar producto simulado: guarda en la BD de Pancocos y publica en Shopify vía Pancocos-Fulfillment
+    if (pathname === '/api/profitability/publish-product' && method === 'POST') {
+      const body = await parseBody(req);
+
+      const businessUnitId = Number(body.business_unit_id);
+      if (!Number.isInteger(businessUnitId) || businessUnitId <= 0) {
+        return sendJson(res, 400, { success: false, error: 'business_unit_id es requerido.' });
+      }
+      if (!body.product_id) {
+        return sendJson(res, 400, { success: false, error: 'product_id es requerido.' });
+      }
+
+      const businessUnit = await findActiveBusinessUnit(businessUnitId);
+      if (!businessUnit) {
+        return sendJson(res, 404, { success: false, error: 'La unidad de negocio no existe o no está activa.' });
+      }
+
+      const prodResult = await getProducts({ limit: 1000 });
+      const product = prodResult.products.find(
+        p => p.id === body.product_id || p.dropi_id === Number(body.product_id),
+      );
+      if (!product) {
+        return sendJson(res, 404, { success: false, error: 'Producto no encontrado.' });
+      }
+
+      // La evaluación se recalcula en el servidor para no confiar en precios enviados por el navegador
+      const profiles = await getFinancialProfiles();
+      const profile = body.profile_id
+        ? (profiles.find(p => p.id === body.profile_id) || await getActiveFinancialProfile())
+        : (await getActiveFinancialProfile());
+
+      const evaluation = await calculateProductProfitability({
+        product,
+        profile,
+        taxTreatment: body.tax_treatment,
+        customSalePrice: body.custom_sale_price ? Number(body.custom_sale_price) : undefined,
+        customAdCost: body.custom_ad_cost !== undefined ? Number(body.custom_ad_cost) : undefined,
+      });
+
+      const productToPublish: ProductToPublish = {
+        dropiId: evaluation.dropi_id,
+        name: evaluation.product_name,
+        description: `${evaluation.product_name}. Categoría: ${evaluation.category}. Proveedor: ${evaluation.supplier_name}.`,
+        category: evaluation.category,
+        supplierName: evaluation.supplier_name,
+        imageUrl: evaluation.image_url ?? null,
+        supplierPrice: evaluation.supplier_price,
+        suggestedPrice: evaluation.suggested_price,
+        salePrice: evaluation.sale_price_used,
+        stock: evaluation.stock,
+        simulatedMarginPct: evaluation.avg_margin_pct,
+      };
+
+      if (!(productToPublish.salePrice > 0) || !(productToPublish.supplierPrice > 0)) {
+        return sendJson(res, 400, {
+          success: false,
+          error: 'El producto necesita un precio de venta y un costo de proveedor mayores a 0 para publicarse.',
+        });
+      }
+
+      // Paso 1: guardar en la base de datos de Pancocos
+      const saved = await saveProductToPancocosDb(businessUnit, productToPublish);
+
+      // Paso 2: publicar en Shopify. Si falla, el producto ya quedó guardado en Pancocos
+      // y el reintento es seguro (ambos pasos son idempotentes).
+      try {
+        const published = await publishViaPancocosFulfillment(
+          businessUnit,
+          productToPublish,
+          saved.pancocosProductId,
+        );
+        return sendJson(res, 200, {
+          success: true,
+          business_unit: { id: businessUnit.id, name: businessUnit.name },
+          pancocos_product_id: saved.pancocosProductId,
+          shopify_product_id: published.shopifyProductId,
+          shopify_variant_id: published.shopifyVariantId,
+          updated_existing: published.updatedExisting,
+        });
+      } catch (shopifyError: any) {
+        console.error('[Publish] Producto guardado en Pancocos pero falló Shopify:', shopifyError?.message);
+        return sendJson(res, 502, {
+          success: false,
+          partial: true,
+          pancocos_product_id: saved.pancocosProductId,
+          error: `El producto se guardó en Pancocos (#${saved.pancocosProductId}), pero falló la publicación en Shopify: ${shopifyError?.message ?? 'error desconocido'}`,
+        });
+      }
     }
 
     // 2. Evaluación Individual de Producto / Simulador Interactivo (Sección 10)
@@ -465,20 +576,105 @@ const server = http.createServer(async (req, res) => {
       return res.end(excelBuffer);
     }
 
+    // 8. Consulta IA ("Análisis IA" - ChatGPT o Copilot según Administración IA)
+    if (pathname === '/api/profitability/ai-analysis' && method === 'POST') {
+      const body = await parseBody(req);
+      if (!body.product_name) {
+        return sendJson(res, 400, { success: false, error: 'product_name es requerido para el análisis IA.' });
+      }
+      const result = await queryCopilotAnalysis({
+        product_name: body.product_name,
+        dropi_id: body.dropi_id,
+        supplier_price: body.supplier_price ? Number(body.supplier_price) : undefined,
+        suggested_price: body.suggested_price ? Number(body.suggested_price) : undefined,
+        category: body.category,
+        sale_price: body.sale_price ? Number(body.sale_price) : undefined,
+        provider: body.provider,
+        custom_prompt: body.custom_prompt,
+      });
+      return sendJson(res, 200, result);
+    }
+
+    if (pathname === '/api/copilot/start-login' && method === 'POST') {
+      const result = await startAssistedCopilotLoginWindow();
+      return sendJson(res, 200, result);
+    }
+
+    // 9. Consulta de Precios del Mercado en Chile vía sesión de IA (ChatGPT o Copilot)
+    if (pathname === '/api/profitability/market-prices' && method === 'POST') {
+      const body = await parseBody(req);
+      if (!body.product_name) {
+        return sendJson(res, 400, {
+          success: false,
+          error: 'product_name es requerido para consultar los precios del mercado.',
+        });
+      }
+      const result = await queryChatGptMarketPrices({
+        product_name: String(body.product_name),
+        dropi_id: body.dropi_id,
+        supplier_price: body.supplier_price ? Number(body.supplier_price) : undefined,
+        suggested_price: body.suggested_price ? Number(body.suggested_price) : undefined,
+        sale_price: body.sale_price ? Number(body.sale_price) : undefined,
+        provider: body.provider,
+        custom_prompt: body.custom_prompt,
+      });
+      return sendJson(res, 200, result);
+    }
+
+    if (pathname === '/api/chatgpt/start-login' && method === 'POST') {
+      const result = await startAssistedChatGptLoginWindow();
+      return sendJson(res, 200, result);
+    }
+
+    // 10. Administración IA (selección ChatGPT / Copilot y edición de Prompts)
+    if (pathname === '/api/ai-config' && method === 'GET') {
+      const config = getAIConfig();
+      const defaults = getDefaultAIConfig();
+      return sendJson(res, 200, {
+        success: true,
+        config,
+        defaults,
+      });
+    }
+
+    if (pathname === '/api/ai-config' && method === 'POST') {
+      const body = await parseBody(req);
+      const saved = saveAIConfig({
+        provider: body.provider,
+        analysis_prompt_template: body.analysis_prompt_template,
+        market_prices_prompt_template: body.market_prices_prompt_template,
+      });
+      return sendJson(res, 200, {
+        success: true,
+        config: saved,
+        message: 'Configuración de Administración IA guardada correctamente.',
+      });
+    }
+
     // 2. API: CONSULTA DE PRODUCTOS (BASE DE DATOS LOCAL/POSTGRESQL)
     if (pathname === '/api/products' && method === 'GET') {
-      const q = parsedUrl.query;
-      const search = (q.search as string) || '';
-      const category = (q.category as string) || undefined;
-      const is_verified = q.is_verified === 'true' ? true : undefined;
-      const is_premium = q.is_premium === 'true' ? true : undefined;
-      const exclude_flags = q.exclude_flags === 'true';
-      const min_price = q.min_price ? parseFloat(q.min_price as string) : undefined;
-      const max_price = q.max_price ? parseFloat(q.max_price as string) : undefined;
-      const min_margin = q.min_margin ? parseFloat(q.min_margin as string) : undefined;
-      const limit = q.limit ? parseInt(q.limit as string, 10) : 50;
-      const offset = q.offset ? parseInt(q.offset as string, 10) : 0;
-      const sort_by = (q.sort_by as any) || 'margin_desc';
+      const search = reqUrl.searchParams.get('search') || '';
+      const category = reqUrl.searchParams.get('category') || undefined;
+      const is_verified = reqUrl.searchParams.get('is_verified') === 'true' ? true : undefined;
+      const is_premium = reqUrl.searchParams.get('is_premium') === 'true' ? true : undefined;
+      const exclude_flags = reqUrl.searchParams.get('exclude_flags') === 'true';
+
+      const min_price_param = reqUrl.searchParams.get('min_price');
+      const min_price = min_price_param ? parseFloat(min_price_param) : undefined;
+
+      const max_price_param = reqUrl.searchParams.get('max_price');
+      const max_price = max_price_param ? parseFloat(max_price_param) : undefined;
+
+      const min_margin_param = reqUrl.searchParams.get('min_margin');
+      const min_margin = min_margin_param ? parseFloat(min_margin_param) : undefined;
+
+      const limit_param = reqUrl.searchParams.get('limit');
+      const limit = limit_param ? parseInt(limit_param, 10) : 50;
+
+      const offset_param = reqUrl.searchParams.get('offset');
+      const offset = offset_param ? parseInt(offset_param, 10) : 0;
+
+      const sort_by = (reqUrl.searchParams.get('sort_by') as any) || 'margin_desc';
 
       const result = await getProducts({
         search,

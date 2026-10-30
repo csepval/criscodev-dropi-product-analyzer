@@ -4048,5 +4048,3225 @@
     "stock": 100,
     "status": "FLAGGED",
     "observed_at": "2026-10-27T00:43:00.876Z"
+  },
+  {
+    "product_id": "prod_184931",
+    "dropi_id": 184931,
+    "supplier_price_min": 7990,
+    "supplier_price_max": 7990,
+    "suggested_price": 19990,
+    "stock": 2000,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:30.379Z"
+  },
+  {
+    "product_id": "prod_180030",
+    "dropi_id": 180030,
+    "supplier_price_min": 2500,
+    "supplier_price_max": 2500,
+    "suggested_price": 1,
+    "stock": 243,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.387Z"
+  },
+  {
+    "product_id": "prod_173165",
+    "dropi_id": 173165,
+    "supplier_price_min": 7000,
+    "supplier_price_max": 7000,
+    "suggested_price": 1,
+    "stock": 248,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.395Z"
+  },
+  {
+    "product_id": "prod_162377",
+    "dropi_id": 162377,
+    "supplier_price_min": 6900,
+    "supplier_price_max": 6900,
+    "suggested_price": 1,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.404Z"
+  },
+  {
+    "product_id": "prod_156203",
+    "dropi_id": 156203,
+    "supplier_price_min": 1400,
+    "supplier_price_max": 1400,
+    "suggested_price": 1,
+    "stock": 6598,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.411Z"
+  },
+  {
+    "product_id": "prod_150230",
+    "dropi_id": 150230,
+    "supplier_price_min": 5000,
+    "supplier_price_max": 5000,
+    "suggested_price": 30,
+    "stock": 1109,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.416Z"
+  },
+  {
+    "product_id": "prod_144884",
+    "dropi_id": 144884,
+    "supplier_price_min": 5950,
+    "supplier_price_max": 5950,
+    "suggested_price": 30,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.431Z"
+  },
+  {
+    "product_id": "prod_142904",
+    "dropi_id": 142904,
+    "supplier_price_min": 6490,
+    "supplier_price_max": 6490,
+    "suggested_price": 1,
+    "stock": 357,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.437Z"
+  },
+  {
+    "product_id": "prod_140859",
+    "dropi_id": 140859,
+    "supplier_price_min": 10800,
+    "supplier_price_max": 10800,
+    "suggested_price": 1,
+    "stock": 95,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.442Z"
+  },
+  {
+    "product_id": "prod_135677",
+    "dropi_id": 135677,
+    "supplier_price_min": 3000,
+    "supplier_price_max": 3000,
+    "suggested_price": 30,
+    "stock": 631,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.448Z"
+  },
+  {
+    "product_id": "prod_131651",
+    "dropi_id": 131651,
+    "supplier_price_min": 1500,
+    "supplier_price_max": 1500,
+    "suggested_price": 1,
+    "stock": 4575,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.454Z"
+  },
+  {
+    "product_id": "prod_131618",
+    "dropi_id": 131618,
+    "supplier_price_min": 4000,
+    "supplier_price_max": 4000,
+    "suggested_price": 1,
+    "stock": 1502,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.460Z"
+  },
+  {
+    "product_id": "prod_131289",
+    "dropi_id": 131289,
+    "supplier_price_min": 5400,
+    "supplier_price_max": 5400,
+    "suggested_price": 30,
+    "stock": 1026,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.467Z"
+  },
+  {
+    "product_id": "prod_125414",
+    "dropi_id": 125414,
+    "supplier_price_min": 6990,
+    "supplier_price_max": 6990,
+    "suggested_price": 13990,
+    "stock": 88,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:30.473Z"
+  },
+  {
+    "product_id": "prod_124589",
+    "dropi_id": 124589,
+    "supplier_price_min": 6990,
+    "supplier_price_max": 6990,
+    "suggested_price": 1,
+    "stock": 92,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.479Z"
+  },
+  {
+    "product_id": "prod_123533",
+    "dropi_id": 123533,
+    "supplier_price_min": 1850,
+    "supplier_price_max": 1850,
+    "suggested_price": 30,
+    "stock": 3252,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.487Z"
+  },
+  {
+    "product_id": "prod_122444",
+    "dropi_id": 122444,
+    "supplier_price_min": 3200,
+    "supplier_price_max": 3200,
+    "suggested_price": 1,
+    "stock": 298,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.493Z"
+  },
+  {
+    "product_id": "prod_119474",
+    "dropi_id": 119474,
+    "supplier_price_min": 6300,
+    "supplier_price_max": 6300,
+    "suggested_price": 1,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.500Z"
+  },
+  {
+    "product_id": "prod_114690",
+    "dropi_id": 114690,
+    "supplier_price_min": 3500,
+    "supplier_price_max": 3500,
+    "suggested_price": 1,
+    "stock": 1170,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.507Z"
+  },
+  {
+    "product_id": "prod_114260",
+    "dropi_id": 114260,
+    "supplier_price_min": 6100,
+    "supplier_price_max": 6100,
+    "suggested_price": 1,
+    "stock": 315,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.513Z"
+  },
+  {
+    "product_id": "prod_112181",
+    "dropi_id": 112181,
+    "supplier_price_min": 6990,
+    "supplier_price_max": 6990,
+    "suggested_price": 1,
+    "stock": 9,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.520Z"
+  },
+  {
+    "product_id": "prod_108222",
+    "dropi_id": 108222,
+    "supplier_price_min": 3000,
+    "supplier_price_max": 3000,
+    "suggested_price": 1,
+    "stock": 50,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.527Z"
+  },
+  {
+    "product_id": "prod_107497",
+    "dropi_id": 107497,
+    "supplier_price_min": 2000,
+    "supplier_price_max": 2000,
+    "suggested_price": 30,
+    "stock": 425,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.534Z"
+  },
+  {
+    "product_id": "prod_106737",
+    "dropi_id": 106737,
+    "supplier_price_min": 7900,
+    "supplier_price_max": 7900,
+    "suggested_price": 30,
+    "stock": 6,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.540Z"
+  },
+  {
+    "product_id": "prod_103601",
+    "dropi_id": 103601,
+    "supplier_price_min": 4100,
+    "supplier_price_max": 4100,
+    "suggested_price": 1,
+    "stock": 100,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.548Z"
+  },
+  {
+    "product_id": "prod_98237",
+    "dropi_id": 98237,
+    "supplier_price_min": 3000,
+    "supplier_price_max": 3000,
+    "suggested_price": 30,
+    "stock": 967,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.555Z"
+  },
+  {
+    "product_id": "prod_98173",
+    "dropi_id": 98173,
+    "supplier_price_min": 3000,
+    "supplier_price_max": 3000,
+    "suggested_price": 30,
+    "stock": 1613,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.562Z"
+  },
+  {
+    "product_id": "prod_95190",
+    "dropi_id": 95190,
+    "supplier_price_min": 4000,
+    "supplier_price_max": 4000,
+    "suggested_price": 15000,
+    "stock": 299,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:30.569Z"
+  },
+  {
+    "product_id": "prod_94890",
+    "dropi_id": 94890,
+    "supplier_price_min": 7500,
+    "supplier_price_max": 7500,
+    "suggested_price": 1,
+    "stock": 377,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.575Z"
+  },
+  {
+    "product_id": "prod_94836",
+    "dropi_id": 94836,
+    "supplier_price_min": 5000,
+    "supplier_price_max": 5000,
+    "suggested_price": 1,
+    "stock": 534,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.583Z"
+  },
+  {
+    "product_id": "prod_94371",
+    "dropi_id": 94371,
+    "supplier_price_min": 1800,
+    "supplier_price_max": 1800,
+    "suggested_price": 30,
+    "stock": 103,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.590Z"
+  },
+  {
+    "product_id": "prod_93834",
+    "dropi_id": 93834,
+    "supplier_price_min": 2700,
+    "supplier_price_max": 2700,
+    "suggested_price": 1,
+    "stock": 206,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.596Z"
+  },
+  {
+    "product_id": "prod_93111",
+    "dropi_id": 93111,
+    "supplier_price_min": 8990,
+    "supplier_price_max": 8990,
+    "suggested_price": 1,
+    "stock": 399,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.603Z"
+  },
+  {
+    "product_id": "prod_92790",
+    "dropi_id": 92790,
+    "supplier_price_min": 1500,
+    "supplier_price_max": 1500,
+    "suggested_price": 30,
+    "stock": 1245,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.610Z"
+  },
+  {
+    "product_id": "prod_92745",
+    "dropi_id": 92745,
+    "supplier_price_min": 6400,
+    "supplier_price_max": 6400,
+    "suggested_price": 1,
+    "stock": 395,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.616Z"
+  },
+  {
+    "product_id": "prod_92744",
+    "dropi_id": 92744,
+    "supplier_price_min": 11990,
+    "supplier_price_max": 11990,
+    "suggested_price": 1,
+    "stock": 300,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.623Z"
+  },
+  {
+    "product_id": "prod_92319",
+    "dropi_id": 92319,
+    "supplier_price_min": 2850,
+    "supplier_price_max": 2850,
+    "suggested_price": 30,
+    "stock": 180,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.632Z"
+  },
+  {
+    "product_id": "prod_86772",
+    "dropi_id": 86772,
+    "supplier_price_min": 7900,
+    "supplier_price_max": 7900,
+    "suggested_price": 1,
+    "stock": 91,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.640Z"
+  },
+  {
+    "product_id": "prod_78721",
+    "dropi_id": 78721,
+    "supplier_price_min": 6900,
+    "supplier_price_max": 6900,
+    "suggested_price": 30,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.647Z"
+  },
+  {
+    "product_id": "prod_76477",
+    "dropi_id": 76477,
+    "supplier_price_min": 0,
+    "supplier_price_max": 0,
+    "suggested_price": 0,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.655Z"
+  },
+  {
+    "product_id": "prod_72284",
+    "dropi_id": 72284,
+    "supplier_price_min": 6790,
+    "supplier_price_max": 6790,
+    "suggested_price": 1,
+    "stock": 396,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.662Z"
+  },
+  {
+    "product_id": "prod_72096",
+    "dropi_id": 72096,
+    "supplier_price_min": 1990,
+    "supplier_price_max": 1990,
+    "suggested_price": 1,
+    "stock": 980,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.669Z"
+  },
+  {
+    "product_id": "prod_71724",
+    "dropi_id": 71724,
+    "supplier_price_min": 5300,
+    "supplier_price_max": 5300,
+    "suggested_price": 1,
+    "stock": 1316,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.679Z"
+  },
+  {
+    "product_id": "prod_71503",
+    "dropi_id": 71503,
+    "supplier_price_min": 0,
+    "supplier_price_max": 0,
+    "suggested_price": 0,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.687Z"
+  },
+  {
+    "product_id": "prod_71494",
+    "dropi_id": 71494,
+    "supplier_price_min": 3000,
+    "supplier_price_max": 3000,
+    "suggested_price": 1,
+    "stock": 718,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.695Z"
+  },
+  {
+    "product_id": "prod_71279",
+    "dropi_id": 71279,
+    "supplier_price_min": 2850,
+    "supplier_price_max": 2850,
+    "suggested_price": 1,
+    "stock": 254,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.705Z"
+  },
+  {
+    "product_id": "prod_71278",
+    "dropi_id": 71278,
+    "supplier_price_min": 4750,
+    "supplier_price_max": 4750,
+    "suggested_price": 1,
+    "stock": 498,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.713Z"
+  },
+  {
+    "product_id": "prod_71206",
+    "dropi_id": 71206,
+    "supplier_price_min": 6990,
+    "supplier_price_max": 6990,
+    "suggested_price": 1,
+    "stock": 329,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.722Z"
+  },
+  {
+    "product_id": "prod_71205",
+    "dropi_id": 71205,
+    "supplier_price_min": 3990,
+    "supplier_price_max": 3990,
+    "suggested_price": 1,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.732Z"
+  },
+  {
+    "product_id": "prod_65673",
+    "dropi_id": 65673,
+    "supplier_price_min": 6790,
+    "supplier_price_max": 6790,
+    "suggested_price": 13990,
+    "stock": 489,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:30.739Z"
+  },
+  {
+    "product_id": "prod_65326",
+    "dropi_id": 65326,
+    "supplier_price_min": 7500,
+    "supplier_price_max": 7500,
+    "suggested_price": 30,
+    "stock": 750,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.745Z"
+  },
+  {
+    "product_id": "prod_64594",
+    "dropi_id": 64594,
+    "supplier_price_min": 10104,
+    "supplier_price_max": 10104,
+    "suggested_price": 21990,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.752Z"
+  },
+  {
+    "product_id": "prod_63016",
+    "dropi_id": 63016,
+    "supplier_price_min": 7500,
+    "supplier_price_max": 7500,
+    "suggested_price": 30,
+    "stock": 978,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.760Z"
+  },
+  {
+    "product_id": "prod_62587",
+    "dropi_id": 62587,
+    "supplier_price_min": 3300,
+    "supplier_price_max": 3300,
+    "suggested_price": 30,
+    "stock": 925,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.768Z"
+  },
+  {
+    "product_id": "prod_62491",
+    "dropi_id": 62491,
+    "supplier_price_min": 6950,
+    "supplier_price_max": 6950,
+    "suggested_price": 30,
+    "stock": 971,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.777Z"
+  },
+  {
+    "product_id": "prod_62253",
+    "dropi_id": 62253,
+    "supplier_price_min": 7900,
+    "supplier_price_max": 7900,
+    "suggested_price": 30,
+    "stock": 109,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.784Z"
+  },
+  {
+    "product_id": "prod_62022",
+    "dropi_id": 62022,
+    "supplier_price_min": 7900,
+    "supplier_price_max": 7900,
+    "suggested_price": 30,
+    "stock": 886,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.791Z"
+  },
+  {
+    "product_id": "prod_61339",
+    "dropi_id": 61339,
+    "supplier_price_min": 4300,
+    "supplier_price_max": 4300,
+    "suggested_price": 30,
+    "stock": 1000,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.799Z"
+  },
+  {
+    "product_id": "prod_60945",
+    "dropi_id": 60945,
+    "supplier_price_min": 1990,
+    "supplier_price_max": 1990,
+    "suggested_price": 30,
+    "stock": 5,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.809Z"
+  },
+  {
+    "product_id": "prod_60941",
+    "dropi_id": 60941,
+    "supplier_price_min": 2800,
+    "supplier_price_max": 2800,
+    "suggested_price": 30,
+    "stock": 972,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.816Z"
+  },
+  {
+    "product_id": "prod_59810",
+    "dropi_id": 59810,
+    "supplier_price_min": 14841,
+    "supplier_price_max": 14841,
+    "suggested_price": 28990,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.825Z"
+  },
+  {
+    "product_id": "prod_59555",
+    "dropi_id": 59555,
+    "supplier_price_min": 7500,
+    "supplier_price_max": 7500,
+    "suggested_price": 30,
+    "stock": 626,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.834Z"
+  },
+  {
+    "product_id": "prod_59551",
+    "dropi_id": 59551,
+    "supplier_price_min": 8500,
+    "supplier_price_max": 8500,
+    "suggested_price": 30,
+    "stock": 993,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.841Z"
+  },
+  {
+    "product_id": "prod_59086",
+    "dropi_id": 59086,
+    "supplier_price_min": 4900,
+    "supplier_price_max": 4900,
+    "suggested_price": 30,
+    "stock": 437,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.849Z"
+  },
+  {
+    "product_id": "prod_59030",
+    "dropi_id": 59030,
+    "supplier_price_min": 7000,
+    "supplier_price_max": 7000,
+    "suggested_price": 1,
+    "stock": 187,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.858Z"
+  },
+  {
+    "product_id": "prod_58977",
+    "dropi_id": 58977,
+    "supplier_price_min": 6990,
+    "supplier_price_max": 6990,
+    "suggested_price": 30,
+    "stock": 219,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.866Z"
+  },
+  {
+    "product_id": "prod_58954",
+    "dropi_id": 58954,
+    "supplier_price_min": 10500,
+    "supplier_price_max": 10500,
+    "suggested_price": 30,
+    "stock": 1000,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.874Z"
+  },
+  {
+    "product_id": "prod_58655",
+    "dropi_id": 58655,
+    "supplier_price_min": 2600,
+    "supplier_price_max": 2600,
+    "suggested_price": 5200,
+    "stock": 998,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:30.881Z"
+  },
+  {
+    "product_id": "prod_58557",
+    "dropi_id": 58557,
+    "supplier_price_min": 4000,
+    "supplier_price_max": 4000,
+    "suggested_price": 30,
+    "stock": 110,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.889Z"
+  },
+  {
+    "product_id": "prod_58373",
+    "dropi_id": 58373,
+    "supplier_price_min": 2000,
+    "supplier_price_max": 2000,
+    "suggested_price": 30,
+    "stock": 247,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.898Z"
+  },
+  {
+    "product_id": "prod_55866",
+    "dropi_id": 55866,
+    "supplier_price_min": 6500,
+    "supplier_price_max": 6500,
+    "suggested_price": 123,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.906Z"
+  },
+  {
+    "product_id": "prod_55811",
+    "dropi_id": 55811,
+    "supplier_price_min": 2210,
+    "supplier_price_max": 2210,
+    "suggested_price": 4420,
+    "stock": 989,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:30.915Z"
+  },
+  {
+    "product_id": "prod_55421",
+    "dropi_id": 55421,
+    "supplier_price_min": 1170,
+    "supplier_price_max": 1170,
+    "suggested_price": 2340,
+    "stock": 924,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:30.922Z"
+  },
+  {
+    "product_id": "prod_54645",
+    "dropi_id": 54645,
+    "supplier_price_min": 2500,
+    "supplier_price_max": 2500,
+    "suggested_price": 30,
+    "stock": 994,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.930Z"
+  },
+  {
+    "product_id": "prod_54148",
+    "dropi_id": 54148,
+    "supplier_price_min": 1950,
+    "supplier_price_max": 1950,
+    "suggested_price": 3900,
+    "stock": 1000,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:30.938Z"
+  },
+  {
+    "product_id": "prod_51381",
+    "dropi_id": 51381,
+    "supplier_price_min": 10400,
+    "supplier_price_max": 10400,
+    "suggested_price": 20800,
+    "stock": 991,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:30.945Z"
+  },
+  {
+    "product_id": "prod_50722",
+    "dropi_id": 50722,
+    "supplier_price_min": 1500,
+    "supplier_price_max": 1500,
+    "suggested_price": 1,
+    "stock": 99,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.955Z"
+  },
+  {
+    "product_id": "prod_50716",
+    "dropi_id": 50716,
+    "supplier_price_min": 3990,
+    "supplier_price_max": 3990,
+    "suggested_price": 12990,
+    "stock": 99,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:30.962Z"
+  },
+  {
+    "product_id": "prod_50073",
+    "dropi_id": 50073,
+    "supplier_price_min": 5990,
+    "supplier_price_max": 5990,
+    "suggested_price": 11000,
+    "stock": 500,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:30.970Z"
+  },
+  {
+    "product_id": "prod_49603",
+    "dropi_id": 49603,
+    "supplier_price_min": 3600,
+    "supplier_price_max": 3600,
+    "suggested_price": 30,
+    "stock": 985,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.978Z"
+  },
+  {
+    "product_id": "prod_49394",
+    "dropi_id": 49394,
+    "supplier_price_min": 3000,
+    "supplier_price_max": 3000,
+    "suggested_price": 12990,
+    "stock": 1,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.987Z"
+  },
+  {
+    "product_id": "prod_49216",
+    "dropi_id": 49216,
+    "supplier_price_min": 18000,
+    "supplier_price_max": 18000,
+    "suggested_price": 10,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:30.995Z"
+  },
+  {
+    "product_id": "prod_49215",
+    "dropi_id": 49215,
+    "supplier_price_min": 8800,
+    "supplier_price_max": 8800,
+    "suggested_price": 10,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.004Z"
+  },
+  {
+    "product_id": "prod_49214",
+    "dropi_id": 49214,
+    "supplier_price_min": 14500,
+    "supplier_price_max": 14500,
+    "suggested_price": 10,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.012Z"
+  },
+  {
+    "product_id": "prod_48825",
+    "dropi_id": 48825,
+    "supplier_price_min": 2000,
+    "supplier_price_max": 2000,
+    "suggested_price": 1,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.020Z"
+  },
+  {
+    "product_id": "prod_48824",
+    "dropi_id": 48824,
+    "supplier_price_min": 4500,
+    "supplier_price_max": 4500,
+    "suggested_price": 1,
+    "stock": 399,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.028Z"
+  },
+  {
+    "product_id": "prod_48676",
+    "dropi_id": 48676,
+    "supplier_price_min": 4000,
+    "supplier_price_max": 4000,
+    "suggested_price": 1,
+    "stock": 990,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.036Z"
+  },
+  {
+    "product_id": "prod_48328",
+    "dropi_id": 48328,
+    "supplier_price_min": 5500,
+    "supplier_price_max": 5500,
+    "suggested_price": 15990,
+    "stock": 212,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.046Z"
+  },
+  {
+    "product_id": "prod_48271",
+    "dropi_id": 48271,
+    "supplier_price_min": 5000,
+    "supplier_price_max": 5000,
+    "suggested_price": 1,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.054Z"
+  },
+  {
+    "product_id": "prod_47640",
+    "dropi_id": 47640,
+    "supplier_price_min": 12200,
+    "supplier_price_max": 12200,
+    "suggested_price": 1,
+    "stock": 113,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.061Z"
+  },
+  {
+    "product_id": "prod_47605",
+    "dropi_id": 47605,
+    "supplier_price_min": 10000,
+    "supplier_price_max": 10000,
+    "suggested_price": 30,
+    "stock": 16,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.071Z"
+  },
+  {
+    "product_id": "prod_47560",
+    "dropi_id": 47560,
+    "supplier_price_min": 910,
+    "supplier_price_max": 910,
+    "suggested_price": 1820,
+    "stock": 983,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.080Z"
+  },
+  {
+    "product_id": "prod_47214",
+    "dropi_id": 47214,
+    "supplier_price_min": 8000,
+    "supplier_price_max": 8000,
+    "suggested_price": 25990,
+    "stock": 188,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.091Z"
+  },
+  {
+    "product_id": "prod_47027",
+    "dropi_id": 47027,
+    "supplier_price_min": 3000,
+    "supplier_price_max": 3000,
+    "suggested_price": 1200,
+    "stock": 596,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.101Z"
+  },
+  {
+    "product_id": "prod_46602",
+    "dropi_id": 46602,
+    "supplier_price_min": 5700,
+    "supplier_price_max": 5700,
+    "suggested_price": 1,
+    "stock": 90,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.112Z"
+  },
+  {
+    "product_id": "prod_46495",
+    "dropi_id": 46495,
+    "supplier_price_min": 14990,
+    "supplier_price_max": 14990,
+    "suggested_price": 29990,
+    "stock": 95,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.120Z"
+  },
+  {
+    "product_id": "prod_46393",
+    "dropi_id": 46393,
+    "supplier_price_min": 2200,
+    "supplier_price_max": 2200,
+    "suggested_price": 1,
+    "stock": 918,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.128Z"
+  },
+  {
+    "product_id": "prod_46098",
+    "dropi_id": 46098,
+    "supplier_price_min": 1000,
+    "supplier_price_max": 1000,
+    "suggested_price": 30,
+    "stock": 4,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.137Z"
+  },
+  {
+    "product_id": "prod_40732",
+    "dropi_id": 40732,
+    "supplier_price_min": 5000,
+    "supplier_price_max": 5000,
+    "suggested_price": 19990,
+    "stock": 271,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.144Z"
+  },
+  {
+    "product_id": "prod_40039",
+    "dropi_id": 40039,
+    "supplier_price_min": 3000,
+    "supplier_price_max": 3000,
+    "suggested_price": 14000,
+    "stock": 97,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.153Z"
+  },
+  {
+    "product_id": "prod_38127",
+    "dropi_id": 38127,
+    "supplier_price_min": 2950,
+    "supplier_price_max": 2950,
+    "suggested_price": 30,
+    "stock": 990,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.161Z"
+  },
+  {
+    "product_id": "prod_38080",
+    "dropi_id": 38080,
+    "supplier_price_min": 2800,
+    "supplier_price_max": 2800,
+    "suggested_price": 1,
+    "stock": 372,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.169Z"
+  },
+  {
+    "product_id": "prod_38071",
+    "dropi_id": 38071,
+    "supplier_price_min": 3900,
+    "supplier_price_max": 3900,
+    "suggested_price": 1,
+    "stock": 356,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.178Z"
+  },
+  {
+    "product_id": "prod_37718",
+    "dropi_id": 37718,
+    "supplier_price_min": 5700,
+    "supplier_price_max": 5700,
+    "suggested_price": 15500,
+    "stock": 838,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.186Z"
+  },
+  {
+    "product_id": "prod_37715",
+    "dropi_id": 37715,
+    "supplier_price_min": 13990,
+    "supplier_price_max": 13990,
+    "suggested_price": 18990,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.194Z"
+  },
+  {
+    "product_id": "prod_37596",
+    "dropi_id": 37596,
+    "supplier_price_min": 3850,
+    "supplier_price_max": 3850,
+    "suggested_price": 1,
+    "stock": 157,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.202Z"
+  },
+  {
+    "product_id": "prod_37263",
+    "dropi_id": 37263,
+    "supplier_price_min": 6500,
+    "supplier_price_max": 6500,
+    "suggested_price": 24990,
+    "stock": 1,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.211Z"
+  },
+  {
+    "product_id": "prod_36531",
+    "dropi_id": 36531,
+    "supplier_price_min": 12500,
+    "supplier_price_max": 12500,
+    "suggested_price": 1,
+    "stock": 346,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.220Z"
+  },
+  {
+    "product_id": "prod_36273",
+    "dropi_id": 36273,
+    "supplier_price_min": 2300,
+    "supplier_price_max": 2300,
+    "suggested_price": 2500,
+    "stock": 234,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.228Z"
+  },
+  {
+    "product_id": "prod_36263",
+    "dropi_id": 36263,
+    "supplier_price_min": 3850,
+    "supplier_price_max": 3850,
+    "suggested_price": 4800,
+    "stock": 223,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.237Z"
+  },
+  {
+    "product_id": "prod_36206",
+    "dropi_id": 36206,
+    "supplier_price_min": 4500,
+    "supplier_price_max": 4500,
+    "suggested_price": 6500,
+    "stock": 229,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.247Z"
+  },
+  {
+    "product_id": "prod_36142",
+    "dropi_id": 36142,
+    "supplier_price_min": 11050,
+    "supplier_price_max": 11050,
+    "suggested_price": 22100,
+    "stock": 786,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.255Z"
+  },
+  {
+    "product_id": "prod_36054",
+    "dropi_id": 36054,
+    "supplier_price_min": 8000,
+    "supplier_price_max": 8000,
+    "suggested_price": 1,
+    "stock": 119,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.264Z"
+  },
+  {
+    "product_id": "prod_36042",
+    "dropi_id": 36042,
+    "supplier_price_min": 9800,
+    "supplier_price_max": 9800,
+    "suggested_price": 1,
+    "stock": 97,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.273Z"
+  },
+  {
+    "product_id": "prod_35787",
+    "dropi_id": 35787,
+    "supplier_price_min": 3000,
+    "supplier_price_max": 3000,
+    "suggested_price": 30,
+    "stock": 952,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.282Z"
+  },
+  {
+    "product_id": "prod_35572",
+    "dropi_id": 35572,
+    "supplier_price_min": 3650,
+    "supplier_price_max": 3650,
+    "suggested_price": 1,
+    "stock": 242,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.292Z"
+  },
+  {
+    "product_id": "prod_35531",
+    "dropi_id": 35531,
+    "supplier_price_min": 9000,
+    "supplier_price_max": 9000,
+    "suggested_price": 30,
+    "stock": 610,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.301Z"
+  },
+  {
+    "product_id": "prod_35126",
+    "dropi_id": 35126,
+    "supplier_price_min": 3500,
+    "supplier_price_max": 3500,
+    "suggested_price": 0,
+    "stock": 219,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.312Z"
+  },
+  {
+    "product_id": "prod_34962",
+    "dropi_id": 34962,
+    "supplier_price_min": 5500,
+    "supplier_price_max": 5500,
+    "suggested_price": 0,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.323Z"
+  },
+  {
+    "product_id": "prod_34783",
+    "dropi_id": 34783,
+    "supplier_price_min": 18500,
+    "supplier_price_max": 18500,
+    "suggested_price": 30,
+    "stock": 207,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.333Z"
+  },
+  {
+    "product_id": "prod_33776",
+    "dropi_id": 33776,
+    "supplier_price_min": 5500,
+    "supplier_price_max": 5500,
+    "suggested_price": 20,
+    "stock": 953,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.342Z"
+  },
+  {
+    "product_id": "prod_32757",
+    "dropi_id": 32757,
+    "supplier_price_min": 8990,
+    "supplier_price_max": 8990,
+    "suggested_price": 19950,
+    "stock": 2291,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.354Z"
+  },
+  {
+    "product_id": "prod_32694",
+    "dropi_id": 32694,
+    "supplier_price_min": 12000,
+    "supplier_price_max": 12000,
+    "suggested_price": 24000,
+    "stock": 994,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.363Z"
+  },
+  {
+    "product_id": "prod_32691",
+    "dropi_id": 32691,
+    "supplier_price_min": 6500,
+    "supplier_price_max": 6500,
+    "suggested_price": 24000,
+    "stock": 729,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.373Z"
+  },
+  {
+    "product_id": "prod_32095",
+    "dropi_id": 32095,
+    "supplier_price_min": 1999,
+    "supplier_price_max": 1999,
+    "suggested_price": 11990,
+    "stock": 18,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.384Z"
+  },
+  {
+    "product_id": "prod_31903",
+    "dropi_id": 31903,
+    "supplier_price_min": 4000,
+    "supplier_price_max": 4000,
+    "suggested_price": 1,
+    "stock": 116,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.393Z"
+  },
+  {
+    "product_id": "prod_31741",
+    "dropi_id": 31741,
+    "supplier_price_min": 4990,
+    "supplier_price_max": 4990,
+    "suggested_price": 19990,
+    "stock": 150,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.403Z"
+  },
+  {
+    "product_id": "prod_31157",
+    "dropi_id": 31157,
+    "supplier_price_min": 4000,
+    "supplier_price_max": 4000,
+    "suggested_price": 1,
+    "stock": 117,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.414Z"
+  },
+  {
+    "product_id": "prod_31135",
+    "dropi_id": 31135,
+    "supplier_price_min": 3500,
+    "supplier_price_max": 3500,
+    "suggested_price": 4500,
+    "stock": 69,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.423Z"
+  },
+  {
+    "product_id": "prod_31129",
+    "dropi_id": 31129,
+    "supplier_price_min": 4000,
+    "supplier_price_max": 4000,
+    "suggested_price": 1,
+    "stock": 223,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.433Z"
+  },
+  {
+    "product_id": "prod_30778",
+    "dropi_id": 30778,
+    "supplier_price_min": 5500,
+    "supplier_price_max": 5500,
+    "suggested_price": 11990,
+    "stock": 90,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.443Z"
+  },
+  {
+    "product_id": "prod_30694",
+    "dropi_id": 30694,
+    "supplier_price_min": 5990,
+    "supplier_price_max": 5990,
+    "suggested_price": 21990,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.454Z"
+  },
+  {
+    "product_id": "prod_30693",
+    "dropi_id": 30693,
+    "supplier_price_min": 7990,
+    "supplier_price_max": 7990,
+    "suggested_price": 24990,
+    "stock": 663,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.465Z"
+  },
+  {
+    "product_id": "prod_30691",
+    "dropi_id": 30691,
+    "supplier_price_min": 5800,
+    "supplier_price_max": 5800,
+    "suggested_price": 19990,
+    "stock": 9,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.476Z"
+  },
+  {
+    "product_id": "prod_30690",
+    "dropi_id": 30690,
+    "supplier_price_min": 1990,
+    "supplier_price_max": 1990,
+    "suggested_price": 1,
+    "stock": 662,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.486Z"
+  },
+  {
+    "product_id": "prod_30580",
+    "dropi_id": 30580,
+    "supplier_price_min": 6990,
+    "supplier_price_max": 6990,
+    "suggested_price": 13980,
+    "stock": 2,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.498Z"
+  },
+  {
+    "product_id": "prod_30507",
+    "dropi_id": 30507,
+    "supplier_price_min": 5000,
+    "supplier_price_max": 5000,
+    "suggested_price": 14990,
+    "stock": 812,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.509Z"
+  },
+  {
+    "product_id": "prod_30213",
+    "dropi_id": 30213,
+    "supplier_price_min": 1990,
+    "supplier_price_max": 1990,
+    "suggested_price": 0,
+    "stock": 100,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.521Z"
+  },
+  {
+    "product_id": "prod_30150",
+    "dropi_id": 30150,
+    "supplier_price_min": 7300,
+    "supplier_price_max": 7300,
+    "suggested_price": 1,
+    "stock": 246,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.529Z"
+  },
+  {
+    "product_id": "prod_29571",
+    "dropi_id": 29571,
+    "supplier_price_min": 14000,
+    "supplier_price_max": 14000,
+    "suggested_price": 30000,
+    "stock": 2,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.538Z"
+  },
+  {
+    "product_id": "prod_29273",
+    "dropi_id": 29273,
+    "supplier_price_min": 5000,
+    "supplier_price_max": 5000,
+    "suggested_price": 1,
+    "stock": 166,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.547Z"
+  },
+  {
+    "product_id": "prod_29268",
+    "dropi_id": 29268,
+    "supplier_price_min": 3500,
+    "supplier_price_max": 3500,
+    "suggested_price": 1,
+    "stock": 213,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.558Z"
+  },
+  {
+    "product_id": "prod_29266",
+    "dropi_id": 29266,
+    "supplier_price_min": 19500,
+    "supplier_price_max": 19500,
+    "suggested_price": 1,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.569Z"
+  },
+  {
+    "product_id": "prod_29259",
+    "dropi_id": 29259,
+    "supplier_price_min": 15000,
+    "supplier_price_max": 15000,
+    "suggested_price": 1,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.578Z"
+  },
+  {
+    "product_id": "prod_28572",
+    "dropi_id": 28572,
+    "supplier_price_min": 3500,
+    "supplier_price_max": 3500,
+    "suggested_price": 12990,
+    "stock": 77,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.586Z"
+  },
+  {
+    "product_id": "prod_28226",
+    "dropi_id": 28226,
+    "supplier_price_min": 4990,
+    "supplier_price_max": 4990,
+    "suggested_price": 1,
+    "stock": 2,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.595Z"
+  },
+  {
+    "product_id": "prod_28225",
+    "dropi_id": 28225,
+    "supplier_price_min": 5990,
+    "supplier_price_max": 5990,
+    "suggested_price": 14990,
+    "stock": 99,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.604Z"
+  },
+  {
+    "product_id": "prod_28223",
+    "dropi_id": 28223,
+    "supplier_price_min": 6990,
+    "supplier_price_max": 6990,
+    "suggested_price": 14990,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.614Z"
+  },
+  {
+    "product_id": "prod_28222",
+    "dropi_id": 28222,
+    "supplier_price_min": 3990,
+    "supplier_price_max": 3990,
+    "suggested_price": 12990,
+    "stock": 97,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.622Z"
+  },
+  {
+    "product_id": "prod_27603",
+    "dropi_id": 27603,
+    "supplier_price_min": 4990,
+    "supplier_price_max": 4990,
+    "suggested_price": 18990,
+    "stock": 89,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.631Z"
+  },
+  {
+    "product_id": "prod_27404",
+    "dropi_id": 27404,
+    "supplier_price_min": 3500,
+    "supplier_price_max": 3500,
+    "suggested_price": 16990,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.639Z"
+  },
+  {
+    "product_id": "prod_27403",
+    "dropi_id": 27403,
+    "supplier_price_min": 4500,
+    "supplier_price_max": 4500,
+    "suggested_price": 20000,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.649Z"
+  },
+  {
+    "product_id": "prod_26314",
+    "dropi_id": 26314,
+    "supplier_price_min": 12900,
+    "supplier_price_max": 12900,
+    "suggested_price": 1,
+    "stock": 188,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.657Z"
+  },
+  {
+    "product_id": "prod_26057",
+    "dropi_id": 26057,
+    "supplier_price_min": 4990,
+    "supplier_price_max": 4990,
+    "suggested_price": 18990,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.667Z"
+  },
+  {
+    "product_id": "prod_25413",
+    "dropi_id": 25413,
+    "supplier_price_min": 9500,
+    "supplier_price_max": 9500,
+    "suggested_price": 29990,
+    "stock": 2083,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.676Z"
+  },
+  {
+    "product_id": "prod_24927",
+    "dropi_id": 24927,
+    "supplier_price_min": 4900,
+    "supplier_price_max": 4900,
+    "suggested_price": 22990,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.686Z"
+  },
+  {
+    "product_id": "prod_24792",
+    "dropi_id": 24792,
+    "supplier_price_min": 2500,
+    "supplier_price_max": 2500,
+    "suggested_price": 30,
+    "stock": 1597,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.695Z"
+  },
+  {
+    "product_id": "prod_24424",
+    "dropi_id": 24424,
+    "supplier_price_min": 3500,
+    "supplier_price_max": 3500,
+    "suggested_price": 1,
+    "stock": 179,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.704Z"
+  },
+  {
+    "product_id": "prod_24362",
+    "dropi_id": 24362,
+    "supplier_price_min": 3200,
+    "supplier_price_max": 3200,
+    "suggested_price": 14990,
+    "stock": 73,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.713Z"
+  },
+  {
+    "product_id": "prod_24184",
+    "dropi_id": 24184,
+    "supplier_price_min": 4490,
+    "supplier_price_max": 4490,
+    "suggested_price": 0,
+    "stock": 299,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.723Z"
+  },
+  {
+    "product_id": "prod_24120",
+    "dropi_id": 24120,
+    "supplier_price_min": 3500,
+    "supplier_price_max": 3500,
+    "suggested_price": 1,
+    "stock": 478,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.731Z"
+  },
+  {
+    "product_id": "prod_23943",
+    "dropi_id": 23943,
+    "supplier_price_min": 6000,
+    "supplier_price_max": 6000,
+    "suggested_price": 7500,
+    "stock": 2,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.740Z"
+  },
+  {
+    "product_id": "prod_23938",
+    "dropi_id": 23938,
+    "supplier_price_min": 2200,
+    "supplier_price_max": 2200,
+    "suggested_price": 14990,
+    "stock": 976,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.749Z"
+  },
+  {
+    "product_id": "prod_23629",
+    "dropi_id": 23629,
+    "supplier_price_min": 1400,
+    "supplier_price_max": 1400,
+    "suggested_price": 10,
+    "stock": 918,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.759Z"
+  },
+  {
+    "product_id": "prod_22654",
+    "dropi_id": 22654,
+    "supplier_price_min": 2100,
+    "supplier_price_max": 2100,
+    "suggested_price": 1,
+    "stock": 981,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.768Z"
+  },
+  {
+    "product_id": "prod_22547",
+    "dropi_id": 22547,
+    "supplier_price_min": 3500,
+    "supplier_price_max": 3500,
+    "suggested_price": 14990,
+    "stock": 100,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:31.778Z"
+  },
+  {
+    "product_id": "prod_22546",
+    "dropi_id": 22546,
+    "supplier_price_min": 4990,
+    "supplier_price_max": 4990,
+    "suggested_price": 0,
+    "stock": 300,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.788Z"
+  },
+  {
+    "product_id": "prod_22412",
+    "dropi_id": 22412,
+    "supplier_price_min": 3490,
+    "supplier_price_max": 3490,
+    "suggested_price": 0,
+    "stock": 299,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.796Z"
+  },
+  {
+    "product_id": "prod_22409",
+    "dropi_id": 22409,
+    "supplier_price_min": 3460,
+    "supplier_price_max": 3460,
+    "suggested_price": 0,
+    "stock": 300,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.805Z"
+  },
+  {
+    "product_id": "prod_22408",
+    "dropi_id": 22408,
+    "supplier_price_min": 4490,
+    "supplier_price_max": 4490,
+    "suggested_price": 0,
+    "stock": 300,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.813Z"
+  },
+  {
+    "product_id": "prod_22374",
+    "dropi_id": 22374,
+    "supplier_price_min": 9990,
+    "supplier_price_max": 9990,
+    "suggested_price": 0,
+    "stock": 300,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.823Z"
+  },
+  {
+    "product_id": "prod_22299",
+    "dropi_id": 22299,
+    "supplier_price_min": 5290,
+    "supplier_price_max": 5290,
+    "suggested_price": 0,
+    "stock": 222,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.832Z"
+  },
+  {
+    "product_id": "prod_22297",
+    "dropi_id": 22297,
+    "supplier_price_min": 3690,
+    "supplier_price_max": 3690,
+    "suggested_price": 2200,
+    "stock": 300,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.841Z"
+  },
+  {
+    "product_id": "prod_22293",
+    "dropi_id": 22293,
+    "supplier_price_min": 9990,
+    "supplier_price_max": 9990,
+    "suggested_price": 0,
+    "stock": 300,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.852Z"
+  },
+  {
+    "product_id": "prod_22283",
+    "dropi_id": 22283,
+    "supplier_price_min": 3490,
+    "supplier_price_max": 3490,
+    "suggested_price": 0,
+    "stock": 300,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.862Z"
+  },
+  {
+    "product_id": "prod_22277",
+    "dropi_id": 22277,
+    "supplier_price_min": 9990,
+    "supplier_price_max": 9990,
+    "suggested_price": 0,
+    "stock": 300,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.871Z"
+  },
+  {
+    "product_id": "prod_22276",
+    "dropi_id": 22276,
+    "supplier_price_min": 5490,
+    "supplier_price_max": 5490,
+    "suggested_price": 0,
+    "stock": 299,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.880Z"
+  },
+  {
+    "product_id": "prod_22272",
+    "dropi_id": 22272,
+    "supplier_price_min": 7990,
+    "supplier_price_max": 7990,
+    "suggested_price": 0,
+    "stock": 291,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.891Z"
+  },
+  {
+    "product_id": "prod_22267",
+    "dropi_id": 22267,
+    "supplier_price_min": 19990,
+    "supplier_price_max": 19990,
+    "suggested_price": 0,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.900Z"
+  },
+  {
+    "product_id": "prod_22261",
+    "dropi_id": 22261,
+    "supplier_price_min": 8990,
+    "supplier_price_max": 8990,
+    "suggested_price": 0,
+    "stock": 228,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.909Z"
+  },
+  {
+    "product_id": "prod_22256",
+    "dropi_id": 22256,
+    "supplier_price_min": 17990,
+    "supplier_price_max": 17990,
+    "suggested_price": 0,
+    "stock": 300,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.919Z"
+  },
+  {
+    "product_id": "prod_22250",
+    "dropi_id": 22250,
+    "supplier_price_min": 8990,
+    "supplier_price_max": 8990,
+    "suggested_price": 0,
+    "stock": 300,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.927Z"
+  },
+  {
+    "product_id": "prod_21993",
+    "dropi_id": 21993,
+    "supplier_price_min": 4990,
+    "supplier_price_max": 4990,
+    "suggested_price": 0,
+    "stock": 297,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.936Z"
+  },
+  {
+    "product_id": "prod_21987",
+    "dropi_id": 21987,
+    "supplier_price_min": 7490,
+    "supplier_price_max": 7490,
+    "suggested_price": 0,
+    "stock": 300,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.945Z"
+  },
+  {
+    "product_id": "prod_21985",
+    "dropi_id": 21985,
+    "supplier_price_min": 4890,
+    "supplier_price_max": 4890,
+    "suggested_price": 0,
+    "stock": 248,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.955Z"
+  },
+  {
+    "product_id": "prod_21907",
+    "dropi_id": 21907,
+    "supplier_price_min": 7290,
+    "supplier_price_max": 7290,
+    "suggested_price": 0,
+    "stock": 269,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.965Z"
+  },
+  {
+    "product_id": "prod_21906",
+    "dropi_id": 21906,
+    "supplier_price_min": 7990,
+    "supplier_price_max": 7990,
+    "suggested_price": 0,
+    "stock": 300,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.974Z"
+  },
+  {
+    "product_id": "prod_21904",
+    "dropi_id": 21904,
+    "supplier_price_min": 12990,
+    "supplier_price_max": 12990,
+    "suggested_price": 0,
+    "stock": 229,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.984Z"
+  },
+  {
+    "product_id": "prod_21806",
+    "dropi_id": 21806,
+    "supplier_price_min": 9990,
+    "supplier_price_max": 9990,
+    "suggested_price": 0,
+    "stock": 299,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:31.993Z"
+  },
+  {
+    "product_id": "prod_21749",
+    "dropi_id": 21749,
+    "supplier_price_min": 21900,
+    "supplier_price_max": 21900,
+    "suggested_price": 0,
+    "stock": 49,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.003Z"
+  },
+  {
+    "product_id": "prod_21745",
+    "dropi_id": 21745,
+    "supplier_price_min": 4290,
+    "supplier_price_max": 4290,
+    "suggested_price": 0,
+    "stock": 300,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.015Z"
+  },
+  {
+    "product_id": "prod_21741",
+    "dropi_id": 21741,
+    "supplier_price_min": 13990,
+    "supplier_price_max": 13990,
+    "suggested_price": 0,
+    "stock": 250,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.027Z"
+  },
+  {
+    "product_id": "prod_21740",
+    "dropi_id": 21740,
+    "supplier_price_min": 5200,
+    "supplier_price_max": 5200,
+    "suggested_price": 1,
+    "stock": 155,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.039Z"
+  },
+  {
+    "product_id": "prod_21737",
+    "dropi_id": 21737,
+    "supplier_price_min": 5990,
+    "supplier_price_max": 5990,
+    "suggested_price": 0,
+    "stock": 300,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.049Z"
+  },
+  {
+    "product_id": "prod_21736",
+    "dropi_id": 21736,
+    "supplier_price_min": 5000,
+    "supplier_price_max": 5000,
+    "suggested_price": 6000,
+    "stock": 1,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.062Z"
+  },
+  {
+    "product_id": "prod_21735",
+    "dropi_id": 21735,
+    "supplier_price_min": 6990,
+    "supplier_price_max": 6990,
+    "suggested_price": 0,
+    "stock": 300,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.073Z"
+  },
+  {
+    "product_id": "prod_21729",
+    "dropi_id": 21729,
+    "supplier_price_min": 12990,
+    "supplier_price_max": 12990,
+    "suggested_price": 0,
+    "stock": 250,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.083Z"
+  },
+  {
+    "product_id": "prod_21712",
+    "dropi_id": 21712,
+    "supplier_price_min": 19900,
+    "supplier_price_max": 19900,
+    "suggested_price": 0,
+    "stock": 60,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.092Z"
+  },
+  {
+    "product_id": "prod_21644",
+    "dropi_id": 21644,
+    "supplier_price_min": 3990,
+    "supplier_price_max": 3990,
+    "suggested_price": 0,
+    "stock": 299,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.105Z"
+  },
+  {
+    "product_id": "prod_21643",
+    "dropi_id": 21643,
+    "supplier_price_min": 1900,
+    "supplier_price_max": 1900,
+    "suggested_price": 0,
+    "stock": 298,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.117Z"
+  },
+  {
+    "product_id": "prod_21642",
+    "dropi_id": 21642,
+    "supplier_price_min": 3490,
+    "supplier_price_max": 3490,
+    "suggested_price": 0,
+    "stock": 299,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.130Z"
+  },
+  {
+    "product_id": "prod_21641",
+    "dropi_id": 21641,
+    "supplier_price_min": 18990,
+    "supplier_price_max": 18990,
+    "suggested_price": 0,
+    "stock": 300,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.143Z"
+  },
+  {
+    "product_id": "prod_21639",
+    "dropi_id": 21639,
+    "supplier_price_min": 4990,
+    "supplier_price_max": 4990,
+    "suggested_price": 0,
+    "stock": 300,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.156Z"
+  },
+  {
+    "product_id": "prod_21638",
+    "dropi_id": 21638,
+    "supplier_price_min": 8990,
+    "supplier_price_max": 8990,
+    "suggested_price": 0,
+    "stock": 300,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.168Z"
+  },
+  {
+    "product_id": "prod_21637",
+    "dropi_id": 21637,
+    "supplier_price_min": 2990,
+    "supplier_price_max": 2990,
+    "suggested_price": 0,
+    "stock": 249,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.177Z"
+  },
+  {
+    "product_id": "prod_21635",
+    "dropi_id": 21635,
+    "supplier_price_min": 4990,
+    "supplier_price_max": 4990,
+    "suggested_price": 0,
+    "stock": 250,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.187Z"
+  },
+  {
+    "product_id": "prod_21632",
+    "dropi_id": 21632,
+    "supplier_price_min": 23990,
+    "supplier_price_max": 23990,
+    "suggested_price": 39990,
+    "stock": 3750,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:32.196Z"
+  },
+  {
+    "product_id": "prod_21628",
+    "dropi_id": 21628,
+    "supplier_price_min": 2190,
+    "supplier_price_max": 2190,
+    "suggested_price": 0,
+    "stock": 250,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.208Z"
+  },
+  {
+    "product_id": "prod_21625",
+    "dropi_id": 21625,
+    "supplier_price_min": 5490,
+    "supplier_price_max": 5490,
+    "suggested_price": 0,
+    "stock": 250,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.220Z"
+  },
+  {
+    "product_id": "prod_21618",
+    "dropi_id": 21618,
+    "supplier_price_min": 16990,
+    "supplier_price_max": 16990,
+    "suggested_price": 0,
+    "stock": 300,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.232Z"
+  },
+  {
+    "product_id": "prod_21616",
+    "dropi_id": 21616,
+    "supplier_price_min": 19990,
+    "supplier_price_max": 19990,
+    "suggested_price": 0,
+    "stock": 300,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.243Z"
+  },
+  {
+    "product_id": "prod_21611",
+    "dropi_id": 21611,
+    "supplier_price_min": 15900,
+    "supplier_price_max": 15900,
+    "suggested_price": 0,
+    "stock": 250,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.254Z"
+  },
+  {
+    "product_id": "prod_21608",
+    "dropi_id": 21608,
+    "supplier_price_min": 10790,
+    "supplier_price_max": 10790,
+    "suggested_price": 0,
+    "stock": 250,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.272Z"
+  },
+  {
+    "product_id": "prod_21558",
+    "dropi_id": 21558,
+    "supplier_price_min": 16990,
+    "supplier_price_max": 16990,
+    "suggested_price": 0,
+    "stock": 298,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.282Z"
+  },
+  {
+    "product_id": "prod_21538",
+    "dropi_id": 21538,
+    "supplier_price_min": 14990,
+    "supplier_price_max": 14990,
+    "suggested_price": 0,
+    "stock": 249,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.294Z"
+  },
+  {
+    "product_id": "prod_21257",
+    "dropi_id": 21257,
+    "supplier_price_min": 9750,
+    "supplier_price_max": 9750,
+    "suggested_price": 19500,
+    "stock": 498,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:32.307Z"
+  },
+  {
+    "product_id": "prod_20759",
+    "dropi_id": 20759,
+    "supplier_price_min": 2500,
+    "supplier_price_max": 2500,
+    "suggested_price": 14990,
+    "stock": 326,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:32.317Z"
+  },
+  {
+    "product_id": "prod_20758",
+    "dropi_id": 20758,
+    "supplier_price_min": 3200,
+    "supplier_price_max": 3200,
+    "suggested_price": 1,
+    "stock": 53,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.327Z"
+  },
+  {
+    "product_id": "prod_20704",
+    "dropi_id": 20704,
+    "supplier_price_min": 4300,
+    "supplier_price_max": 4300,
+    "suggested_price": 1,
+    "stock": 202,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.340Z"
+  },
+  {
+    "product_id": "prod_20686",
+    "dropi_id": 20686,
+    "supplier_price_min": 6500,
+    "supplier_price_max": 6500,
+    "suggested_price": 1,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.351Z"
+  },
+  {
+    "product_id": "prod_20673",
+    "dropi_id": 20673,
+    "supplier_price_min": 6500,
+    "supplier_price_max": 6500,
+    "suggested_price": 1,
+    "stock": 290,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.364Z"
+  },
+  {
+    "product_id": "prod_19957",
+    "dropi_id": 19957,
+    "supplier_price_min": 5000,
+    "supplier_price_max": 5000,
+    "suggested_price": 14990,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.374Z"
+  },
+  {
+    "product_id": "prod_19838",
+    "dropi_id": 19838,
+    "supplier_price_min": 17000,
+    "supplier_price_max": 17000,
+    "suggested_price": 29990,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.385Z"
+  },
+  {
+    "product_id": "prod_18984",
+    "dropi_id": 18984,
+    "supplier_price_min": 2500,
+    "supplier_price_max": 2500,
+    "suggested_price": 12990,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.398Z"
+  },
+  {
+    "product_id": "prod_18813",
+    "dropi_id": 18813,
+    "supplier_price_min": 6000,
+    "supplier_price_max": 6000,
+    "suggested_price": 1,
+    "stock": 149,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.411Z"
+  },
+  {
+    "product_id": "prod_18807",
+    "dropi_id": 18807,
+    "supplier_price_min": 9000,
+    "supplier_price_max": 9000,
+    "suggested_price": 10000,
+    "stock": 333,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:32.426Z"
+  },
+  {
+    "product_id": "prod_18800",
+    "dropi_id": 18800,
+    "supplier_price_min": 2000,
+    "supplier_price_max": 2000,
+    "suggested_price": 4990,
+    "stock": 1,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.438Z"
+  },
+  {
+    "product_id": "prod_18776",
+    "dropi_id": 18776,
+    "supplier_price_min": 1500,
+    "supplier_price_max": 1500,
+    "suggested_price": 7990,
+    "stock": 269,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:32.448Z"
+  },
+  {
+    "product_id": "prod_18513",
+    "dropi_id": 18513,
+    "supplier_price_min": 2000,
+    "supplier_price_max": 2000,
+    "suggested_price": 1,
+    "stock": 144,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.458Z"
+  },
+  {
+    "product_id": "prod_18446",
+    "dropi_id": 18446,
+    "supplier_price_min": 3900,
+    "supplier_price_max": 3900,
+    "suggested_price": 7800,
+    "stock": 739,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:32.471Z"
+  },
+  {
+    "product_id": "prod_18308",
+    "dropi_id": 18308,
+    "supplier_price_min": 13000,
+    "supplier_price_max": 13000,
+    "suggested_price": 25000,
+    "stock": 1229,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:32.482Z"
+  },
+  {
+    "product_id": "prod_17974",
+    "dropi_id": 17974,
+    "supplier_price_min": 5960,
+    "supplier_price_max": 5960,
+    "suggested_price": 10920,
+    "stock": 178,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:32.492Z"
+  },
+  {
+    "product_id": "prod_17540",
+    "dropi_id": 17540,
+    "supplier_price_min": 3500,
+    "supplier_price_max": 3500,
+    "suggested_price": 5990,
+    "stock": 6539,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:32.505Z"
+  },
+  {
+    "product_id": "prod_15598",
+    "dropi_id": 15598,
+    "supplier_price_min": 7500,
+    "supplier_price_max": 7500,
+    "suggested_price": 1,
+    "stock": 198,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.516Z"
+  },
+  {
+    "product_id": "prod_14922",
+    "dropi_id": 14922,
+    "supplier_price_min": 9500,
+    "supplier_price_max": 9500,
+    "suggested_price": 16990,
+    "stock": 7942,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:32.527Z"
+  },
+  {
+    "product_id": "prod_14408",
+    "dropi_id": 14408,
+    "supplier_price_min": 9990,
+    "supplier_price_max": 9990,
+    "suggested_price": 18500,
+    "stock": 372,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:32.539Z"
+  },
+  {
+    "product_id": "prod_14395",
+    "dropi_id": 14395,
+    "supplier_price_min": 7500,
+    "supplier_price_max": 7500,
+    "suggested_price": 24990,
+    "stock": 288,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:32.553Z"
+  },
+  {
+    "product_id": "prod_13633",
+    "dropi_id": 13633,
+    "supplier_price_min": 14950,
+    "supplier_price_max": 14950,
+    "suggested_price": 29900,
+    "stock": 494,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:32.564Z"
+  },
+  {
+    "product_id": "prod_13628",
+    "dropi_id": 13628,
+    "supplier_price_min": 11570,
+    "supplier_price_max": 11570,
+    "suggested_price": 23150,
+    "stock": 498,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:32.577Z"
+  },
+  {
+    "product_id": "prod_13616",
+    "dropi_id": 13616,
+    "supplier_price_min": 0,
+    "supplier_price_max": 0,
+    "suggested_price": 0,
+    "stock": 4979,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.587Z"
+  },
+  {
+    "product_id": "prod_12898",
+    "dropi_id": 12898,
+    "supplier_price_min": 5990,
+    "supplier_price_max": 5990,
+    "suggested_price": 12500,
+    "stock": 5818,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:32.600Z"
+  },
+  {
+    "product_id": "prod_12346",
+    "dropi_id": 12346,
+    "supplier_price_min": 3500,
+    "supplier_price_max": 3500,
+    "suggested_price": 19900,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.611Z"
+  },
+  {
+    "product_id": "prod_12292",
+    "dropi_id": 12292,
+    "supplier_price_min": 9990,
+    "supplier_price_max": 9990,
+    "suggested_price": 17500,
+    "stock": 1131,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:32.623Z"
+  },
+  {
+    "product_id": "prod_12205",
+    "dropi_id": 12205,
+    "supplier_price_min": 6500,
+    "supplier_price_max": 6500,
+    "suggested_price": 1,
+    "stock": 196,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.635Z"
+  },
+  {
+    "product_id": "prod_12202",
+    "dropi_id": 12202,
+    "supplier_price_min": 6500,
+    "supplier_price_max": 6500,
+    "suggested_price": 1,
+    "stock": 260,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.650Z"
+  },
+  {
+    "product_id": "prod_12198",
+    "dropi_id": 12198,
+    "supplier_price_min": 4500,
+    "supplier_price_max": 4500,
+    "suggested_price": 1,
+    "stock": 51,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.666Z"
+  },
+  {
+    "product_id": "prod_12156",
+    "dropi_id": 12156,
+    "supplier_price_min": 2000,
+    "supplier_price_max": 2000,
+    "suggested_price": 0,
+    "stock": 100,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.678Z"
+  },
+  {
+    "product_id": "prod_11959",
+    "dropi_id": 11959,
+    "supplier_price_min": 4500,
+    "supplier_price_max": 4500,
+    "suggested_price": 1,
+    "stock": 98,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.689Z"
+  },
+  {
+    "product_id": "prod_11242",
+    "dropi_id": 11242,
+    "supplier_price_min": 6500,
+    "supplier_price_max": 6500,
+    "suggested_price": 7500,
+    "stock": 5,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.702Z"
+  },
+  {
+    "product_id": "prod_10562",
+    "dropi_id": 10562,
+    "supplier_price_min": 5720,
+    "supplier_price_max": 5720,
+    "suggested_price": 11440,
+    "stock": 499,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:32.713Z"
+  },
+  {
+    "product_id": "prod_10554",
+    "dropi_id": 10554,
+    "supplier_price_min": 5200,
+    "supplier_price_max": 5200,
+    "suggested_price": 10400,
+    "stock": 491,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:32.725Z"
+  },
+  {
+    "product_id": "prod_10465",
+    "dropi_id": 10465,
+    "supplier_price_min": 5850,
+    "supplier_price_max": 5850,
+    "suggested_price": 11700,
+    "stock": 500,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:32.738Z"
+  },
+  {
+    "product_id": "prod_10405",
+    "dropi_id": 10405,
+    "supplier_price_min": 11900,
+    "supplier_price_max": 11900,
+    "suggested_price": 1,
+    "stock": 162,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.750Z"
+  },
+  {
+    "product_id": "prod_10375",
+    "dropi_id": 10375,
+    "supplier_price_min": 5400,
+    "supplier_price_max": 5400,
+    "suggested_price": 1,
+    "stock": 289,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.763Z"
+  },
+  {
+    "product_id": "prod_10300",
+    "dropi_id": 10300,
+    "supplier_price_min": 7000,
+    "supplier_price_max": 7000,
+    "suggested_price": 1,
+    "stock": 96,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.774Z"
+  },
+  {
+    "product_id": "prod_10135",
+    "dropi_id": 10135,
+    "supplier_price_min": 5900,
+    "supplier_price_max": 5900,
+    "suggested_price": 21990,
+    "stock": 87,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:32.786Z"
+  },
+  {
+    "product_id": "prod_8627",
+    "dropi_id": 8627,
+    "supplier_price_min": 8000,
+    "supplier_price_max": 8000,
+    "suggested_price": 16000,
+    "stock": 995,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:32.797Z"
+  },
+  {
+    "product_id": "prod_8564",
+    "dropi_id": 8564,
+    "supplier_price_min": 2500,
+    "supplier_price_max": 2500,
+    "suggested_price": 15000,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.809Z"
+  },
+  {
+    "product_id": "prod_8555",
+    "dropi_id": 8555,
+    "supplier_price_min": 13500,
+    "supplier_price_max": 13500,
+    "suggested_price": 29990,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.825Z"
+  },
+  {
+    "product_id": "prod_8509",
+    "dropi_id": 8509,
+    "supplier_price_min": 5000,
+    "supplier_price_max": 5000,
+    "suggested_price": 17990,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.837Z"
+  },
+  {
+    "product_id": "prod_7522",
+    "dropi_id": 7522,
+    "supplier_price_min": 4400,
+    "supplier_price_max": 4400,
+    "suggested_price": 1,
+    "stock": 279,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.849Z"
+  },
+  {
+    "product_id": "prod_7445",
+    "dropi_id": 7445,
+    "supplier_price_min": 3000,
+    "supplier_price_max": 3000,
+    "suggested_price": 21990,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.862Z"
+  },
+  {
+    "product_id": "prod_6703",
+    "dropi_id": 6703,
+    "supplier_price_min": 4500,
+    "supplier_price_max": 4500,
+    "suggested_price": 22990,
+    "stock": 299,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:32.874Z"
+  },
+  {
+    "product_id": "prod_6152",
+    "dropi_id": 6152,
+    "supplier_price_min": 11990,
+    "supplier_price_max": 11990,
+    "suggested_price": 24000,
+    "stock": 989,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:32.884Z"
+  },
+  {
+    "product_id": "prod_5710",
+    "dropi_id": 5710,
+    "supplier_price_min": 3800,
+    "supplier_price_max": 3800,
+    "suggested_price": 123,
+    "stock": 243,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.898Z"
+  },
+  {
+    "product_id": "prod_5645",
+    "dropi_id": 5645,
+    "supplier_price_min": 16990,
+    "supplier_price_max": 16990,
+    "suggested_price": 34000,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.908Z"
+  },
+  {
+    "product_id": "prod_5644",
+    "dropi_id": 5644,
+    "supplier_price_min": 5990,
+    "supplier_price_max": 5990,
+    "suggested_price": 12000,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.919Z"
+  },
+  {
+    "product_id": "prod_5567",
+    "dropi_id": 5567,
+    "supplier_price_min": 4000,
+    "supplier_price_max": 4000,
+    "suggested_price": 15000,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.930Z"
+  },
+  {
+    "product_id": "prod_5456",
+    "dropi_id": 5456,
+    "supplier_price_min": 5990,
+    "supplier_price_max": 5990,
+    "suggested_price": 12000,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.943Z"
+  },
+  {
+    "product_id": "prod_5418",
+    "dropi_id": 5418,
+    "supplier_price_min": 5000,
+    "supplier_price_max": 5000,
+    "suggested_price": 10000,
+    "stock": 682,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-28T13:23:32.956Z"
+  },
+  {
+    "product_id": "prod_4216",
+    "dropi_id": 4216,
+    "supplier_price_min": 9900,
+    "supplier_price_max": 9900,
+    "suggested_price": 1,
+    "stock": 47,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.971Z"
+  },
+  {
+    "product_id": "prod_4213",
+    "dropi_id": 4213,
+    "supplier_price_min": 5500,
+    "supplier_price_max": 5500,
+    "suggested_price": 19990,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-28T13:23:32.983Z"
+  },
+  {
+    "product_id": "prod_190855",
+    "dropi_id": 190855,
+    "supplier_price_min": 3310,
+    "supplier_price_max": 3310,
+    "suggested_price": 1,
+    "stock": 302,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:12.688Z"
+  },
+  {
+    "product_id": "prod_184931",
+    "dropi_id": 184931,
+    "supplier_price_min": 7990,
+    "supplier_price_max": 7990,
+    "suggested_price": 19990,
+    "stock": 2000,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-30T00:44:12.704Z"
+  },
+  {
+    "product_id": "prod_180030",
+    "dropi_id": 180030,
+    "supplier_price_min": 2500,
+    "supplier_price_max": 2500,
+    "suggested_price": 1,
+    "stock": 236,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:12.719Z"
+  },
+  {
+    "product_id": "prod_173165",
+    "dropi_id": 173165,
+    "supplier_price_min": 7000,
+    "supplier_price_max": 7000,
+    "suggested_price": 1,
+    "stock": 248,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:12.731Z"
+  },
+  {
+    "product_id": "prod_162377",
+    "dropi_id": 162377,
+    "supplier_price_min": 6900,
+    "supplier_price_max": 6900,
+    "suggested_price": 1,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:12.746Z"
+  },
+  {
+    "product_id": "prod_156203",
+    "dropi_id": 156203,
+    "supplier_price_min": 1400,
+    "supplier_price_max": 1400,
+    "suggested_price": 1,
+    "stock": 6584,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:12.761Z"
+  },
+  {
+    "product_id": "prod_150230",
+    "dropi_id": 150230,
+    "supplier_price_min": 5000,
+    "supplier_price_max": 5000,
+    "suggested_price": 30,
+    "stock": 1109,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:12.775Z"
+  },
+  {
+    "product_id": "prod_144884",
+    "dropi_id": 144884,
+    "supplier_price_min": 5950,
+    "supplier_price_max": 5950,
+    "suggested_price": 30,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:12.788Z"
+  },
+  {
+    "product_id": "prod_142904",
+    "dropi_id": 142904,
+    "supplier_price_min": 6490,
+    "supplier_price_max": 6490,
+    "suggested_price": 1,
+    "stock": 346,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:12.800Z"
+  },
+  {
+    "product_id": "prod_140859",
+    "dropi_id": 140859,
+    "supplier_price_min": 10800,
+    "supplier_price_max": 10800,
+    "suggested_price": 1,
+    "stock": 95,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:12.815Z"
+  },
+  {
+    "product_id": "prod_135677",
+    "dropi_id": 135677,
+    "supplier_price_min": 3000,
+    "supplier_price_max": 3000,
+    "suggested_price": 30,
+    "stock": 629,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:12.830Z"
+  },
+  {
+    "product_id": "prod_131651",
+    "dropi_id": 131651,
+    "supplier_price_min": 1500,
+    "supplier_price_max": 1500,
+    "suggested_price": 1,
+    "stock": 4575,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:12.847Z"
+  },
+  {
+    "product_id": "prod_131618",
+    "dropi_id": 131618,
+    "supplier_price_min": 4000,
+    "supplier_price_max": 4000,
+    "suggested_price": 1,
+    "stock": 1502,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:12.862Z"
+  },
+  {
+    "product_id": "prod_131289",
+    "dropi_id": 131289,
+    "supplier_price_min": 5400,
+    "supplier_price_max": 5400,
+    "suggested_price": 30,
+    "stock": 1026,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:12.876Z"
+  },
+  {
+    "product_id": "prod_125414",
+    "dropi_id": 125414,
+    "supplier_price_min": 6990,
+    "supplier_price_max": 6990,
+    "suggested_price": 13990,
+    "stock": 88,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-30T00:44:12.890Z"
+  },
+  {
+    "product_id": "prod_124589",
+    "dropi_id": 124589,
+    "supplier_price_min": 6990,
+    "supplier_price_max": 6990,
+    "suggested_price": 1,
+    "stock": 92,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:12.903Z"
+  },
+  {
+    "product_id": "prod_123533",
+    "dropi_id": 123533,
+    "supplier_price_min": 1850,
+    "supplier_price_max": 1850,
+    "suggested_price": 30,
+    "stock": 3252,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:12.915Z"
+  },
+  {
+    "product_id": "prod_122444",
+    "dropi_id": 122444,
+    "supplier_price_min": 3200,
+    "supplier_price_max": 3200,
+    "suggested_price": 1,
+    "stock": 344,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:12.928Z"
+  },
+  {
+    "product_id": "prod_119474",
+    "dropi_id": 119474,
+    "supplier_price_min": 6300,
+    "supplier_price_max": 6300,
+    "suggested_price": 1,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:12.943Z"
+  },
+  {
+    "product_id": "prod_114690",
+    "dropi_id": 114690,
+    "supplier_price_min": 3500,
+    "supplier_price_max": 3500,
+    "suggested_price": 1,
+    "stock": 1170,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:12.958Z"
+  },
+  {
+    "product_id": "prod_114260",
+    "dropi_id": 114260,
+    "supplier_price_min": 6100,
+    "supplier_price_max": 6100,
+    "suggested_price": 1,
+    "stock": 309,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:12.970Z"
+  },
+  {
+    "product_id": "prod_112181",
+    "dropi_id": 112181,
+    "supplier_price_min": 6990,
+    "supplier_price_max": 6990,
+    "suggested_price": 1,
+    "stock": 9,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:12.982Z"
+  },
+  {
+    "product_id": "prod_108222",
+    "dropi_id": 108222,
+    "supplier_price_min": 3000,
+    "supplier_price_max": 3000,
+    "suggested_price": 1,
+    "stock": 300,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:12.994Z"
+  },
+  {
+    "product_id": "prod_107497",
+    "dropi_id": 107497,
+    "supplier_price_min": 2000,
+    "supplier_price_max": 2000,
+    "suggested_price": 30,
+    "stock": 425,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:13.005Z"
+  },
+  {
+    "product_id": "prod_106737",
+    "dropi_id": 106737,
+    "supplier_price_min": 7900,
+    "supplier_price_max": 7900,
+    "suggested_price": 30,
+    "stock": 6,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:13.017Z"
+  },
+  {
+    "product_id": "prod_103601",
+    "dropi_id": 103601,
+    "supplier_price_min": 4100,
+    "supplier_price_max": 4100,
+    "suggested_price": 1,
+    "stock": 100,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:13.029Z"
+  },
+  {
+    "product_id": "prod_98237",
+    "dropi_id": 98237,
+    "supplier_price_min": 3000,
+    "supplier_price_max": 3000,
+    "suggested_price": 30,
+    "stock": 967,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:13.040Z"
+  },
+  {
+    "product_id": "prod_98173",
+    "dropi_id": 98173,
+    "supplier_price_min": 3000,
+    "supplier_price_max": 3000,
+    "suggested_price": 30,
+    "stock": 1613,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:13.054Z"
+  },
+  {
+    "product_id": "prod_95190",
+    "dropi_id": 95190,
+    "supplier_price_min": 4000,
+    "supplier_price_max": 4000,
+    "suggested_price": 15000,
+    "stock": 299,
+    "status": "ACTIVE",
+    "observed_at": "2026-10-30T00:44:13.068Z"
+  },
+  {
+    "product_id": "prod_94890",
+    "dropi_id": 94890,
+    "supplier_price_min": 7500,
+    "supplier_price_max": 7500,
+    "suggested_price": 1,
+    "stock": 377,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:13.081Z"
+  },
+  {
+    "product_id": "prod_94836",
+    "dropi_id": 94836,
+    "supplier_price_min": 5000,
+    "supplier_price_max": 5000,
+    "suggested_price": 1,
+    "stock": 499,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:13.092Z"
+  },
+  {
+    "product_id": "prod_94371",
+    "dropi_id": 94371,
+    "supplier_price_min": 1800,
+    "supplier_price_max": 1800,
+    "suggested_price": 30,
+    "stock": 102,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:13.105Z"
+  },
+  {
+    "product_id": "prod_93834",
+    "dropi_id": 93834,
+    "supplier_price_min": 2700,
+    "supplier_price_max": 2700,
+    "suggested_price": 1,
+    "stock": 206,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:13.115Z"
+  },
+  {
+    "product_id": "prod_93111",
+    "dropi_id": 93111,
+    "supplier_price_min": 8990,
+    "supplier_price_max": 8990,
+    "suggested_price": 1,
+    "stock": 399,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:13.127Z"
+  },
+  {
+    "product_id": "prod_92790",
+    "dropi_id": 92790,
+    "supplier_price_min": 1500,
+    "supplier_price_max": 1500,
+    "suggested_price": 30,
+    "stock": 1245,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:13.139Z"
+  },
+  {
+    "product_id": "prod_92745",
+    "dropi_id": 92745,
+    "supplier_price_min": 6400,
+    "supplier_price_max": 6400,
+    "suggested_price": 1,
+    "stock": 395,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:13.150Z"
+  },
+  {
+    "product_id": "prod_92744",
+    "dropi_id": 92744,
+    "supplier_price_min": 11990,
+    "supplier_price_max": 11990,
+    "suggested_price": 1,
+    "stock": 300,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:13.162Z"
+  },
+  {
+    "product_id": "prod_92319",
+    "dropi_id": 92319,
+    "supplier_price_min": 2850,
+    "supplier_price_max": 2850,
+    "suggested_price": 30,
+    "stock": 180,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:13.176Z"
+  },
+  {
+    "product_id": "prod_86772",
+    "dropi_id": 86772,
+    "supplier_price_min": 7900,
+    "supplier_price_max": 7900,
+    "suggested_price": 1,
+    "stock": 91,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:13.189Z"
+  },
+  {
+    "product_id": "prod_78721",
+    "dropi_id": 78721,
+    "supplier_price_min": 6900,
+    "supplier_price_max": 6900,
+    "suggested_price": 30,
+    "stock": 41,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:13.203Z"
+  },
+  {
+    "product_id": "prod_76477",
+    "dropi_id": 76477,
+    "supplier_price_min": 0,
+    "supplier_price_max": 0,
+    "suggested_price": 0,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:13.216Z"
+  },
+  {
+    "product_id": "prod_72284",
+    "dropi_id": 72284,
+    "supplier_price_min": 6790,
+    "supplier_price_max": 6790,
+    "suggested_price": 1,
+    "stock": 396,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:13.228Z"
+  },
+  {
+    "product_id": "prod_72096",
+    "dropi_id": 72096,
+    "supplier_price_min": 1990,
+    "supplier_price_max": 1990,
+    "suggested_price": 1,
+    "stock": 980,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:13.242Z"
+  },
+  {
+    "product_id": "prod_71724",
+    "dropi_id": 71724,
+    "supplier_price_min": 5300,
+    "supplier_price_max": 5300,
+    "suggested_price": 1,
+    "stock": 1316,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:13.257Z"
+  },
+  {
+    "product_id": "prod_71503",
+    "dropi_id": 71503,
+    "supplier_price_min": 0,
+    "supplier_price_max": 0,
+    "suggested_price": 0,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:13.271Z"
+  },
+  {
+    "product_id": "prod_71494",
+    "dropi_id": 71494,
+    "supplier_price_min": 3000,
+    "supplier_price_max": 3000,
+    "suggested_price": 1,
+    "stock": 714,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:13.283Z"
+  },
+  {
+    "product_id": "prod_71279",
+    "dropi_id": 71279,
+    "supplier_price_min": 2850,
+    "supplier_price_max": 2850,
+    "suggested_price": 1,
+    "stock": 254,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:13.298Z"
+  },
+  {
+    "product_id": "prod_71278",
+    "dropi_id": 71278,
+    "supplier_price_min": 4750,
+    "supplier_price_max": 4750,
+    "suggested_price": 1,
+    "stock": 498,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:13.310Z"
+  },
+  {
+    "product_id": "prod_71206",
+    "dropi_id": 71206,
+    "supplier_price_min": 6990,
+    "supplier_price_max": 6990,
+    "suggested_price": 1,
+    "stock": 329,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:13.323Z"
+  },
+  {
+    "product_id": "prod_71205",
+    "dropi_id": 71205,
+    "supplier_price_min": 3990,
+    "supplier_price_max": 3990,
+    "suggested_price": 1,
+    "stock": 0,
+    "status": "FLAGGED",
+    "observed_at": "2026-10-30T00:44:13.337Z"
   }
 ]

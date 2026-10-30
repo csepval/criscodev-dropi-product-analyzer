@@ -1,0 +1,6 @@
+{
+  "provider": "chatgpt",
+  "analysis_prompt_template": "Para el producto XXXXXXX, analiza la demanda, competencia, margen estimado.",
+  "market_prices_prompt_template": "Busca un máximo de 10 tiendas en Chile donde esté disponible el producto XXXXXXX, y muestra únicamente los datos: nombre de la tienda, link, precio y costo despacho, ordenados de menor a mayor. Siempre incluye las tiendas: Falabella, Lider, Ripley, Mercado Libre, y el resto, tiendas donde encuentres el producto.",
+  "updated_at": "2026-10-30T14:44:09.735Z"
+}

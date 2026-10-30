@@ -6,6 +6,7 @@
   <title>CrisCodev – Dropi Product Analyzer (Autónomo)</title>
   <style>
     :root {
+      color-scheme: dark;
       --bg: #0B1120;
       --card-bg: rgba(15, 23, 42, 0.85);
       --border: rgba(255, 255, 255, 0.1);
@@ -219,15 +220,46 @@
       margin-bottom: 1.5rem;
     }
     .filter-input {
-      background: rgba(255, 255, 255, 0.05);
+      background: #1E293B;
       border: 1px solid var(--border);
-      color: white;
+      color: #F8FAFC;
       padding: 0.6rem 1rem;
       border-radius: 8px;
       font-size: 0.9rem;
       outline: none;
+      color-scheme: dark;
     }
     .filter-input:focus { border-color: var(--brand-blue); }
+
+    /* Estilos explícitos para selectores y opciones desplegables */
+    select,
+    select.filter-input {
+      background-color: #1E293B !important;
+      color: #F8FAFC !important;
+      color-scheme: dark !important;
+      cursor: pointer;
+    }
+
+    select option,
+    select optgroup,
+    select.filter-input option,
+    select.filter-input optgroup {
+      background-color: #1E293B !important;
+      color: #F8FAFC !important;
+      padding: 0.5rem 0.75rem;
+    }
+
+    select option:checked,
+    select.filter-input option:checked {
+      background-color: #334155 !important;
+      color: #FFFFFF !important;
+    }
+
+    select option:hover,
+    select.filter-input option:hover {
+      background-color: #2563EB !important;
+      color: #FFFFFF !important;
+    }
     .btn {
       background: var(--brand-blue);
       color: white;
@@ -250,6 +282,43 @@
       border: 1px solid var(--border);
       border-radius: 12px;
       overflow-x: auto;
+    }
+    .table-scrollable {
+      max-height: 650px;
+      overflow-y: auto;
+      overflow-x: auto;
+      position: relative;
+    }
+    .table-scrollable thead th {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #0F172A;
+      box-shadow: inset 0 -1px 0 var(--border);
+    }
+    .table-scrollable thead th.sortable-th {
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.15s, color 0.15s;
+    }
+    .table-scrollable thead th.sortable-th:hover {
+      background: #1E293B;
+      color: #FFFFFF;
+    }
+    .table-scrollable::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    .table-scrollable::-webkit-scrollbar-track {
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 8px;
+    }
+    .table-scrollable::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+    }
+    .table-scrollable::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.25);
     }
     table {
       width: 100%;
@@ -378,7 +447,7 @@
       <button class="tab-btn" onclick="switchTab('shipping')">🚚 Tarifas de Despacho</button>
       <button class="tab-btn" onclick="switchTab('profitability')">💰 Rentabilidad e IVA</button>
       <button class="tab-btn" onclick="switchTab('jobs')">📊 Historial de Importaciones</button>
-      <button class="tab-btn" onclick="switchTab('connection')">⚙️ Configuración de Conexión</button>
+      <button class="tab-btn" onclick="switchTab('connection')">⚙️ Configuración</button>
     </div>
 
     <!-- Pestaña 1: Catálogo -->
@@ -433,13 +502,23 @@
         <input type="text" id="live-filter-search" class="filter-input" style="flex: 2; min-width: 200px;" placeholder="Palabra clave (ej. cargador, smartwatch, soporte)...">
         
         <select id="live-filter-category" class="filter-input" style="flex: 1; min-width: 160px;">
-          <option value="Tecnología" selected>Tecnología</option>
+          <option value="" selected>Todas las Categorías</option>
+          <option value="Tecnología">Tecnología</option>
           <option value="Hogar">Hogar</option>
-          <option value="Belleza">Belleza y Cuidado Personal</option>
-          <option value="Moda">Moda y Accesorios</option>
-          <option value="Salud">Salud y Bienestar</option>
           <option value="Mascotas">Mascotas</option>
-          <option value="">Todas las Categorías</option>
+          <option value="Belleza">Belleza y Cuidado Personal</option>
+          <option value="Salud">Salud y Bienestar</option>
+          <option value="Moda">Moda y Accesorios</option>
+          <option value="Bienestar">Bienestar</option>
+          <option value="Cocina">Cocina</option>
+          <option value="Ferreteria">Ferretería</option>
+          <option value="Juguetería">Juguetería</option>
+          <option value="Vehículo">Vehículos y Accesorios</option>
+          <option value="Bebé">Bebé y Maternidad</option>
+          <option value="Camping">Camping y Deporte</option>
+          <option value="Natural Home">Natural Home</option>
+          <option value="DROPI CUP">DROPI CUP</option>
+          <option value="Otro">Otro</option>
         </select>
 
         <div style="display:flex; align-items:center; gap: 0.4rem;">
@@ -759,7 +838,23 @@
         <div style="display:flex; flex-direction:column; gap:0.25rem;">
           <span style="font-size:0.75rem; color:var(--text-muted);">Categoría:</span>
           <select id="prof-filter-category" class="filter-input" onchange="filterProfitabilityTable()">
-            <option value="">Todas las Categorías</option>
+            <option value="" selected>Todas las Categorías</option>
+            <option value="Tecnología">Tecnología</option>
+            <option value="Hogar">Hogar</option>
+            <option value="Mascotas">Mascotas</option>
+            <option value="Belleza">Belleza y Cuidado Personal</option>
+            <option value="Salud">Salud y Bienestar</option>
+            <option value="Moda">Moda y Accesorios</option>
+            <option value="Bienestar">Bienestar</option>
+            <option value="Cocina">Cocina</option>
+            <option value="Ferreteria">Ferretería</option>
+            <option value="Juguetería">Juguetería</option>
+            <option value="Vehículo">Vehículos y Accesorios</option>
+            <option value="Bebé">Bebé y Maternidad</option>
+            <option value="Camping">Camping y Deporte</option>
+            <option value="Natural Home">Natural Home</option>
+            <option value="DROPI CUP">DROPI CUP</option>
+            <option value="Otro">Otro</option>
           </select>
         </div>
 
@@ -772,6 +867,16 @@
             <option value="LOW">Rentabilidad Baja (0-15%)</option>
             <option value="LOSS">Pérdida Estimada (&lt;0%)</option>
             <option value="INCOMPLETE">Evaluación Incompleta</option>
+          </select>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:0.25rem;">
+          <span style="font-size:0.75rem; color:var(--text-muted);">Ordenar por:</span>
+          <select id="prof-filter-sort" class="filter-input" onchange="onSortSelectChange(this.value)">
+            <option value="avg_margin_desc" selected>Margen Promedio: Mayor a Menor</option>
+            <option value="avg_margin_asc">Margen Promedio: Menor a Mayor</option>
+            <option value="status_desc">Semáforo: Mayor a Menor (Atractiva → Pérdida)</option>
+            <option value="status_asc">Semáforo: Menor a Mayor (Pérdida → Atractiva)</option>
           </select>
         </div>
 
@@ -795,25 +900,29 @@
       </div>
 
       <!-- Tabla de Rentabilidad Masiva (Sección 11) -->
-      <div class="table-container" style="margin-bottom: 2rem;">
+      <div class="table-container table-scrollable" style="margin-bottom: 2rem;">
         <table>
           <thead>
             <tr>
-              <th>ID Dropi</th>
-              <th>Producto & Variantes</th>
-              <th>Proveedor</th>
-              <th>Costo Prov.</th>
-              <th>Precio Sugerido</th>
-              <th>Precio Evaluado</th>
-              <th>Mínimo Rentable</th>
-              <th>Recomendado</th>
-              <th>Mejor Margen</th>
-              <th>Peor Margen</th>
-              <th>Margen Promedio</th>
-              <th>Zonas Rentables</th>
-              <th>Cobertura</th>
-              <th>Semáforo</th>
-              <th>Acciones</th>
+              <th style="white-space: nowrap;">ID Dropi</th>
+              <th style="min-width: 260px;">Producto & Variantes</th>
+              <th class="sortable-th" style="white-space: nowrap;" onclick="toggleProfitabilitySort('status')" title="Clic para ordenar por Semáforo (Mayor a Menor / Menor a Mayor)">
+                Semáforo <span id="sort-icon-status" style="font-size:0.75rem; margin-left:0.25rem; color:var(--text-muted);">↕</span>
+              </th>
+              <th style="white-space: nowrap;">Simular</th>
+              <th class="sortable-th" style="white-space: nowrap;" onclick="toggleProfitabilitySort('avg_margin')" title="Clic para ordenar por Margen Promedio (Mayor a Menor / Menor a Mayor)">
+                Margen Promedio <span id="sort-icon-avg_margin" style="font-size:0.75rem; margin-left:0.25rem; color:#60A5FA;">▼</span>
+              </th>
+              <th style="white-space: nowrap;">Mejor Margen</th>
+              <th style="white-space: nowrap;">Peor Margen</th>
+              <th style="white-space: nowrap;">Proveedor</th>
+              <th style="white-space: nowrap;">Costo Prov.</th>
+              <th style="white-space: nowrap;">Precio Sugerido</th>
+              <th style="white-space: nowrap;">Precio Evaluado</th>
+              <th style="white-space: nowrap;">Mínimo Rentable</th>
+              <th style="white-space: nowrap;">Recomendado</th>
+              <th style="white-space: nowrap;">Zonas Rentables</th>
+              <th style="white-space: nowrap;">Cobertura</th>
             </tr>
           </thead>
           <tbody id="profitability-table-tbody">
@@ -823,26 +932,105 @@
       </div>
     </div>
 
-    <!-- Pestaña 3: Conexión -->
+    <!-- Pestaña: Configuración -->
     <div id="tab-connection" class="tab-content">
-      <div class="stat-card" style="max-width: 650px; margin: 0 auto;">
-        <h2 style="font-size: 1.2rem; margin-bottom: 1rem;">Administración de Sesión Dropi Chile</h2>
-        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">
-          Configura tu token Bearer de sesión o API key para conectar el catálogo sin almacenar contraseñas en el servidor.
-        </p>
-        <div style="margin-bottom: 1.25rem;">
-          <label style="display:block; font-size: 0.85rem; margin-bottom: 0.5rem; color: var(--text-muted);">Token de Sesión o Integración Dropi</label>
-          <input type="password" id="input-token" class="filter-input" style="width: 100%;" placeholder="Ingresa tu token activo de Dropi...">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(460px, 1fr)); gap: 1.5rem; align-items: start;">
+        <!-- Ítem 1: Administración de Sesión Dropi Chile -->
+        <div class="stat-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
+            <h2 style="font-size: 1.2rem; color:white;">🔗 Administración de Sesión Dropi Chile</h2>
+            <span class="badge badge-verified">CONEXIÓN DROPI</span>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">
+            Configura tu token Bearer de sesión o API key para conectar el catálogo sin almacenar contraseñas en el servidor.
+          </p>
+          <div style="margin-bottom: 1.25rem;">
+            <label style="display:block; font-size: 0.85rem; margin-bottom: 0.5rem; color: var(--text-muted);">Token de Sesión o Integración Dropi</label>
+            <input type="password" id="input-token" class="filter-input" style="width: 100%;" placeholder="Ingresa tu token activo de Dropi...">
+          </div>
+          <div style="display:flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+            <button class="btn" onclick="saveToken()">Guardar y Verificar Token</button>
+            <button class="btn btn-orange" onclick="startAssistedLogin()">🔑 Iniciar Sesión Asistido (Navegador)</button>
+            <button class="btn" style="background: rgba(239, 68, 68, 0.2); color: #F87171;" onclick="disconnect()">Desconectar</button>
+          </div>
+          <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 1rem; font-size: 0.85rem; color: #E2E8F0;">
+            <strong>⚡ Cambio Automático de Estado:</strong> En cuanto inicies sesión exitosamente (ya sea pegando tu token o mediante la ventana asistida de Dropi), el indicador superior cambiará inmediatamente a <span style="color:#34D399; font-weight:700;">● CONECTADO A DROPI</span>.
+          </div>
+          <div id="conn-msg" style="margin-top: 1.25rem; font-size: 0.85rem;"></div>
         </div>
-        <div style="display:flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
-          <button class="btn" onclick="saveToken()">Guardar y Verificar Token</button>
-          <button class="btn btn-orange" onclick="startAssistedLogin()">🔑 Iniciar Sesión Asistido (Navegador)</button>
-          <button class="btn" style="background: rgba(239, 68, 68, 0.2); color: #F87171;" onclick="disconnect()">Desconectar</button>
+
+        <!-- Ítem 2: Administración IA -->
+        <div class="stat-card" style="border-color: rgba(59, 130, 246, 0.4);">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem; flex-wrap:wrap; gap:0.5rem;">
+            <h2 style="font-size: 1.2rem; color:white;">🤖 Administración IA</h2>
+            <span id="ai-config-active-badge" class="badge badge-verified" style="background:rgba(16,185,129,0.2); color:#34D399; border:1px solid rgba(16,185,129,0.4);">MOTOR ACTIVO: CHATGPT</span>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.25rem;">
+            Selecciona qué motor de Inteligencia Artificial se utilizará para ejecutar las consultas (<strong>Análisis IA</strong> y <strong>Consultar Precios del Mercado</strong>) y edita las plantillas de los prompts si lo necesitas.
+          </p>
+
+          <!-- Selector de Motor: ChatGPT vs Copilot -->
+          <div style="margin-bottom: 1.25rem;">
+            <label style="display:block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.6rem; color: white;">
+              1. Motor IA para ejecutar los Prompts:
+            </label>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+              <label id="ai-provider-card-chatgpt" onclick="selectAIProviderUI('chatgpt')" style="display:flex; align-items:center; justify-content:space-between; padding: 0.85rem 1rem; border-radius: 10px; border: 2px solid #10B981; background: rgba(16, 185, 129, 0.12); cursor: pointer; transition: all 0.2s;">
+                <div style="display:flex; align-items:center; gap:0.6rem;">
+                  <input type="radio" name="ai-provider-radio" id="ai-provider-radio-chatgpt" value="chatgpt" checked onchange="selectAIProviderUI('chatgpt')">
+                  <div>
+                    <div style="font-weight:700; color:white; font-size:0.92rem;">ChatGPT</div>
+                    <div style="font-size:0.74rem; color:var(--text-muted);">Usa tu sesión web de ChatGPT</div>
+                  </div>
+                </div>
+                <button type="button" class="btn" style="padding:0.25rem 0.55rem; font-size:0.72rem; background:rgba(16,185,129,0.2); border:1px solid rgba(16,185,129,0.4); color:#34D399;" onclick="event.stopPropagation(); openChatGptLogin();">
+                  🔑 Sesión
+                </button>
+              </label>
+
+              <label id="ai-provider-card-copilot" onclick="selectAIProviderUI('copilot')" style="display:flex; align-items:center; justify-content:space-between; padding: 0.85rem 1rem; border-radius: 10px; border: 1px solid var(--border); background: rgba(15, 23, 42, 0.6); cursor: pointer; transition: all 0.2s;">
+                <div style="display:flex; align-items:center; gap:0.6rem;">
+                  <input type="radio" name="ai-provider-radio" id="ai-provider-radio-copilot" value="copilot" onchange="selectAIProviderUI('copilot')">
+                  <div>
+                    <div style="font-weight:700; color:white; font-size:0.92rem;">Copilot</div>
+                    <div style="font-size:0.74rem; color:var(--text-muted);">Usa Microsoft Copilot Web</div>
+                  </div>
+                </div>
+                <button type="button" class="btn" style="padding:0.25rem 0.55rem; font-size:0.72rem; background:rgba(59,130,246,0.2); border:1px solid rgba(59,130,246,0.4); color:#60A5FA;" onclick="event.stopPropagation(); openCopilotLogin();">
+                  🔑 Sesión
+                </button>
+              </label>
+            </div>
+          </div>
+
+          <!-- Cuadro de Texto 1: Prompt de Consultar Precios del Mercado -->
+          <div style="margin-bottom: 1.15rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+              <label for="ai-config-market-prompt" style="font-size: 0.84rem; font-weight: 600; color: white;">
+                2. Prompt para "🏷️ Consultar Precios del Mercado":
+              </label>
+              <span style="font-size: 0.72rem; color: #93C5FD;">Usa <code>XXXXXXX</code> para el nombre del producto</span>
+            </div>
+            <textarea id="ai-config-market-prompt" class="filter-input" rows="4" style="width: 100%; font-size: 0.82rem; line-height: 1.45; resize: vertical; font-family: inherit;">Busca un máximo de 10 tiendas en Chile donde esté disponible el producto XXXXXXX, y muestra únicamente los datos: nombre de la tienda, link y precio, ordenados de menor a mayor. Siempre incluye las tiendas: Falabella, Lider, Ripley, Mercado Libre, y el resto, tiendas donde encuentres el producto.</textarea>
+          </div>
+
+          <!-- Cuadro de Texto 2: Prompt de Análisis IA -->
+          <div style="margin-bottom: 1.25rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+              <label for="ai-config-analysis-prompt" style="font-size: 0.84rem; font-weight: 600; color: white;">
+                3. Prompt para "🤖 Análisis IA" (Demanda, Competencia y Margen):
+              </label>
+              <span style="font-size: 0.72rem; color: #93C5FD;">Usa <code>XXXXXXX</code> para el nombre del producto</span>
+            </div>
+            <textarea id="ai-config-analysis-prompt" class="filter-input" rows="3" style="width: 100%; font-size: 0.82rem; line-height: 1.45; resize: vertical; font-family: inherit;">Para el producto XXXXXXX, analiza la demanda, competencia, margen estimado.</textarea>
+          </div>
+
+          <div style="display:flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
+            <button class="btn btn-orange" onclick="saveAIConfigFromUI()">💾 Guardar Configuración IA</button>
+            <button class="btn" style="background: transparent; border: 1px solid var(--border);" onclick="resetAIConfigPromptsToDefault()">↺ Restaurar Prompts Originales</button>
+          </div>
+          <div id="ai-config-msg" style="margin-top: 0.85rem; font-size: 0.85rem;"></div>
         </div>
-        <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 1rem; font-size: 0.85rem; color: #E2E8F0;">
-          <strong>⚡ Cambio Automático de Estado:</strong> En cuanto inicies sesión exitosamente (ya sea pegando tu token o mediante la ventana asistida de Dropi), el indicador superior cambiará inmediatamente a <span style="color:#34D399; font-weight:700;">● CONECTADO A DROPI</span>.
-        </div>
-        <div id="conn-msg" style="margin-top: 1.25rem; font-size: 0.85rem;"></div>
       </div>
     </div>
 
@@ -888,6 +1076,7 @@
       if (tabId === 'catalog') loadProducts();
       if (tabId === 'shipping') loadShippingDashboard();
       if (tabId === 'profitability') loadProfitabilityDashboard();
+      if (tabId === 'connection') loadAIConfigUI();
     }
 
     let currentAuthData = { status: 'DISCONNECTED' };
@@ -1265,7 +1454,36 @@
       }).join('');
     }
 
-    
+    // =========================================================================
+    // LISTA HOMOLOGADA DE CATEGORÍAS (COMPARTIDA ENTRE IMPORTACIÓN Y RENTABILIDAD)
+    // =========================================================================
+    const HOMOLOGATED_CATEGORIES = [
+      { value: '', label: 'Todas las Categorías' },
+      { value: 'Tecnología', label: 'Tecnología' },
+      { value: 'Hogar', label: 'Hogar' },
+      { value: 'Mascotas', label: 'Mascotas' },
+      { value: 'Belleza', label: 'Belleza y Cuidado Personal' },
+      { value: 'Salud', label: 'Salud y Bienestar' },
+      { value: 'Moda', label: 'Moda y Accesorios' },
+      { value: 'Bienestar', label: 'Bienestar' },
+      { value: 'Cocina', label: 'Cocina' },
+      { value: 'Ferreteria', label: 'Ferretería' },
+      { value: 'Juguetería', label: 'Juguetería' },
+      { value: 'Vehículo', label: 'Vehículos y Accesorios' },
+      { value: 'Bebé', label: 'Bebé y Maternidad' },
+      { value: 'Camping', label: 'Camping y Deporte' },
+      { value: 'Natural Home', label: 'Natural Home' },
+      { value: 'DROPI CUP', label: 'DROPI CUP' },
+      { value: 'Otro', label: 'Otro' }
+    ];
+
+    function getHomologatedCategoryOptionsHtml(selectedValue = '') {
+      return HOMOLOGATED_CATEGORIES.map(cat => {
+        const isSelected = (cat.value === selectedValue) ? 'selected' : '';
+        return `<option value="${cat.value}" ${isSelected}>${cat.label}</option>`;
+      }).join('');
+    }
+
     // =========================================================================
     // SECCIÓN 2: IMPORTACIÓN EN VIVO DIRECTA DESDE DROPI CHILE (PAGINACIÓN CONTINUA)
     // =========================================================================
@@ -2239,8 +2457,70 @@
       currentSimProduct: null,
       currentSimEval: null,
       currentSimZoneId: null,
-      activeModalTab: 'calc'
+      activeModalTab: 'calc',
+      sortColumn: 'avg_margin',
+      sortDirection: 'desc'
     };
+
+    function toggleProfitabilitySort(col) {
+      if (profState.sortColumn === col) {
+        profState.sortDirection = profState.sortDirection === 'desc' ? 'asc' : 'desc';
+      } else {
+        profState.sortColumn = col;
+        profState.sortDirection = 'desc';
+      }
+      filterProfitabilityTable();
+    }
+
+    function onSortSelectChange(val) {
+      if (val === 'avg_margin_desc') {
+        profState.sortColumn = 'avg_margin';
+        profState.sortDirection = 'desc';
+      } else if (val === 'avg_margin_asc') {
+        profState.sortColumn = 'avg_margin';
+        profState.sortDirection = 'asc';
+      } else if (val === 'status_desc') {
+        profState.sortColumn = 'status';
+        profState.sortDirection = 'desc';
+      } else if (val === 'status_asc') {
+        profState.sortColumn = 'status';
+        profState.sortDirection = 'asc';
+      }
+      filterProfitabilityTable();
+    }
+
+    function updateSortIndicators() {
+      const statusIcon = document.getElementById('sort-icon-status');
+      const avgMarginIcon = document.getElementById('sort-icon-avg_margin');
+      const sortSelect = document.getElementById('prof-filter-sort');
+
+      if (statusIcon) {
+        if (profState.sortColumn === 'status') {
+          statusIcon.textContent = profState.sortDirection === 'desc' ? '▼' : '▲';
+          statusIcon.style.color = '#60A5FA';
+        } else {
+          statusIcon.textContent = '↕';
+          statusIcon.style.color = 'var(--text-muted)';
+        }
+      }
+
+      if (avgMarginIcon) {
+        if (profState.sortColumn === 'avg_margin') {
+          avgMarginIcon.textContent = profState.sortDirection === 'desc' ? '▼' : '▲';
+          avgMarginIcon.style.color = '#60A5FA';
+        } else {
+          avgMarginIcon.textContent = '↕';
+          avgMarginIcon.style.color = 'var(--text-muted)';
+        }
+      }
+
+      if (sortSelect) {
+        const key = `${profState.sortColumn}_${profState.sortDirection}`;
+        if (sortSelect.value !== key) {
+          sortSelect.value = key;
+        }
+      }
+    }
 
     function formatCLP(val) {
       if (val === null || val === undefined || isNaN(val)) return 'Sin datos';
@@ -2372,13 +2652,16 @@
           // Actualizar KPIs
           updateProfitabilityKPIs(data.results);
 
-          // Actualizar Categorías
-          const categories = Array.from(new Set(data.results.map(r => r.category).filter(Boolean)));
+          // Actualizar Categorías Homologadas
           const catSelect = document.getElementById('prof-filter-category');
           if (catSelect) {
-            const currentCat = catSelect.value;
-            catSelect.innerHTML = '<option value="">Todas las Categorías</option>' +
-              categories.map(c => `<option value="${c}" ${c === currentCat ? 'selected' : ''}>${c}</option>`).join('');
+            const currentCat = catSelect.value || '';
+            const existingValues = new Set(HOMOLOGATED_CATEGORIES.map(c => c.value.toLowerCase()));
+            const extraCategories = Array.from(new Set(data.results.map(r => r.category).filter(Boolean)))
+              .filter(c => !existingValues.has(c.toLowerCase()));
+
+            catSelect.innerHTML = getHomologatedCategoryOptionsHtml(currentCat) +
+              extraCategories.map(c => `<option value="${c}" ${c === currentCat ? 'selected' : ''}>${c}</option>`).join('');
           }
 
           filterProfitabilityTable();
@@ -2410,7 +2693,7 @@
       const status = document.getElementById('prof-filter-status')?.value || '';
       const onlyStock = document.getElementById('prof-filter-stock')?.checked || false;
 
-      let list = profState.productsResults;
+      let list = [...profState.productsResults];
 
       if (search) {
         list = list.filter(r => 
@@ -2420,7 +2703,12 @@
         );
       }
       if (category) {
-        list = list.filter(r => r.category === category);
+        const targetNorm = category.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+        list = list.filter(r => {
+          if (!r.category) return false;
+          const catNorm = r.category.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+          return catNorm === targetNorm || catNorm.includes(targetNorm) || targetNorm.includes(catNorm);
+        });
       }
       if (status) {
         list = list.filter(r => r.overall_classification === status);
@@ -2429,7 +2717,44 @@
         list = list.filter(r => r.stock > 0);
       }
 
+      // Ordenamiento por Semáforo o Margen Promedio
+      const statusWeights = {
+        'ATTRACTIVE': 4,
+        'MODERATE': 3,
+        'LOW': 2,
+        'LOSS': 1,
+        'INCOMPLETE': -1
+      };
+
+      list.sort((a, b) => {
+        if (profState.sortColumn === 'status') {
+          const wA = statusWeights[a.overall_classification] ?? -1;
+          const wB = statusWeights[b.overall_classification] ?? -1;
+
+          if (wA === -1 && wB === -1) return 0;
+          if (wA === -1) return 1;
+          if (wB === -1) return -1;
+
+          if (wA !== wB) {
+            return profState.sortDirection === 'desc' ? (wB - wA) : (wA - wB);
+          }
+          const mA = (a.avg_margin_pct !== null && a.avg_margin_pct !== undefined && !isNaN(a.avg_margin_pct)) ? Number(a.avg_margin_pct) : -9999;
+          const mB = (b.avg_margin_pct !== null && b.avg_margin_pct !== undefined && !isNaN(b.avg_margin_pct)) ? Number(b.avg_margin_pct) : -9999;
+          return profState.sortDirection === 'desc' ? (mB - mA) : (mA - mB);
+        } else {
+          const valA = (a.avg_margin_pct !== null && a.avg_margin_pct !== undefined && !isNaN(a.avg_margin_pct)) ? Number(a.avg_margin_pct) : null;
+          const valB = (b.avg_margin_pct !== null && b.avg_margin_pct !== undefined && !isNaN(b.avg_margin_pct)) ? Number(b.avg_margin_pct) : null;
+
+          if (valA === null && valB === null) return 0;
+          if (valA === null) return 1;
+          if (valB === null) return -1;
+
+          return profState.sortDirection === 'desc' ? (valB - valA) : (valA - valB);
+        }
+      });
+
       profState.filteredResults = list;
+      updateSortIndicators();
       renderProfitabilityTable(list);
     }
 
@@ -2462,29 +2787,34 @@
         const marginColor = r.avg_margin_pct !== null && r.avg_margin_pct >= 25 ? '#34D399' : (r.avg_margin_pct !== null && r.avg_margin_pct >= 15 ? '#60A5FA' : (r.avg_margin_pct !== null && r.avg_margin_pct >= 0 ? '#FBBF24' : '#F87171'));
 
         return `<tr>
-          <td style="color:var(--text-muted); font-size:0.75rem;">${r.dropi_id}</td>
+          <td style="color:var(--text-muted); font-size:0.75rem; white-space:nowrap;">${r.dropi_id}</td>
           <td>
-            <div style="font-weight:600; color:white;">${r.product_name} ${variantsBadge}</div>
-            <div style="font-size:0.75rem; color:var(--text-muted);">${r.category} • Stock: ${r.stock}</div>
-            ${alertsHtml}
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+              <img src="${r.image_url || 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=100'}" style="width:38px; height:38px; object-fit:cover; border-radius:6px; border:1px solid rgba(255,255,255,0.1); flex-shrink:0; background:#1E293B;" alt="" onerror="this.src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=100'">
+              <div>
+                <div style="font-weight:600; color:white;">${r.product_name} ${variantsBadge}</div>
+                <div style="font-size:0.75rem; color:var(--text-muted);">${r.category} • Stock: ${r.stock}</div>
+                ${alertsHtml}
+              </div>
+            </div>
           </td>
-          <td style="font-size:0.8rem; color:#CBD5E1;">${r.supplier_name || 'Sin proveedor'}</td>
-          <td style="font-size:0.85rem; font-weight:600; color:white;">${formatCLP(r.supplier_price)}</td>
-          <td style="font-size:0.85rem; color:var(--text-muted);">${formatCLP(r.suggested_price)}</td>
-          <td style="font-size:0.85rem; font-weight:700; color:#60A5FA;">${formatCLP(r.sale_price_used)}</td>
-          <td style="font-size:0.85rem; font-weight:700; color:#FBBF24;">${formatCLP(r.overall_min_profitable_price)}</td>
-          <td style="font-size:0.85rem; font-weight:700; color:#34D399;">${formatCLP(r.overall_recommended_price)}</td>
-          <td style="font-size:0.85rem; color:#34D399; font-weight:600;">${formatPct(r.best_margin_pct)}</td>
-          <td style="font-size:0.85rem; color:#F87171;">${formatPct(r.worst_margin_pct)}</td>
-          <td style="font-size:0.95rem; font-weight:800; color:${marginColor};">${formatPct(r.avg_margin_pct)}</td>
-          <td style="font-size:0.8rem; color:#CBD5E1;">${r.profitable_zones_count} / ${r.total_zones_count}</td>
-          <td style="font-size:0.8rem; color:#CBD5E1;">${r.evaluable_coverage_pct}%</td>
-          <td>${getStatusBadge(r.overall_classification)}</td>
-          <td>
-            <button class="btn" style="padding:0.4rem 0.75rem; font-size:0.8rem; background:rgba(37,99,235,0.25); border:1px solid rgba(37,99,235,0.5);" onclick="openProductSimulator('${r.product_id}')">
+          <td style="white-space:nowrap;">${getStatusBadge(r.overall_classification)}</td>
+          <td style="white-space:nowrap;">
+            <button class="btn" style="padding:0.4rem 0.75rem; font-size:0.8rem; background:rgba(37,99,235,0.25); border:1px solid rgba(37,99,235,0.5); white-space:nowrap;" onclick="openProductSimulator('${r.product_id}')">
               🔍 Simular
             </button>
           </td>
+          <td style="font-size:0.95rem; font-weight:800; color:${marginColor}; white-space:nowrap;">${formatPct(r.avg_margin_pct)}</td>
+          <td style="font-size:0.85rem; color:#34D399; font-weight:600; white-space:nowrap;">${formatPct(r.best_margin_pct)}</td>
+          <td style="font-size:0.85rem; color:#F87171; white-space:nowrap;">${formatPct(r.worst_margin_pct)}</td>
+          <td style="font-size:0.8rem; color:#CBD5E1; white-space:nowrap;">${r.supplier_name || 'Sin proveedor'}</td>
+          <td style="font-size:0.85rem; font-weight:600; color:white; white-space:nowrap;">${formatCLP(r.supplier_price)}</td>
+          <td style="font-size:0.85rem; color:var(--text-muted); white-space:nowrap;">${formatCLP(r.suggested_price)}</td>
+          <td style="font-size:0.85rem; font-weight:700; color:#60A5FA; white-space:nowrap;">${formatCLP(r.sale_price_used)}</td>
+          <td style="font-size:0.85rem; font-weight:700; color:#FBBF24; white-space:nowrap;">${formatCLP(r.overall_min_profitable_price)}</td>
+          <td style="font-size:0.85rem; font-weight:700; color:#34D399; white-space:nowrap;">${formatCLP(r.overall_recommended_price)}</td>
+          <td style="font-size:0.8rem; color:#CBD5E1; white-space:nowrap;">${r.profitable_zones_count} / ${r.total_zones_count}</td>
+          <td style="font-size:0.8rem; color:#CBD5E1; white-space:nowrap;">${r.evaluable_coverage_pct}%</td>
         </tr>`;
       }).join('');
     }
@@ -2495,12 +2825,21 @@
 
     function switchSimModalTab(tabKey) {
       profState.activeModalTab = tabKey;
-      ['calc', 'zones', 'variants'].forEach(k => {
+      ['calc', 'zones', 'ai', 'market', 'variants'].forEach(k => {
         const btn = document.getElementById(`sim-tab-btn-${k}`);
         const view = document.getElementById(`sim-view-${k}`);
         if (btn) btn.classList.toggle('active', k === tabKey);
         if (view) view.style.display = (k === tabKey) ? 'block' : 'none';
       });
+
+      if (tabKey === 'ai') {
+        updateAIProviderVisualSelection(aiConfigState.provider);
+        runCopilotAIAnalysis(false);
+      }
+      if (tabKey === 'market') {
+        updateAIProviderVisualSelection(aiConfigState.provider);
+        runChatGptMarketPricesQuery(false);
+      }
     }
 
     async function openProductSimulator(productId) {
@@ -2508,11 +2847,64 @@
       if (!prodResult) return;
 
       profState.currentSimProduct = prodResult;
+      currentAiAnalysisData = null;
+      currentMarketPricesData = null;
 
-      // Actualizar Título
+      // Actualizar Título, Costo Proveedor y Enlaces Dropi
       document.getElementById('sim-modal-product-title').textContent = prodResult.product_name;
+      const dropiUrl = prodResult.product_url || (prodResult.dropi_id ? `https://app.dropi.cl/dashboard/search?product=${prodResult.dropi_id}` : 'https://app.dropi.cl');
+      
+      const headerCost = document.getElementById('sim-modal-header-supplier-cost');
+      if (headerCost) headerCost.textContent = formatCLP(prodResult.supplier_price);
+
+      const headerLink = document.getElementById('sim-modal-header-dropi-link');
+      if (headerLink) headerLink.href = dropiUrl;
+
+      const boxCost = document.getElementById('sim-input-supplier-cost-box');
+      if (boxCost) boxCost.textContent = formatCLP(prodResult.supplier_price);
+
+      const boxLink = document.getElementById('sim-box-dropi-link');
+      if (boxLink) boxLink.href = dropiUrl;
+
       document.getElementById('sim-modal-product-subtitle').textContent = 
-        `Proveedor: ${prodResult.supplier_name} | Costo Prov: ${formatCLP(prodResult.supplier_price)} | Sugerido: ${formatCLP(prodResult.suggested_price)} | Stock: ${prodResult.stock}`;
+        `Proveedor: ${prodResult.supplier_name} | ID Dropi: ${prodResult.dropi_id} | Sugerido: ${formatCLP(prodResult.suggested_price)} | Stock: ${prodResult.stock}`;
+
+      // Actualizar Foto y Ficha Resumen del Producto en Simulación & Desglose
+      const fallbackImg = 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=200';
+      const actualImg = prodResult.image_url || fallbackImg;
+      const prodImgEl = document.getElementById('sim-product-image');
+      const prodImgLink = document.getElementById('sim-product-image-link');
+      if (prodImgEl) {
+        prodImgEl.src = actualImg;
+        prodImgEl.alt = prodResult.product_name;
+        prodImgEl.onerror = function() { 
+          this.src = fallbackImg; 
+          if (prodImgLink) prodImgLink.href = fallbackImg;
+        };
+      }
+      if (prodImgLink) {
+        prodImgLink.href = actualImg;
+      }
+
+      const prodDisplayName = document.getElementById('sim-product-display-name');
+      if (prodDisplayName) prodDisplayName.textContent = prodResult.product_name;
+
+      const prodDisplayId = document.getElementById('sim-product-display-id');
+      if (prodDisplayId) prodDisplayId.textContent = prodResult.dropi_id || '--';
+
+      const prodDisplaySupplier = document.getElementById('sim-product-display-supplier');
+      if (prodDisplaySupplier) prodDisplaySupplier.textContent = prodResult.supplier_name || 'Dropi';
+
+      const prodDisplayStock = document.getElementById('sim-product-display-stock');
+      if (prodDisplayStock) prodDisplayStock.textContent = `${prodResult.stock} un.`;
+
+      const prodCatBadge = document.getElementById('sim-product-badge-cat');
+      if (prodCatBadge) prodCatBadge.textContent = prodResult.category || 'Catálogo';
+
+      const prodVarBadge = document.getElementById('sim-product-display-variants');
+      if (prodVarBadge) {
+        prodVarBadge.textContent = prodResult.has_variants ? `Con Variantes (${prodResult.variants_count || ''})` : 'Producto Simple';
+      }
 
       // Configurar Selector de Zonas
       const zoneSelect = document.getElementById('sim-select-zone');
@@ -2542,9 +2934,131 @@
       // Abrir Modal
       const modal = document.getElementById('modal-product-profitability');
       if (modal) modal.classList.add('open');
+      loadBusinessUnitsForPublish();
 
       // Calcular
       await runLiveProductSimulation();
+    }
+
+    // -------------------------------------------------------------------------
+    // PUBLICAR PRODUCTO (Pancocos + Shopify vía Pancocos-Fulfillment)
+    // -------------------------------------------------------------------------
+
+    function setPublishStatus(message, color) {
+      const statusEl = document.getElementById('sim-publish-status');
+      if (statusEl) {
+        statusEl.style.display = message ? 'block' : 'none';
+        statusEl.style.color = color || 'var(--text-muted)';
+        statusEl.textContent = message || '';
+      }
+      const modalStatusEl = document.getElementById('sim-publish-modal-status');
+      if (modalStatusEl) {
+        modalStatusEl.style.display = message ? 'block' : 'none';
+        modalStatusEl.style.color = color || 'var(--text-muted)';
+        modalStatusEl.textContent = message || '';
+      }
+    }
+
+    async function loadBusinessUnitsForPublish() {
+      const select = document.getElementById('sim-select-business-unit');
+      if (!select) return;
+
+      try {
+        const res = await fetch('/api/business-units');
+        const data = await res.json();
+        const units = (data.success && Array.isArray(data.business_units) && data.business_units.length > 0)
+          ? data.business_units
+          : [
+              { id: 1, name: 'Pancocos', slug: 'pancocos', is_default: true },
+              { id: 2, name: 'CrisCodev', slug: 'criscodev', is_default: false }
+            ];
+
+        select.innerHTML = units
+          .map(bu => `<option value="${bu.id}">${bu.name}</option>`)
+          .join('');
+
+        const defaultUnit = units.find(bu => bu.is_default) || units[0];
+        if (defaultUnit) select.value = String(defaultUnit.id);
+      } catch (e) {
+        select.innerHTML = '<option value="1">Pancocos</option><option value="2">CrisCodev</option>';
+      }
+    }
+
+    async function openPublishBusinessUnitModal() {
+      if (!profState.currentSimEval) return;
+
+      const prodNameEl = document.getElementById('publish-modal-product-name');
+      if (prodNameEl) prodNameEl.textContent = profState.currentSimEval.product_name || '--';
+
+      const salePrice = Number(document.getElementById('sim-input-price')?.value) || profState.currentSimEval.sale_price_used || 0;
+      const priceEl = document.getElementById('publish-modal-sale-price');
+      if (priceEl) priceEl.textContent = formatCLP(salePrice);
+
+      const modalStatusEl = document.getElementById('sim-publish-modal-status');
+      if (modalStatusEl) {
+        modalStatusEl.style.display = 'none';
+        modalStatusEl.textContent = '';
+      }
+
+      const modal = document.getElementById('modal-publish-business-unit');
+      if (modal) modal.classList.add('open');
+
+      await loadBusinessUnitsForPublish();
+    }
+
+    function closePublishBusinessUnitModal(e) {
+      if (!e || e.target.id === 'modal-publish-business-unit') {
+        const modal = document.getElementById('modal-publish-business-unit');
+        if (modal) modal.classList.remove('open');
+      }
+    }
+
+    async function publishProductFromModal() {
+      if (!profState.currentSimEval) return;
+
+      const businessUnitSelect = document.getElementById('sim-select-business-unit');
+      const businessUnitId = Number(businessUnitSelect?.value);
+      if (!businessUnitId) {
+        setPublishStatus('Selecciona una unidad de negocio antes de publicar.', '#FBBF24');
+        return;
+      }
+
+      const confirmBtn = document.getElementById('btn-confirm-publish-product');
+      const topPublishBtn = document.getElementById('btn-sim-publish-product');
+      if (confirmBtn) confirmBtn.disabled = true;
+      if (topPublishBtn) topPublishBtn.disabled = true;
+      setPublishStatus('⏳ Publicando en Pancocos y Shopify...', '#93C5FD');
+
+      try {
+        const res = await fetch('/api/profitability/publish-product', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            product_id: profState.currentSimEval.product_id,
+            business_unit_id: businessUnitId,
+            custom_sale_price: Number(document.getElementById('sim-input-price')?.value) || 0,
+            custom_ad_cost: Number(document.getElementById('sim-input-ad-cost')?.value) || 0,
+            tax_treatment: document.getElementById('sim-select-tax')?.value,
+            profile_id: profState.activeProfile?.id
+          })
+        });
+
+        const data = await res.json();
+        if (data.success) {
+          setPublishStatus(
+            `✅ Publicado en "${data.business_unit.name}". Producto Pancocos #${data.pancocos_product_id} · Shopify: ${data.shopify_product_id}` + (data.updated_existing ? ' (actualizado)' : ''),
+            '#34D399'
+          );
+          setTimeout(() => closePublishBusinessUnitModal(), 1200);
+        } else {
+          setPublishStatus('❌ ' + (data.error || 'No se pudo publicar el producto.'), data.partial ? '#FBBF24' : '#F87171');
+        }
+      } catch (e) {
+        setPublishStatus('❌ Error de conexión: ' + e.message, '#F87171');
+      } finally {
+        if (confirmBtn) confirmBtn.disabled = false;
+        if (topPublishBtn) topPublishBtn.disabled = false;
+      }
     }
 
     function closeProductSimulatorModal(e) {
@@ -2711,6 +3225,684 @@
         }
       } catch (e) {
         alert('Error de conexión: ' + e.message);
+      }
+    }
+
+    // =========================================================================
+    // ADMINISTRACIÓN IA (CONFIGURACIÓN MOTOR CHATGPT / COPILOT Y PROMPTS)
+    // =========================================================================
+
+    const DEFAULT_ANALYSIS_PROMPT_TEMPLATE_UI =
+      'Para el producto XXXXXXX, analiza la demanda, competencia, margen estimado.';
+    const DEFAULT_MARKET_PROMPT_TEMPLATE_UI =
+      'Busca un máximo de 10 tiendas en Chile donde esté disponible el producto XXXXXXX, y muestra únicamente los datos: nombre de la tienda, link y precio, ordenados de menor a mayor. Siempre incluye las tiendas: Falabella, Lider, Ripley, Mercado Libre, y el resto, tiendas donde encuentres el producto.';
+
+    let aiConfigState = {
+      provider: 'chatgpt',
+      analysis_prompt_template: DEFAULT_ANALYSIS_PROMPT_TEMPLATE_UI,
+      market_prices_prompt_template: DEFAULT_MARKET_PROMPT_TEMPLATE_UI
+    };
+
+    function interpolateClientPrompt(template, productName) {
+      const cleanProduct = (productName || '').trim();
+      const cleanTemplate = (template || '').trim();
+      if (/XXXXXXX/i.test(cleanTemplate)) {
+        return cleanTemplate.replace(/XXXXXXX/gi, cleanProduct);
+      }
+      if (/\{producto\}/i.test(cleanTemplate)) {
+        return cleanTemplate.replace(/\{producto\}/gi, cleanProduct);
+      }
+      return `${cleanTemplate} (${cleanProduct})`;
+    }
+
+    function updateAIProviderVisualSelection(provider) {
+      const isCopilot = provider === 'copilot';
+      const activeProvider = isCopilot ? 'copilot' : 'chatgpt';
+      const providerDisplay = isCopilot ? 'Microsoft Copilot' : 'ChatGPT';
+      const providerShort = isCopilot ? 'Copilot' : 'ChatGPT';
+      aiConfigState.provider = activeProvider;
+
+      const cardChatgpt = document.getElementById('ai-provider-card-chatgpt');
+      const cardCopilot = document.getElementById('ai-provider-card-copilot');
+      const radioChatgpt = document.getElementById('ai-provider-radio-chatgpt');
+      const radioCopilot = document.getElementById('ai-provider-radio-copilot');
+      const badge = document.getElementById('ai-config-active-badge');
+
+      if (radioChatgpt) radioChatgpt.checked = !isCopilot;
+      if (radioCopilot) radioCopilot.checked = isCopilot;
+
+      if (cardChatgpt) {
+        cardChatgpt.style.border = !isCopilot ? '2px solid #10B981' : '1px solid var(--border)';
+        cardChatgpt.style.background = !isCopilot ? 'rgba(16, 185, 129, 0.12)' : 'rgba(15, 23, 42, 0.6)';
+      }
+      if (cardCopilot) {
+        cardCopilot.style.border = isCopilot ? '2px solid #3B82F6' : '1px solid var(--border)';
+        cardCopilot.style.background = isCopilot ? 'rgba(59, 130, 246, 0.15)' : 'rgba(15, 23, 42, 0.6)';
+      }
+      if (badge) {
+        badge.textContent = isCopilot ? 'MOTOR ACTIVO: COPILOT' : 'MOTOR ACTIVO: CHATGPT';
+        badge.style.background = isCopilot ? 'rgba(59,130,246,0.2)' : 'rgba(16,185,129,0.2)';
+        badge.style.color = isCopilot ? '#60A5FA' : '#34D399';
+        badge.style.border = isCopilot ? '1px solid rgba(59,130,246,0.4)' : '1px solid rgba(16,185,129,0.4)';
+      }
+
+      // Actualizar dinámicamente textos y botones de la pestaña "🤖 Análisis IA"
+      const aiTitleEl = document.getElementById('sim-ai-title-provider');
+      if (aiTitleEl) {
+        aiTitleEl.textContent = `Análisis de Inteligencia Artificial (${providerDisplay})`;
+      }
+      const aiPromptLabelEl = document.getElementById('sim-ai-prompt-label');
+      if (aiPromptLabelEl) {
+        aiPromptLabelEl.textContent = `Prompt enviado a ${providerShort}:`;
+      }
+      const aiBtnRerunEl = document.getElementById('sim-ai-btn-rerun');
+      if (aiBtnRerunEl) {
+        aiBtnRerunEl.innerHTML = `🔄 Re-consultar ${providerShort}`;
+      }
+      const aiBtnLoginEl = document.getElementById('sim-ai-btn-login');
+      if (aiBtnLoginEl) {
+        aiBtnLoginEl.innerHTML = `🔑 Iniciar Sesión ${providerShort}`;
+      }
+      const aiWebLinkEl = document.getElementById('sim-ai-open-web-copilot');
+      if (aiWebLinkEl) {
+        aiWebLinkEl.textContent = `↗ Abrir en ${providerShort} Web`;
+      }
+      const aiRawHeaderEl = document.getElementById('sim-ai-raw-header-label');
+      if (aiRawHeaderEl) {
+        aiRawHeaderEl.textContent = `Texto Completo de la Respuesta (${providerShort})`;
+      }
+
+      // Actualizar dinámicamente textos y botones de la pestaña "🏷️ Consultar Precios del Mercado"
+      const marketTitleEl = document.getElementById('sim-market-title-text');
+      if (marketTitleEl) {
+        marketTitleEl.textContent = `Precios del Mercado en Chile (Sesión ${providerShort})`;
+      }
+      const marketPromptLabelEl = document.getElementById('sim-market-prompt-label');
+      if (marketPromptLabelEl) {
+        marketPromptLabelEl.textContent = `Prompt enviado a ${providerShort}:`;
+      }
+      const marketBtnRerunEl = document.getElementById('sim-market-btn-rerun');
+      if (marketBtnRerunEl) {
+        marketBtnRerunEl.innerHTML = `🔄 Consultar Precios (${providerShort})`;
+      }
+      const marketBtnLoginEl = document.getElementById('sim-market-btn-login');
+      if (marketBtnLoginEl) {
+        marketBtnLoginEl.innerHTML = `🔑 Iniciar Sesión ${providerShort}`;
+      }
+      const marketWebLinkEl = document.getElementById('sim-market-open-web-chatgpt');
+      if (marketWebLinkEl) {
+        marketWebLinkEl.textContent = `↗ Abrir en ${providerShort} Web`;
+      }
+      const marketRawHeaderEl = document.getElementById('sim-market-raw-header-label');
+      if (marketRawHeaderEl) {
+        marketRawHeaderEl.textContent = `Respuesta de ${providerShort} (Tienda, Link y Precio)`;
+      }
+    }
+
+    function openActiveProviderLogin() {
+      if (aiConfigState.provider === 'copilot') {
+        openCopilotLogin();
+      } else {
+        openChatGptLogin();
+      }
+    }
+
+    async function selectAIProviderUI(provider) {
+      updateAIProviderVisualSelection(provider);
+      await saveAIConfigFromUI();
+    }
+
+    async function loadAIConfigUI() {
+      try {
+        const res = await fetch('/api/ai-config');
+        const data = await res.json();
+        if (data && data.config) {
+          aiConfigState = {
+            provider: data.config.provider || 'chatgpt',
+            analysis_prompt_template: data.config.analysis_prompt_template || DEFAULT_ANALYSIS_PROMPT_TEMPLATE_UI,
+            market_prices_prompt_template: data.config.market_prices_prompt_template || DEFAULT_MARKET_PROMPT_TEMPLATE_UI
+          };
+
+          updateAIProviderVisualSelection(aiConfigState.provider);
+
+          const marketPromptEl = document.getElementById('ai-config-market-prompt');
+          if (marketPromptEl) {
+            marketPromptEl.value = aiConfigState.market_prices_prompt_template;
+          }
+
+          const analysisPromptEl = document.getElementById('ai-config-analysis-prompt');
+          if (analysisPromptEl) {
+            analysisPromptEl.value = aiConfigState.analysis_prompt_template;
+          }
+        }
+      } catch (err) {
+        console.warn('No se pudo cargar /api/ai-config:', err);
+      }
+    }
+
+    async function saveAIConfigFromUI() {
+      const msgEl = document.getElementById('ai-config-msg');
+      const marketPromptVal = document.getElementById('ai-config-market-prompt')?.value?.trim() || DEFAULT_MARKET_PROMPT_TEMPLATE_UI;
+      const analysisPromptVal = document.getElementById('ai-config-analysis-prompt')?.value?.trim() || DEFAULT_ANALYSIS_PROMPT_TEMPLATE_UI;
+      const providerVal = aiConfigState.provider || 'chatgpt';
+
+      if (msgEl) {
+        msgEl.textContent = 'Guardando configuración de Administración IA...';
+        msgEl.style.color = '#F59E0B';
+      }
+
+      try {
+        const res = await fetch('/api/ai-config', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            provider: providerVal,
+            market_prices_prompt_template: marketPromptVal,
+            analysis_prompt_template: analysisPromptVal
+          })
+        });
+        const data = await res.json();
+        if (data && data.success && data.config) {
+          aiConfigState = {
+            provider: data.config.provider,
+            analysis_prompt_template: data.config.analysis_prompt_template,
+            market_prices_prompt_template: data.config.market_prices_prompt_template
+          };
+          currentAiAnalysisData = null;
+          currentMarketPricesData = null;
+          updateAIProviderVisualSelection(aiConfigState.provider);
+          if (msgEl) {
+            msgEl.textContent = `✅ Configuración guardada. Motor activo: ${aiConfigState.provider === 'copilot' ? 'Microsoft Copilot' : 'ChatGPT'}.`;
+            msgEl.style.color = '#34D399';
+          }
+        } else {
+          if (msgEl) {
+            msgEl.textContent = '❌ No se pudo guardar la configuración IA.';
+            msgEl.style.color = '#F87171';
+          }
+        }
+      } catch (err) {
+        if (msgEl) {
+          msgEl.textContent = '❌ Error al guardar configuración IA: ' + err.message;
+          msgEl.style.color = '#F87171';
+        }
+      }
+    }
+
+    async function resetAIConfigPromptsToDefault() {
+      const marketPromptEl = document.getElementById('ai-config-market-prompt');
+      const analysisPromptEl = document.getElementById('ai-config-analysis-prompt');
+      if (marketPromptEl) marketPromptEl.value = DEFAULT_MARKET_PROMPT_TEMPLATE_UI;
+      if (analysisPromptEl) analysisPromptEl.value = DEFAULT_ANALYSIS_PROMPT_TEMPLATE_UI;
+      await saveAIConfigFromUI();
+    }
+
+    // Cargar configuración IA al iniciar la aplicación
+    loadAIConfigUI();
+
+    // =========================================================================
+    // ANÁLISIS DE INTELIGENCIA ARTIFICIAL (CHATGPT O COPILOT SEGÚN CONFIG)
+    // =========================================================================
+
+    let currentAiAnalysisData = null;
+    let isAiQueryInProgress = false;
+
+    async function runCopilotAIAnalysis(forceRefresh = false) {
+      if (!profState.currentSimProduct) return;
+      const product = profState.currentSimProduct;
+
+      // Si ya tenemos los datos y no se solicita recarga forzada, reutilizar
+      if (!forceRefresh && currentAiAnalysisData && currentAiAnalysisData.product_name === product.product_name) {
+        renderAiAnalysis(currentAiAnalysisData);
+        return;
+      }
+
+      if (isAiQueryInProgress) return;
+
+      const templateFromConfig =
+        document.getElementById('ai-config-analysis-prompt')?.value?.trim() ||
+        aiConfigState.analysis_prompt_template ||
+        DEFAULT_ANALYSIS_PROMPT_TEMPLATE_UI;
+
+      const promptText = interpolateClientPrompt(templateFromConfig, product.product_name);
+      const isCopilot = aiConfigState.provider === 'copilot';
+
+      // Actualizar vista previa del prompt y enlace externo
+      const promptPreview = document.getElementById('sim-ai-prompt-preview');
+      if (promptPreview) {
+        promptPreview.textContent = `"${promptText}"`;
+      }
+
+      const webCopilotLink = document.getElementById('sim-ai-open-web-copilot');
+      if (webCopilotLink) {
+        webCopilotLink.href = isCopilot
+          ? `https://copilot.microsoft.com/?q=${encodeURIComponent(promptText)}`
+          : `https://chatgpt.com/?q=${encodeURIComponent(promptText)}`;
+        webCopilotLink.textContent = isCopilot ? '↗ Abrir en Copilot Web' : '↗ Abrir en ChatGPT Web';
+      }
+
+      setAiStatusLoading(promptText);
+
+      isAiQueryInProgress = true;
+      try {
+        const salePrice = Number(document.getElementById('sim-input-price')?.value) || 
+                          product.sale_price_used || 
+                          product.suggested_price || 
+                          Math.round(product.supplier_price * 1.8);
+
+        const response = await fetch('/api/profitability/ai-analysis', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            product_name: product.product_name,
+            dropi_id: product.dropi_id,
+            supplier_price: product.supplier_price,
+            suggested_price: product.suggested_price,
+            category: product.category,
+            sale_price: salePrice,
+            provider: aiConfigState.provider,
+            custom_prompt: templateFromConfig
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error(`Error en servidor (${response.status})`);
+        }
+
+        const data = await response.json();
+        currentAiAnalysisData = data;
+        renderAiAnalysis(data);
+      } catch (err) {
+        console.error('Error al consultar análisis IA:', err);
+        setAiStatusError(err.message || 'Error desconocido');
+      } finally {
+        isAiQueryInProgress = false;
+      }
+    }
+
+    function setAiStatusLoading(promptText) {
+      const statusDot = document.getElementById('sim-ai-status-dot');
+      const statusText = document.getElementById('sim-ai-status-text');
+      const sourceBadge = document.getElementById('sim-ai-source-badge');
+      const providerLabel = aiConfigState.provider === 'copilot' ? 'Microsoft Copilot' : 'ChatGPT';
+
+      if (statusDot) statusDot.style.background = '#F59E0B'; // Ámbar cargando
+      if (statusText) {
+        statusText.innerHTML = `Consultando a ${providerLabel} en segundo plano... <span style="font-size:0.75rem; color:var(--text-muted);">(puede tardar unos segundos)</span>`;
+      }
+      if (sourceBadge) {
+        sourceBadge.textContent = `CONSULTANDO ${providerLabel.toUpperCase()}...`;
+        sourceBadge.style.background = 'rgba(245, 158, 11, 0.2)';
+        sourceBadge.style.color = '#FBBF24';
+        sourceBadge.style.border = '1px solid rgba(245, 158, 11, 0.4)';
+      }
+
+      ['demanda', 'competencia', 'margen', 'recomendacion'].forEach(sec => {
+        const el = document.getElementById(`sim-ai-${sec}`);
+        if (el) el.innerHTML = `<span style="color:var(--text-muted); font-style:italic;">Analizando mediante ${providerLabel}...</span>`;
+      });
+
+      const rawEl = document.getElementById('sim-ai-raw-text');
+      if (rawEl) rawEl.textContent = `Procesando consulta en ${providerLabel}...`;
+    }
+
+    function setAiStatusError(errMsg) {
+      const statusDot = document.getElementById('sim-ai-status-dot');
+      const statusText = document.getElementById('sim-ai-status-text');
+      const sourceBadge = document.getElementById('sim-ai-source-badge');
+
+      if (statusDot) statusDot.style.background = '#EF4444'; // Rojo
+      if (statusText) statusText.textContent = `Error en consulta IA: ${errMsg}`;
+      if (sourceBadge) {
+        sourceBadge.textContent = 'ERROR';
+        sourceBadge.style.background = 'rgba(239, 68, 68, 0.2)';
+        sourceBadge.style.color = '#F87171';
+        sourceBadge.style.border = '1px solid rgba(239, 68, 68, 0.4)';
+      }
+    }
+
+    function renderAiAnalysis(data) {
+      if (!data || !data.sections) return;
+
+      const statusDot = document.getElementById('sim-ai-status-dot');
+      const statusText = document.getElementById('sim-ai-status-text');
+      const sourceBadge = document.getElementById('sim-ai-source-badge');
+      const providerLabel = (data.provider_used || aiConfigState.provider) === 'copilot' ? 'Microsoft Copilot' : 'ChatGPT';
+
+      if (statusDot) statusDot.style.background = '#10B981'; // Verde
+      if (statusText) {
+        if (data.source === 'COPILOT_LIVE' || data.source === 'CHATGPT_LIVE') {
+          statusText.innerHTML = `✅ Respuesta obtenida en vivo desde ${providerLabel}`;
+        } else {
+          statusText.innerHTML = `⚡ Análisis estructurado de mercado y viabilidad comercial (${providerLabel})`;
+        }
+      }
+
+      if (sourceBadge) {
+        if (data.source === 'COPILOT_LIVE' || data.source === 'CHATGPT_LIVE') {
+          sourceBadge.textContent = `${providerLabel.toUpperCase()} LIVE`;
+          sourceBadge.style.background = 'rgba(16, 185, 129, 0.2)';
+          sourceBadge.style.color = '#34D399';
+          sourceBadge.style.border = '1px solid rgba(16, 185, 129, 0.4)';
+        } else {
+          sourceBadge.textContent = `MERCADO DROPI & ${providerLabel.toUpperCase()}`;
+          sourceBadge.style.background = 'rgba(59, 130, 246, 0.2)';
+          sourceBadge.style.color = '#60A5FA';
+          sourceBadge.style.border = '1px solid rgba(59, 130, 246, 0.4)';
+        }
+      }
+
+      // Rellenar las 4 secciones
+      const demandaEl = document.getElementById('sim-ai-demanda');
+      if (demandaEl) demandaEl.textContent = data.sections.demanda || 'Sin datos de demanda.';
+
+      const compEl = document.getElementById('sim-ai-competencia');
+      if (compEl) compEl.textContent = data.sections.competencia || 'Sin datos de competencia.';
+
+      const margenEl = document.getElementById('sim-ai-margen');
+      if (margenEl) margenEl.textContent = data.sections.margen_estimado || 'Sin datos de margen.';
+
+      const recEl = document.getElementById('sim-ai-recomendacion');
+      if (recEl) recEl.textContent = data.sections.recomendacion || 'Sin recomendaciones registradas.';
+
+      // Texto completo en bloque de código
+      const rawEl = document.getElementById('sim-ai-raw-text');
+      if (rawEl) rawEl.textContent = data.raw_response || '';
+    }
+
+    async function copyAiResponseToClipboard() {
+      const rawEl = document.getElementById('sim-ai-raw-text');
+      if (!rawEl || !rawEl.textContent) return;
+
+      try {
+        await navigator.clipboard.writeText(rawEl.textContent);
+        alert('¡Texto del análisis copiado al portapapeles!');
+      } catch (e) {
+        // Fallback para navegadores antiguos
+        const textarea = document.createElement('textarea');
+        textarea.value = rawEl.textContent;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        alert('¡Texto copiado al portapapeles!');
+      }
+    }
+
+    async function openCopilotLogin() {
+      try {
+        const res = await fetch('/api/copilot/start-login', { method: 'POST' });
+        const data = await res.json();
+        if (data.success) {
+          alert('Se ha abierto una ventana de navegador. Inicia sesión con tu cuenta de Microsoft para sincronizar consultas automáticas de Copilot.');
+        } else {
+          alert('Aviso: ' + (data.error || 'No fue posible abrir la ventana'));
+        }
+      } catch (e) {
+        alert('Error al solicitar inicio de sesión asistido: ' + e.message);
+      }
+    }
+
+    // =========================================================================
+    // CONSULTA DE PRECIOS DEL MERCADO EN CHILE (SEGÚN ADMINISTRACIÓN IA)
+    // =========================================================================
+
+    let currentMarketPricesData = null;
+    let isMarketPricesQueryInProgress = false;
+
+    function buildMarketPromptForProduct(productName) {
+      const templateFromConfig =
+        document.getElementById('ai-config-market-prompt')?.value?.trim() ||
+        aiConfigState.market_prices_prompt_template ||
+        DEFAULT_MARKET_PROMPT_TEMPLATE_UI;
+      return interpolateClientPrompt(templateFromConfig, productName);
+    }
+
+    async function runChatGptMarketPricesQuery(forceRefresh = false) {
+      if (!profState.currentSimProduct) return;
+      const product = profState.currentSimProduct;
+
+      if (!forceRefresh && currentMarketPricesData && currentMarketPricesData.product_name === product.product_name) {
+        renderMarketPricesResult(currentMarketPricesData);
+        return;
+      }
+
+      if (isMarketPricesQueryInProgress) return;
+
+      const templateFromConfig =
+        document.getElementById('ai-config-market-prompt')?.value?.trim() ||
+        aiConfigState.market_prices_prompt_template ||
+        DEFAULT_MARKET_PROMPT_TEMPLATE_UI;
+      const promptText = interpolateClientPrompt(templateFromConfig, product.product_name);
+      const isCopilot = aiConfigState.provider === 'copilot';
+
+      const promptPreviewEl = document.getElementById('sim-market-prompt-preview');
+      if (promptPreviewEl) {
+        promptPreviewEl.textContent = `"${promptText}"`;
+      }
+
+      const openWebLink = document.getElementById('sim-market-open-web-chatgpt');
+      if (openWebLink) {
+        openWebLink.href = isCopilot
+          ? `https://copilot.microsoft.com/?q=${encodeURIComponent(promptText)}`
+          : `https://chatgpt.com/?q=${encodeURIComponent(promptText)}`;
+        openWebLink.textContent = isCopilot ? '↗ Abrir en Copilot Web' : '↗ Abrir en ChatGPT Web';
+      }
+
+      setMarketPricesLoadingState();
+      isMarketPricesQueryInProgress = true;
+
+      try {
+        const salePrice = Number(document.getElementById('sim-input-price')?.value) ||
+                          product.sale_price_used ||
+                          product.suggested_price ||
+                          Math.round(product.supplier_price * 1.8);
+
+        const response = await fetch('/api/profitability/market-prices', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            product_name: product.product_name,
+            dropi_id: product.dropi_id,
+            supplier_price: product.supplier_price,
+            suggested_price: product.suggested_price,
+            sale_price: salePrice,
+            provider: aiConfigState.provider,
+            custom_prompt: templateFromConfig
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error(`Error del servidor (${response.status})`);
+        }
+
+        const data = await response.json();
+        currentMarketPricesData = data;
+        renderMarketPricesResult(data);
+      } catch (err) {
+        console.error('Error al consultar precios del mercado en ChatGPT:', err);
+        setMarketPricesErrorState(err.message || 'Error desconocido');
+      } finally {
+        isMarketPricesQueryInProgress = false;
+      }
+    }
+
+    function setMarketPricesLoadingState() {
+      const statusDot = document.getElementById('sim-market-status-dot');
+      const statusText = document.getElementById('sim-market-status-text');
+      const sourceBadge = document.getElementById('sim-market-source-badge');
+      const warningBox = document.getElementById('sim-market-warning-box');
+      const tbody = document.getElementById('sim-market-prices-tbody');
+      const rawEl = document.getElementById('sim-market-raw-text');
+      const providerLabel = aiConfigState.provider === 'copilot' ? 'Microsoft Copilot' : 'ChatGPT';
+
+      if (statusDot) statusDot.style.background = '#F59E0B';
+      if (statusText) {
+        statusText.innerHTML = `Consultando tu sesión de ${providerLabel} en segundo plano... <span style="font-size:0.75rem; color:var(--text-muted);">(buscando hasta 10 tiendas en Chile ordenadas de menor a mayor precio)</span>`;
+      }
+      if (sourceBadge) {
+        sourceBadge.textContent = `CONSULTANDO ${providerLabel.toUpperCase()}...`;
+        sourceBadge.style.background = 'rgba(245, 158, 11, 0.2)';
+        sourceBadge.style.color = '#FBBF24';
+        sourceBadge.style.border = '1px solid rgba(245, 158, 11, 0.4)';
+      }
+      if (warningBox) warningBox.style.display = 'none';
+      if (tbody) {
+        tbody.innerHTML = `<tr>
+          <td colspan="5" style="text-align:center; padding: 1.75rem; color: #93C5FD;">
+            ⏳ Ejecutando prompt en ${providerLabel} y ordenando tiendas de menor a mayor precio...
+          </td>
+        </tr>`;
+      }
+      if (rawEl) {
+        rawEl.textContent = `Consultando ${providerLabel}...`;
+      }
+    }
+
+    function setMarketPricesErrorState(errorMessage) {
+      const statusDot = document.getElementById('sim-market-status-dot');
+      const statusText = document.getElementById('sim-market-status-text');
+      const sourceBadge = document.getElementById('sim-market-source-badge');
+      const tbody = document.getElementById('sim-market-prices-tbody');
+
+      if (statusDot) statusDot.style.background = '#EF4444';
+      if (statusText) statusText.textContent = `Error al consultar precios: ${errorMessage}`;
+      if (sourceBadge) {
+        sourceBadge.textContent = 'ERROR';
+        sourceBadge.style.background = 'rgba(239, 68, 68, 0.2)';
+        sourceBadge.style.color = '#F87171';
+        sourceBadge.style.border = '1px solid rgba(239, 68, 68, 0.4)';
+      }
+      if (tbody) {
+        tbody.innerHTML = `<tr>
+          <td colspan="5" style="text-align:center; padding: 1.5rem; color: #F87171;">
+            ❌ No se pudo completar la consulta: ${errorMessage}
+          </td>
+        </tr>`;
+      }
+    }
+
+    function renderMarketPricesResult(data) {
+      if (!data) return;
+
+      const statusDot = document.getElementById('sim-market-status-dot');
+      const statusText = document.getElementById('sim-market-status-text');
+      const sourceBadge = document.getElementById('sim-market-source-badge');
+      const warningBox = document.getElementById('sim-market-warning-box');
+      const tbody = document.getElementById('sim-market-prices-tbody');
+      const rawEl = document.getElementById('sim-market-raw-text');
+      const openWebLink = document.getElementById('sim-market-open-web-chatgpt');
+
+      if (openWebLink && data.chatgpt_url) {
+        openWebLink.href = data.chatgpt_url;
+      }
+
+      const providerLabel = (data.provider_used || aiConfigState.provider) === 'copilot' ? 'Microsoft Copilot' : 'ChatGPT';
+
+      if (statusDot) statusDot.style.background = '#10B981';
+      if (statusText) {
+        if (data.source === 'CHATGPT_LIVE' || data.source === 'COPILOT_LIVE') {
+          statusText.innerHTML = `✅ Precios obtenidos en vivo desde tu sesión de ${providerLabel} (ordenados de menor a mayor)`;
+        } else if (data.source === 'CACHE') {
+          statusText.innerHTML = `✅ Precios obtenidos desde caché reciente (${providerLabel})`;
+        } else {
+          statusText.innerHTML = `⚡ Listado de tiendas en Chile ordenado de menor a mayor (inicia sesión en ${providerLabel} para sincronizar en vivo)`;
+        }
+      }
+
+      if (sourceBadge) {
+        if (data.source === 'CHATGPT_LIVE' || data.source === 'COPILOT_LIVE') {
+          sourceBadge.textContent = `${providerLabel.toUpperCase()} EN VIVO`;
+          sourceBadge.style.background = 'rgba(16, 185, 129, 0.2)';
+          sourceBadge.style.color = '#34D399';
+          sourceBadge.style.border = '1px solid rgba(16, 185, 129, 0.4)';
+        } else {
+          sourceBadge.textContent = `${providerLabel.toUpperCase()} CHILE`;
+          sourceBadge.style.background = 'rgba(59, 130, 246, 0.2)';
+          sourceBadge.style.color = '#60A5FA';
+          sourceBadge.style.border = '1px solid rgba(59, 130, 246, 0.4)';
+        }
+      }
+
+      if (warningBox) {
+        if (data.warning) {
+          warningBox.style.display = 'block';
+          warningBox.textContent = 'ℹ️ ' + data.warning;
+        } else {
+          warningBox.style.display = 'none';
+        }
+      }
+
+      const items = Array.isArray(data.items) ? data.items : [];
+      if (tbody) {
+        if (items.length === 0) {
+          tbody.innerHTML = `<tr>
+            <td colspan="5" style="text-align:center; padding: 1.5rem; color: var(--text-muted);">
+              No se encontraron tiendas para mostrar.
+            </td>
+          </tr>`;
+        } else {
+          tbody.innerHTML = items.map((item, idx) => {
+            const mandatoryBadge = item.es_tienda_obligatoria
+              ? '<span class="badge" style="margin-left:0.5rem; font-size:0.68rem; background:rgba(59,130,246,0.18); color:#93C5FD; border:1px solid rgba(59,130,246,0.35);">Principal Chile</span>'
+              : '';
+            const storeLinkHtml = item.link
+              ? `<a href="${item.link}" target="_blank" rel="noopener noreferrer" style="color:#60A5FA; text-decoration:none; font-size:0.8rem; display:inline-flex; align-items:center; gap:0.3rem; max-width:280px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" title="${item.link}">🔗 Ver en tienda ↗</a>`
+              : '<span style="color:var(--text-muted); font-size:0.75rem;">--</span>';
+            const actionBtn = item.precio_numerico
+              ? `<button class="btn" style="padding:0.25rem 0.65rem; font-size:0.75rem; background:rgba(16,185,129,0.18); border:1px solid rgba(16,185,129,0.35); color:#34D399;" onclick="applyMarketPriceToSimulator(${item.precio_numerico})">Usar este precio</button>`
+              : '<span style="font-size:0.75rem; color:var(--text-muted);">--</span>';
+
+            return `<tr>
+              <td style="font-weight:700; color:var(--text-muted);">${idx + 1}</td>
+              <td style="font-weight:600; color:white;">${item.tienda}${mandatoryBadge}</td>
+              <td>${storeLinkHtml}</td>
+              <td style="font-weight:800; color:#34D399; font-size:0.95rem;">${item.precio}</td>
+              <td style="text-align:right;">${actionBtn}</td>
+            </tr>`;
+          }).join('');
+        }
+      }
+
+      if (rawEl) {
+        rawEl.textContent = data.raw_response || '';
+      }
+    }
+
+    function applyMarketPriceToSimulator(numericPrice) {
+      if (!numericPrice || numericPrice <= 0) return;
+      onSimInputPriceChange(numericPrice);
+      switchSimModalTab('calc');
+    }
+
+    async function openChatGptLogin() {
+      try {
+        const res = await fetch('/api/chatgpt/start-login', { method: 'POST' });
+        const data = await res.json();
+        if (data.success) {
+          alert(data.message || 'Se abrió la ventana de navegador para iniciar sesión en ChatGPT.');
+        } else {
+          alert('Aviso: ' + (data.message || data.error || 'No fue posible abrir la ventana de ChatGPT'));
+        }
+      } catch (e) {
+        alert('Error al abrir inicio de sesión de ChatGPT: ' + e.message);
+      }
+    }
+
+    async function copyMarketPricesToClipboard() {
+      const rawEl = document.getElementById('sim-market-raw-text');
+      if (!rawEl || !rawEl.textContent) return;
+      try {
+        await navigator.clipboard.writeText(rawEl.textContent);
+        alert('¡Listado de tiendas y precios copiado al portapapeles!');
+      } catch {
+        const textarea = document.createElement('textarea');
+        textarea.value = rawEl.textContent;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        alert('¡Listado copiado al portapapeles!');
       }
     }
 
@@ -2944,17 +4136,35 @@
           <span class="badge-icon">RENTABILIDAD</span>
           <div>
             <h2 id="sim-modal-product-title" style="font-size: 1.15rem; font-weight: 700; color: white;">Calculadora Financiera de Producto</h2>
-            <p id="sim-modal-product-subtitle" style="font-size: 0.78rem; color: var(--text-muted);">Simulación de márgenes, impuestos y precios recomendados</p>
+            <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-top:0.35rem;">
+              <span id="sim-modal-product-subtitle" style="font-size: 0.78rem; color: var(--text-muted);">Simulación de márgenes, impuestos y precios recomendados</span>
+              <span style="font-size:0.75rem; color:#34D399; font-weight:700; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.3); padding:0.15rem 0.5rem; border-radius:4px;">
+                Costo Proveedor: <span id="sim-modal-header-supplier-cost">$0</span>
+              </span>
+              <a id="sim-modal-header-dropi-link" href="#" target="_blank" class="btn" style="padding:0.2rem 0.6rem; font-size:0.75rem; background:rgba(249,115,22,0.2); border:1px solid rgba(249,115,22,0.4); color:#FB923C; text-decoration:none;">
+                🔗 Abrir en Dropi
+              </a>
+            </div>
           </div>
         </div>
         <button class="modal-close-btn" onclick="closeProductSimulatorModal()">&times;</button>
       </div>
 
-      <!-- Pestañas internas del Modal -->
-      <div style="display:flex; gap:1rem; padding: 0.75rem 1.5rem; background: rgba(0,0,0,0.2); border-bottom: 1px solid var(--border);">
-        <button id="sim-tab-btn-calc" class="tab-btn active" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;" onclick="switchSimModalTab('calc')">🧮 Simulación & Desglose</button>
-        <button id="sim-tab-btn-zones" class="tab-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;" onclick="switchSimModalTab('zones')">🗺️ Comparativa entre Zonas</button>
-        <button id="sim-tab-btn-variants" class="tab-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; display:none;" onclick="switchSimModalTab('variants')">🏷️ Variantes de Producto</button>
+      <!-- Pestañas internas del Modal + Botón Publicar Producto al costado derecho -->
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:1rem; padding: 0.75rem 1.5rem; background: rgba(0,0,0,0.2); border-bottom: 1px solid var(--border); flex-wrap:wrap;">
+        <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+          <button id="sim-tab-btn-calc" class="tab-btn active" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;" onclick="switchSimModalTab('calc')">🧮 Simulación & Desglose</button>
+          <button id="sim-tab-btn-zones" class="tab-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;" onclick="switchSimModalTab('zones')">🗺️ Comparativa entre Zonas</button>
+          <button id="sim-tab-btn-ai" class="tab-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;" onclick="switchSimModalTab('ai')">🤖 Análisis IA</button>
+          <button id="sim-tab-btn-market" class="tab-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;" onclick="switchSimModalTab('market')">🏷️ Consultar Precios del Mercado</button>
+          <button id="sim-tab-btn-variants" class="tab-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; display:none;" onclick="switchSimModalTab('variants')">🏷️ Variantes de Producto</button>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.75rem; margin-left:auto;">
+          <span id="sim-publish-status" style="display:none; font-size:0.78rem; line-height:1.3; max-width:340px; text-align:right;"></span>
+          <button id="btn-sim-publish-product" class="btn" style="padding: 0.42rem 0.95rem; font-size: 0.85rem; background:linear-gradient(135deg,#10B981,#059669); color:white; font-weight:700; border:none; box-shadow: 0 2px 8px rgba(16,185,129,0.35);" onclick="openPublishBusinessUnitModal()">
+            🚀 Publicar Producto
+          </button>
+        </div>
       </div>
 
       <div class="modal-body" style="overflow-y: auto; padding: 1.5rem; flex: 1;">
@@ -2966,6 +4176,17 @@
               <h4 style="font-size: 0.95rem; font-weight: 700; color: white; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.5rem;">
                 ⚙️ Variables de Simulación
               </h4>
+
+              <!-- Costo Base Proveedor y Enlace Dropi -->
+              <div style="background: rgba(30, 41, 59, 0.7); border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                  <span style="font-size:0.75rem; color:var(--text-muted); display:block;">Costo Proveedor:</span>
+                  <strong style="font-size:1.15rem; color:#34D399;" id="sim-input-supplier-cost-box">$0</strong>
+                </div>
+                <a id="sim-box-dropi-link" href="#" target="_blank" class="btn btn-orange" style="padding:0.35rem 0.75rem; font-size:0.78rem; text-decoration:none;">
+                  🛒 Ver en Dropi
+                </a>
+              </div>
 
               <div style="margin-bottom: 1rem;">
                 <div style="display:flex; justify-content:space-between; margin-bottom:0.3rem;">
@@ -3016,6 +4237,30 @@
 
             <!-- Resultados en Tiempo Real (Derecha) -->
             <div>
+              <!-- Ficha con Foto del Producto (Sobre Margen de Contribución y Utilidad Estimada) -->
+              <div style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.8) 100%); border: 1px solid var(--border); border-radius: 12px; padding: 0.9rem 1.25rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 1.25rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);">
+                <a id="sim-product-image-link" href="#" target="_blank" title="Haz clic para ver la imagen en resolución completa" style="position: relative; flex-shrink: 0; width: 92px; height: 92px; border-radius: 10px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.18); background: #1E293B; display: block; box-shadow: 0 4px 14px rgba(0,0,0,0.35); text-decoration: none;">
+                  <img id="sim-product-image" src="" alt="Foto del Producto" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.25s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                  <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(15,23,42,0.85), transparent); font-size: 0.65rem; color: #93C5FD; text-align: center; padding: 2px 0; font-weight: 600;">
+                    🔍 Ver Foto
+                  </div>
+                </a>
+                <div style="flex: 1; min-width: 0;">
+                  <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem; flex-wrap: wrap;">
+                    <span id="sim-product-badge-cat" class="badge badge-verified" style="font-size: 0.75rem;">Categoría</span>
+                    <span id="sim-product-display-variants" class="badge" style="background: rgba(59, 130, 246, 0.2); color: #60A5FA; border: 1px solid rgba(59, 130, 246, 0.35); font-size: 0.75rem;">Simple</span>
+                  </div>
+                  <h4 id="sim-product-display-name" style="font-size: 1rem; font-weight: 700; color: white; margin-bottom: 0.35rem; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                    Nombre del Producto
+                  </h4>
+                  <div style="display: flex; gap: 0.9rem; font-size: 0.78rem; color: var(--text-muted); flex-wrap: wrap;">
+                    <span>ID Dropi: <strong style="color: white;" id="sim-product-display-id">--</strong></span>
+                    <span>Proveedor: <strong style="color: white;" id="sim-product-display-supplier">--</strong></span>
+                    <span>Stock: <strong style="color: #34D399;" id="sim-product-display-stock">--</strong></span>
+                  </div>
+                </div>
+              </div>
+
               <!-- Tarjetas Principales -->
               <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
                 <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem;">
@@ -3138,7 +4383,168 @@
           </div>
         </div>
 
-        <!-- VISTA 3: VARIANTES DE PRODUCTO -->
+        <!-- VISTA 3: ANÁLISIS IA (SEGÚN MOTOR SELECCIONADO EN ADMINISTRACIÓN IA) -->
+        <div id="sim-view-ai" style="display:none;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.9rem; flex-wrap:wrap; gap:0.75rem;">
+            <h3 style="font-size: 1.1rem; font-weight: 700; color: white; display:flex; align-items:center; gap:0.5rem; margin:0;">
+              <span>🤖</span> <span id="sim-ai-title-provider">Análisis de Inteligencia Artificial (ChatGPT)</span>
+            </h3>
+            <div style="display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap;">
+              <button id="sim-ai-btn-rerun" class="btn" style="background: rgba(37, 99, 235, 0.2); border: 1px solid rgba(37, 99, 235, 0.4); font-size:0.8rem; padding:0.4rem 0.85rem;" onclick="runCopilotAIAnalysis(true)">
+                🔄 Re-consultar ChatGPT
+              </button>
+              <button id="sim-ai-btn-login" class="btn" style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); color:#34D399; font-size:0.8rem; padding:0.4rem 0.85rem;" onclick="openActiveProviderLogin()">
+                🔑 Iniciar Sesión ChatGPT
+              </button>
+              <a id="sim-ai-open-web-copilot" href="#" target="_blank" class="btn" style="background: rgba(249, 115, 22, 0.2); border: 1px solid rgba(249, 115, 22, 0.4); color:#FB923C; font-size:0.8rem; padding:0.4rem 0.85rem; text-decoration:none;">
+                ↗ Abrir en ChatGPT Web
+              </a>
+            </div>
+          </div>
+
+          <!-- Banner de Prompt a todo el ancho (mismo formato que sim-market-status-banner) -->
+          <div id="sim-ai-prompt-banner" style="width:100%; background: rgba(30, 41, 59, 0.7); border: 1px solid var(--border); border-radius: 10px; padding: 0.85rem 1.25rem; margin-bottom: 0.85rem; font-size: 0.825rem; color: var(--text-muted); line-height: 1.5;">
+            <strong id="sim-ai-prompt-label" style="color:white; margin-right:0.35rem;">Prompt enviado a ChatGPT:</strong>
+            <em style="color:#93C5FD;" id="sim-ai-prompt-preview">"Para el producto ..., analiza la demanda, competencia, margen estimado"</em>
+          </div>
+
+          <!-- Banner de Estado de la Consulta -->
+          <div id="sim-ai-status-banner" style="display:flex; align-items:center; justify-content:space-between; background: rgba(30, 41, 59, 0.7); border: 1px solid var(--border); border-radius: 10px; padding: 0.85rem 1.25rem; margin-bottom: 1.25rem;">
+            <div style="display:flex; align-items:center; gap:0.6rem;">
+              <span id="sim-ai-status-dot" class="status-dot" style="background:#10B981;"></span>
+              <span id="sim-ai-status-text" style="font-size:0.85rem; font-weight:600; color:white;">Listo</span>
+            </div>
+            <span id="sim-ai-source-badge" class="badge badge-verified">CHATGPT & MERCADO</span>
+          </div>
+
+          <!-- Cuadrícula de Análisis Estructurado -->
+          <div id="sim-ai-results-grid" style="display:grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+            <!-- 1. Demanda -->
+            <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem;">
+              <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.75rem;">
+                <span style="font-size:1.2rem;">📈</span>
+                <h4 style="font-size:0.95rem; font-weight:700; color:white;">1. Análisis de Demanda</h4>
+              </div>
+              <div id="sim-ai-demanda" style="font-size:0.85rem; color:#CBD5E1; line-height:1.6; white-space:pre-line;">
+                Cargando análisis de demanda...
+              </div>
+            </div>
+
+            <!-- 2. Competencia -->
+            <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem;">
+              <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.75rem;">
+                <span style="font-size:1.2rem;">🥊</span>
+                <h4 style="font-size:0.95rem; font-weight:700; color:white;">2. Análisis de Competencia</h4>
+              </div>
+              <div id="sim-ai-competencia" style="font-size:0.85rem; color:#CBD5E1; line-height:1.6; white-space:pre-line;">
+                Cargando análisis de competencia...
+              </div>
+            </div>
+
+            <!-- 3. Margen Estimado -->
+            <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem;">
+              <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.75rem;">
+                <span style="font-size:1.2rem;">💰</span>
+                <h4 style="font-size:0.95rem; font-weight:700; color:white;">3. Margen Estimado</h4>
+              </div>
+              <div id="sim-ai-margen" style="font-size:0.85rem; color:#CBD5E1; line-height:1.6; white-space:pre-line;">
+                Cargando cálculo de margen...
+              </div>
+            </div>
+
+            <!-- 4. Recomendación Estratégica -->
+            <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem;">
+              <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.75rem;">
+                <span style="font-size:1.2rem;">🎯</span>
+                <h4 style="font-size:0.95rem; font-weight:700; color:white;">4. Estrategia y Recomendación</h4>
+              </div>
+              <div id="sim-ai-recomendacion" style="font-size:0.85rem; color:#CBD5E1; line-height:1.6; white-space:pre-line;">
+                Cargando recomendaciones estratégicas...
+              </div>
+            </div>
+          </div>
+
+          <!-- Respuesta Completa / Markdown -->
+          <div id="sim-ai-raw-container" style="margin-top: 1.25rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+              <span id="sim-ai-raw-header-label" style="font-size:0.8rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.05em;">Texto Completo de la Respuesta (ChatGPT)</span>
+              <button class="btn" style="padding:0.25rem 0.6rem; font-size:0.75rem; background:rgba(255,255,255,0.06);" onclick="copyAiResponseToClipboard()">📋 Copiar Texto</button>
+            </div>
+            <pre id="sim-ai-raw-text" style="font-size:0.825rem; color:#E2E8F0; white-space:pre-wrap; word-break:break-word; font-family:inherit; max-height:220px; overflow-y:auto; line-height:1.6;"></pre>
+          </div>
+        </div>
+
+        <!-- VISTA: CONSULTAR PRECIOS DEL MERCADO (SEGÚN MOTOR SELECCIONADO EN ADMINISTRACIÓN IA) -->
+        <div id="sim-view-market" style="display:none;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.9rem; flex-wrap:wrap; gap:0.75rem;">
+            <h3 style="font-size: 1.1rem; font-weight: 700; color: white; display:flex; align-items:center; gap:0.5rem; margin:0;">
+              <span>🏷️</span> <span id="sim-market-title-text">Precios del Mercado en Chile (Sesión ChatGPT)</span>
+            </h3>
+            <div style="display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap;">
+              <button id="sim-market-btn-rerun" class="btn" style="background: rgba(37, 99, 235, 0.25); border: 1px solid rgba(59, 130, 246, 0.5); color:#93C5FD; font-size:0.8rem; padding:0.42rem 0.9rem; font-weight:600;" onclick="runChatGptMarketPricesQuery(true)">
+                🔄 Consultar Precios (ChatGPT)
+              </button>
+              <button id="sim-market-btn-login" class="btn" style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.35); color:#34D399; font-size:0.8rem; padding:0.42rem 0.9rem;" onclick="openActiveProviderLogin()">
+                🔑 Iniciar Sesión ChatGPT
+              </button>
+              <a id="sim-market-open-web-chatgpt" href="https://chatgpt.com/" target="_blank" class="btn" style="background: rgba(249, 115, 22, 0.2); border: 1px solid rgba(249, 115, 22, 0.4); color:#FB923C; font-size:0.8rem; padding:0.42rem 0.9rem; text-decoration:none;">
+                ↗ Abrir en ChatGPT Web
+              </a>
+            </div>
+          </div>
+
+          <!-- Banner de Prompt a todo el ancho (mismo formato que sim-market-status-banner) -->
+          <div id="sim-market-prompt-banner" style="width:100%; background: rgba(30, 41, 59, 0.7); border: 1px solid var(--border); border-radius: 10px; padding: 0.85rem 1.25rem; margin-bottom: 0.85rem; font-size: 0.825rem; color: var(--text-muted); line-height: 1.5;">
+            <strong id="sim-market-prompt-label" style="color:white; margin-right:0.35rem;">Prompt enviado a ChatGPT:</strong>
+            <em style="color:#93C5FD;" id="sim-market-prompt-preview">"Busca un máximo de 10 tiendas en Chile donde esté disponible el producto ..., y muestra únicamente los datos: nombre de la tienda, link y precio, ordenados de menor a mayor. Siempre incluye las tiendas: Falabella, Lider, Ripley, Mercado Libre, y el resto, tiendas donde encuentres el producto."</em>
+          </div>
+
+          <!-- Banner de Estado de la Consulta -->
+          <div id="sim-market-status-banner" style="display:flex; align-items:center; justify-content:space-between; background: rgba(30, 41, 59, 0.7); border: 1px solid var(--border); border-radius: 10px; padding: 0.85rem 1.25rem; margin-bottom: 1.25rem; flex-wrap:wrap; gap:0.5rem;">
+            <div style="display:flex; align-items:center; gap:0.6rem;">
+              <span id="sim-market-status-dot" class="status-dot" style="background:#10B981;"></span>
+              <span id="sim-market-status-text" style="font-size:0.85rem; font-weight:600; color:white;">Listo para consultar precios del mercado</span>
+            </div>
+            <span id="sim-market-source-badge" class="badge badge-verified">CHATGPT CHILE</span>
+          </div>
+
+          <!-- Aviso de sesión si aplica -->
+          <div id="sim-market-warning-box" style="display:none; background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.35); border-radius: 10px; padding: 0.75rem 1rem; margin-bottom: 1rem; font-size: 0.82rem; color: #FCD34D;">
+          </div>
+
+          <!-- Tabla: Listado Tienda, Link y Precio ordenados de menor a mayor -->
+          <div class="table-container" style="margin-bottom: 1.25rem;">
+            <table>
+              <thead>
+                <tr>
+                  <th style="width: 60px;">#</th>
+                  <th>Tienda</th>
+                  <th>Link</th>
+                  <th>Precio</th>
+                  <th style="width: 170px; text-align:right;">Acción Rápida</th>
+                </tr>
+              </thead>
+              <tbody id="sim-market-prices-tbody">
+                <tr>
+                  <td colspan="5" style="text-align:center; padding: 1.5rem; color: var(--text-muted);">
+                    Haz clic en "Consultar Precios del Mercado" para obtener el listado de tiendas, link y precios en Chile.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Respuesta Completa de IA -->
+          <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+              <span id="sim-market-raw-header-label" style="font-size:0.78rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.05em;">Respuesta de ChatGPT (Tienda, Link y Precio)</span>
+              <button class="btn" style="padding:0.25rem 0.6rem; font-size:0.75rem; background:rgba(255,255,255,0.06);" onclick="copyMarketPricesToClipboard()">📋 Copiar Listado</button>
+            </div>
+            <pre id="sim-market-raw-text" style="font-size:0.825rem; color:#E2E8F0; white-space:pre-wrap; word-break:break-word; font-family:inherit; max-height:180px; overflow-y:auto; line-height:1.55; margin:0;"></pre>
+          </div>
+        </div>
+
+        <!-- VISTA 4: VARIANTES DE PRODUCTO -->
         <div id="sim-view-variants" style="display:none;">
           <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">
             Evaluación independiente por cada variante con sus costos y precios de catálogo específicos:
@@ -3268,5 +4674,41 @@
     </div>
   </div>
 
+
+  <!-- Modal Solicitud de Unidad de Negocio para Publicar Producto -->
+  <div id="modal-publish-business-unit" class="modal-backdrop" onclick="closePublishBusinessUnitModal(event)" style="z-index: 1100;">
+    <div class="modal-card" style="max-width: 460px;">
+      <div class="modal-header">
+        <div style="display:flex; align-items:center; gap: 0.75rem;">
+          <span class="badge-icon" style="background:rgba(16,185,129,0.2); color:#34D399; border:1px solid rgba(16,185,129,0.4);">PUBLICAR</span>
+          <h2 style="font-size: 1.05rem; font-weight: 700; color: white;">Seleccionar Unidad de Negocio</h2>
+        </div>
+        <button class="modal-close-btn" onclick="closePublishBusinessUnitModal()">&times;</button>
+      </div>
+      <div class="modal-body" style="padding: 1.25rem 1.5rem;">
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">
+          Elige la Unidad de Negocio donde se guardará el producto en la tabla <strong>Producto</strong> y se sincronizará con Shopify mediante <strong>Pancocos-Fulfillment</strong>:
+        </p>
+        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 1rem;">
+          <div style="font-size:0.78rem; color:var(--text-muted);">Producto: <strong id="publish-modal-product-name" style="color:white;">--</strong></div>
+          <div style="font-size:0.78rem; color:var(--text-muted); margin-top:0.25rem;">Precio de Venta Simulado: <strong id="publish-modal-sale-price" style="color:#34D399;">$0</strong></div>
+        </div>
+        <div style="margin-bottom: 1.25rem;">
+          <label style="display:block; font-size:0.82rem; font-weight:600; color:white; margin-bottom:0.4rem;">Unidad de Negocio *</label>
+          <select id="sim-select-business-unit" class="filter-input" style="width:100%; font-size:0.9rem; padding:0.55rem 0.75rem;">
+            <option value="1">Pancocos</option>
+            <option value="2">CrisCodev</option>
+          </select>
+        </div>
+        <div id="sim-publish-modal-status" style="display:none; font-size:0.82rem; margin-bottom:1rem; line-height:1.4;"></div>
+        <div style="display:flex; justify-content:flex-end; gap:0.75rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:1rem;">
+          <button class="btn" style="background:transparent; border:1px solid var(--border);" onclick="closePublishBusinessUnitModal()">Cancelar</button>
+          <button id="btn-confirm-publish-product" class="btn" style="background:linear-gradient(135deg,#10B981,#059669); color:white; font-weight:700; border:none;" onclick="publishProductFromModal()">
+            🚀 Confirmar y Publicar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
